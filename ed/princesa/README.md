@@ -24,6 +24,7 @@ ___
 
 ### Abordagem I - Custo O(N * LogN)
 
+
 - marcando os elementos que morrem.
   - toda vez que alguém morrer, marque 0 no vetor
   - procure pelo próximo elemento vivo a direita

@@ -2,8 +2,78 @@
     "patches": [
         {
             "label": "2026-03-10_11-02-14",
-            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"qxcode\")\n}\n",
+            "content": "@@ -43,530 +43,28 @@\n     \n-var tamanho int%0A    fmt.Scan(&tamanho)%0A    var inicio int%0A    fmt.Scan(&inicio)%0A%0A    vetor_circular := make(%5B%5Dint, tamanho)%0A%0A    for i := 0; i %3C len(vetor_circular); i++ %7B%0A        vetor_circular%5Bi%5D = i + 1%0A    %7D%0A%0A    var idcVitima int %0A    var idcMatador int = inicio - 1%0A%0A    for len(vetor_circular) %3E 1 %7B%0A        idcVitima = (idcMatador + 1) %25 len(vetor_circular)%0A%0A        vetor_circular = append(vetor_circular%5B:idcVitima%5D, vetor_circular%5BidcVitima + 1:%5D...)%0A%0A        idcMatador = idcVitima %25 len(vetor_circular)%0A    %7D%0A%0A\n+fmt.Println(%22qxcode%22)\n %0A%7D%0A\n",
             "lines": "7"
+        },
+        {
+            "label": "2026-03-10_19-35-04",
+            "content": "@@ -124,20 +124,16 @@\n o)%0A%0A    \n-var \n vetor_ci\n@@ -143,56 +143,21 @@\n lar \n-%5B%5Dint%0A    vetor_circular = append(vetor_circular\n+:= make(%5B%5Dint\n , ta\n@@ -559,253 +559,14 @@\n ar)%0A\n-%0A\n     %7D%0A%0A\n-    fmt.Print(%22%5B %22)%0A    for i := 0; i %3C len(vetor_circular); i++ %7B%0A        if i == idcMatador %7B%0A            fmt.Print(i, %22%3E%22)%0A        %7D%0A%0A        if i %3C len(vetor_circular)-1 %7B%0A            fmt.Print(%22 %22)%0A        %7D%0A    %7D%0A    fmt.Print(%22%5D%22)%0A\n %0A%7D%0A\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-10_19-59-43",
+            "content": "@@ -673,46 +673,8 @@\n + %7B%0A\n-        fmt.Print(vetor_circular%5Bi%5D)%0A%0A\n     \n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-10_20-00-32",
+            "content": "@@ -595,24 +595,27 @@\n cular)%0A%0A    \n+%7D%0A%0A\n     fmt.Prin\n@@ -618,32 +618,24 @@\n Print(%22%5B %22)%0A\n-        \n     for i :=\n@@ -669,24 +669,16 @@\n ; i++ %7B%0A\n-        \n         \n@@ -711,32 +711,24 @@\n %5D)%0A%0A        \n-     \n-   \n if i == idcM\n@@ -744,32 +744,24 @@\n             \n-       \n- \n fmt.Print(i,\n@@ -766,24 +766,16 @@\n i, %22%3E%22)%0A\n-        \n         \n@@ -785,24 +785,16 @@\n         \n- \n-       \n if i %3C l\n@@ -824,32 +824,24 @@\n             \n-        \n fmt.Print(%22 \n@@ -855,36 +855,16 @@\n     \n-      \n-  %7D%0A        \n+%7D%0A\n     %7D%0A\n-    \n     \n@@ -877,18 +877,12 @@\n int(%22%5D%22)\n-%0A    %7D\n %0A%0A%7D%0A\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-03-10_20-04-40",
+            "content": "@@ -153,77 +153,117 @@\n int%0A\n-%0A\n     \n-for i := 0; i %3C= tamanho; i++ %7B%0A        vetor_circular = append(\n+vetor_circular = append(vetor_circular, tamanho)%0A%0A    for i := 0; i %3C len(vetor_circular); i++ %7B%0A        \n veto\n@@ -276,12 +276,19 @@\n ular\n-, i)\n+%5Bi%5D = i + 1\n %0A   \n@@ -787,16 +787,19 @@\n t.Print(\n+i, \n %22%3E%22)%0A   \n@@ -949,13 +949,10 @@\n rint\n-ln\n (%22\n- \n %5D%22)%0A\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-03-10_20-11-25",
+            "content": "@@ -370,17 +370,17 @@\n Matador \n--\n++\n  1) %25 le\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-10_20-12-08",
+            "content": "@@ -370,17 +370,17 @@\n Matador \n-+\n+-\n  1) %25 le\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-10_20-12-23",
+            "content": "@@ -298,16 +298,20 @@\n = inicio\n+ - 1\n %0A%0A    fo\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-10_20-13-03",
+            "content": "@@ -302,13 +302,8 @@\n icio\n- - 1 \n %0A%0A  \n@@ -455,12 +455,8 @@\n tima\n- - 1\n %5D, v\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-10_20-14-20",
+            "content": "@@ -163,17 +163,17 @@\n or i := \n-1\n+0\n ; i %3C= t\n@@ -456,16 +456,20 @@\n dcVitima\n+ - 1\n %5D, vetor\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-10_20-17-34",
+            "content": "@@ -302,16 +302,17 @@\n icio - 1\n+ \n %0A%0A    fo\n@@ -335,24 +335,234 @@\n ular) %3E 1 %7B%0A\n+        idcVitima = (idcMatador + 1) %25 len(vetor_circular)%0A%0A        vetor_circular = append(vetor_circular%5B:idcVitima%5D, vetor_circular%5BidcVitima + 1:%5D...)%0A%0A        idcMatador = idcVitima %25 len(vetor_circular)%0A%0A\n         fmt.\n@@ -909,219 +909,8 @@\n %5D%22)%0A\n-%0A        idcVitima = (idcMatador + 1) %25 len(vetor_circular)%0A%0A        vetor_circular = append(vetor_circular%5B:idcVitima%5D, vetor_circular%5BidcVitima + 1:%5D...)%0A%0A        idcMatador = idcVitima %25 len(vetor_circular)%0A%0A\n     \n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-10_20-23-13",
+            "content": "@@ -916,46 +916,6 @@\n  %7D%0A%0A\n-    fmt.Print(%22%5B %22, idcMatador, %22%3E %5D%22)%0A%0A\n %7D%0A\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-03-10_20-26-09",
+            "content": "@@ -334,17 +334,17 @@\n ular) %3E \n-0\n+1\n  %7B%0A     \n@@ -912,10 +912,50 @@\n %0A    %7D%0A%0A\n+    fmt.Print(%22%5B %22, idcMatador, %22%3E %5D%22)%0A%0A\n %7D%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-10_20-30-35",
+            "content": "@@ -699,75 +699,8 @@\n %22)%0A%0A\n-        if len(vetor_circular) == 1 %7B%0A            break%0A        %7D%0A%0A\n     \n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-03-10_20-32-31",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    var tamanho int\n    fmt.Scan(&tamanho)\n    var inicio int\n    fmt.Scan(&inicio)\n\n    var vetor_circular []int\n\n    for i := 1; i <= tamanho; i++ {\n        vetor_circular = append(vetor_circular, i)\n    }\n\n    var idcVitima int \n    var idcMatador int = inicio - 1\n\n    for len(vetor_circular) > 0 {\n        fmt.Print(\"[ \")\n            for i := 0; i < len(vetor_circular); i++ {\n                fmt.Print(vetor_circular[i])\n\n                if i == idcMatador {\n                    fmt.Print(\">\")\n                }\n\n                if i < len(vetor_circular)-1 {\n                    fmt.Print(\" \")\n                }\n            }\n        fmt.Println(\" ]\")\n\n        if len(vetor_circular) == 1 {\n            break\n        }\n\n        idcVitima = (idcMatador + 1) % len(vetor_circular)\n\n        vetor_circular = append(vetor_circular[:idcVitima], vetor_circular[idcVitima + 1:]...)\n\n        idcMatador = idcVitima % len(vetor_circular)\n\n    }\n\n}\n",
+            "lines": "47"
         }
     ]
 }
