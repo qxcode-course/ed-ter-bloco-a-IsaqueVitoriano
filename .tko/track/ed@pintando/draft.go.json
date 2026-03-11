@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-11_19-57-24",
+            "content": "@@ -246,10 +246,8 @@\n %25.2f\n-%5Cn\n %22, a\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-11_19-58-01",
+            "content": "package main\n\nimport (\n    \"fmt\"\n    \"math\"\n)\n\nfunc main() {\n    var a, b, c float64\n    fmt.Scan(&a)\n    fmt.Scan(&b)\n    fmt.Scan(&c)\n\n    p := (a + b + c) / 2\n    area_triangulo := math.Sqrt(p * ((p - a) * (p - b) * (p - c)))\n    fmt.Printf(\"%.2f\\n\", area_triangulo)\n\n}\n",
+            "lines": "18"
+        }
+    ]
+}
