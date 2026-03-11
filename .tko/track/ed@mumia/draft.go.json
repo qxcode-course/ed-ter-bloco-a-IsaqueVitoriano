@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-11_20-10-17",
+            "content": "@@ -162,16 +162,17 @@\n (nome, %22\n+ \n eh crian\n@@ -244,16 +244,17 @@\n (nome, %22\n+ \n eh jovem\n@@ -324,16 +324,17 @@\n (nome, %22\n+ \n eh adult\n@@ -406,16 +406,17 @@\n (nome, %22\n+ \n eh idoso\n@@ -459,16 +459,17 @@\n (nome, %22\n+ \n eh mumia\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-11_20-11-04",
+            "content": "@@ -373,17 +373,16 @@\n de %3C 100\n-0\n  %7B%0A     \n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-11_20-11-36",
+            "content": "@@ -214,15 +214,14 @@\n de %3C\n-=\n  18 %7B%0A\n+\n     \n@@ -289,17 +289,16 @@\n  idade %3C\n-=\n  65 %7B%0A  \n@@ -334,16 +334,16 @@\n dulto%22)%0A\n+\n     %7D el\n@@ -373,9 +373,8 @@\n de %3C\n-=\n  100\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-11_20-12-06",
+            "content": "@@ -210,16 +210,17 @@\n  idade %3C\n+=\n  18 %7B%0A  \n@@ -290,16 +290,17 @@\n  idade %3C\n+=\n  65 %7B%0A  \n@@ -371,16 +371,17 @@\n  idade %3C\n+=\n  1000 %7B%0A\n@@ -434,24 +434,8 @@\n lse \n-if idade %3E 1000 \n %7B%0A  \n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-11_20-13-53",
+            "content": "@@ -214,15 +214,14 @@\n de %3C\n-=\n  18 %7B%0A\n+\n     \n@@ -289,17 +289,16 @@\n  idade %3C\n-=\n  65 %7B%0A  \n@@ -334,16 +334,16 @@\n dulto%22)%0A\n+\n     %7D el\n@@ -373,9 +373,8 @@\n de %3C\n-=\n  100\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-11_20-14-14",
+            "content": "@@ -196,17 +196,16 @@\n  idade %3E\n-=\n  12 && i\n@@ -217,16 +217,16 @@\n %3C= 18 %7B%0A\n+\n         \n@@ -276,17 +276,16 @@\n  idade %3E\n-=\n  18 && i\n@@ -336,16 +336,16 @@\n dulto%22)%0A\n+\n     %7D el\n@@ -357,17 +357,16 @@\n  idade %3E\n-=\n  65 && i\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-11_20-14-41",
+            "content": "@@ -129,17 +129,16 @@\n  idade %3C\n-=\n  12 %7B%0A  \n@@ -443,17 +443,16 @@\n  idade %3E\n-=\n  1000 %7B%0A\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-11_20-14-55",
+            "content": "@@ -129,16 +129,17 @@\n  idade %3C\n+=\n  12 %7B%0A  \n@@ -196,17 +196,33 @@\n f idade \n-%3C\n+%3E= 12 && idade %3C=\n  18 %7B%0A  \n@@ -277,17 +277,33 @@\n f idade \n-%3C\n+%3E= 18 && idade %3C=\n  65 %7B%0A  \n@@ -359,17 +359,33 @@\n f idade \n-%3C\n+%3E= 65 && idade %3C=\n  1000 %7B%0A\n@@ -444,16 +444,17 @@\n  idade %3E\n+=\n  1000 %7B%0A\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-11_20-16-15",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    var nome string\n    fmt.Scan(&nome)\n    var idade int\n    fmt.Scan(&idade)\n\n    if idade < 12 {\n        fmt.Println(nome, \"eh crianca\")\n    } else if idade < 18 {\n        fmt.Println(nome, \"eh jovem\")\n    } else if idade < 65 {\n        fmt.Println(nome, \"eh adulto\")\n    } else if idade < 1000 {\n        fmt.Println(nome, \"eh idoso\") \n    } else if idade > 1000 {\n        fmt.Println(nome, \"eh mumia\")\n    }\n\n}\n",
+            "lines": "23"
+        }
+    ]
+}

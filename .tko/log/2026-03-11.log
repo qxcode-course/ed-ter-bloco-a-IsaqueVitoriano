@@ -3,3 +3,17 @@
 2026-03-11 19:57:24, EXEC, v:1, k:ed@pintando, mode:FULL, rate:0, size:18
 2026-03-11 19:58:01, EXEC, v:1, k:ed@pintando, mode:FULL, rate:100, size:18
 2026-03-11 19:59:22, SELF, v:1, k:ed@pintando, self:1, rate:100, study:10
+2026-03-11 20:02:59, MOVE, v:1, k:ed@pintando, mode:BACK
+2026-03-11 20:03:06, MOVE, v:1, k:ed@mumia, mode:DOWN
+2026-03-11 20:03:14, MOVE, v:1, k:ed@mumia, mode:PICK
+2026-03-11 20:10:17, EXEC, v:1, k:ed@mumia, mode:FULL, rate:0, size:23
+2026-03-11 20:11:04, EXEC, v:1, k:ed@mumia, mode:FULL, rate:55, size:23
+2026-03-11 20:11:36, EXEC, v:1, k:ed@mumia, mode:FULL, rate:55, size:23
+2026-03-11 20:12:06, EXEC, v:1, k:ed@mumia, mode:FULL, rate:55, size:23
+2026-03-11 20:13:53, EXEC, v:1, k:ed@mumia, mode:FULL, rate:55, size:23
+2026-03-11 20:14:14, EXEC, v:1, k:ed@mumia, mode:FULL, rate:55, size:23
+2026-03-11 20:14:41, EXEC, v:1, k:ed@mumia, mode:FULL, rate:66, size:23
+2026-03-11 20:14:55, EXEC, v:1, k:ed@mumia, mode:FULL, rate:55, size:23
+2026-03-11 20:16:15, EXEC, v:1, k:ed@mumia, mode:FULL, rate:100, size:23
+2026-03-11 20:18:14, EXEC, v:1, k:ed@mumia, mode:FULL, rate:100
+2026-03-11 20:18:53, SELF, v:1, k:ed@mumia, self:1, rate:100, study:15
