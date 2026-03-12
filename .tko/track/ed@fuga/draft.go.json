@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-11_20-33-16",
+            "content": "@@ -134,24 +134,8 @@\n %25 H \n-== 0 %7C%7C H %25 soma\n  == \n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-11_20-33-54",
+            "content": "@@ -132,14 +132,32 @@\n a %25 \n-P\n+H\n  == 0\n+ %7C%7C H %25 soma == 0 \n %7B%0A  \n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-11_20-34-58",
+            "content": "@@ -136,25 +136,8 @@\n P ==\n- 0 %7C%7C P %25 soma ==\n  0%7B%0A\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-11_20-35-28",
+            "content": "@@ -92,293 +92,141 @@\n &D)%0A\n-    \n %0A    \n-for %7B%0A        F \n+soma :\n = \n+(\n F + D\n-%0A\n+)\n %0A    \n+%0A\n     if \n-F %3E 15 %7B%0A            F = 0%0A        %7D else if F %3C 0%7B%0A            F = 15%0A        %7D%0A%0A        if F == P %7B%0A            fmt.Println(%22N%22)%0A            break%0A        %7D else  if F == H %7B%0A            fmt.Println(%22S%22)%0A            break%0A        %7D%0A    %7D%0A\n+soma %25 P == 0 %7C%7C P %25 soma == 0%7B%0A        fmt.Println(%22N%22)%0A    %7D else %7B%0A        fmt.Println(%22S%22)%0A    %7D\n %0A%0A%7D%0A\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-11_21-06-32",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    var H, P, F, D int \n    fmt.Scan(&H, &P, &F, &D)\n    \n    for {\n        F = F + D\n\n        if F > 15 {\n            F = 0\n        } else if F < 0{\n            F = 15\n        }\n\n        if F == P {\n            fmt.Println(\"N\")\n            break\n        } else  if F == H {\n            fmt.Println(\"S\")\n            break\n        }\n    }\n\n\n}\n",
+            "lines": "28"
+        }
+    ]
+}
