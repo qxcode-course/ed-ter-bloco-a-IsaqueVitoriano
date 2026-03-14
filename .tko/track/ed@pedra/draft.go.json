@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-14_10-56-46",
+            "content": "@@ -139,15 +139,8 @@\n at64\n- = 100 \n %0A   \n@@ -271,16 +271,52 @@\n at64(B))\n+%0A        menor_distancia = distancia\n %0A%0A      \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-14_11-00-15",
+            "content": "@@ -531,99 +531,17 @@\n     \n-if idc_ganhador == 0 %7B%0A        fmt.Println(%22sem ganhador%22)%0A    %7D else %7B%0A        fmt.Println\n+fmt.Print\n (idc\n@@ -550,18 +550,12 @@\n anhador)\n-%0A    %7D\n %0A%0A%7D%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-14_11-01-55",
+            "content": "@@ -63,24 +63,25 @@\n    var N int\n+;\n %0A    fmt.Sca\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-14_11-08-14",
+            "content": "package main\n\nimport (\n    \"fmt\"\n    \"math\"\n)\n\nfunc main() {\n    var N int\n    fmt.Scan(&N)\n\n    var A, B int\n    var menor_distancia float64 = 100 \n    var idc_ganhador int\n\n    for i := 0; i < N; i++ {\n        fmt.Scan(&A, &B)\n\n        distancia := math.Abs(float64(A) - float64(B))\n\n        if A >= 10 && B >= 10 {\n            distancia = math.Abs(float64(A) - float64(B))\n            if distancia < menor_distancia {\n                menor_distancia = distancia\n                idc_ganhador = i\n            }\n        }\n    }\n\n    if idc_ganhador == 0 {\n        fmt.Println(\"sem ganhador\")\n    } else {\n        fmt.Println(idc_ganhador)\n    }\n\n}\n",
+            "lines": "36"
+        }
+    ]
+}
