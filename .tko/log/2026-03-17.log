@@ -7,3 +7,6 @@
 2026-03-17 10:44:52, EXEC, v:1, k:ed@casais, mode:FULL, rate:0, size:28
 2026-03-17 10:52:53, EXEC, v:1, k:ed@casais, mode:FULL, rate:100, size:29
 2026-03-17 10:53:46, SELF, v:1, k:ed@casais, self:1, rate:100, study:35
+2026-03-17 10:56:29, MOVE, v:1, k:ed@casais, mode:BACK
+2026-03-17 10:58:44, MOVE, v:1, k:ed@baruel, mode:DOWN
+2026-03-17 10:58:46, MOVE, v:1, k:ed@baruel, mode:PICK
