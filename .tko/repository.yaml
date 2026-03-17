@@ -10,11 +10,10 @@ sources:
   target: https://github.com/qxcodeed/arcade.git
   type: git
   writeable: false
-  cache_timestamp: '2026-03-17 15:28:15'
+  cache_timestamp: '2026-03-17 16:38:58'
   quests: null
   tasks: null
 expanded:
-- ed@revisão
 - ed@main-quest
 tasks:
   ed@pintando: '{self:1, rate:100, study:10}'
@@ -23,6 +22,7 @@ tasks:
   ed@pedra: '{self:1, rate:100, study:75, concept:1, problem:1}'
   ed@casais: '{self:1, rate:100, study:35}'
   ed@baruel: '{self:1, rate:100, study:110, concept:1, problem:1, debug:1}'
+  ed@gomos: '{self:1, rate:100, study:85, concept:1, problem:1, debug:1}'
   ed@princesa: '{self:1, rate:100, study:150, concept:1, problem:1, debug:1}'
 flags:
   painel: 0
@@ -32,5 +32,5 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@baruel
+selected: ed@revisão
 next_draft_id: 0

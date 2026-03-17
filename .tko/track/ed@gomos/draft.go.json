@@ -1,0 +1,64 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-17_17-14-28",
+            "content": "@@ -772,33 +772,36 @@\n i := 0; i %3C \n-qtd_gomos\n+len(rastroX)\n ; i++ %7B%0A    \n@@ -826,18 +826,85 @@\n stroX%5Bi%5D\n-, \n+)%0A    %7D%0A%0A    for i := 0; i %3C len(rastroY); i++ %7B%0A        fmt.Println(\n rastroY%5B\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-17_17-18-25",
+            "content": "@@ -77,14 +77,12 @@\n cao \n-string\n+rune\n %0A   \n@@ -497,27 +497,24 @@\n   if direcao\n-%5B0%5D\n  == 'l' %7B%0A  \n@@ -507,24 +507,24 @@\n ao == 'l' %7B%0A\n+\n         rast\n@@ -564,27 +564,24 @@\n e if direcao\n-%5B0%5D\n  == 'u' %7B%0A  \n@@ -632,27 +632,24 @@\n e if direcao\n-%5B0%5D\n  == 'r' %7B%0A  \n@@ -678,24 +678,24 @@\n troX%5B0%5D + 1%0A\n+\n     %7D else i\n@@ -703,19 +703,16 @@\n  direcao\n-%5B0%5D\n  == 'd' \n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-17_17-25-24",
+            "content": "@@ -77,12 +77,14 @@\n cao \n-rune\n+string\n %0A   \n@@ -497,22 +497,18 @@\n     \n-switch\n+if\n  direcao\n  %7B%0A \n@@ -507,24 +507,20 @@\n ecao\n- %7B%0A    case\n+%5B0%5D ==\n  'l'\n-:\n+ %7B\n %0A   \n@@ -560,32 +560,37 @@\n     \n-    break%0A    case\n+%7D else if direcao%5B0%5D ==\n  'u' \n-:\n+%7B\n %0A   \n@@ -631,32 +631,37 @@\n     \n-    break%0A    case\n+%7D else if direcao%5B0%5D ==\n  'r' \n-:\n+%7B\n %0A   \n@@ -701,32 +701,37 @@\n     \n-    break%0A    case\n+%7D else if direcao%5B0%5D ==\n  'd' \n-:\n+%7B\n %0A   \n@@ -767,22 +767,8 @@\n + 1%0A\n-        break%0A\n     \n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-17_17-30-41",
+            "content": "@@ -558,16 +558,30 @@\n %5B0%5D - 1%0A\n+        break%0A\n     case\n@@ -583,24 +583,24 @@\n  case 'u' :%0A\n-\n         rast\n@@ -624,16 +624,30 @@\n 0%5D - 1 %0A\n+        break%0A\n     case\n@@ -685,24 +685,38 @@\n troX%5B0%5D + 1%0A\n+        break%0A\n     case 'd'\n@@ -714,24 +714,24 @@\n  case 'd' :%0A\n-\n         rast\n@@ -750,24 +750,38 @@\n troY%5B0%5D + 1%0A\n+        break%0A\n     %7D%0A%0A    f\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-03-17_17-30-58",
+            "content": "@@ -738,17 +738,16 @@\n = 0; i %3C\n-=\n  qtd_gom\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-17_17-31-31",
+            "content": "@@ -732,17 +732,17 @@\n or i := \n-1\n+0\n ; i %3C= q\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-17_17-31-38",
+            "content": "@@ -724,38 +724,39 @@\n %7D%0A%0A    for i := \n-0\n+1\n ; i %3C\n+=\n  qtd_gomos; i++ \n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-17_17-31-52",
+            "content": "@@ -739,28 +739,25 @@\n  0; i %3C \n-len(rastroX)\n+qtd_gomos\n ; i++ %7B%0A\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-17_17-33-54",
+            "content": "@@ -377,25 +377,28 @@\n or i := \n-qtd_gomos\n+len(rastroX)\n  - 1; i \n@@ -735,33 +735,36 @@\n i := 0; i %3C \n-qtd_gomos\n+len(rastroX)\n ; i++ %7B%0A    \n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-17_17-36-26",
+            "content": "@@ -519,9 +519,9 @@\n se '\n-L\n+l\n ':%0A \n@@ -569,9 +569,9 @@\n se '\n-U\n+u\n ' :%0A\n@@ -621,9 +621,9 @@\n se '\n-R\n+r\n ' :%0A\n@@ -672,9 +672,9 @@\n se '\n-D\n+d\n ' :%0A\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-17_17-40-42",
+            "content": "@@ -77,14 +77,12 @@\n cao \n-string\n+rune\n %0A   \n@@ -518,11 +518,11 @@\n ase \n-%22L%22\n+'L'\n :%0A  \n@@ -568,11 +568,11 @@\n ase \n-%22U%22\n+'U'\n  :%0A \n@@ -620,11 +620,11 @@\n ase \n-%22R%22\n+'R'\n  :%0A \n@@ -671,11 +671,11 @@\n ase \n-%22D%22\n+'D'\n  :%0A \n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-17_17-42-51",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    var qtd_gomos int\n    var direcao string\n    var posX int \n    var posY int \n    var rastroX[] int \n    var rastroY[] int\n\n    fmt.Scan(&qtd_gomos)\n    fmt.Scan(&direcao)\n\n    for i := 0; i < qtd_gomos; i++ {\n        fmt.Scan(&posX, &posY)\n        rastroX = append(rastroX, posX)\n        rastroY = append(rastroY, posY)\n    }\n\n    for i := qtd_gomos - 1; i > 0; i-- {\n        rastroX[i] = rastroX[i - 1]\n        rastroY[i] = rastroY[i - 1]\n    }\n\n    switch direcao {\n    case \"L\":\n        rastroX[0] = rastroX[0] - 1\n    case \"U\" :\n        rastroY[0] = rastroY[0] - 1 \n    case \"R\" :\n        rastroX[0] = rastroX[0] + 1\n    case \"D\" :\n        rastroY[0] = rastroY[0] + 1\n    }\n\n    for i := 0; i < qtd_gomos; i++ {\n        fmt.Println(rastroX[i], rastroY[i])\n    }\n\n}\n",
+            "lines": "42"
+        }
+    ]
+}
