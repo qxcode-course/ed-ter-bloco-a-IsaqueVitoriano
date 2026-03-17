@@ -1,0 +1,64 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-17_15-32-09",
+            "content": "@@ -303,16 +303,20 @@\n ossuidas\n+ + 1\n ; i++ %7B%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-17_15-32-24",
+            "content": "@@ -436,25 +436,25 @@\n    for i := \n-1\n+0\n ; i %3C len(ve\n@@ -578,32 +578,34 @@\n s, vetor_geral%5Bi\n+-1\n %5D)%0A        %7D els\n@@ -669,16 +669,18 @@\n _geral%5Bi\n+-1\n %5D)%0A     \n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-17_15-46-24",
+            "content": "@@ -773,90 +773,33 @@\n    f\n-or i := 0; i %3C len(vetor_repetidas); i++ %7B%0A            fmt.Print(i, %22 %22)%0A        %7D\n+mt.Print(vetor_repetidas)\n %0A   \n@@ -885,87 +885,30 @@\n    f\n-or i := 0; i %3C len(vetor_unicas); i++ %7B%0A            fmt.Print(i, %22 %22)%0A        %7D\n+mt.Print(vetor_unicas)\n %0A   \n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-17_15-48-06",
+            "content": "@@ -769,33 +769,33 @@\n        for i := \n-1\n+0\n ; i %3C len(vetor_\n@@ -938,33 +938,33 @@\n        for i := \n-1\n+0\n ; i %3C len(vetor_\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-17_15-48-30",
+            "content": "@@ -272,25 +272,25 @@\n    for i := \n-0\n+1\n ; i %3C figuri\n@@ -602,202 +602,13 @@\n    %7D\n-%0A    %7D%0A%0A    for figurinha_faltante := 1; figurinha_faltante %3C= total_figurinhas_album; figurinha_faltante++%7B%0A%0A        figurinha_encontrada := false%0A%0A        for i := 0; i %3C len(vetor_geral); i++\n+ else\n  %7B%0A \n@@ -622,250 +622,58 @@\n     \n-if \n vetor_\n-geral%5Bi%5D == figurinha_faltante %7B%0A                figurinha_encontrada = true%0A                break%0A            %7D%0A        %7D%0A%0A        if figurinha_encontrada != false %7B%0A            vetor_unicas = append(vetor_unicas, figurinha_faltante\n+unicas = append(vetor_unicas, vetor_geral%5Bi%5D\n )%0A  \n@@ -676,25 +676,24 @@\n )%0A        %7D%0A\n-%0A\n     %7D%0A%0A    i\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-17_16-02-01",
+            "content": "@@ -144,24 +144,21 @@\n r vetor_\n-faltante\n+unica\n s%5B%5D int%0A\n@@ -975,19 +975,20 @@\n rada != \n-tru\n+fals\n e %7B%0A    \n@@ -1001,24 +1001,21 @@\n   vetor_\n-faltante\n+unica\n s = appe\n@@ -1023,24 +1023,21 @@\n d(vetor_\n-faltante\n+unica\n s, figur\n@@ -1151,33 +1151,33 @@\n        for i := \n-0\n+1\n ; i %3C len(vetor_\n@@ -1220,26 +1220,9 @@\n int(\n-vetor_repetidas%5Bi%5D\n+i\n , %22 \n@@ -1258,24 +1258,21 @@\n n(vetor_\n-faltante\n+unica\n s) == 0 \n@@ -1320,33 +1320,33 @@\n        for i := \n-0\n+1\n ; i %3C len(vetor_\n@@ -1345,24 +1345,21 @@\n n(vetor_\n-faltante\n+unica\n s); i++ \n@@ -1386,26 +1386,9 @@\n int(\n-vetor_faltantes%5Bi%5D\n+i\n , %22 \n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-03-17_16-06-26",
+            "content": "@@ -1219,26 +1219,24 @@\n    fmt.Print\n-ln\n (vetor_repet\n@@ -1412,18 +1412,16 @@\n mt.Print\n-ln\n (vetor_f\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-03-17_16-07-48",
+            "content": "@@ -1219,24 +1219,26 @@\n    fmt.Print\n+ln\n (vetor_repet\n@@ -1261,38 +1261,16 @@\n       %7D%0A\n-        fmt.Println()%0A\n     %7D%0A%0A \n@@ -1414,16 +1414,18 @@\n mt.Print\n+ln\n (vetor_f\n@@ -1456,30 +1456,8 @@\n   %7D%0A\n-        fmt.Println()%0A\n     \n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-03-17_16-09-49",
+            "content": "@@ -979,15 +979,14 @@\n ada \n-== fals\n+!= tru\n e %7B%0A\n@@ -1061,32 +1061,33 @@\n ante)%0A        %7D%0A\n+%0A\n     %7D%0A%0A    if le\n@@ -1218,169 +1218,42 @@\n     \n-if i %3C len(vetor_repetidas) %7B%0A                fmt.Print(vetor_repetidas%5Bi%5D, %22 %22)%0A            %7D else %7B%0A                fmt.Print(vetor_repetidas%5Bi%5D)%0A            %7D\n+fmt.Print(vetor_repetidas%5Bi%5D, %22 %22)\n %0A   \n@@ -1429,169 +1429,42 @@\n     \n-if i %3C len(vetor_faltantes) %7B%0A                fmt.Print(vetor_faltantes%5Bi%5D, %22 %22)%0A            %7D else %7B%0A                fmt.Print(vetor_faltantes%5Bi%5D)%0A            %7D\n+fmt.Print(vetor_faltantes%5Bi%5D, %22 %22)\n %0A   \n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-03-17_16-15-59",
+            "content": "@@ -1172,18 +1172,17 @@\n := 0; i \n-==\n+%3C\n  len(vet\n@@ -1242,19 +1242,16 @@\n etidas) \n-- 1\n %7B%0A      \n@@ -1284,24 +1284,29 @@\n repetidas%5Bi%5D\n+, %22 %22\n )%0A          \n@@ -1352,37 +1352,32 @@\n tor_repetidas%5Bi%5D\n-, %22 %22\n )%0A            %7D%0A\n@@ -1557,18 +1557,17 @@\n    if i \n-==\n+%3C\n  len(vet\n@@ -1584,11 +1584,8 @@\n es) \n-- 1\n %7B%0A  \n@@ -1622,24 +1622,29 @@\n faltantes%5Bi%5D\n+, %22 %22\n )%0A          \n@@ -1690,37 +1690,32 @@\n tor_faltantes%5Bi%5D\n-, %22 %22\n )%0A            %7D%0A\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-03-17_16-17-17",
+            "content": "@@ -1164,33 +1164,34 @@\n   for i := 0; i \n-%3C\n+==\n  len(vetor_repet\n@@ -1212,34 +1212,33 @@\n            if i \n-==\n+%3C\n  len(vetor_repet\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-03-17_16-18-00",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    var total_figurinhas_album int\n    var figurinhas_possuidas int\n    var vetor_geral[] int \n    var vetor_faltantes[] int\n    var vetor_repetidas[] int\n\n    fmt.Scan(&total_figurinhas_album)\n    fmt.Scan(&figurinhas_possuidas)\n\n    for i := 0; i < figurinhas_possuidas; i++ {\n        var figurinha int \n        fmt.Scan(&figurinha)\n        vetor_geral = append(vetor_geral, figurinha)\n    }\n\n    for i := 1; i < len(vetor_geral); i++ {\n        if vetor_geral[i] == vetor_geral[i-1] {\n            vetor_repetidas = append(vetor_repetidas, vetor_geral[i])\n        }\n    }\n\n    for figurinha_faltante := 1; figurinha_faltante <= total_figurinhas_album; figurinha_faltante++{\n\n        figurinha_encontrada := false\n\n        for i := 0; i < len(vetor_geral); i++ {\n            if vetor_geral[i] == figurinha_faltante {\n                figurinha_encontrada = true\n                break\n            }\n        }\n\n        if figurinha_encontrada == false {\n            vetor_faltantes = append(vetor_faltantes, figurinha_faltante)\n        }\n    }\n\n    if len(vetor_repetidas) == 0 {\n        fmt.Println(\"N\")\n    } else {\n        for i := 0; i < len(vetor_repetidas); i++ {\n            if i == len(vetor_repetidas) - 1{\n                fmt.Print(vetor_repetidas[i])\n            } else {\n                fmt.Print(vetor_repetidas[i], \" \")\n            }\n        }\n        fmt.Println()\n    }\n\n    if len(vetor_faltantes) == 0 {\n        fmt.Println(\"N\")\n    } else {\n        for i := 0; i < len(vetor_faltantes); i++ {\n            if i == len(vetor_faltantes) - 1{\n                fmt.Print(vetor_faltantes[i])\n            } else {\n                fmt.Print(vetor_faltantes[i], \" \")\n            }\n        }\n        fmt.Println()\n    }\n        \n}\n",
+            "lines": "69"
+        }
+    ]
+}
