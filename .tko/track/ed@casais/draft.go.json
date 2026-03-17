@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-17_10-28-31",
+            "content": "@@ -18,32 +18,13 @@\n ort \n-(%0A    %22fmt%22%0A    %22math%22%0A)\n+%22fmt%22\n %0A%0Afu\n@@ -280,70 +280,16 @@\n  == \n-int(math.Abs(float64(animal))) %7B%0A            descasados%5Bi%5D = 0\n+animal %7B\n %0A   \n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-03-17_10-32-10",
+            "content": "@@ -26,16 +26,27 @@\n   %22fmt%22%0A\n+    %22math%22%0A\n )%0A%0Afunc \n@@ -299,44 +299,38 @@\n  == \n--(animal) %7C%7C descasados%5Bi%5D == \n+int(math.Abs(float64(\n animal\n+)))\n  %7B%0A \n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-17_10-34-49",
+            "content": "@@ -20,21 +20,16 @@\n t (%0A\n-%09%22fmt%22%0A%09%22math\n+    %22fmt\n %22%0A)%0A\n@@ -288,16 +288,76 @@\n  == \n-animal %7B\n+-(animal) %7C%7C descasados%5Bi%5D == animal %7B%0A            descasados%5Bi%5D = 0\n %0A   \n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-17_10-44-38",
+            "content": "@@ -23,16 +23,24 @@\n %0A%09%22fmt%22%0A\n+%09%22math%22%0A\n )%0A%0Afunc \n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-17_10-44-52",
+            "content": "@@ -292,53 +292,9 @@\n mal \n-%7C%7C animal %3C 0 %7B%0A            descasados%5Bi%5D = 0\n+%7B\n %0A   \n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-03-17_10-52-53",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n    var N int\n    var conta_casais = 0\n    var descasados[] int\n\n    fmt.Scan(&N)\n\n    for i := 0; i < N; i++ {\n        var animal int\n        fmt.Scan(&animal)\n        descasados = append(descasados, N, animal)\n\n        if descasados[i] == animal || animal < 0 {\n            descasados[i] = 0\n            conta_casais++\n        } else {\n            descasados = append(descasados, N, animal)\n        }\n    }\n\n    fmt.Println(conta_casais)\n\n}\n",
+            "lines": "29"
+        }
+    ]
+}
