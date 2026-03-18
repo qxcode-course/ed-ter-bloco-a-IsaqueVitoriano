@@ -1,0 +1,44 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-18_15-46-54",
+            "content": "@@ -123,38 +123,8 @@\n     \n-fmt.Println(conta_ocorrencia)%0A\n %0A%0A%7D%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-18_15-47-15",
+            "content": "@@ -97,199 +97,30 @@\n     \n-mapa_ocorrencia := make(map%5Bstring%5Dint)%0A%0A    for _, str_de_entrada := range str_entrada %7B%0A        mapa_ocorrencia%5Bstr_de_entrada%5D++%0A    %7D%0A%0A    for _, str_procurada := range str_buscada %7B%0A    \n+conta_ocorrencia := 0%0A\n     \n@@ -132,12 +132,15 @@\n rint\n-(map\n+ln(cont\n a_oc\n@@ -151,35 +151,10 @@\n ncia\n-%5Bstr_procurada%5D, %22 %22)%0A    %7D\n+)%0A\n %0A%0A%7D%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-03-18_16-21-02",
+            "content": "@@ -240,17 +240,17 @@\n     for \n-i\n+_\n , str_pr\n@@ -284,122 +284,8 @@\n a %7B%0A\n-        if i == len(str_buscada) - 1 %7B%0A            fmt.Print(mapa_ocorrencia%5Bstr_procurada%5D)%0A        %7D else %7B%0A    \n     \n@@ -339,18 +339,8 @@\n  %22)%0A\n-        %7D%0A\n     \n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-18_16-23-18",
+            "content": "@@ -375,13 +375,8 @@\n ada%5D\n-, %22 %22\n )%0A  \n@@ -434,32 +434,37 @@\n a%5Bstr_procurada%5D\n+, %22 %22\n )%0A        %7D%0A    \n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-03-18_16-23-50",
+            "content": "@@ -300,30 +300,26 @@\n  == len(\n-mapa_ocorrenci\n+str_buscad\n a) - 1 %7B\n@@ -371,16 +371,21 @@\n ocurada%5D\n+, %22 %22\n )%0A      \n@@ -439,37 +439,32 @@\n a%5Bstr_procurada%5D\n-, %22 %22\n )%0A        %7D%0A    \n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-03-18_16-24-21",
+            "content": "@@ -300,26 +300,30 @@\n  == len(\n-str_buscad\n+mapa_ocorrenci\n a) - 1 %7B\n@@ -467,17 +467,8 @@\n   %7D%0A\n-        %0A\n     \n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-03-18_16-25-02",
+            "content": "@@ -344,10 +344,8 @@\n rint\n-ln\n (map\n@@ -455,24 +455,32 @@\n )%0A        %7D%0A\n+        \n %0A    %7D%0A%0A%7D%0A%0Af\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-18_16-27-40",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc matchingStrings (str_entrada []string, str_buscada []string) {\n    mapa_ocorrencia := make(map[string]int)\n\n    for _, str_de_entrada := range str_entrada {\n        mapa_ocorrencia[str_de_entrada]++\n    }\n\n    for i, str_procurada := range str_buscada {\n        if i == len(str_buscada) - 1 {\n            fmt.Println(mapa_ocorrencia[str_procurada])\n        } else {\n            fmt.Print(mapa_ocorrencia[str_procurada], \" \")\n        }\n\n    }\n\n}\n\nfunc main() {\n    var tam_vetor_consultas int\n    var tam_vetor_buscas int \n    var vetor_consultas []string\n    var vetor_buscas []string \n\n    fmt.Scan(&tam_vetor_consultas)\n    for i := 0; i < tam_vetor_consultas; i++ {\n        var str_entrada string \n        fmt.Scan(&str_entrada)\n        vetor_consultas = append(vetor_consultas, str_entrada)\n    }\n\n    fmt.Scan(&tam_vetor_buscas)\n    for i := 0; i < tam_vetor_buscas; i++ {\n        var str_buscada string \n        fmt.Scan(&str_buscada)\n        vetor_buscas = append(vetor_buscas, str_buscada)\n    }\n\n    matchingStrings(vetor_consultas, vetor_buscas)\n    \n}\n",
+            "lines": "45"
+        }
+    ]
+}
