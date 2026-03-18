@@ -1,0 +1,104 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-18_16-43-37",
+            "content": "@@ -279,116 +279,8 @@\n  %7D%0A%0A\n-    fmt.Print(%22%5B%22)%0A    for i := 0; i %3C tam_vetor; i++ %7B%0A        fmt.Print(i, %22 %22)%0A    %7D%0A    fmt.Print(%22%5D%22)%0A%0A\n     \n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-18_16-45-10",
+            "content": "@@ -291,17 +291,16 @@\n Print(%22%5B\n- \n %22)%0A    f\n@@ -382,15 +382,32 @@\n nt(%22%5D%22)%0A\n+%0A\n     \n+fmt.Print(vetor)\n %0A%7D%0A\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-18_16-45-40",
+            "content": "@@ -80,13 +80,23 @@\n ados\n+, elemento\n  int%0A\n-\n     \n@@ -180,15 +180,14 @@\n  := \n-1\n+0\n ; i %3C\n-=\n  tam\n@@ -192,32 +192,60 @@\n am_vetor; i++ %7B%0A\n+        fmt.Scan(&elemento)%0A\n         vetor = \n@@ -258,17 +258,24 @@\n (vetor, \n-i\n+elemento\n )%0A    %7D%0A\n@@ -383,11 +383,15 @@\n nt(%22%5D%22)%0A\n+    \n %0A%7D%0A\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-18_16-47-57",
+            "content": "@@ -80,23 +80,13 @@\n ados\n-, elemento\n  int%0A\n+\n     \n@@ -158,38 +158,39 @@\n t%0A%0A    for i := \n-0\n+1\n ; i %3C\n+=\n  tam_vetor; i++ \n@@ -195,36 +195,8 @@\n + %7B%0A\n-        fmt.Scan(&elemento)%0A\n     \n@@ -221,24 +221,17 @@\n (vetor, \n-elemento\n+i\n )%0A    %7D%0A\n@@ -339,15 +339,11 @@\n nt(%22%5D%22)%0A\n-    \n %0A%7D%0A\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-03-18_16-49-02",
+            "content": "@@ -180,15 +180,14 @@\n  := \n-1\n+0\n ; i %3C\n-=\n  tam\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-18_16-49-19",
+            "content": "@@ -150,39 +150,23 @@\n     \n+var \n vetor \n-:= make(%5B%5Dint, tam_vetor)\n+%5B%5Dint\n %0A%0A  \n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-18_16-49-49",
+            "content": "@@ -150,23 +150,39 @@\n     \n-var \n vetor \n-%5B%5Dint\n+:= make(%5B%5Dint, tam_vetor)\n %0A%0A  \n@@ -317,39 +317,38 @@\n %22)%0A    for i := \n-1\n+0\n ; i %3C\n-=\n  tam_vetor; i++ \n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-18_16-51-03",
+            "content": "@@ -383,16 +383,13 @@\n rint\n-ln\n (%22%5D%22)\n- \n %0A   \n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-18_16-51-32",
+            "content": "@@ -346,146 +346,24 @@\n     \n-elementos_rotacionados = elementos_rotacionados %25 tam_vetor%0A        fmt.Print(append(vetor%5B:tam_vetor - elementos_rotacionados%5D, vetor...)\n+fmt.Print(i, %22 %22\n )%0A  \n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-18_17-19-02",
+            "content": "@@ -433,16 +433,17 @@\n d(vetor%5B\n+:\n tam_veto\n@@ -472,17 +472,16 @@\n ados\n-:\n %5D, vetor\n %5B:ta\n@@ -480,45 +480,8 @@\n etor\n-%5B:tam_vetor - elementos_rotacionados%5D\n ...)\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-18_17-20-45",
+            "content": "@@ -261,32 +261,97 @@\n etor, elemento)%0A\n+    %7D%0A%0A    fmt.Print(%22%5B %22)%0A    for i := 1; i %3C= tam_vetor; i++ %7B%0A\n         elemento\n@@ -406,32 +406,34 @@\n tor%0A        \n-vetor = \n+fmt.Print(\n append(vetor\n@@ -521,202 +521,9 @@\n ...)\n-%0A    %7D%0A%0A    fmt.Print(%22%5B %22)%0A    for i := 1; i %3C= tam_vetor; i++ %7B%0A        if i == len(vetor) - 1 %7B%0A            fmt.Print(vetor%5Bi%5D)%0A        %7D else %7B%0A            fmt.Print(vetor%5Bi%5D, %22 %22)%0A        %7D\n+)\n %0A   \n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-18_17-23-33",
+            "content": "@@ -273,73 +273,8 @@\n to)%0A\n-    %7D%0A%0A    fmt.Print(%22%5B %22)%0A    for i := 1; i %3C= tam_vetor; i++ %7B%0A\n     \n@@ -455,20 +455,76 @@\n ..)%0A    \n+%7D%0A%0A\n     \n+fmt.Print(%22%5B %22)%0A    for i := 1; i %3C= tam_vetor; i++ %7B\n %0A       \n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-03-18_17-24-16",
+            "content": "@@ -516,16 +516,154 @@\n os%5D...)%0A\n+        %0A        if i == len(vetor) - 1 %7B%0A            fmt.Print(vetor%5Bi%5D)%0A        %7D else %7B%0A            fmt.Print(vetor%5Bi%5D, %22 %22)%0A        %7D%0A\n     %7D%0A  \n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-18_17-25-30",
+            "content": "@@ -520,41 +520,8 @@\n ..)%0A\n-        fmt.Print(vetor%5Bi%5D, %22 %22)%0A\n     \n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-18_17-26-15",
+            "content": "@@ -516,16 +516,49 @@\n os%5D...)%0A\n+        fmt.Print(vetor%5Bi%5D, %22 %22)%0A\n     %7D%0A  \n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-03-18_17-26-25",
+            "content": "@@ -526,29 +526,8 @@\n   %7D%0A\n-    fmt.Print(vetor)%0A\n     \n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-18_17-26-58",
+            "content": "@@ -30,48 +30,131 @@\n unc \n-rotacionaVetor (tam_vetor, rotacoes int,\n+main() %7B%0A    var tam_vetor, elementos_rotacionados, elemento int%0A    fmt.Scan(&tam_vetor, &elementos_rotacionados)%0A%0A    var\n  vet\n@@ -161,19 +161,17 @@\n or %5B%5Dint\n-) %7B\n+%0A\n %0A    for\n@@ -184,26 +184,25 @@\n 1; i %3C= \n-len(\n+tam_\n vetor\n-)\n ; i++ %7B%0A\n@@ -213,39 +213,27 @@\n     \n-rotacoes = rotacoes %25 tam_vetor\n+fmt.Scan(&elemento)\n %0A   \n@@ -261,64 +261,18 @@\n etor\n-%5Btam_vetor - rotacoes:%5D, vetor%5B:tam_vetor - rotacoes%5D...\n+, elemento\n )%0A  \n@@ -300,20 +300,16 @@\n  %22)%0A    \n-    \n for i :=\n@@ -313,25 +313,25 @@\n  := \n-0\n+1\n ; i %3C\n- len(\n+= tam_\n vetor\n-)\n ; i+\n@@ -346,276 +346,153 @@\n     \n-    fmt.Print(vetor%5Bi%5D)%0A        %7D%0A    fmt.Println(%22%5D%22)%0A%0A%7D%0A%0Afunc main() %7B%0A    var tam_vetor, rotacoes, elemento int%0A    fmt.Scan(&tam_vetor, &rotacoes)%0A%0A\n+elementos_rotacionados = elementos_rotacionados %25 tam_vetor%0A   \n     \n-var\n  vetor \n-%5B%5Dint%0A%0A    for i := 1; i %3C= tam_vetor; i++ %7B%0A        fmt.Scan(&elemento)%0A        vetor = append(\n+= append(vetor%5Btam_vetor - elementos_rotacionados:%5D, vetor%5B:tam_\n vetor\n-,\n+ -\n  ele\n@@ -492,32 +492,50 @@\n r - elemento\n+s_rotacionados%5D...\n )%0A    %7D%0A\n %0A    rotacio\n@@ -526,55 +526,50 @@\n   %7D%0A\n-%0A\n     \n-rotacionaVetor(tam_vetor, rotacoes, vetor)\n+fmt.Print(vetor)%0A    fmt.Println(%22%5D%22) \n %0A   \n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-03-18_17-32-42",
+            "content": "@@ -78,24 +78,67 @@\n or %5B%5Dint) %7B%0A\n+    for i := 1; i %3C= len(vetor); i++ %7B%0A    \n     rotacoes\n@@ -161,24 +161,28 @@\n m_vetor%0A    \n+  \n+  \n vetor = appe\n@@ -246,16 +246,22 @@\n oes%5D...)\n+%0A    %7D\n %0A%0A    fm\n@@ -350,13 +350,8 @@\n r%5Bi%5D\n-, %22 %22\n )%0A  \n@@ -375,17 +375,16 @@\n rintln(%22\n- \n %5D%22)%0A%0A%7D%0A%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-18_17-35-17",
+            "content": "@@ -327,16 +327,17 @@\n rintln(%22\n+ \n %5D%22)%0A%0A%7D%0A%0A\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-18_17-35-33",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc rotacionaVetor (tam_vetor, rotacoes int, vetor []int) {\n    rotacoes = rotacoes % tam_vetor\n    vetor = append(vetor[tam_vetor - rotacoes:], vetor[:tam_vetor - rotacoes]...)\n\n    fmt.Print(\"[ \")\n        for i := 0; i < len(vetor); i++ {\n            fmt.Print(vetor[i], \" \")\n        }\n    fmt.Println(\"]\")\n\n}\n\nfunc main() {\n    var tam_vetor, rotacoes, elemento int\n    fmt.Scan(&tam_vetor, &rotacoes)\n\n    var vetor []int\n\n    for i := 1; i <= tam_vetor; i++ {\n        fmt.Scan(&elemento)\n        vetor = append(vetor, elemento)\n    }\n\n    rotacionaVetor(tam_vetor, rotacoes, vetor)\n    \n}\n",
+            "lines": "30"
+        }
+    ]
+}
