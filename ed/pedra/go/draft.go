@@ -16,7 +16,7 @@ func main() {
     for i := 0; i < N; i++ {
         fmt.Scan(&A, &B)
 
-        distancia := math.Abs(float64(A) - float64(B))
+        var distancia float64
 
         if A >= 10 && B >= 10 {
             distancia = math.Abs(float64(A) - float64(B))
