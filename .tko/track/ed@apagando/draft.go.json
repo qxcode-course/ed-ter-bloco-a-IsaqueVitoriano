@@ -1,0 +1,89 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-24_11-18-29",
+            "content": "@@ -435,12 +435,8 @@\n (idc\n-, %22%22\n )%0A%09%09\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-24_11-19-07",
+            "content": "@@ -404,25 +404,19 @@\n  %7B%0A%09%09if \n-fila%5B\n idc\n-%5D\n  != 0 %7B%0A\n@@ -432,17 +432,11 @@\n int(\n-fila%5B\n idc\n-%5D\n , %22%22\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-24_11-20-11",
+            "content": "@@ -227,25 +227,31 @@\n soas)%0A%0A%09for \n-i\n+_, indc\n  := range fi\n@@ -332,17 +332,26 @@\n rada == \n-i\n+fila%5Bindc%5D\n  %7B%0A%09%09%09fi\n@@ -350,24 +350,27 @@\n  %7B%0A%09%09%09fila%5Bi\n+ndc\n %5D = 0%0A%09%09%7D%0A%09%7D\n@@ -372,25 +372,30 @@\n %09%7D%0A%09%7D%0A%0A%09for \n-i\n+_, idc\n  := range fi\n@@ -410,16 +410,18 @@\n f fila%5Bi\n+dc\n %5D != 0 %7B\n@@ -440,16 +440,18 @@\n t(fila%5Bi\n+dc\n %5D, %22%22)%0A%09\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-24_11-22-34",
+            "content": "@@ -179,32 +179,263 @@\n %0A%09%7D%0A\n-%09%0A%09fmt.Println(fila)%0A%09%0A%09\n+%0A%09var retiraPessoas int%0A%09fmt.Scan(&retiraPessoas)%0A%0A%09for i := range fila %7B%0A%09%09var pessoaRetirada int%0A%09%09fmt.Scan(&pessoaRetirada)%0A%0A%09%09if pessoaRetirada == i %7B%0A%09%09%09fila%5Bi%5D = 0%0A%09%09%7D%0A%09%7D%0A%0A%09for i := range fila %7B%0A%09%09if fila%5Bi%5D != 0 %7B%0A%09%09%09fmt.Print(fila%5Bi%5D, %22%22)%0A%09%09%7D %0A%09%7D \n %0A%0A%7D%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-24_11-27-46",
+            "content": "@@ -80,16 +80,19 @@\n ake(\n-%5B\n+map%5Bint\n %5Dint\n-, N\n )%0A%0A%09\n@@ -122,330 +122,89 @@\n %7B%0A%09%09\n-fmt.Scan(&fila%5Bi%5D)%0A%09%7D%0A%0A%09var qtdPessoasRetiradas int%0A%09fmt.Scan(&qtdPessoasRetiradas)%0A%0A%09retiradas := make(map%5Bint%5Dbool)%0A%09for i := 0; i %3C qtdPessoasRetiradas; i++ %7B%0A%09%09var pessoa int%0A%09%09fmt.Scan(&pessoa)%0A%09%09retiradas%5Bpessoa%5D = true%0A%09%7D%0A%0A%09for _, pessoa := range fila %7B%0A%09%09if !retiradas%5Bpessoa%5D %7B%0A%09%09%09fmt.Print(pessoa, %22 %22)%0A%09%09%7D%0A%09%7D\n+var pessoa int%0A%09%09fmt.Scan(&pessoa)%0A%09%09fila%5Bi%5D = pessoa%0A%09%7D%0A%09%0A%09fmt.Println(fila)\n %0A%09%0A\n+%09\n %0A%0A%7D%0A\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-24_11-40-46",
+            "content": "@@ -350,17 +350,17 @@\n %7D%0A%0A%09for \n-i\n+_\n , pessoa\n@@ -409,98 +409,30 @@\n %0A%09%09%09\n-if i %3C len(fila) - 1 %7B%0A%09%09%09%09fmt.Print(pessoa, %22 %22)%0A%09%09%09%7D else %7B%0A%09%09%09%09fmt.Println(pessoa)%0A%09%09%09%7D\n+fmt.Print(pessoa, %22 %22)\n %0A%09%09%7D\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-03-24_11-42-42",
+            "content": "@@ -476,24 +476,26 @@\n %09%09%09fmt.Print\n+ln\n (pessoa)%0A%09%09%09\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-24_11-43-08",
+            "content": "@@ -491,12 +491,8 @@\n ssoa\n-, %22%22\n )%0A%09%09\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-24_11-43-27",
+            "content": "@@ -486,25 +486,24 @@\n nt(pessoa, %22\n- \n %22)%0A%09%09%09%7D%0A%09%09%7D%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-24_11-43-35",
+            "content": "@@ -484,10 +484,8 @@\n rint\n-ln\n (pes\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-24_11-43-42",
+            "content": "@@ -472,32 +472,34 @@\n  %7B%0A%09%09%09%09fmt.Print\n+ln\n (pessoa, %22 %22)%0A%09%09\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-24_11-43-55",
+            "content": "@@ -490,16 +490,17 @@\n essoa, %22\n+ \n %22)%0A%09%09%09%7D%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-24_11-44-07",
+            "content": "@@ -486,25 +486,24 @@\n nt(pessoa, %22\n- \n %22)%0A%09%09%09%7D%0A%09%09%7D%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-24_11-44-20",
+            "content": "@@ -498,26 +498,8 @@\n  %22)%0A\n-%09%09%09%09fmt.Println()%0A\n %09%09%09%7D\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-24_11-44-32",
+            "content": "@@ -514,10 +514,8 @@\n tln(\n-%22%22\n )%0A%09%09\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-24_11-44-42",
+            "content": "@@ -501,18 +501,8 @@\n %0A%09%09%09\n-%7D%0A%09%09%7D%0A%09%7D%0A%0A\n %09fmt\n@@ -510,16 +510,30 @@\n Println(\n-)\n+%22%22)%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D\n %0A%09%0A%0A%0A%7D%0A\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-24_11-44-56",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\n\tvar N int\n\tfmt.Scan(&N)\n\n\tfila := make([]int, N)\n\n\tfor i := 0; i < N; i++ {\n\t\tfmt.Scan(&fila[i])\n\t}\n\n\tvar qtdPessoasRetiradas int\n\tfmt.Scan(&qtdPessoasRetiradas)\n\n\tretiradas := make(map[int]bool)\n\tfor i := 0; i < qtdPessoasRetiradas; i++ {\n\t\tvar pessoa int\n\t\tfmt.Scan(&pessoa)\n\t\tretiradas[pessoa] = true\n\t}\n\n\tfor i, pessoa := range fila {\n\t\tif !retiradas[pessoa] {\n\t\t\tif i < len(fila) - 1 {\n\t\t\t\tfmt.Print(pessoa, \" \")\n\t\t\t} else {\n\t\t\t\tfmt.Print(pessoa, \" \")\n\t\t\t}\n\t\t}\n\t}\n\n\tfmt.Println()\n\t\n\n\n}\n",
+            "lines": "40"
+        }
+    ]
+}
