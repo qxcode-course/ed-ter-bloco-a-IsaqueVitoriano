@@ -20,3 +20,10 @@
 2026-03-24 11:45:10, MOVE, v:1, k:ed@apagando, mode:BACK
 2026-03-24 11:45:16, MOVE, v:1, k:ed@apagando, mode:PICK
 2026-03-24 11:46:00, SELF, v:1, k:ed@apagando, self:1, rate:100, study:45, concept:1
+2026-03-24 15:52:06, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-03-24 15:52:09, EXEC, v:1, k:ed@apagando, mode:FULL, rate:33, size:36
+2026-03-24 15:52:36, EXEC, v:1, k:ed@apagando, mode:FULL, rate:100, size:34
+2026-03-24 15:52:50, MOVE, v:1, k:ed@apagando, mode:BACK
+2026-03-24 15:52:54, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-03-24 15:52:57, EXEC, v:1, k:ed@apagando, mode:FULL, rate:100
+2026-03-24 15:53:16, SELF, v:1, k:ed@apagando, self:1, rate:100, study:45, concept:1

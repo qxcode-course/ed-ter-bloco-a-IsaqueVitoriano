@@ -23,18 +23,12 @@ func main() {
 		retiradas[pessoa] = true
 	}
 
-	for i, pessoa := range fila {
+	for _, pessoa := range fila {
 		if !retiradas[pessoa] {
-			if i < len(fila) - 1 {
-				fmt.Print(pessoa, " ")
-			} else {
-				fmt.Print(pessoa, " ")
-			}
+			fmt.Print(pessoa, " ")
 		}
 	}
 
 	fmt.Println()
-	
-
 
 }
