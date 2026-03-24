@@ -24,7 +24,8 @@ tasks:
   ed@casais: '{self:1, rate:100, study:35}'
   ed@baruel: '{self:1, rate:100, study:110, concept:1, problem:1, debug:1}'
   ed@gomos: '{self:1, rate:100, study:85, concept:1, problem:1, debug:1}'
-  ed@princesa: '{self:1, rate:100, study:150, concept:1, problem:1, debug:1}'
+  ed@princesa: '{self:1, rate:100, study:170, concept:1, refactor:1}'
+  ed@apagando: '{self:1, rate:100, study:45, concept:1}'
   ed@buscas: '{self:1, rate:100, study:80, concept:1}'
   ed@rotacoes: '{self:1, rate:100, study:76, concept:1}'
 flags:
@@ -35,5 +36,5 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@apagando
+selected: ed@princesa
 next_draft_id: 0
