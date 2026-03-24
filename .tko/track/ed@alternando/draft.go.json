@@ -1,0 +1,119 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-24_16-52-19",
+            "content": "@@ -300,12 +300,9 @@\n %5D = \n-0 - \n+-\n i %0A \n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-24_16-52-43",
+            "content": "@@ -300,12 +300,14 @@\n %5D = \n--(i)\n+0 - i \n %0A   \n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-24_16-53-03",
+            "content": "@@ -169,16 +169,48 @@\n  == 1 %7B%0A\n+            if i %25 2 == 0 %7B%0A    \n         \n@@ -239,16 +239,20 @@\n = i + 1%0A\n+    \n         \n@@ -264,32 +264,36 @@\n e %7B%0A            \n+    \n vetor_circular%5Bi\n@@ -300,19 +300,26 @@\n %5D = \n+-\n (i\n- + 1) * F\n+)%0A            %7D\n %0A   \n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-24_16-58-28",
+            "content": "@@ -136,14 +136,15 @@\n  := \n-0\n+1\n ; i %3C\n+=\n  N; \n@@ -153,60 +153,8 @@\n + %7B%0A\n-       elemento := i + 1%0A%0A       if i %25 2 == 0%7B%0A    \n     \n@@ -161,36 +161,32 @@\n     if F == 1 %7B%0A\n-    \n             veto\n@@ -197,37 +197,30 @@\n rcular%5Bi%5D = \n-elemento%0A    \n+i + 1%0A\n         %7D el\n@@ -228,36 +228,32 @@\n e %7B%0A            \n-  \n-  \n vetor_circular%5Bi\n@@ -260,198 +260,21 @@\n %5D = \n--elemento%0A            %7D%0A       %7D else %7B%0A            if F == 1 %7B%0A                vetor_circular%5Bi%5D = -elemento%0A            %7D else %7B%0A                vetor_circular%5Bi%5D = elemento%0A            %7D%0A\n+(i + 1) * F%0A \n     \n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-03-24_17-03-03",
+            "content": "@@ -18,801 +18,13 @@\n ort \n-(%0A%09%22debug/pe%22%0A%09%22fmt%22%0A)%0A%0Afunc imprimindo_vetor_circular(idcMatador int, vetor_circular %5B%5Dint) %7B%0A    fmt.Print(%22%5B%22)%0A    for i, pessoa := range vetor_circular %7B%0A        fmt.Print(%22 %22, pessoa)%0A        if i == idcMatador %7B%0A            if pessoa %3E 0 %7B%0A                fmt.Print(%22%3E%22)%0A            %7D else %7B%0A                fmt.Print(%22%3C%22)%0A            %7D%0A        %7D%0A    %7D%0A%7D%0A%0Afunc rodando_vetor(idcMatador int, vetor_circular %5B%5Dint) %7B%0A    for len(vetor_circular) %3E 1 %7B%0A        imprimindo_vetor_circular(idcMatador, vetor_circular)%0A%0A        idcVitima := (idcMatador + 1) %25 len(vetor_circular)%0A%0A        vetor_circular = append(vetor_circular%5B:idcVitima%5D, vetor_circular%5BidcVitima + 1:%5D...)%0A%0A        idcMatador = idcVitima %25 len(vetor_circular)%0A    %7D%0A    imprimindo_vetor_circular(idcMatador, vetor_circular)%0A%7D\n+%22fmt%22\n %0A%0Afu\n@@ -536,59 +536,18 @@\n     \n-idcMatador := E - 1%0A%0A    rodando_vetor(idcMatador, \n+fmt.Print(\n veto\n@@ -558,11 +558,10 @@\n rcular)%0A\n-%0A\n %7D%0A\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-24_17-23-57",
+            "content": "@@ -16,16 +16,28 @@\n mport (%0A\n+%09%22debug/pe%22%0A\n %09%22fmt%22%0A)\n@@ -377,28 +377,8 @@\n   %7D%0A\n-    fmt.Print(%22 %5D%22)%0A\n %7D%0A%0Af\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-03-24_17-24-23",
+            "content": "@@ -378,10 +378,8 @@\n rint\n-ln\n (%22 %5D\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-03-24_17-25-00",
+            "content": "@@ -178,16 +178,21 @@\n t.Print(\n+%22 %22, \n pessoa)%0A\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-03-24_17-26-12",
+            "content": "@@ -182,22 +182,14 @@\n int(\n-%22%22, \n pessoa\n-, %22%22\n )%0A  \n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-03-24_17-26-36",
+            "content": "@@ -179,17 +179,16 @@\n .Print(%22\n- \n %22, pesso\n@@ -191,17 +191,16 @@\n essoa, %22\n- \n %22)%0A     \n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-03-24_17-26-54",
+            "content": "@@ -178,16 +178,21 @@\n t.Print(\n+%22 %22, \n pessoa, \n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-03-24_17-29-33",
+            "content": "@@ -182,19 +182,19 @@\n int(\n-%22 %22, \n pessoa\n+, %22 %22\n )%0A  \n@@ -550,20 +550,16 @@\n         \n-var \n idcVitim\n@@ -564,259 +564,49 @@\n ima \n-int%0A        matador := vetor_circular%5BidcMatador%5D%0A%0A        if matador %3E 0 %7B%0A            idcVitima = (idcMatador + 1) %25 len(vetor_circular)%0A        %7D else %7B%0A            idcVitima = (idcMatador - 1 + len(vetor_circular)) %25 len(vetor_circular)%0A        %7D%0A\n+:= (idcMatador + 1) %25 len(vetor_circular)\n %0A%0A  \n@@ -703,38 +703,8 @@\n .)%0A%0A\n-%0A        if matador %3E 0 %7B%0A    \n     \n@@ -712,33 +712,32 @@\n    idcMatador = \n-(\n idcVitima + 1) %25\n@@ -729,21 +729,16 @@\n dcVitima\n- + 1)\n  %25 len(v\n@@ -756,129 +756,8 @@\n ar)%0A\n-        %7D else %7B%0A            idcMatador = (idcVitima - 1 + len(vetor_circular)) %25 len(vetor_circular)%0A        %7D%0A        %0A\n     \n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-03-24_17-42-09",
+            "content": "@@ -917,79 +917,8 @@\n .)%0A%0A\n-        if idcMatador %3E idcVitima %7B%0A            idcMatador--%0A        %7D%0A\n %0A   \n@@ -1129,21 +1129,16 @@\n  %0A    %7D%0A\n-    %0A\n     impr\n",
+            "lines": "77"
+        },
+        {
+            "label": "2026-03-24_17-44-20",
+            "content": "@@ -1035,16 +1035,17 @@\n tador = \n+(\n idcVitim\n@@ -1045,16 +1045,21 @@\n dcVitima\n+ + 1)\n  %25 len(v\n@@ -1129,16 +1129,38 @@\n tima - 1\n+ + len(vetor_circular)\n ) %25 len(\n@@ -1196,24 +1196,28 @@\n      %0A    %7D%0A\n+    \n %0A    imprimi\n",
+            "lines": "81"
+        },
+        {
+            "label": "2026-03-24_17-45-42",
+            "content": "@@ -1123,38 +1123,16 @@\n tima - 1\n- + len(vetor_circular)\n ) %25 len(\n",
+            "lines": "81"
+        },
+        {
+            "label": "2026-03-24_17-45-48",
+            "content": "@@ -1027,33 +1027,32 @@\n    idcMatador = \n-(\n idcVitima + 1) %25\n@@ -1044,21 +1044,16 @@\n dcVitima\n- + 1)\n  %25 len(v\n",
+            "lines": "81"
+        },
+        {
+            "label": "2026-03-24_17-46-08",
+            "content": "@@ -1035,31 +1035,30 @@\n tador = (idc\n-Matador\n+Vitima\n  + 1) %25 len(\n@@ -1115,31 +1115,30 @@\n tador = (idc\n-Matador\n+Vitima\n  - 1 + len(v\n",
+            "lines": "81"
+        },
+        {
+            "label": "2026-03-24_17-51-14",
+            "content": "@@ -278,16 +278,8 @@\n int(\n-pessoa, \n %22%3E%22)\n@@ -329,24 +329,16 @@\n rint(%22%3C%22\n-, pessoa\n )%0A      \n@@ -808,32 +808,33 @@\n lar)%0A        %7D%0A%0A\n+%0A\n         vetor_ci\n",
+            "lines": "81"
+        },
+        {
+            "label": "2026-03-24_17-55-36",
+            "content": "@@ -156,24 +156,55 @@\n _circular %7B%0A\n+        fmt.Print(%22 %22, pessoa)%0A\n         if i\n@@ -375,39 +375,8 @@\n   %7D%0A\n-        fmt.Print(%22 %22, pessoa)%0A\n     \n",
+            "lines": "80"
+        },
+        {
+            "label": "2026-03-24_17-56-36",
+            "content": "@@ -252,17 +252,16 @@\n essoa, %22\n- \n %3E%22)%0A    \n@@ -305,17 +305,16 @@\n Print(%22%3C\n- \n %22, pesso\n",
+            "lines": "80"
+        },
+        {
+            "label": "2026-03-24_17-57-49",
+            "content": "@@ -246,24 +246,21 @@\n rint\n-f(%22 %25d%3E%22, pessoa\n+(pessoa, %22 %3E%22\n )%0A  \n@@ -307,15 +307,12 @@\n rint\n-f\n (%22\n+%3C\n  \n-%3C%25d\n %22, p\n",
+            "lines": "80"
+        },
+        {
+            "label": "2026-03-24_17-58-36",
+            "content": "@@ -343,36 +343,25 @@\n  %7D%0A        %7D\n- else %7B%0A    \n+%0A\n         fmt.\n@@ -379,26 +379,16 @@\n pessoa)%0A\n-        %7D%0A\n     %7D%0A  \n",
+            "lines": "80"
+        },
+        {
+            "label": "2026-03-24_17-58-54",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc imprimindo_vetor_circular(idcMatador int, vetor_circular []int) {\n    fmt.Print(\"[\")\n    for i, pessoa := range vetor_circular {\n        if i == idcMatador {\n            if pessoa > 0 {\n                fmt.Printf(\" %d>\", pessoa)\n            } else {\n                fmt.Printf(\" <%d\", pessoa)\n            }\n        } else {\n            fmt.Print(\" \", pessoa)\n        }\n    }\n    fmt.Println(\" ]\")\n}\n\nfunc rodando_vetor(idcMatador int, vetor_circular []int) {\n    for len(vetor_circular) > 1 {\n        imprimindo_vetor_circular(idcMatador, vetor_circular)\n\n        var idcVitima int\n        matador := vetor_circular[idcMatador]\n\n        if matador > 0 {\n            idcVitima = (idcMatador + 1) % len(vetor_circular)\n        } else {\n            idcVitima = (idcMatador - 1 + len(vetor_circular)) % len(vetor_circular)\n        }\n\n        vetor_circular = append(vetor_circular[:idcVitima], vetor_circular[idcVitima + 1:]...)\n\n        if idcMatador > idcVitima {\n            idcMatador--\n        }\n\n        if matador > 0 {\n            idcMatador = (idcMatador + 1) % len(vetor_circular)\n        } else {\n            idcMatador = (idcMatador - 1 + len(vetor_circular)) % len(vetor_circular)\n        }\n        \n    }\n\n    imprimindo_vetor_circular(idcMatador, vetor_circular)\n}\n\nfunc main() {\n    var N, E, F int\n    fmt.Scan(&N, &E, &F)\n\n    vetor_circular := make([]int, N)\n\n    for i := 0; i < N; i++ {\n       elemento := i + 1\n\n       if i % 2 == 0{\n            if F == 1 {\n                vetor_circular[i] = elemento\n            } else {\n                vetor_circular[i] = -elemento\n            }\n       } else {\n            if F == 1 {\n                vetor_circular[i] = -elemento\n            } else {\n                vetor_circular[i] = elemento\n            }\n       }\n    }\n\n    idcMatador := E - 1\n\n    rodando_vetor(idcMatador, vetor_circular)\n\n}\n",
+            "lines": "81"
+        }
+    ]
+}
