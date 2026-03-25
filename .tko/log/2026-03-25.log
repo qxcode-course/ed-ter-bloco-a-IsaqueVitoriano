@@ -1,0 +1,6 @@
+2026-03-25 16:14:09, MOVE, v:1, k:ed@alternando, mode:PICK
+2026-03-25 16:14:19, MOVE, v:1, k:ed@alternando, mode:BACK
+2026-03-25 16:14:27, MOVE, v:1, k:ed@alternando, mode:PICK
+2026-03-25 16:14:34, EXEC, v:1, k:ed@alternando, mode:FULL, rate:100
+2026-03-25 16:15:06, SELF, v:1, k:ed@alternando, self:1, rate:100, study:85, concept:1, debug:1
+2026-03-25 16:15:17, MOVE, v:1, k:ed@alternando, mode:BACK
