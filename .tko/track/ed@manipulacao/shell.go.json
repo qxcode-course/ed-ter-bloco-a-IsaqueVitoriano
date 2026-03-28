@@ -1,0 +1,329 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-28_09-58-00",
+            "content": "@@ -199,16 +199,48 @@\n  vet%5Bi%5D%0A\n+%09%09%7D else %7B%0A%09%09%09lista%5Bi%5D = vet%5Bi%5D%0A\n %09%09%7D%0A%09%7D%0A%09\n",
+            "lines": "114"
+        },
+        {
+            "label": "2026-03-28_09-58-38",
+            "content": "@@ -137,47 +137,46 @@\n or i\n-, elemento := range vet %7B%0A%09%09if elemento\n+ := 0; i %3C len(vet); i++ %7B%0A%09%09if vet%5Bi%5D\n  %3E 0\n@@ -196,16 +196,14 @@\n %5D = \n-elemento\n+vet%5Bi%5D\n %0A%09%09%7D\n",
+            "lines": "112"
+        },
+        {
+            "label": "2026-03-28_10-01-12",
+            "content": "@@ -206,63 +206,15 @@\n nto%0A\n-%09%09%09lista = append(lista%5B:elemento%5D, lista...)%0A\n %09%09%7D%0A%09%7D%0A\n-%09%0A\n %09ret\n",
+            "lines": "112"
+        },
+        {
+            "label": "2026-03-28_10-02-20",
+            "content": "@@ -191,26 +191,67 @@\n ista\n- = append(lista, i\n+%5Bi%5D = elemento%0A%09%09%09lista = append(lista%5B:elemento%5D, lista...\n )%0A%09%09\n@@ -251,24 +251,26 @@\n ...)%0A%09%09%7D%0A%09%7D%0A\n+%09%0A\n %09return list\n",
+            "lines": "114"
+        },
+        {
+            "label": "2026-03-28_10-04-57",
+            "content": "@@ -204,24 +204,17 @@\n (lista, \n-elemento\n+i\n )%0A%09%09%7D%0A%09%7D\n",
+            "lines": "112"
+        },
+        {
+            "label": "2026-03-28_10-05-07",
+            "content": "@@ -132,17 +132,17 @@\n )%0A%0A%09for \n-_\n+i\n , elemen\n",
+            "lines": "112"
+        },
+        {
+            "label": "2026-03-28_10-05-15",
+            "content": "@@ -224,53 +224,8 @@\n %7D%0A%09%7D\n-%0A%0A%09lista = append(lista%5Blen(vet):%5D, lista...)\n %0A%09re\n",
+            "lines": "112"
+        },
+        {
+            "label": "2026-03-28_10-06-46",
+            "content": "@@ -265,19 +265,8 @@\n ista\n-%5B:len(vet)%5D\n ...)\n",
+            "lines": "114"
+        },
+        {
+            "label": "2026-03-28_10-07-17",
+            "content": "@@ -226,61 +226,8 @@\n %09%7D%0A%0A\n-%09for _, pessoa := range lista %7B%0A%09%09if pessoa == 0 %7B%0A%09%09\n %09lis\n@@ -248,14 +248,16 @@\n sta%5B\n-pessoa\n+len(vet)\n :%5D, \n@@ -265,20 +265,23 @@\n ista\n-...)%0A%09%09%7D%0A%09%7D \n+%5B:len(vet)%5D...)\n %0A%09re\n",
+            "lines": "114"
+        },
+        {
+            "label": "2026-03-28_10-09-19",
+            "content": "@@ -316,17 +316,8 @@\n ista\n-%5B:pessoa%5D\n ...)\n",
+            "lines": "118"
+        },
+        {
+            "label": "2026-03-28_10-09-40",
+            "content": "@@ -324,10 +324,8 @@\n ssoa\n-+1\n %5D...\n",
+            "lines": "118"
+        },
+        {
+            "label": "2026-03-28_10-10-06",
+            "content": "@@ -99,23 +99,38 @@\n  %7B%0A%09\n-var \n lista \n-%5B%5Dint\n+:= make(%5B%5Dint, len(vet))\n %0A%0A%09f\n@@ -222,16 +222,130 @@\n %09%09%7D%0A%09%7D%0A%0A\n+%09for _, pessoa := range lista %7B%0A%09%09if pessoa == 0 %7B%0A%09%09%09lista = append(lista%5Bpessoa:%5D, lista%5B:pessoa+1%5D...)%0A%09%09%7D%0A%09%7D %0A\n %09return \n",
+            "lines": "118"
+        },
+        {
+            "label": "2026-03-28_10-12-27",
+            "content": "@@ -120,21 +120,24 @@\n %09for _, \n-homem\n+elemento\n  := rang\n@@ -149,21 +149,24 @@\n  %7B%0A%09%09if \n-homem\n+elemento\n  %3E 0 %7B%0A%09\n@@ -193,13 +193,16 @@\n ta, \n-homem\n+elemento\n )%0A%09%09\n@@ -266,113 +266,15 @@\n  %7B%0A%09\n-var lista %5B%5Dint%0A%0A%09for _, mulher := range vet %7B%0A%09%09if mulher %3E 0 %7B%0A%09%09%09lista = append(lista, mulher)%0A%09%09%7D%0A%09%7D%0A\n+_ = vet\n %0A%09re\n@@ -270,37 +270,35 @@\n _ = vet%0A%09return \n-lista\n+nil\n %0A%7D%0A%0Afunc sortVet\n",
+            "lines": "113"
+        },
+        {
+            "label": "2026-03-28_10-13-45",
+            "content": "@@ -316,9 +316,9 @@\n her \n-%3C\n+%3E\n  0 %7B\n",
+            "lines": "120"
+        },
+        {
+            "label": "2026-03-28_10-13-53",
+            "content": "@@ -305,17 +305,16 @@\n  %7B%0A%09%09if \n-(\n mulher %3C\n@@ -320,24 +320,8 @@\n %3C 0 \n-&& mulher %3E -10)\n %7B%0A%09%09\n",
+            "lines": "120"
+        },
+        {
+            "label": "2026-03-28_10-15-40",
+            "content": "@@ -430,117 +430,27 @@\n  %7B%0A%09\n-lista := make(%5B%5Dint, len(vet))%0A%0A%09for _, pessoa := range vet %7B%0A%09%09lista = append(lista%5Blen(vet):%5D, lista...)%0A%09%7D\n+_ = vet%0A%09return nil\n %0A%7D%0A%0A\n",
+            "lines": "120"
+        },
+        {
+            "label": "2026-03-28_10-18-12",
+            "content": "@@ -511,22 +511,24 @@\n d(lista%5B\n-pessoa\n+len(vet)\n :%5D, list\n@@ -536,30 +536,16 @@\n ...)%0A%09%7D%0A\n-%09return lista%0A\n %7D%0A%0Afunc \n",
+            "lines": "123"
+        },
+        {
+            "label": "2026-03-28_10-18-42",
+            "content": "@@ -530,17 +530,8 @@\n ista\n-%5B:pessoa%5D\n ...)\n",
+            "lines": "124"
+        },
+        {
+            "label": "2026-03-28_10-19-02",
+            "content": "@@ -538,10 +538,8 @@\n ssoa\n-+1\n %5D...\n",
+            "lines": "124"
+        },
+        {
+            "label": "2026-03-28_10-19-12",
+            "content": "@@ -458,16 +458,47 @@\n (vet))%0A%0A\n+%09for _, pessoa := range vet %7B%0A%09\n %09lista =\n@@ -511,24 +511,22 @@\n d(lista%5B\n-len(vet)\n+pessoa\n :%5D, list\n@@ -532,23 +532,24 @@\n ta%5B:\n-len(vet)\n+pessoa+1\n %5D...)%0A%09\n+%7D\n %0A%09re\n",
+            "lines": "124"
+        },
+        {
+            "label": "2026-03-28_10-19-54",
+            "content": "@@ -435,19 +435,37 @@\n ista := \n+make(%5B%5Dint, len(\n vet\n+))\n %0A%0A%09lista\n",
+            "lines": "123"
+        },
+        {
+            "label": "2026-03-28_10-20-11",
+            "content": "@@ -470,18 +470,16 @@\n len(vet)\n--1\n :%5D, list\n",
+            "lines": "123"
+        },
+        {
+            "label": "2026-03-28_10-20-39",
+            "content": "@@ -482,24 +482,25 @@\n , lista%5B\n+:\n len(vet)\n :%5D...)%0A%09\n@@ -491,17 +491,16 @@\n len(vet)\n-:\n %5D...)%0A%09%0A\n",
+            "lines": "123"
+        },
+        {
+            "label": "2026-03-28_10-20-55",
+            "content": "@@ -462,17 +462,16 @@\n d(lista%5B\n-:\n len(vet)\n@@ -472,16 +472,17 @@\n n(vet)-1\n+:\n %5D, lista\n",
+            "lines": "123"
+        },
+        {
+            "label": "2026-03-28_10-21-19",
+            "content": "@@ -482,25 +482,24 @@\n , lista%5B\n-:\n len(vet)\n %5D...)%0A%09%0A\n@@ -490,16 +490,17 @@\n len(vet)\n+:\n %5D...)%0A%09%0A\n",
+            "lines": "123"
+        },
+        {
+            "label": "2026-03-28_10-21-28",
+            "content": "@@ -462,16 +462,17 @@\n d(lista%5B\n+:\n len(vet)\n@@ -473,17 +473,16 @@\n n(vet)-1\n-:\n %5D, lista\n",
+            "lines": "123"
+        },
+        {
+            "label": "2026-03-28_10-21-40",
+            "content": "@@ -444,33 +444,8 @@\n et%0A%0A\n-%09for i := range lista %7B%0A%09\n %09lis\n@@ -462,17 +462,24 @@\n d(lista%5B\n-i\n+len(vet)\n -1:%5D, li\n@@ -487,19 +487,22 @@\n ta%5B:\n-i\n+len(vet)\n %5D...)%0A\n-%09%7D %0A\n %09%0A%09r\n",
+            "lines": "123"
+        },
+        {
+            "label": "2026-03-28_10-22-46",
+            "content": "@@ -487,24 +487,17 @@\n d(lista%5B\n-lista%5Bi%5D\n+i\n -1:%5D, li\n@@ -505,16 +505,9 @@\n ta%5B:\n-lista%5Bi%5D\n+i\n %5D...\n",
+            "lines": "125"
+        },
+        {
+            "label": "2026-03-28_10-23-07",
+            "content": "@@ -440,16 +440,40 @@\n := vet%0A%0A\n+%09for i := range lista %7B%0A\n %09%09lista \n@@ -488,23 +488,23 @@\n (lista%5Bl\n-en(vet)\n+ista%5Bi%5D\n -1:%5D, li\n@@ -513,21 +513,25 @@\n a%5B:l\n-en(vet)\n+ista%5Bi%5D\n %5D...)%0A\n+%09%7D %0A\n %09%0A%09r\n",
+            "lines": "125"
+        },
+        {
+            "label": "2026-03-28_10-25-58",
+            "content": "@@ -445,109 +445,64 @@\n t%0A%0A%09\n-for i, j := 0, l\n+%09lista = app\n en\n+d\n (lista\n-); i %3C j; i, j = i + 1, j - 1 %7B%0A%09%09lista%5Bi%5D, lista%5Bj%5D = lista%5Bj%5D, lista%5Bi%5D%0A%09%7D \n+%5Blen(vet)-1:%5D, lista%5B:len(vet)%5D...)\n %0A%09%0A%09\n",
+            "lines": "123"
+        },
+        {
+            "label": "2026-03-28_10-33-23",
+            "content": "@@ -466,20 +466,16 @@\n n(lista)\n- - 1\n ; i %3C j;\n",
+            "lines": "125"
+        },
+        {
+            "label": "2026-03-28_10-33-30",
+            "content": "@@ -505,36 +505,8 @@\n 1 %7B%0A\n-%09%09if lista%5Bi%5D %3E lista%5Bj%5D %7B%0A%09\n %09%09li\n@@ -543,20 +543,16 @@\n ista%5Bi%5D%0A\n-%09%09%7D%0A\n %09%7D %0A%09%0A%09r\n",
+            "lines": "125"
+        },
+        {
+            "label": "2026-03-28_10-35-25",
+            "content": "@@ -515,17 +515,17 @@\n ista%5Bi%5D \n-%3C\n+%3E\n  lista%5Bj\n",
+            "lines": "127"
+        },
+        {
+            "label": "2026-03-28_10-35-32",
+            "content": "@@ -515,17 +515,17 @@\n ista%5Bi%5D \n-%3E\n+%3C\n  lista%5Bj\n",
+            "lines": "127"
+        },
+        {
+            "label": "2026-03-28_10-35-45",
+            "content": "@@ -450,18 +450,17 @@\n or i\n+, j\n  := 0\n-; i %3C\n+,\n  len\n@@ -470,13 +470,40 @@\n sta)\n-; i++\n+ - 1; i %3C j; i, j = i + 1, j - 1\n  %7B%0A%09\n@@ -519,21 +519,17 @@\n %5Bi%5D \n-%3C\n+%3E\n  lista%5B\n-i + 1\n+j\n %5D %7B%0A\n@@ -543,30 +543,46 @@\n a%5Bi%5D\n- = lista%5Bi + 1\n+, lista%5Bj%5D = lista%5Bj%5D, lista%5Bi\n %5D%0A%09%09%7D%0A%09%7D\n %0A%09%0A%09\n@@ -577,16 +577,17 @@\n %5D%0A%09%09%7D%0A%09%7D\n+ \n %0A%09%0A%09retu\n",
+            "lines": "127"
+        },
+        {
+            "label": "2026-03-28_10-38-24",
+            "content": "@@ -450,17 +450,17 @@\n or i := \n-1\n+0\n ; i %3C le\n@@ -471,12 +471,8 @@\n sta)\n- - 1\n ; i+\n",
+            "lines": "127"
+        },
+        {
+            "label": "2026-03-28_10-38-44",
+            "content": "@@ -493,17 +493,17 @@\n ista%5Bi%5D \n-%3E\n+%3C\n  lista%5Bi\n",
+            "lines": "127"
+        },
+        {
+            "label": "2026-03-28_10-38-55",
+            "content": "@@ -522,27 +522,26 @@\n ista\n- = append(lista, i)\n+%5Bi%5D = lista%5Bi + 1%5D\n %0A%09%09%7D\n",
+            "lines": "127"
+        },
+        {
+            "label": "2026-03-28_10-39-25",
+            "content": "@@ -535,24 +535,17 @@\n (lista, \n-lista%5Bi%5D\n+i\n )%0A%09%09%7D%0A%09%7D\n",
+            "lines": "127"
+        },
+        {
+            "label": "2026-03-28_10-39-48",
+            "content": "@@ -450,17 +450,18 @@\n or i\n-, j\n  := \n-0,\n+1; i %3C\n  len\n@@ -478,33 +478,10 @@\n 1; i\n- %3C j; i, j = i + 1, j - 1\n+++\n  %7B%0A%09\n@@ -501,17 +501,17 @@\n %3E lista%5B\n-j\n+i\n  + 1%5D %7B%0A\n@@ -522,32 +522,23 @@\n ista\n-%5Bi%5D, lista%5Bj%5D = \n+ = append(\n lista\n-%5Bj%5D\n , li\n@@ -547,16 +547,16 @@\n a%5Bi%5D\n+)\n %0A%09%09%7D%0A\n+\n %09%7D\n- \n %0A%09%0A%09\n",
+            "lines": "127"
+        },
+        {
+            "label": "2026-03-28_10-40-57",
+            "content": "@@ -525,17 +525,17 @@\n lista%5Bj \n--\n++\n  1%5D %7B%0A%09%09\n",
+            "lines": "127"
+        },
+        {
+            "label": "2026-03-28_10-41-04",
+            "content": "@@ -428,16 +428,30 @@\n nt %7B\n+%0A%09lista := vet\n %0A%0A%09for i\n  := \n@@ -450,224 +450,133 @@\n or i\n+, j\n  := 0\n-; i %3C len(vet) - 1; i++ %7B%0A%09%09idc_menor := i%0A%0A%09%09for\n+, len(lista) - 1; i %3C j; i,\n  j \n-:\n = i + 1\n-; j %3C len(vet); j++\n+, j - 1\n  %7B%0A\n-%09\n %09%09if \n-vet%5Bj%5D %3C vet%5Bidc_menor%5D %7B%0A%09%09%09%09idc_menor = j%0A%09%09%09%7D%0A%09%09%7D%0A%0A%09%09if idc_menor != i %7B%0A%09%09%09vet%5Bi%5D, vet%5Bidc_menor%5D = vet%5Bidc_menor%5D, vet\n+lista%5Bi%5D %3E lista%5Bj - 1%5D %7B%0A%09%09%09lista%5Bi%5D, lista%5Bj%5D = lista%5Bj%5D, lista\n %5Bi%5D%0A\n@@ -577,25 +577,27 @@\n ta%5Bi%5D%0A%09%09%7D%0A%09%7D\n-%0A\n+ %0A%09\n %0A%09return vet\n@@ -589,27 +589,29 @@\n  %0A%09%0A%09return \n-vet\n+lista\n %0A%7D%0A%0Afunc sor\n",
+            "lines": "127"
+        },
+        {
+            "label": "2026-03-28_10-54-23",
+            "content": "@@ -771,102 +771,27 @@\n  %7B%0A%09\n-for i, j := 0, len(vet) - 1; i %3C j; i, j = i + 1, j - 1 %7B%0A%09%09vet%5Bi%5D, vet%5Bj%5D = vet%5Bj%5D, vet%5Bi%5D%0A%09%7D\n+_ = vet%0A%09return nil\n %0A%7D%0A%0A\n",
+            "lines": "134"
+        },
+        {
+            "label": "2026-03-28_10-57-27",
+            "content": "@@ -862,28 +862,16 @@\n t%5Bi%5D%0A%09%7D%0A\n-%09return vet%0A\n %7D%0A%0Afunc \n",
+            "lines": "135"
+        },
+        {
+            "label": "2026-03-28_10-57-37",
+            "content": "@@ -762,38 +762,15 @@\n nt) \n-(\n %5B%5Dint\n-, %5B%5Dint) %7B%0A%09vetor := vet\n+ %7B\n %0A%09fo\n@@ -873,15 +873,8 @@\n turn\n- vetor,\n  vet\n",
+            "lines": "136"
+        },
+        {
+            "label": "2026-03-28_10-59-22",
+            "content": "@@ -758,23 +758,46 @@\n  %5B%5Dint) \n+(\n %5B%5Dint\n- %7B\n+, %5B%5Dint) %7B%0A%09vetor := vet\n %0A%09for i,\n@@ -884,32 +884,39 @@\n et%5Bi%5D%0A%09%7D%0A%09return\n+ vetor,\n  vet%0A%7D%0A%0Afunc uni\n",
+            "lines": "137"
+        },
+        {
+            "label": "2026-03-28_10-59-59",
+            "content": "@@ -762,18 +762,16 @@\n nt) \n-%5B%5D\n %5B%5Dint %7B%0A\n %0A%09ve\n@@ -770,33 +770,8 @@\n t %7B%0A\n-%0A%09vetor_original := vet%0A%0A\n %09for\n@@ -874,38 +874,11 @@\n urn \n-%5B%5D%5B%5D int %7Bvetor_original, vet%7D\n+vet\n %0A%7D%0A%0A\n",
+            "lines": "136"
+        },
+        {
+            "label": "2026-03-28_11-03-58",
+            "content": "@@ -792,57 +792,11 @@\n  := \n-make(%5B%5Dint, len(vet))%0A%0A%09copy(vetor_original, vet)\n+vet\n %0A%0A%09f\n",
+            "lines": "139"
+        },
+        {
+            "label": "2026-03-28_11-08-47",
+            "content": "@@ -750,32 +750,34 @@\n erse(vet %5B%5Dint) \n+%5B%5D\n %5B%5Dint %7B%0A%0A%09fmt.Pr\n@@ -770,28 +770,79 @@\n int %7B%0A%0A%09\n-fmt.Println(\n+vetor_original := make(%5B%5Dint, len(vet))%0A%0A%09copy(vetor_original, \n vet)%0A%0A%09f\n@@ -935,35 +935,62 @@\n t%5Bi%5D%0A%09%7D%0A%09return \n-vet\n+%5B%5D%5B%5D int %7Bvetor_original, vet%7D\n %0A%7D%0A%0Afunc unique(\n",
+            "lines": "141"
+        },
+        {
+            "label": "2026-03-28_11-11-19",
+            "content": "@@ -762,45 +762,34 @@\n nt) \n-(\n %5B%5Dint\n-, %5B%5Dint) %7B%0A%0A%09vetoriginal := \n+ %7B%0A%0A%09fmt.Println(\n vet\n+)\n %0A%0A%09f\n@@ -893,21 +893,8 @@\n turn\n- vetoriginal,\n  vet\n",
+            "lines": "139"
+        },
+        {
+            "label": "2026-03-28_11-12-23",
+            "content": "@@ -754,29 +754,38 @@\n (vet %5B%5Dint) \n+(\n %5B%5Dint\n+, %5B%5Dint)\n  %7B%0A%0A%09vetor_i\n@@ -786,43 +786,21 @@\n etor\n-_invertido := make(%5B%5Dint, len(\n+iginal := \n vet\n-))\n %0A%0A%09f\n@@ -865,81 +865,33 @@\n %09vet\n-or_invertido%5Bi%5D, vetor_invertido%5Bj%5D = vetor_invertido%5Bj%5D, vetor_invertido\n+%5Bi%5D, vet%5Bj%5D = vet%5Bj%5D, vet\n %5Bi%5D%0A\n@@ -910,18 +910,19 @@\n etor\n-_invertido\n+iginal, vet\n %0A%7D%0A%0A\n",
+            "lines": "139"
+        },
+        {
+            "label": "2026-03-28_11-16-22",
+            "content": "@@ -812,36 +812,8 @@\n et))\n-%0A%09copy(vetor_invertido, vet)\n %0A%0A%09f\n",
+            "lines": "139"
+        },
+        {
+            "label": "2026-03-28_11-17-08",
+            "content": "@@ -814,89 +814,34 @@\n ))%0A%09\n-for i := 0; i %3C len(vet); i++ %7B%0A%09%09vetor_invertido = append(vetor_invertido, i)%0A%09%7D\n+copy(vetor_invertido, vet)\n %0A%0A%09f\n",
+            "lines": "140"
+        },
+        {
+            "label": "2026-03-28_11-18-07",
+            "content": "@@ -886,22 +886,17 @@\n ertido, \n-vet%5Bi%5D\n+i\n )%0A%09%7D%0A%0A%09f\n",
+            "lines": "142"
+        },
+        {
+            "label": "2026-03-28_11-18-35",
+            "content": "@@ -814,12 +814,66 @@\n ))%0A%09\n-copy\n+for i := 0; i %3C len(vet); i++ %7B%0A%09%09vetor_invertido = append\n (vet\n@@ -889,17 +889,23 @@\n ido, vet\n-)\n+%5Bi%5D)%0A%09%7D\n %0A%0A%09for i\n",
+            "lines": "142"
+        },
+        {
+            "label": "2026-03-28_11-19-17",
+            "content": "@@ -814,74 +814,34 @@\n ))%0A%09\n-%0A%09for i := 0; i %3C len(vet); i++ %7B%0A%09%09vetor_invertido%5Bi%5D = vet%5Bi%5D%0A%09%7D\n+copy(vetor_invertido, vet)\n %0A%0A%09f\n",
+            "lines": "140"
+        },
+        {
+            "label": "2026-03-28_11-23-36",
+            "content": "@@ -816,34 +816,72 @@\n %0A%09%0A%09\n-copy(vetor_invertido, vet)\n+for i := 0; i %3C len(vet); i++ %7B%0A%09%09vetor_invertido%5Bi%5D = vet%5Bi%5D%0A%09%7D\n %0A%0A%09f\n",
+            "lines": "143"
+        },
+        {
+            "label": "2026-03-28_11-24-03",
+            "content": "@@ -64,19 +64,8 @@\n gs%22%0A\n-%09%22unicode%22%0A\n )%0A%0Af\n@@ -1047,238 +1047,27 @@\n  %7B%0A%09\n-ocorrencia := make(map%5Bint%5Dint)%0A%09var unicos %5B%5Dint%0A%0A%09for _, existe := range vet %7B%0A%09%09ocorrencia%5Bexiste%5D++%0A%09%7D%0A%0A%09for numero, contador := range ocorrencia %7B%0A%09%09if contador == 1 %7B%0A%09%09%09unicos = append(unicos, numero)%0A%09%09%7D%0A%09%7D%0A%0A%09return unicos\n+_ = vet%0A%09return nil\n %0A%7D%0A%0A\n",
+            "lines": "141"
+        },
+        {
+            "label": "2026-03-28_11-38-35",
+            "content": "@@ -60,16 +60,27 @@\n trings%22%0A\n+%09%22unicode%22%0A\n )%0A%0Afunc \n",
+            "lines": "154"
+        },
+        {
+            "label": "2026-03-28_11-39-12",
+            "content": "@@ -1209,17 +1209,17 @@\n ontador \n-%3E\n+=\n = 1 %7B%0A%09%09\n",
+            "lines": "153"
+        },
+        {
+            "label": "2026-03-28_11-39-53",
+            "content": "@@ -1174,35 +1174,42 @@\n ntador := range \n-vet\n+ocorrencia\n  %7B%0A%09%09if contador\n",
+            "lines": "153"
+        },
+        {
+            "label": "2026-03-28_11-45-18",
+            "content": "@@ -1159,18 +1159,25 @@\n %09for\n- _,\n  numero\n+, contador\n  := \n@@ -1197,26 +1197,16 @@\n %09if \n-o\n co\n-rrencia%5Bnumero%5D\n+ntador\n  %3E= \n",
+            "lines": "153"
+        },
+        {
+            "label": "2026-03-28_11-46-25",
+            "content": "@@ -1079,45 +1079,8 @@\n nt)%0A\n-%09ja_adicionado := make(map%5Bint%5Dbool)%0A\n %09var\n@@ -1255,39 +1255,8 @@\n %09%09%7D%0A\n-%09%09ja_adicionado%5Bnumero%5D = true%0A\n %09%7D%0A%0A\n",
+            "lines": "153"
+        },
+        {
+            "label": "2026-03-28_11-47-38",
+            "content": "@@ -1222,89 +1222,8 @@\n t %7B%0A\n-%0A%09%09if ja_adicionado%5Bnumero%5D %7B%0A%09%09%09continue%0A%09%09%7D%0A%09%09%0A%09%09ja_adicionado%5Bnumero%5D = true%0A%0A\n %09%09if\n@@ -1284,24 +1284,55 @@\n numero)%0A%09%09%7D%0A\n+%09%09ja_adicionado%5Bnumero%5D = true%0A\n %09%7D%0A%0A%09return \n",
+            "lines": "155"
+        },
+        {
+            "label": "2026-03-28_11-48-19",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc getMen(vet []int) []int {\n\tvar lista []int\n\n\tfor _, homem := range vet {\n\t\tif homem > 0 {\n\t\t\tlista = append(lista, homem)\n\t\t}\n\t}\n\n\treturn lista\n}\n\nfunc getCalmWomen(vet []int) []int {\n\tvar lista []int\n\n\tfor _, mulher := range vet {\n\t\tif (mulher < 0 && mulher > -10){\n\t\t\tlista = append(lista, mulher)\n\t\t}\n\t}\n\n\treturn lista\n}\n\nfunc sortVet(vet []int) []int {\n\n\tfor i := 0; i < len(vet) - 1; i++ {\n\t\tidc_menor := i\n\n\t\tfor j := i + 1; j < len(vet); j++ {\n\t\t\tif vet[j] < vet[idc_menor] {\n\t\t\t\tidc_menor = j\n\t\t\t}\n\t\t}\n\n\t\tif idc_menor != i {\n\t\t\tvet[i], vet[idc_menor] = vet[idc_menor], vet[i]\n\t\t}\n\t}\n\n\treturn vet\n}\n\nfunc sortStress(vet []int) []int {\n\t_ = vet\n\treturn nil\n}\n\nfunc reverse(vet []int) []int {\n\n\tvetor_invertido := make([]int, len(vet))\n\t\n\tcopy(vetor_invertido, vet)\n\n\tfor i, j := 0, len(vet) - 1; i < j; i, j = i + 1, j - 1 {\n\t\tvetor_invertido[i], vetor_invertido[j] = vetor_invertido[j], vetor_invertido[i]\n\t}\n\treturn vetor_invertido\n}\n\nfunc unique(vet []int) []int {\n\tocorrencia := make(map[int]int)\n\tja_adicionado := make(map[int]bool)\n\tvar unicos []int\n\n\tfor _, existe := range vet {\n\t\tocorrencia[existe]++\n\t}\n\n\tfor _, numero := range vet {\n\n\t\tif ja_adicionado[numero] {\n\t\t\tcontinue\n\t\t}\n\t\t\n\t\tja_adicionado[numero] = true\n\n\t\tif ocorrencia[numero] >= 1 {\n\t\t\tunicos = append(unicos, numero)\n\t\t}\n\t}\n\n\treturn unicos\n}\n\nfunc repeated(vet []int) []int {\n\t_ = vet\n\treturn nil\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tfor {\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tfmt.Print(\"$\")\n\t\tline := scanner.Text()\n\t\targs := strings.Split(line, \" \")\n\t\tfmt.Println(line)\n\n\t\tswitch args[0] {\n\t\tcase \"get_men\":\n\t\t\tprintVec(getMen(str2vet(args[1])))\n\t\tcase \"get_calm_women\":\n\t\t\tprintVec(getCalmWomen(str2vet(args[1])))\n\t\tcase \"sort\":\n\t\t\tprintVec(sortVet(str2vet(args[1])))\n\t\tcase \"sort_stress\":\n\t\t\tprintVec(sortStress(str2vet(args[1])))\n\t\tcase \"reverse\":\n\t\t\tarray := str2vet(args[1])\n\t\t\tother := reverse(array)\n\t\t\tprintVec(array)\n\t\t\tprintVec(other)\n\t\tcase \"unique\":\n\t\t\tprintVec(unique(str2vet(args[1])))\n\t\tcase \"repeated\":\n\t\t\tprintVec(repeated(str2vet(args[1])))\n\t\tcase \"end\":\n\t\t\treturn\n\t\t}\n\t}\n}\n\nfunc printVec(vet []int) {\n\tfmt.Print(\"[\")\n\tfor i, val := range vet {\n\t\tif i > 0 {\n\t\t\tfmt.Print(\", \")\n\t\t}\n\t\tfmt.Print(val)\n\t}\n\tfmt.Println(\"]\")\n}\n\nfunc str2vet(s string) []int {\n\tif s == \"[]\" {\n\t\treturn nil\n\t}\n\ts = s[1 : len(s)-1]\n\tparts := strings.Split(s, \",\")\n\tvar vet []int\n\tfor _, part := range parts {\n\t\tn, _ := strconv.Atoi(part)\n\t\tvet = append(vet, n)\n\t}\n\treturn vet\n}\n\n",
+            "lines": "161"
+        }
+    ]
+}
