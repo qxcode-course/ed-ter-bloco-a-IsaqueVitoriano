@@ -52,8 +52,30 @@ func sortVet(vet []int) []int {
 }
 
 func sortStress(vet []int) []int {
-	_ = vet
-	return nil
+	for i := 0; i < len(vet) - 1; i++ {
+		idc_menor := i
+
+		for j := i + 1; j < len(vet); j++ {
+			peso_j := vet[j]
+			if peso_j < 0 {
+				peso_j = -peso_j
+			}
+
+			peso_menor := vet[idc_menor]
+			if peso_menor < 0 {
+				peso_menor = -peso_menor
+			}
+
+			if peso_j < peso_menor {
+				idc_menor = j
+			}
+		}
+
+		if idc_menor != i {
+			vet[i], vet[idc_menor] = vet[idc_menor], vet[i]
+		}
+	}
+	return vet
 }
 
 func reverse(vet []int) []int {
@@ -94,8 +116,21 @@ func unique(vet []int) []int {
 }
 
 func repeated(vet []int) []int {
-	_ = vet
-	return nil
+	frequencia := make(map[int]int)
+
+	var repetidos []int
+
+	for _, numero := range vet {
+		if frequencia[numero] == 0 {
+			frequencia[numero]++
+		} else if frequencia[numero] >= 1 {
+			frequencia[numero]++
+
+			repetidos = append(repetidos, numero)
+		}
+	}
+
+	return repetidos
 }
 
 func main() {
