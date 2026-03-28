@@ -4,10 +4,12 @@ import (
 	"fmt"
 )
 
-func imprimindo_vetor_circular(idcMatador int, vetor_circular []int) {
+func imprimindo_roda(roda []int, idcMatador int) {
+    matador := idcMatador
+
     fmt.Print("[")
-    for i, pessoa := range vetor_circular {
-        if i == idcMatador {
+    for i, pessoa := range roda {
+        if i == matador {
             if pessoa > 0 {
                 fmt.Printf(" %d>", pessoa)
             } else {
@@ -20,62 +22,47 @@ func imprimindo_vetor_circular(idcMatador int, vetor_circular []int) {
     fmt.Println(" ]")
 }
 
-func rodando_vetor(idcMatador int, vetor_circular []int) {
-    for len(vetor_circular) > 1 {
-        imprimindo_vetor_circular(idcMatador, vetor_circular)
+func buscando_sobrevivente(roda []int, idcMatador int) {
+    for len(roda) > 1 {
+        imprimindo_roda(roda, idcMatador)
 
+        matador := roda[idcMatador]
         var idcVitima int
-        matador := vetor_circular[idcMatador]
 
         if matador > 0 {
-            idcVitima = (idcMatador + 1) % len(vetor_circular)
+            idcVitima = (idcMatador + 1) % len(roda)
         } else {
-            idcVitima = (idcMatador - 1 + len(vetor_circular)) % len(vetor_circular)
+            idcVitima = (idcMatador - 1 + len(roda)) % len(roda)
         }
 
-        vetor_circular = append(vetor_circular[:idcVitima], vetor_circular[idcVitima + 1:]...)
+        roda = append(roda[:idcVitima], roda[idcVitima+1:]...)
 
         if idcMatador > idcVitima {
             idcMatador--
         }
 
         if matador > 0 {
-            idcMatador = (idcMatador + 1) % len(vetor_circular)
+            idcMatador = (idcMatador + 1) % len(roda)
         } else {
-            idcMatador = (idcMatador - 1 + len(vetor_circular)) % len(vetor_circular)
+            idcMatador = (idcMatador - 1 + len(roda)) % len(roda)
         }
-        
     }
-
-    imprimindo_vetor_circular(idcMatador, vetor_circular)
+    imprimindo_roda(roda, idcMatador)
 }
 
 func main() {
     var N, E, F int
     fmt.Scan(&N, &E, &F)
 
-    vetor_circular := make([]int, N)
+    roda := make([]int, N)
 
     for i := 0; i < N; i++ {
-       elemento := i + 1
+        roda[i] = (i + 1) * F
 
-       if i % 2 == 0{
-            if F == 1 {
-                vetor_circular[i] = elemento
-            } else {
-                vetor_circular[i] = -elemento
-            }
-       } else {
-            if F == 1 {
-                vetor_circular[i] = -elemento
-            } else {
-                vetor_circular[i] = elemento
-            }
-       }
+        F = F * -1
     }
 
     idcMatador := E - 1
 
-    rodando_vetor(idcMatador, vetor_circular)
-
+    buscando_sobrevivente(roda, idcMatador)
 }
