@@ -1,0 +1,19 @@
+2026-03-31 14:31:46, MOVE, v:1, k:ed@triangulo, mode:DOWN
+2026-03-31 14:31:48, MOVE, v:1, k:ed@triangulo, mode:PICK
+2026-03-31 14:37:40, MOVE, v:1, k:ed@triangulo, mode:PICK
+2026-03-31 14:37:43, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:0, size:58
+2026-03-31 14:41:02, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:0, size:59
+2026-03-31 14:42:16, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:0, size:59
+2026-03-31 14:51:16, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:0, size:62
+2026-03-31 14:53:11, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:0, size:64
+2026-03-31 14:58:04, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:0, size:67
+2026-03-31 14:58:31, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:0, size:67
+2026-03-31 14:58:40, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:0, size:67
+2026-03-31 14:59:02, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:0, size:67
+2026-03-31 14:59:40, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:0, size:71
+2026-03-31 14:59:50, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:0, size:71
+2026-03-31 15:00:05, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:0, size:71
+2026-03-31 15:01:10, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:0, size:71
+2026-03-31 15:02:44, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:100, size:73
+2026-03-31 15:03:01, MOVE, v:1, k:ed@triangulo, mode:BACK
+2026-03-31 15:03:55, SELF, v:1, k:ed@triangulo, self:1, rate:100, study:35, concept:1

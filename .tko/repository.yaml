@@ -10,14 +10,12 @@ sources:
   target: https://github.com/qxcodeed/arcade.git
   type: git
   writeable: false
-  cache_timestamp: '2026-03-28 16:21:59'
+  cache_timestamp: '2026-03-31 14:29:20'
   quests: null
   tasks: null
 expanded:
-- '@ed@analise-map_set-map_set-basic_sem_quest'
-- ed@analise-map_set-map_set-basic
-- ed@revisao-basic-basic
-- '@ed@revisao-basic-basic_sem_quest'
+- ed@recursao-recursion-rec-basic
+- '@ed@recursao-recursion-rec-basic_sem_quest'
 tasks:
   ed@pintando: '{self:1, rate:100, study:10}'
   ed@mumia: '{self:1, rate:100, study:15}'
@@ -32,6 +30,7 @@ tasks:
   ed@buscas: '{self:1, rate:100, study:80, concept:1}'
   ed@rotacoes: '{self:1, rate:100, study:76, concept:1}'
   ed@alternando: '{self:1, rate:100, study:30, concept:1}'
+  ed@triangulo: '{self:1, rate:100, study:35, concept:1}'
 flags:
   painel: 0
   quests: 0
@@ -40,5 +39,5 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@manipulacao
+selected: ed@triangulo
 next_draft_id: 0
