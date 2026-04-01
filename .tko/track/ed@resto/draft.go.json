@@ -1,0 +1,69 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-01_10-24-58",
+            "content": "@@ -48,19 +48,26 @@\n ro int) \n+(\n int\n+, int)\n  %7B%0A    i\n@@ -96,16 +96,24 @@\n   return\n+ numero,\n  1%0A    %7D\n@@ -171,16 +171,24 @@\n   return\n+ numero,\n  resto%0A%7D\n@@ -238,24 +238,32 @@\n n(&num)%0A%0A   \n+ numero,\n  resto := di\n@@ -292,16 +292,24 @@\n Println(\n+numero, \n resto)%0A%7D\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-04-01_10-26-31",
+            "content": "@@ -98,17 +98,16 @@\n 1%0A    %7D%0A\n-%0A\n     divi\n@@ -123,10 +123,8 @@\n mero\n-/2\n )%0A  \n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-04-01_10-28-10",
+            "content": "@@ -47,16 +47,20 @@\n ero int)\n+ int\n  %7B%0A    i\n@@ -107,74 +107,70 @@\n     \n-resto := \n+divide_rec(\n numero\n- %25 2\n+/2)\n %0A    \n-divide_rec(\n+resto := \n numero\n-/2)\n+ %25 2\n %0A%0A    \n-fmt.Print(\n+return \n resto\n-)\n %0A%7D%0A%0A\n@@ -218,24 +218,33 @@\n n(&num)%0A%0A   \n+ resto :=\n  divide_rec(\n@@ -248,10 +248,33 @@\n ec(num)%0A\n+    fmt.Println(resto)%0A\n %7D%0A\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-04-01_10-29-35",
+            "content": "@@ -86,16 +86,17 @@\n  return \n+1\n %0A    %7D%0A%0A\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-04-01_10-29-45",
+            "content": "@@ -161,10 +161,8 @@\n rint\n-ln\n (res\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-04-01_10-30-08",
+            "content": "@@ -130,71 +130,23 @@\n divi\n-sao := numero / 2%0A    divide_rec(divisao)%0A    fmt.Print(divisao\n+de_rec(numero/2\n )%0A%0A \n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-04-01_10-36-27",
+            "content": "@@ -193,10 +193,27 @@\n isao\n-, \n+)%0A%0A    fmt.Println(\n rest\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-04-01_10-36-47",
+            "content": "@@ -185,10 +185,8 @@\n rint\n-ln\n (div\n@@ -194,13 +194,8 @@\n sao,\n- %22 %22,\n  res\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-04-01_10-37-22",
+            "content": "@@ -194,16 +194,17 @@\n visao, %22\n+ \n %22, resto\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-04-01_10-37-27",
+            "content": "@@ -192,16 +192,17 @@\n divisao,\n+ \n %22%22, rest\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-04-01_10-37-37",
+            "content": "@@ -195,16 +195,17 @@\n isao,%22%22,\n+ \n resto)%0A%7D\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-04-01_10-37-48",
+            "content": "@@ -192,17 +192,19 @@\n divisao,\n- \n+%22%22,\n resto)%0A%7D\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-04-01_10-37-55",
+            "content": "package main\nimport \"fmt\"\n\nfunc divide_rec(numero int) {\n    if numero == 0 {\n        return \n    }\n\n    resto := numero % 2\n    divisao := numero / 2\n    divide_rec(divisao)\n    fmt.Println(divisao, resto)\n}\n\nfunc main() {\n    var num int\n    fmt.Scan(&num)\n\n    divide_rec(num)\n}\n",
+            "lines": "20"
+        }
+    ]
+}
