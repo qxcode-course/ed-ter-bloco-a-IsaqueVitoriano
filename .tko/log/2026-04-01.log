@@ -32,3 +32,28 @@
 2026-04-01 13:41:16, MOVE, v:1, k:ed@mdc, mode:PICK
 2026-04-01 13:41:50, SELF, v:1, k:ed@mdc, self:1, rate:100, study:35, concept:1
 2026-04-01 13:41:53, MOVE, v:1, k:ed@mdc, mode:BACK
+2026-04-01 13:50:34, MOVE, v:1, k:ed@vetequals, mode:DOWN
+2026-04-01 13:50:35, MOVE, v:1, k:ed@vetequals, mode:PICK
+2026-04-01 13:59:25, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:20, size:58
+2026-04-01 14:00:31, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:20, size:54
+2026-04-01 14:03:49, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:30, size:61
+2026-04-01 14:05:21, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:30, size:61
+2026-04-01 14:13:15, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:30, size:61
+2026-04-01 14:23:21, MOVE, v:1, k:ed@vetequals, mode:BACK
+2026-04-01 14:23:31, MOVE, v:1, k:ed@vetequals, mode:PICK
+2026-04-01 14:26:17, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:0, size:60
+2026-04-01 14:31:11, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:0, size:60
+2026-04-01 14:31:39, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:0, size:56
+2026-04-01 14:33:07, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:70, size:60
+2026-04-01 14:34:05, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:70, size:64
+2026-04-01 14:42:40, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:20, size:68
+2026-04-01 14:42:49, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:70, size:68
+2026-04-01 14:42:58, MOVE, v:1, k:ed@vetequals, mode:BACK
+2026-04-01 14:43:01, MOVE, v:1, k:ed@vetequals, mode:PICK
+2026-04-01 14:47:12, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:100, size:64
+2026-04-01 14:48:04, MOVE, v:1, k:ed@vetequals, mode:BACK
+2026-04-01 14:48:09, MOVE, v:1, k:ed@vetequals, mode:PICK
+2026-04-01 14:48:26, SELF, v:1, k:ed@vetequals, self:1, rate:100, study:60, concept:1
+2026-04-01 14:48:30, MOVE, v:1, k:ed@vetequals, mode:BACK
+2026-04-01 14:49:29, MOVE, v:1, k:ed@vetequals, mode:PICK
+2026-04-01 14:49:49, MOVE, v:1, k:ed@vetequals, mode:BACK

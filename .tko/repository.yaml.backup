@@ -32,6 +32,7 @@ tasks:
   ed@alternando: '{self:1, rate:100, study:30, concept:1}'
   ed@triangulo: '{self:1, rate:100, study:35, concept:1}'
   ed@resto: '{self:1, rate:100, study:20}'
+  ed@vetequals: '{self:1, rate:100, study:60, concept:1}'
 flags:
   painel: 0
   quests: 0
@@ -40,5 +41,5 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@mdc
+selected: ed@vetequals
 next_draft_id: 0
