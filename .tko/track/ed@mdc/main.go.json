@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-01_10-47-05",
+            "content": "@@ -111,81 +111,23 @@\n %09%7D%0A%0A\n-%09var resto int %0A%0A%09if a %3E b %7B%0A%09\n %09resto \n+:\n = a %25 b\n-%0A%09%7D else %7B%0A%09%09resto = b %25 a%0A%09%7D\n %0A%0A%09r\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-04-01_10-48-21",
+            "content": "@@ -111,49 +111,16 @@\n %09%7D%0A%0A\n-%09a = -a%0A%09b = -b%0A%0A%09resto := a %25 b%0A\n %09var res\n ulta\n@@ -119,104 +119,75 @@\n  res\n-ultad\n+t\n o int\n+ \n %0A%0A%09if \n-(a%25resto == 0 && b%25resto == 0) %7B%0A%09%09resultado = resto%0A%09%7D else %7B%0A%09%09mdc(a, b)\n+a %3E b %7B%0A%09%09resto = a %25 b%0A%09%7D else %7B%0A%09%09resto = b %25 a\n %0A%09%7D%0A%0A\n-%0A\n %09ret\n@@ -197,13 +197,9 @@\n  res\n-ultad\n+t\n o%0A%7D%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-01_10-56-10",
+            "content": "@@ -140,16 +140,119 @@\n = a %25 b%0A\n+%09var resultado int%0A%0A%09if (a%25resto == 0 && b%25resto == 0) %7B%0A%09%09resultado = resto%0A%09%7D else %7B%0A%09%09mdc(a, b)%0A%09%7D%0A%0A\n %0A%09return\n@@ -255,17 +255,21 @@\n turn res\n-t\n+ultad\n o%0A%7D%0A%0Afun\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-01_10-56-51",
+            "content": "@@ -107,16 +107,33 @@\n n a%0A%09%7D%0A%0A\n+%09a = -a%0A%09b = -b%0A%0A\n %09resto :\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-01_10-57-16",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc mdc(a, b int) int {\n\tif a == 0 {\n\t\treturn b\n\t}\n\n\tif b == 0 {\n\t\treturn a\n\t}\n\n\tresto := a % b\n\n\treturn resto\n}\n\nfunc main() {\n\tvar a, b int\n\tfmt.Scan(&a, &b)\n\tfmt.Println(mdc(a, b))\n}\n",
+            "lines": "25"
+        }
+    ]
+}
