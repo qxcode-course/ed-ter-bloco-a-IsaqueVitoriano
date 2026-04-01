@@ -10,12 +10,12 @@ sources:
   target: https://github.com/qxcodeed/arcade.git
   type: git
   writeable: false
-  cache_timestamp: '2026-04-01 11:27:31'
+  cache_timestamp: '2026-04-01 13:35:25'
   quests: null
   tasks: null
 expanded:
-- '@ed@recursao-recursion-rec-basic_sem_quest'
 - ed@recursao-recursion-rec-basic
+- '@ed@recursao-recursion-rec-basic_sem_quest'
 tasks:
   ed@pintando: '{self:1, rate:100, study:10}'
   ed@mumia: '{self:1, rate:100, study:15}'

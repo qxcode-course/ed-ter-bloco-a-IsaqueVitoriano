@@ -13,24 +13,9 @@ func mdc(a, b int) int {
 		return a
 	}
 
-	var resto int
+	resto := a % b
 
-	if a > b {
-		resto = a % b
-	} else {
-		resto = b % a
-	}
-
-	cont := 0
-
-	for {
-		if a % resto == 0 && b % resto == 0 {
-			break
-		} else {
-			cont++
-		}
-	}
-	return cont
+	return mdc(b, resto)
 }
 
 func main() {

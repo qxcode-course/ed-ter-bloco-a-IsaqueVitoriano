@@ -22,7 +22,17 @@
         },
         {
             "label": "2026-04-01_10-57-16",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc mdc(a, b int) int {\n\tif a == 0 {\n\t\treturn b\n\t}\n\n\tif b == 0 {\n\t\treturn a\n\t}\n\n\tresto := a % b\n\n\treturn resto\n}\n\nfunc main() {\n\tvar a, b int\n\tfmt.Scan(&a, &b)\n\tfmt.Println(mdc(a, b))\n}\n",
+            "content": "@@ -128,24 +128,8 @@\n  b%0A%0A\n-%09mdc(b, resto)%0A%0A\n %09ret\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-04-01_13-36-27",
+            "content": "@@ -125,23 +125,16 @@\n a %25 b%0A%0A%09\n-return \n mdc(b, r\n@@ -138,16 +138,31 @@\n , resto)\n+%0A%0A%09return resto\n %0A%7D%0A%0Afunc\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-01_13-40-43",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc mdc(a, b int) int {\n\tif a == 0 {\n\t\treturn b\n\t}\n\n\tif b == 0 {\n\t\treturn a\n\t}\n\n\tresto := a % b\n\n\treturn mdc(b, resto)\n}\n\nfunc main() {\n\tvar a, b int\n\tfmt.Scan(&a, &b)\n\tfmt.Println(mdc(a, b))\n}\n",
             "lines": "25"
         }
     ]
