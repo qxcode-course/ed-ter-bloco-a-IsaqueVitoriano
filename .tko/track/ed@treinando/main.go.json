@@ -1,0 +1,119 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-02_14-34-02",
+            "content": "@@ -133,36 +133,138 @@\n %0A%09%7D%0A\n-%09%0A%09return %22%22 + tostr(vet%5B1:%5D\n+%0A%09vetor_auxiliar := make(%5B%5Dint, len(vet))%0A%09for i := range len(vet)%7B%0A%09%09vetor_auxiliar%5Bi%5D = vet%5Bi%5D%0A%09%7D%0A%09%0A%09return tostr(vetor_auxiliar\n )%0A%7D%0A\n",
+            "lines": "92"
+        },
+        {
+            "label": "2026-04-02_14-44-00",
+            "content": "@@ -124,18 +124,16 @@\n return %22\n-%5B%5D\n %22%0A%09%7D%0A%09%0A%09\n@@ -144,10 +144,8 @@\n rn %22\n-%5B \n %22 + \n@@ -162,15 +162,8 @@\n 1:%5D)\n- + %22 %5D%22\n %0A%7D%0A%0A\n",
+            "lines": "87"
+        },
+        {
+            "label": "2026-04-02_14-45-22",
+            "content": "@@ -135,80 +135,22 @@\n %0A%09%7D%0A\n-%0A%09transformaEmStr := fmt.Sprintf(%22%25d%22, vet%5B0%5D)%0A%09%0A%09return transformaEmStr\n+%09%0A%09return %22%5B %22\n  + t\n@@ -162,16 +162,23 @@\n vet%5B1:%5D)\n+ + %22 %5D%22\n %0A%7D%0A%0Afunc\n",
+            "lines": "87"
+        },
+        {
+            "label": "2026-04-02_14-46-46",
+            "content": "@@ -167,17 +167,16 @@\n intf(%22%25d\n- \n %22, vet%5B0\n",
+            "lines": "89"
+        },
+        {
+            "label": "2026-04-02_14-47-48",
+            "content": "@@ -136,68 +136,8 @@\n %09%7D%0A%0A\n-%09if len(vet) == 1 %7B%0A%09%09return fmt.Sprintf(%22%25d %22, vet%5B0%5D)%0A%09%7D%0A%0A\n %09tra\n@@ -167,17 +167,16 @@\n intf(%22%25d\n-,\n  %22, vet%5B\n",
+            "lines": "89"
+        },
+        {
+            "label": "2026-04-02_14-49-24",
+            "content": "@@ -191,14 +191,8 @@\n %5B0%5D)\n- + %22%5D%22\n %0A%09%7D%0A\n",
+            "lines": "93"
+        },
+        {
+            "label": "2026-04-02_14-50-25",
+            "content": "@@ -176,16 +176,17 @@\n intf(%22%25d\n+ \n %22, vet%5B0\n",
+            "lines": "93"
+        },
+        {
+            "label": "2026-04-02_14-51-08",
+            "content": "@@ -68,24 +68,21 @@\n )%0A%0Afunc \n-recursao\n+tostr\n (vet %5B%5Di\n@@ -91,16 +91,17 @@\n ) string\n+ \n %7B%0A%09if le\n@@ -186,16 +186,22 @@\n  vet%5B0%5D)\n+ + %22%5D%22\n %0A%09%7D%0A%0A%09tr\n@@ -247,16 +247,16 @@\n t%5B0%5D)%0A%09%0A\n+\n %09return \n@@ -295,76 +295,8 @@\n %0A%7D%0A%0A\n-func tostr(vet %5B%5Dint) string %7B%0A%09return %22%5B%22 + recursao(vet) + %22%5D%22%0A%7D%0A%0A\n func\n",
+            "lines": "93"
+        },
+        {
+            "label": "2026-04-02_15-00-01",
+            "content": "@@ -96,16 +96,54 @@\n string%7B%0A\n+%09if len(vet) == 0 %7B%0A%09%09return %22%5B%5D%22%0A%09%7D%0A%0A\n %09if len(\n@@ -322,44 +322,8 @@\n g %7B%0A\n-%09if len(vet) == 0 %7B%0A%09%09return %22%22%0A%09%7D%0A%0A\n %09ret\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-02_15-01-04",
+            "content": "@@ -231,24 +231,21 @@\n EmStr + \n-recursao\n+tostr\n (vet%5B1:%5D\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-02_15-02-28",
+            "content": "@@ -313,18 +313,16 @@\n return %22\n-%5B%5D\n %22%0A%09%7D%0A%0A%09r\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-02_15-02-55",
+            "content": "@@ -68,20 +68,17 @@\n )%0A%0Afunc \n-fazR\n+r\n ecursao(\n@@ -231,20 +231,17 @@\n EmStr + \n-fazR\n+r\n ecursao(\n@@ -339,12 +339,9 @@\n %22 + \n-fazR\n+r\n ecur\n@@ -562,71 +562,25 @@\n  %7B%0A%09\n-if len(vet) == 0 %7B%0A%09%09return 0%0A%09%7D%0A%0A%09return vet%5B0%5D + sum(vet%5B1:%5D)\n+_ = vet%0A%09return 0\n %0A%7D%0A%0A\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-02_15-11-00",
+            "content": "@@ -706,71 +706,25 @@\n  %7B%0A%09\n-if len(vet) == 0 %7B%0A%09%09return 0%0A%09%7D%0A%0A%09return vet%5B0%5D + sum(vet%5B1:%5D)\n+_ = vet%0A%09return 0\n %0A%7D%0A%0A\n",
+            "lines": "100"
+        },
+        {
+            "label": "2026-04-02_15-12-01",
+            "content": "@@ -755,9 +755,9 @@\n %5B0%5D \n-*\n++\n  sum\n",
+            "lines": "103"
+        },
+        {
+            "label": "2026-04-02_15-12-11",
+            "content": "@@ -753,20 +753,19 @@\n et%5B0%5D * \n-mult\n+sum\n (vet%5B1:%5D\n",
+            "lines": "103"
+        },
+        {
+            "label": "2026-04-02_15-12-39",
+            "content": "@@ -740,48 +740,8 @@\n %09%7D%0A%0A\n-%09if len(vet) == 1 %7B%0A%09%09return vet%5B0%5D%0A%09%7D%0A%0A\n %09ret\n",
+            "lines": "103"
+        },
+        {
+            "label": "2026-04-02_15-14-17",
+            "content": "@@ -730,17 +730,17 @@\n %09return \n-1\n+0\n %0A%09%7D%0A%0A%09if\n",
+            "lines": "107"
+        },
+        {
+            "label": "2026-04-02_15-14-53",
+            "content": "@@ -497,94 +497,15 @@\n  %7B%0A%09\n-tamanho_vetor := len(vet)%0A%09vet = append(vet%5Btamanho_vetor:%5D, vet%5B:tamanho_vetor-1%5D...)\n+_ = vet\n %0A%7D%0A%0A\n",
+            "lines": "107"
+        },
+        {
+            "label": "2026-04-02_15-18-26",
+            "content": "@@ -572,17 +572,17 @@\n ho_vetor\n-+\n+-\n 1%5D...)%0A%7D\n",
+            "lines": "108"
+        },
+        {
+            "label": "2026-04-02_15-19-39",
+            "content": "@@ -527,36 +527,18 @@\n %09vet\n-%5B0%5D, vet%5Btamanho_vetor-1%5D = \n+ = append(\n vet%5B\n@@ -554,35 +554,16 @@\n etor\n--1\n+:\n %5D, vet%5B\n-0%5D%0A%0A%09reverse(vet%5B1\n :tam\n@@ -576,11 +576,14 @@\n etor\n--\n++\n 1%5D\n+...\n )%0A%7D%0A\n",
+            "lines": "108"
+        },
+        {
+            "label": "2026-04-02_15-25-51",
+            "content": "@@ -523,46 +523,8 @@\n et)%0A\n-%0A%09if tamanho_vetor %3C 1 %7B%0A%09%09return%0A%09%7D%0A%0A\n %09vet\n",
+            "lines": "110"
+        },
+        {
+            "label": "2026-04-02_15-26-49",
+            "content": "@@ -539,17 +539,16 @@\n _vetor %3C\n-=\n  1 %7B%0A%09%09r\n",
+            "lines": "115"
+        },
+        {
+            "label": "2026-04-02_15-27-00",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc fazRecursao(vet []int) string{\n\tif len(vet) == 1 {\n\t\treturn fmt.Sprintf(\"%d\", vet[0])\n\t}\n\n\ttransformaEmStr := fmt.Sprintf(\"%d, \", vet[0])\n\t\n\treturn transformaEmStr + fazRecursao(vet[1:])\n}\n\nfunc tostr(vet []int) string {\n\tif len(vet) == 0 {\n\t\treturn \"[]\"\n\t}\n\n\treturn \"[\" + fazRecursao(vet) + \"]\"\n}\n\nfunc tostrrev(vet []int) string {\n\t_ = vet\n\treturn \"\"\n}\n\n// reverse: inverte os elementos do slice\nfunc reverse(vet []int) {\n\ttamanho_vetor := len(vet)\n\n\tif tamanho_vetor <= 1 {\n\t\treturn\n\t}\n\n\tvet[0], vet[tamanho_vetor-1] = vet[tamanho_vetor-1], vet[0]\n\n\treverse(vet[1:tamanho_vetor-1])\n}\n\n// sum: soma dos elementos do slice\nfunc sum(vet []int) int {\n\tif len(vet) == 0 {\n\t\treturn 0\n\t}\n\n\treturn vet[0] + sum(vet[1:])\n}\n\n// mult: produto dos elementos do slice\nfunc mult(vet []int) int {\n\tif len(vet) == 0 {\n\t\treturn 1\n\t}\n\n\tif len(vet) == 1 {\n\t\treturn vet[0]\n\t}\n\n\treturn vet[0] * mult(vet[1:])\n}\n\n// min: retorna o \u00edndice e valor do menor valor\n// crie uma fun\u00e7\u00e3o recursiva interna do modelo\n// var rec func(v []int) (int, int)\n// para fazer uma recurs\u00e3o que retorna valor e \u00edndice\nfunc min(vet []int) int {\n\t_ = vet\n\treturn 0\n}\n\nfunc main() {\n\tvar vet []int\n\tscanner := bufio.NewScanner(os.Stdin)\n\tfor {\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tline := scanner.Text()\n\t\targs := strings.Fields(line)\n\t\tfmt.Println(\"$\" + line)\n\n\t\tswitch args[0] {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"read\":\n\t\t\tvet = nil\n\t\t\tfor _, arg := range args[1:] {\n\t\t\t\tif val, err := strconv.Atoi(arg); err == nil {\n\t\t\t\t\tvet = append(vet, val)\n\t\t\t\t}\n\t\t\t}\n\t\tcase \"tostr\":\n\t\t\tfmt.Println(tostr(vet))\n\t\tcase \"torev\":\n\t\t\tfmt.Println(tostrrev(vet))\n\t\tcase \"reverse\":\n\t\t\treverse(vet)\n\t\tcase \"sum\":\n\t\t\tfmt.Println(sum(vet))\n\t\tcase \"mult\":\n\t\t\tfmt.Println(mult(vet))\n\t\tcase \"min\":\n\t\t\tfmt.Println(min(vet))\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "115"
+        }
+    ]
+}
