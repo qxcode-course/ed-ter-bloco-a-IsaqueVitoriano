@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-02_13-36-53",
+            "content": "@@ -138,16 +138,20 @@\n return n\n+ - 1\n %0A    %7D%0A%0A\n@@ -178,20 +178,16 @@\n graus(n)\n- - 1\n %0A%7D%0A%0Afunc\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-04-02_13-38-47",
+            "content": "@@ -69,9 +69,9 @@\n  == \n-0\n+1\n  %7B%0A \n@@ -101,92 +101,55 @@\n     \n-subindo_1_degrau := subindoDegraus(n-1)%0A    subindo_3_degraus := subindoDegraus(n-3)\n+if n %3E= 2 && n %25 3 == 0%7B%0A        return n%0A    %7D\n %0A%0A  \n@@ -168,37 +168,22 @@\n indo\n-_1_d\n+D\n egrau\n- + subindo_3_degraus\n+s(n) - 1\n %0A%7D%0A%0A\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-04-02_13-55-27",
+            "content": "@@ -57,47 +57,8 @@\n t %7B%0A\n-    if n %3C 0 %7B%0A        return 0%0A    %7D%0A%0A\n     \n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-04-02_13-57-03",
+            "content": "@@ -336,10 +336,8 @@\n rint\n-ln\n (sub\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-02_13-57-32",
+            "content": "package main\nimport \"fmt\"\n\nfunc subindoDegraus(n int) int {\n    if n < 0 {\n        return 0\n    }\n\n    if n == 0 {\n        return 1\n    }\n\n    subindo_1_degrau := subindoDegraus(n-1)\n    subindo_3_degraus := subindoDegraus(n-3)\n\n    return subindo_1_degrau + subindo_3_degraus\n}\n\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n\n    fmt.Println(subindoDegraus(n))\n}\n",
+            "lines": "24"
+        }
+    ]
+}

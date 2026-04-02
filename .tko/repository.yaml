@@ -14,8 +14,8 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@recursao-recursion-rec-basic
 - '@ed@recursao-recursion-rec-basic_sem_quest'
+- ed@recursao-recursion-rec-basic
 tasks:
   ed@pintando: '{self:1, rate:100, study:10}'
   ed@mumia: '{self:1, rate:100, study:15}'
@@ -41,5 +41,5 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@vetequals
+selected: ed@escada
 next_draft_id: 0
