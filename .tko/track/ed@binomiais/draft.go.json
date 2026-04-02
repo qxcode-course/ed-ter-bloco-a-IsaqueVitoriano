@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-02_14-13-04",
+            "content": "@@ -81,61 +81,12 @@\n f k \n-%3C n %7B%0A        return 0%0A    %7D%0A%0A    if k == 0 %7C%7C k == n\n+== 0\n  %7B%0A \n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-04-02_14-20-30",
+            "content": "@@ -81,9 +81,9 @@\n f k \n-%3E\n+%3C\n  n %7B\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-04-02_14-21-24",
+            "content": "package main\nimport \"fmt\"\n\nfunc calculaCoeficienteBinomial(n, k int) int {\n    if k > n {\n        return 0\n    }\n\n    if k == 0 || k == n {\n        return 1 \n    }\n\n    return calculaCoeficienteBinomial(n-1, k-1) + calculaCoeficienteBinomial(n-1, k)\n}\n\nfunc main() {\n    var n, k int\n    fmt.Scan(&n, &k)\n\n    resultado := calculaCoeficienteBinomial(n, k)\n    fmt.Println(resultado) \n}\n",
+            "lines": "22"
+        }
+    ]
+}

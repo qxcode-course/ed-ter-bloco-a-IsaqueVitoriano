@@ -9,3 +9,10 @@
 2026-04-02 13:57:49, MOVE, v:1, k:ed@escada, mode:PICK
 2026-04-02 13:58:09, SELF, v:1, k:ed@escada, self:1, rate:100, study:35, concept:1
 2026-04-02 13:58:17, MOVE, v:1, k:ed@escada, mode:BACK
+2026-04-02 14:03:06, MOVE, v:1, k:ed@binomiais, mode:DOWN
+2026-04-02 14:03:07, MOVE, v:1, k:ed@binomiais, mode:PICK
+2026-04-02 14:13:04, EXEC, v:1, k:ed@binomiais, mode:FULL, rate:0, size:18
+2026-04-02 14:20:30, EXEC, v:1, k:ed@binomiais, mode:FULL, rate:0, size:22
+2026-04-02 14:21:24, EXEC, v:1, k:ed@binomiais, mode:FULL, rate:100, size:22
+2026-04-02 14:21:57, MOVE, v:1, k:ed@binomiais, mode:BACK
+2026-04-02 14:22:25, SELF, v:1, k:ed@binomiais, self:1, rate:100, study:25, concept:1
