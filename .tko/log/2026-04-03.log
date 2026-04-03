@@ -15,3 +15,14 @@
 2026-04-03 10:51:00, EXEC, v:1, k:ed@mdc, mode:FULL, rate:100
 2026-04-03 10:52:02, SELF, v:1, k:ed@mdc, self:1, rate:100, study:35, concept:1
 2026-04-03 10:52:16, MOVE, v:1, k:ed@mdc, mode:BACK
+2026-04-03 10:55:14, MOVE, v:1, k:ed@queimada, mode:DOWN
+2026-04-03 10:55:20, MOVE, v:1, k:ed@queimada, mode:PICK
+2026-04-03 11:04:50, EXEC, v:1, k:ed@queimada, mode:FULL, rate:100, size:54
+2026-04-03 11:04:56, MOVE, v:1, k:ed@queimada, mode:BACK
+2026-04-03 11:05:00, MOVE, v:1, k:ed@queimada, mode:PICK
+2026-04-03 11:10:26, EXEC, v:1, k:ed@queimada, mode:FULL, rate:100, size:62
+2026-04-03 11:10:33, MOVE, v:1, k:ed@queimada, mode:BACK
+2026-04-03 11:10:36, MOVE, v:1, k:ed@queimada, mode:PICK
+2026-04-03 11:10:38, EXEC, v:1, k:ed@queimada, mode:FULL, rate:100
+2026-04-03 11:11:16, SELF, v:1, k:ed@queimada, self:1, rate:100, study:15
+2026-04-03 11:11:21, MOVE, v:1, k:ed@queimada, mode:BACK

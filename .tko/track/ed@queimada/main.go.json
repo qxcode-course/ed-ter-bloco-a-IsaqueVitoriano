@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-03_11-04-50",
+            "content": "@@ -50,15 +50,17 @@\n unc \n-is\n+burn\n Tree\n- \n+s\n (gri\n@@ -83,30 +83,9 @@\n  int\n-, caractere rune) bool\n+)\n  %7B%0A%09\n@@ -198,30 +198,24 @@\n s %7B%0A%09%09return\n- false\n %0A%09%7D%0A%0A%09if gri\n@@ -228,126 +228,12 @@\n %5D !=\n- caractere %7B%0A%09%09return false%0A%09%7D%0A%0A%09return true%0A%7D%0A%0Afunc burnTrees(grid %5B%5D%5B%5Drune, l, c int) %7B%0A%09if !isTree(grid, l, c,\n  '#'\n-)\n  %7B%0A%09\n@@ -239,17 +239,16 @@\n %09%09return\n- \n %0A%09%7D%0A%0A%09gr\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-04-03_11-10-26",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc isTree (grid [][]rune, l, c int, caractere rune) bool {\n\tqtdLinhas := len(grid)\n\tqtdColunas := len(grid[0])\n\n\tif l < 0 || l >= qtdLinhas || c < 0 || c >= qtdColunas {\n\t\treturn false\n\t}\n\n\tif grid[l][c] != caractere {\n\t\treturn false\n\t}\n\n\treturn true\n}\n\nfunc burnTrees(grid [][]rune, l, c int) {\n\tif !isTree(grid, l, c, '#') {\n\t\treturn \n\t}\n\n\tgrid[l][c] = 'o'\n\tburnTrees(grid, l, c + 1)\n\tburnTrees(grid, l, c - 1)\n\tburnTrees(grid, l + 1, c)\n\tburnTrees(grid, l - 1, c)\n\n\t// se estiver fora da matriz, retorne\n\t// se o elemento atual n\u00e3o for uma arvore, retorne\n\t// queime a arvore colocando o caractere 'o' na posi\u00e7\u00e3o atual\n\t// chame a recurs\u00e3o para todos os 4 vizinhos\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tvar nl, nc, lfire, cfire int\n\tfmt.Sscanf(line, \"%d %d %d %d\", &nl, &nc, &lfire, &cfire)\n\n\tgrid := make([][]rune, 0, nl)\n\tfor range nl {\n\t\tscanner.Scan()\n\t\tline := []rune(scanner.Text())\n\t\tgrid = append(grid, line)\n\t}\n\tburnTrees(grid, lfire, cfire)\n\tshowGrid(grid)\n}\n\nfunc showGrid(grid [][]rune) {\n\tfor _, line := range grid {\n\t\tfmt.Println(string(line))\n\t}\n}\n",
+            "lines": "62"
+        }
+    ]
+}

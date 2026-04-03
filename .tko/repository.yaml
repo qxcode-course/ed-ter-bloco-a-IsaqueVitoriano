@@ -33,6 +33,7 @@ tasks:
   ed@triangulo: '{self:1, rate:100, study:35, concept:1}'
   ed@treinando: '{self:1, rate:100, study:120, concept:1, problem:1}'
   ed@resto: '{self:1, rate:100, study:20}'
+  ed@mdc: '{self:1, rate:100, study:35, concept:1}'
   ed@vetequals: '{self:1, rate:100, study:60, concept:1}'
   ed@escada: '{self:1, rate:100, study:35, concept:1}'
   ed@binomiais: '{self:1, rate:100, study:25, concept:1}'
@@ -44,5 +45,5 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@mdc
+selected: ed@queimada
 next_draft_id: 0
