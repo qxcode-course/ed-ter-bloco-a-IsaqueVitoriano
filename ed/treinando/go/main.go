@@ -18,6 +18,18 @@ func fazRecursao(vet []int) string{
 	return transformaEmStr + fazRecursao(vet[1:])
 }
 
+func fazRecursaoRev(vet []int) string {
+	if len(vet) == 1 {
+		return fmt.Sprintf("%d", vet[0])
+	}
+
+	transformaEmStr := fmt.Sprintf(", %d", vet[0])
+
+	resto_invertido := fazRecursaoRev(vet[1:])
+
+	return resto_invertido + transformaEmStr
+}
+
 func tostr(vet []int) string {
 	if len(vet) == 0 {
 		return "[]"
@@ -27,8 +39,12 @@ func tostr(vet []int) string {
 }
 
 func tostrrev(vet []int) string {
-	_ = vet
-	return ""
+	if len(vet) == 0 {
+		return "[]"
+	}
+
+	return "[" + fazRecursaoRev(vet) + "]"
+	
 }
 
 // reverse: inverte os elementos do slice
@@ -71,8 +87,27 @@ func mult(vet []int) int {
 // var rec func(v []int) (int, int)
 // para fazer uma recursão que retorna valor e índice
 func min(vet []int) int {
-	_ = vet
-	return 0
+	if len(vet) == 0 {
+		return -1
+	}
+
+	var rec func(v []int) (int, int);
+
+	rec = func(v []int) (int, int) {
+		if len(v) == 1 {
+			return 0, v[0]
+		}
+		indiceFuturo, valorFuturo := rec(v[1:])
+
+		if valorFuturo > v[0] {
+			return 0, v[0]
+		}
+		return indiceFuturo + 1, valorFuturo
+	}
+
+	indiceMenor, _ := rec(vet)
+	return indiceMenor
+
 }
 
 func main() {

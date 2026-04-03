@@ -1,0 +1,13 @@
+2026-04-03 08:45:47, MOVE, v:1, k:ed@treinando, mode:PICK
+2026-04-03 09:08:59, EXEC, v:1, k:ed@treinando, mode:FULL, rate:83, size:131
+2026-04-03 09:27:21, EXEC, v:1, k:ed@treinando, mode:FULL, rate:83, size:150
+2026-04-03 09:27:41, MOVE, v:1, k:ed@treinando, mode:BACK
+2026-04-03 09:27:48, MOVE, v:1, k:ed@treinando, mode:PICK
+2026-04-03 09:27:50, EXEC, v:1, k:ed@treinando, mode:FULL, rate:83, size:150
+2026-04-03 09:29:12, MOVE, v:1, k:ed@treinando, mode:BACK
+2026-04-03 09:29:14, MOVE, v:1, k:ed@treinando, mode:PICK
+2026-04-03 09:29:16, EXEC, v:1, k:ed@treinando, mode:FULL, rate:83, size:150
+2026-04-03 09:35:46, EXEC, v:1, k:ed@treinando, mode:FULL, rate:83, size:150
+2026-04-03 09:36:08, EXEC, v:1, k:ed@treinando, mode:FULL, rate:100, size:150
+2026-04-03 09:36:15, MOVE, v:1, k:ed@treinando, mode:BACK
+2026-04-03 09:37:32, SELF, v:1, k:ed@treinando, self:1, rate:100, study:120, concept:1, problem:1
