@@ -8,3 +8,25 @@
 2026-04-07 11:37:58, MOVE, v:1, k:ed@fractais_png, mode:PICK
 2026-04-07 11:37:59, EXEC, v:1, k:ed@fractais_png, mode:FULL, size:139, fail:COMP
 2026-04-07 11:38:04, MOVE, v:1, k:ed@fractais_png, mode:BACK
+2026-04-07 15:29:20, MOVE, v:1, k:ed@eh_primo, mode:DOWN
+2026-04-07 15:29:21, MOVE, v:1, k:ed@eh_primo, mode:PICK
+2026-04-07 15:33:01, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:0, size:28
+2026-04-07 15:33:43, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:77, size:27
+2026-04-07 15:34:51, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:88, size:27
+2026-04-07 15:35:35, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:88, size:27
+2026-04-07 15:36:00, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:66, size:27
+2026-04-07 15:37:55, MOVE, v:1, k:ed@eh_primo, mode:BACK
+2026-04-07 15:37:58, MOVE, v:1, k:ed@eh_primo, mode:PICK
+2026-04-07 15:38:00, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:100, size:31
+2026-04-07 15:39:33, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:100, size:27
+2026-04-07 15:45:02, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:11, size:27
+2026-04-07 15:45:46, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:55, size:31
+2026-04-07 15:47:42, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:22, size:31
+2026-04-07 15:48:07, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:22, size:31
+2026-04-07 15:51:48, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:55, size:31
+2026-04-07 15:52:22, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:100, size:31
+2026-04-07 15:52:41, MOVE, v:1, k:ed@eh_primo, mode:BACK
+2026-04-07 15:52:46, MOVE, v:1, k:ed@eh_primo, mode:PICK
+2026-04-07 15:52:48, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:100
+2026-04-07 15:53:01, SELF, v:1, k:ed@eh_primo, self:1, rate:100, study:25, concept:1
+2026-04-07 15:53:13, MOVE, v:1, k:ed@eh_primo, mode:BACK
