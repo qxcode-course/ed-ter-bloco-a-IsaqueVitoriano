@@ -30,3 +30,35 @@
 2026-04-07 15:52:48, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:100
 2026-04-07 15:53:01, SELF, v:1, k:ed@eh_primo, self:1, rate:100, study:25, concept:1
 2026-04-07 15:53:13, MOVE, v:1, k:ed@eh_primo, mode:BACK
+2026-04-07 15:58:04, MOVE, v:1, k:ed@enesimo, mode:DOWN
+2026-04-07 15:58:06, MOVE, v:1, k:ed@enesimo, mode:PICK
+2026-04-07 15:58:18, MOVE, v:1, k:ed@enesimo, mode:BACK
+2026-04-07 16:00:07, MOVE, v:1, k:ed@enesimo, mode:PICK
+2026-04-07 16:11:20, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:12, size:25
+2026-04-07 16:14:14, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:0, size:21
+2026-04-07 16:20:37, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:0, size:24
+2026-04-07 16:21:18, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:0, size:24
+2026-04-07 16:23:37, EXEC, v:1, k:ed@enesimo, mode:FULL, size:22, fail:COMP
+2026-04-07 16:24:01, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:0, size:22
+2026-04-07 16:24:29, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:0, size:23
+2026-04-07 16:24:54, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:0, size:23
+2026-04-07 16:28:29, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:0, size:23
+2026-04-07 16:31:01, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:0, size:23
+2026-04-07 16:33:17, MOVE, v:1, k:ed@enesimo, mode:BACK
+2026-04-07 16:33:22, MOVE, v:1, k:ed@enesimo, mode:PICK
+2026-04-07 16:40:50, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:0, size:34
+2026-04-07 16:41:47, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:0, size:35
+2026-04-07 16:43:26, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:0, size:39
+2026-04-07 16:45:03, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:0, size:39
+2026-04-07 16:46:09, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:0, size:39
+2026-04-07 16:47:27, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:0, size:39
+2026-04-07 16:48:11, MOVE, v:1, k:ed@enesimo, mode:BACK
+2026-04-07 16:51:22, MOVE, v:1, k:ed@enesimo, mode:PICK
+2026-04-07 16:51:25, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:0, size:39
+2026-04-07 16:53:28, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:0, size:39
+2026-04-07 16:54:16, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:100, size:39
+2026-04-07 16:54:35, MOVE, v:1, k:ed@enesimo, mode:BACK
+2026-04-07 16:54:40, MOVE, v:1, k:ed@enesimo, mode:PICK
+2026-04-07 16:54:42, EXEC, v:1, k:ed@enesimo, mode:FULL, rate:100
+2026-04-07 16:56:08, SELF, v:1, k:ed@enesimo, self:1, rate:100, study:60, concept:1
+2026-04-07 16:56:14, MOVE, v:1, k:ed@enesimo, mode:BACK

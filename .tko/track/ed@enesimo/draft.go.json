@@ -1,0 +1,99 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-07_16-11-20",
+            "content": "@@ -47,14 +47,22 @@\n mo(n\n+, div\n  int) \n+int\n %7B%0A  \n@@ -82,32 +82,75 @@\n %0A        return \n+0%0A    %7D%0A%0A    if n == div %7B%0A        return 3\n %0A    %7D%0A%0A    if n\n@@ -156,9 +156,11 @@\n n %25 \n-2\n+div\n  == \n@@ -178,16 +178,17 @@\n  return \n+0\n %0A    %7D%0A%0A\n@@ -187,24 +187,31 @@\n %0A    %7D%0A%0A    \n+return \n geraEnesimoP\n@@ -220,9 +220,16 @@\n mo(n\n-+\n+, div + \n 1)%0A%7D\n@@ -280,16 +280,28 @@\n n)%0A%0A    \n+fmt.Println(\n geraEnes\n@@ -310,12 +310,16 @@\n oPrimo(n\n+, 2)\n )%0A%7D%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-04-07_16-14-14",
+            "content": "@@ -100,18 +100,8 @@\n   if\n- n != 2 &&\n  n %25\n@@ -128,55 +128,16 @@\n turn\n+ \n %0A    %7D%0A\n-%0A    primo := n + 1%0A    fmt.Print(primo)\n %0A   \n@@ -158,15 +158,12 @@\n imo(\n-primo)%0A\n+n+1)\n %0A%7D%0A%0A\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-04-07_16-20-37",
+            "content": "@@ -165,32 +165,25 @@\n + 1%0A    \n-geraEnesimoPrimo\n+fmt.Print\n (primo)%0A\n@@ -182,33 +182,40 @@\n (primo)%0A    \n-fmt.Print\n+geraEnesimoPrimo\n (primo)%0A%0A%7D%0A%0A\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-07_16-21-18",
+            "content": "@@ -48,20 +48,16 @@\n o(n int)\n- int\n  %7B%0A    i\n@@ -64,12 +64,12 @@\n f n \n-== 2\n+%3C= 1\n  %7B%0A \n@@ -82,18 +82,16 @@\n  return \n-2 \n %0A    %7D%0A%0A\n@@ -100,16 +100,26 @@\n   if\n+ n != 2 &&\n  n %25 2 \n-!\n+=\n = 0 \n@@ -134,18 +134,16 @@\n   return\n- 0\n %0A    %7D%0A%0A\n@@ -150,28 +150,70 @@\n     \n-geraEnesimoPrimo(n+1\n+primo := n + 1%0A    geraEnesimoPrimo(primo)%0A    fmt.Print(primo\n )%0A%0A%7D\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-07_16-23-37",
+            "content": "@@ -144,23 +144,16 @@\n  %7D%0A%0A    \n-return \n geraEnes\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-04-07_16-24-01",
+            "content": "@@ -231,20 +231,8 @@\n     \n-fmt.Println(\n gera\n@@ -246,13 +246,11 @@\n Primo(n)\n-)%0A\n %0A%7D%0A\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-04-07_16-24-29",
+            "content": "@@ -131,17 +131,17 @@\n  return \n-n\n+0\n %0A    %7D%0A%0A\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-04-07_16-24-54",
+            "content": "@@ -43,21 +43,16 @@\n oPrimo(n\n-, div\n  int) in\n@@ -55,16 +55,16 @@\n ) int %7B%0A\n+\n     if n\n@@ -109,14 +109,16 @@\n f n \n-== div\n+%25 2 != 0\n  %7B%0A \n@@ -173,16 +173,9 @@\n mo(n\n-, div + \n++\n 1)%0A%0A\n@@ -223,16 +223,16 @@\n an(&n)%0A%0A\n+\n     fmt.\n@@ -261,11 +261,8 @@\n mo(n\n-, 2\n ))%0A%0A\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-04-07_16-28-29",
+            "content": "@@ -114,19 +114,15 @@\n f n \n-%25\n+==\n  div \n-== 0 \n %7B%0A  \n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-04-07_16-31-01",
+            "content": "@@ -71,141 +71,14 @@\n  if \n-eh_Primo(n, div) %7B%0A        return n%0A    %7D%0A%0A    return  geraEnesimoPrimo(n, div + 1)%0A%7D%0A%0Afunc eh_Primo(n, div int) bool %7B%0A    if n %3C= 1\n+n == 2\n  %7B%0A \n@@ -95,68 +95,10 @@\n urn \n-false%0A    %7D%0A%0A    if n == div %7C%7C n == 2 %7B%0A        return true\n+2 \n %0A   \n@@ -142,13 +142,9 @@\n urn \n-false\n+n\n %0A   \n@@ -162,11 +162,19 @@\n urn \n-eh_\n+geraEnesimo\n Prim\n@@ -237,11 +237,51 @@\n an(&n)%0A%0A\n+    fmt.Println(geraEnesimoPrimo(n, 2))%0A\n %0A%7D%0A\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-04-07_16-40-50",
+            "content": "@@ -121,16 +121,17 @@\n  return \n+ \n geraEnes\n@@ -422,45 +422,7 @@\n n)%0A%0A\n-    fmt.Print(geraEnesimoPrimo(n, 2))%0A\n %0A%7D%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-07_16-41-47",
+            "content": "@@ -98,66 +98,16 @@\n     \n-n -= 1%0A%0A        if n == 0 %7B%0A            return n%0A        %7D\n+return n\n %0A   \n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-07_16-43-26",
+            "content": "@@ -99,10 +99,13 @@\n    n\n---\n+ -= 1\n %0A%0A  \n@@ -141,17 +141,17 @@\n  return \n-0\n+n\n %0A       \n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-07_16-45-03",
+            "content": "@@ -39,28 +39,24 @@\n esimoPrimo(n\n- int\n , div int) i\n@@ -215,20 +215,16 @@\n _Primo(n\n- int\n , div in\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-07_16-46-09",
+            "content": "@@ -25,26 +25,214 @@\n %22%0A%0Afunc \n-eh_Primo(n\n+geraEnesimoPrimo(n int, div int) int %7B%0A    if eh_Primo(n, div) %7B%0A        n--%0A%0A        if n == 0 %7B%0A            return 0%0A        %7D%0A    %7D%0A%0A    return geraEnesimoPrimo(n, div + 1)%0A%7D%0A%0Afunc eh_Primo(n int\n , div in\n@@ -430,188 +430,8 @@\n %0A%7D%0A%0A\n-func geraEnesimoPrimo(n, div int) int %7B%0A    if eh_Primo(n, div) %7B%0A        n--%0A%0A        if n == 0 %7B%0A            return 0%0A        %7D%0A    %7D%0A%0A    return geraEnesimoPrimo(n, div + 1)%0A%7D%0A%0A\n func\n@@ -472,16 +472,16 @@\n an(&n)%0A%0A\n+\n     fmt.\n@@ -489,10 +489,8 @@\n rint\n-ln\n (ger\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-07_16-47-27",
+            "content": "@@ -297,17 +297,19 @@\n rimo(n, \n-2\n+div\n ) %7B%0A    \n@@ -312,19 +312,17 @@\n         \n-div\n+n\n --%0A%0A    \n@@ -328,19 +328,17 @@\n      if \n-div\n+n\n  == 0 %7B%0A\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-07_16-51-25",
+            "content": "@@ -358,17 +358,17 @@\n  return \n-n\n+0\n %0A       \n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-07_16-53-28",
+            "content": "@@ -263,31 +263,19 @@\n rimo(n, \n-candidato_primo\n+div\n  int) in\n@@ -294,31 +294,17 @@\n h_Primo(\n-candidato_primo\n+n\n , 2) %7B%0A \n@@ -310,17 +310,19 @@\n         \n-n\n+div\n --%0A%0A    \n@@ -324,25 +324,27 @@\n %0A        if \n-n\n+div\n  == 0 %7B%0A    \n@@ -358,31 +358,17 @@\n  return \n-candidato_primo\n+n\n %0A       \n@@ -412,23 +412,11 @@\n (n, \n-candidato_primo\n+div\n  + 1\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-07_16-54-16",
+            "content": "package main\nimport \"fmt\"\n\nfunc eh_Primo(n, div int) bool {\n    if n <= 1 {\n        return false\n    }\n\n    if n == div || n == 2 {\n        return true\n    }\n\n    if n % div == 0 {\n        return false\n    }\n\n    return eh_Primo(n, div + 1)\n\n}\n\nfunc geraEnesimoPrimo(n, candidato_primo int) int {\n    if eh_Primo(candidato_primo, 2) {\n        n--\n\n        if n == 0 {\n            return candidato_primo\n        }\n    }\n\n    return geraEnesimoPrimo(n, candidato_primo + 1)\n}\n\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n\n    fmt.Println(geraEnesimoPrimo(n, 2))\n\n}\n",
+            "lines": "39"
+        }
+    ]
+}
