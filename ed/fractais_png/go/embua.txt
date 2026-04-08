@@ -10,20 +10,23 @@ func ri(inf, sup int) float64 {
 }
 
 func embua(pen *Pen, dist float64) {
+	if dist < 5 {
+		return
+	}
+
+	pen.SetLineWidth(dist / 45)
 	pen.Walk(dist)
 	pen.Right(90)
-	pen.Walk(-dist)
-	pen.Left(-90)
-	pen.Walk(dist)
-	pen.Right(90)
-	pen.Walk(-dist)
+	dist *= 0.97
+
+	embua(pen, dist)
 }
 
 func main() {
-	pen := NewPen(500, 500)
-	pen.SetHeading(90)
-	pen.SetPosition(350, 350)
-	embua(pen, 250)
+	pen := NewPen(800, 800)
+	pen.SetHeading(0)
+	pen.SetPosition(200, 200)
+	embua(pen, 400)
 	pen.SavePNG("tree.png")
 	fmt.Println("PNG file created successfully.")
 }

@@ -32,8 +32,18 @@
         },
         {
             "label": "2026-04-08_11-21-32",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc ri(inf, sup int) float64 {\n\treturn float64(rand.Intn(sup-inf+1) + inf)\n}\n\nfunc embua(pen *Pen, dist float64) {\n\tpen.Walk(dist)\n\tpen.Right(150)\n\tpen.Walk(-dist)\n\tpen.Left(-90)\n\tpen.Walk(dist)\n\tpen.Right(90)\n\tpen.Walk(-dist)\n}\n\nfunc main() {\n\tpen := NewPen(500, 500)\n\tpen.SetHeading(90)\n\tpen.SetPosition(300, 250)\n\tembua(pen, 80)\n\tpen.SavePNG(\"tree.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "content": "@@ -174,33 +174,34 @@\n ist)%0A%09pen.Right(\n-9\n+15\n 0)%0A%09pen.Walk(-di\n@@ -351,13 +351,13 @@\n on(3\n-50, 3\n+00, 2\n 50)%0A\n@@ -368,18 +368,17 @@\n ua(pen, \n-25\n+8\n 0)%0A%09pen.\n",
             "lines": "29"
+        },
+        {
+            "label": "2026-04-08_15-55-02",
+            "content": "@@ -160,62 +160,68 @@\n  %7B%0A%09\n-if dist %3C 5 %7B%0A%09%09return%0A%09%7D%0A%0A%09pen.SetLineWidth(dist / 45\n+pen.Walk(dist)%0A%09pen.Right(90)%0A%09pen.Walk(-dist)%0A%09pen.Left(-90\n )%0A%09p\n@@ -254,34 +254,18 @@\n 0)%0A%09\n-dist *= 0.97%0A%0A%09embua(pen, \n+pen.Walk(-\n dist\n@@ -302,14 +302,14 @@\n Pen(\n-8\n+5\n 00, \n-8\n+5\n 00)%0A\n@@ -324,16 +324,17 @@\n Heading(\n+9\n 0)%0A%09pen.\n@@ -349,15 +349,15 @@\n ion(\n-200, 20\n+350, 35\n 0)%0A%09\n@@ -371,10 +371,10 @@\n en, \n-40\n+25\n 0)%0A%09\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-04-08_16-13-19",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc ri(inf, sup int) float64 {\n\treturn float64(rand.Intn(sup-inf+1) + inf)\n}\n\nfunc embua(pen *Pen, dist float64) {\n\tif dist < 5 {\n\t\treturn\n\t}\n\n\tpen.SetLineWidth(dist / 45)\n\tpen.Walk(dist)\n\tpen.Right(90)\n\tdist *= 0.97\n\n\tembua(pen, dist)\n}\n\nfunc main() {\n\tpen := NewPen(800, 800)\n\tpen.SetHeading(0)\n\tpen.SetPosition(200, 200)\n\tembua(pen, 400)\n\tpen.SavePNG(\"tree.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "lines": "32"
         }
     ]
 }
