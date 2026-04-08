@@ -68,3 +68,32 @@
 2026-04-08 16:13:19, EXEC, v:1, k:ed@fractais_png, mode:LOCK, rate:0, size:129
 2026-04-08 16:13:27, MOVE, v:1, k:ed@fractais_png, mode:BACK
 2026-04-08 16:14:31, SELF, v:1, k:ed@fractais_png, self:1, rate:10, study:40
+2026-04-08 16:51:40, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-04-08 16:53:50, EXEC, v:1, k:ed@fractais_png, mode:FREE, size:127
+2026-04-08 16:54:37, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-04-08 16:54:39, EXEC, v:1, k:ed@fractais_png, mode:FREE, size:127
+2026-04-08 16:59:47, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-04-08 16:59:48, EXEC, v:1, k:ed@fractais_png, mode:FREE, size:133
+2026-04-08 16:59:30, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-08 16:59:54, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-08 17:04:56, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-08 17:04:57, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-08 17:09:27, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-08 17:09:29, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-08 17:13:11, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-04-08 17:13:14, EXEC, v:1, k:ed@fractais_png, mode:FREE, size:134
+2026-04-08 17:17:31, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-08 17:15:27, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-08 17:22:46, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-08 17:22:39, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-08 17:27:50, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-08 17:27:57, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-08 17:32:37, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-04-08 17:32:39, EXEC, v:1, k:ed@fractais_png, mode:FREE, size:134
+2026-04-08 17:37:35, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-08 17:37:31, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-08 17:42:34, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-08 17:42:31, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-08 17:47:35, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-08 17:46:55, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-08 17:52:32, SELF, v:1, k:ed@fractais_png, self:1, rate:20, study:50

@@ -15,9 +15,9 @@ sources:
   quests: null
   tasks: null
 expanded:
+- ed@rec
 - ed@list
 - ed@bfs
-- ed@rec
 - ed@linear
 - ed@tree
 - ed@dfs
