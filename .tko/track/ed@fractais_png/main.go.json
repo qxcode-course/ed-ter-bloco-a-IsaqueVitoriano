@@ -2,8 +2,38 @@
     "patches": [
         {
             "label": "2026-04-07_11-37-59",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc ri(inf, sup int) float64 {\n\treturn float64(rand.Intn(sup-inf+1) + inf)\n}\n\nfunc arvere(pen *Pen, dist float64) {\n\tif dist < 10 {\n\t\tif ri(0, 50) == 0 {\n\t\t\tpen.SetRGB(255, 0, 0)\n\t\t\tpen.FillCircle(10)\n\t\t}\n\t\treturn\n\t}\n\tang_dir := ri(10, 40)\n\tang_esq := ri(10, 40)\n\n\tpen.SetLineWidth(dist / 5)\n\tpen.SetRGB(0, 0, 0)\n\tpen.Walk(dist)\n\tpen.Right(ang_dir)\n\tarvere(pen, dist*(ri(80, 85)/100))\n\tpen.Left(ang_dir + ang_esq)\n\tarvere(pen, dist*(ri(80, 85)/100))\n\tpen.Right(ang_esq)\n\tpen.SetRGB(0, 0, 0)\n\tpen.Walk(-dist)\n}\n\nfunc main() {\n\tpen := NewPen(600, 500)\n\tpen.SetHeading(90)\n\tpen.SetPosition(300, 500)\n\tarvere(pen, 80)\n\tpen.SavePNG(\"tree.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "content": "@@ -123,21 +123,22 @@\n %7D%0A%0Afunc \n-embua\n+arvere\n (pen *Pe\n@@ -161,66 +161,393 @@\n  %7B%0A%09\n-pen.SetLineWidth(dist / 5)%0A%09pen.SetRGB(0, 0, 0)%0A%09pen.Walk(\n+if dist %3C 10 %7B%0A%09%09if ri(0, 50) == 0 %7B%0A%09%09%09pen.SetRGB(255, 0, 0)%0A%09%09%09pen.FillCircle(10)%0A%09%09%7D%0A%09%09return%0A%09%7D%0A%09ang_dir := ri(10, 40)%0A%09ang_esq := ri(10, 40)%0A%0A%09pen.SetLineWidth(dist / 5)%0A%09pen.SetRGB(0, 0, 0)%0A%09pen.Walk(dist)%0A%09pen.Right(ang_dir)%0A%09arvere(pen, dist*(ri(80, 85)/100))%0A%09pen.Left(ang_dir + ang_esq)%0A%09arvere(pen, dist*(ri(80, 85)/100))%0A%09pen.Right(ang_esq)%0A%09pen.SetRGB(0, 0, 0)%0A%09pen.Walk(-\n dist\n@@ -642,13 +642,14 @@\n 0)%0A%09\n-embua\n+arvere\n (pen\n",
             "lines": "42"
+        },
+        {
+            "label": "2026-04-08_10-52-16",
+            "content": "@@ -160,160 +160,66 @@\n  %7B%0A%09\n-if dist %3C 30 %7B%0A%09%09return%0A%09%7D%0A%0A%09pen.Walk(dist)%0A%09pen.Right(90)%0A%09pen.Walk(-dist)%0A%09pen.Left(-90)%0A%09pen.Walk\n+pen.SetLineWidth\n (dist\n+ / 5\n )%0A%09pen.\n-Right(90)%0A%09pen.Walk(-dist)%0A%0A%09embua(pen, \n+SetRGB(0, 0, 0)%0A%09pen.Walk(\n dist\n@@ -252,17 +252,17 @@\n  NewPen(\n-5\n+6\n 00, 500)\n@@ -308,10 +308,10 @@\n 00, \n-2\n 5\n+0\n 0)%0A%09\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-04-08_10-59-36",
+            "content": "@@ -151,24 +151,53 @@\n  float64) %7B%0A\n+%09if dist %3C 30 %7B%0A%09%09return%0A%09%7D%0A%0A\n %09pen.Walk(di\n@@ -192,32 +192,32 @@\n %09pen.Walk(dist)%0A\n-\n %09pen.Right(90)%0A%09\n@@ -299,31 +299,25 @@\n st)%0A\n-%09pen.SavePNG(%22tree.png%22\n+%0A%09embua(pen, dist\n )%0A%7D%0A\n@@ -403,16 +403,16 @@\n 0, 250)%0A\n-\n %09embua(p\n@@ -419,16 +419,41 @@\n en, 80)%0A\n+%09pen.SavePNG(%22tree.png%22)%0A\n %09fmt.Pri\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-08_11-03-05",
+            "content": "@@ -159,37 +159,8 @@\n ) %7B%0A\n-%09if dist %3C 20 %7B%0A%09%09return%0A%09%7D%0A%0A\n %09pen\n@@ -163,32 +163,32 @@\n %09pen.Walk(dist)%0A\n+\n %09pen.Right(90)%0A%09\n@@ -270,23 +270,31 @@\n st)%0A\n-%0A%09embua(pen, 60\n+%09pen.SavePNG(%22tree.png%22\n )%0A%7D%0A\n@@ -380,16 +380,16 @@\n 0, 250)%0A\n+\n %09embua(p\n@@ -400,33 +400,8 @@\n 80)%0A\n-%09pen.SavePNG(%22tree.png%22)%0A\n %09fmt\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-04-08_11-05-48",
+            "content": "@@ -294,16 +294,33 @@\n k(-dist)\n+%0A%0A%09embua(pen, 60)\n %0A%7D%0A%0Afunc\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-08_11-07-51",
+            "content": "@@ -151,24 +151,53 @@\n  float64) %7B%0A\n+%09if dist %3C 20 %7B%0A%09%09return%0A%09%7D%0A%0A\n %09pen.Walk(di\n@@ -215,10 +215,9 @@\n ght(\n-15\n+9\n 0)%0A%09\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-08_11-21-32",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc ri(inf, sup int) float64 {\n\treturn float64(rand.Intn(sup-inf+1) + inf)\n}\n\nfunc embua(pen *Pen, dist float64) {\n\tpen.Walk(dist)\n\tpen.Right(150)\n\tpen.Walk(-dist)\n\tpen.Left(-90)\n\tpen.Walk(dist)\n\tpen.Right(90)\n\tpen.Walk(-dist)\n}\n\nfunc main() {\n\tpen := NewPen(500, 500)\n\tpen.SetHeading(90)\n\tpen.SetPosition(300, 250)\n\tembua(pen, 80)\n\tpen.SavePNG(\"tree.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "lines": "29"
         }
     ]
 }

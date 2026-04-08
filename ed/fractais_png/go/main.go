@@ -9,34 +9,21 @@ func ri(inf, sup int) float64 {
 	return float64(rand.Intn(sup-inf+1) + inf)
 }
 
-func arvere(pen *Pen, dist float64) {
-	if dist < 10 {
-		if ri(0, 50) == 0 {
-			pen.SetRGB(255, 0, 0)
-			pen.FillCircle(10)
-		}
-		return
-	}
-	ang_dir := ri(10, 40)
-	ang_esq := ri(10, 40)
-
-	pen.SetLineWidth(dist / 5)
-	pen.SetRGB(0, 0, 0)
+func embua(pen *Pen, dist float64) {
 	pen.Walk(dist)
-	pen.Right(ang_dir)
-	arvere(pen, dist*(ri(80, 85)/100))
-	pen.Left(ang_dir + ang_esq)
-	arvere(pen, dist*(ri(80, 85)/100))
-	pen.Right(ang_esq)
-	pen.SetRGB(0, 0, 0)
+	pen.Right(90)
+	pen.Walk(-dist)
+	pen.Left(-90)
+	pen.Walk(dist)
+	pen.Right(90)
 	pen.Walk(-dist)
 }
 
 func main() {
-	pen := NewPen(600, 500)
+	pen := NewPen(500, 500)
 	pen.SetHeading(90)
-	pen.SetPosition(300, 500)
-	arvere(pen, 80)
+	pen.SetPosition(350, 350)
+	embua(pen, 250)
 	pen.SavePNG("tree.png")
 	fmt.Println("PNG file created successfully.")
 }
