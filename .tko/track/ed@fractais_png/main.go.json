@@ -77,8 +77,13 @@
         },
         {
             "label": "2026-04-11_15-53-01",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc ri(inf, sup int) float64 {\n\treturn float64(rand.Intn(sup-inf+1) + inf)\n}\n\nfunc circulos(pen *Pen, raio float64) {\n\tif raio < 1 {\n\t\treturn\n\t}\n\n\tpen.SetLineWidth(1)\n\tpen.DrawCircle(raio)\n\tpen.Up()\n\tpen.Walk(raio)\n\tpen.Down()\n\tpen.Left(120)\n\n\tfor i := 0; i < 6; i++ {\n\t\tcirculos(pen, raio/3.0)\n\n\t\tpen.SetLineWidth(0)\n\t\tpen.Walk(raio/2)\n\t\tpen.Left(60)\n\t}\n\n\tpen.Right(120)\n\tpen.Up()\n\tpen.Walk(-raio)\n\tpen.Down()\n\n}\n\nfunc main() {\n\tpen := NewPen(500, 500)\n\tpen.SetHeading(90)\n\tpen.SetPosition(250, 250)\n\tcirculos(pen, 140)\n\tpen.SavePNG(\"tree.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "content": "@@ -123,20 +123,24 @@\n %7D%0A%0Afunc \n-ge\n+circu\n lo\n+s\n (pen *Pe\n@@ -142,20 +142,20 @@\n n *Pen, \n-dist\n+raio\n  float64\n@@ -166,16 +166,16 @@\n %09if \n-dist %3C 5\n+raio %3C 1\n  %7B%0A%09\n@@ -206,16 +206,91 @@\n Width(1)\n+%0A%09pen.DrawCircle(raio)%0A%09pen.Up()%0A%09pen.Walk(raio)%0A%09pen.Down()%0A%09pen.Left(120)\n %0A%0A%09for i\n@@ -300,17 +300,17 @@\n  0; i %3C \n-5\n+6\n ; i++ %7B%0A\n@@ -315,60 +315,147 @@\n %7B%0A%09%09\n-pen.Walk(dist)%0A%09%09gelo(pen, 2.0)%0A%09%09pen.Walk(-dist)%0A%09%7D\n+circulos(pen, raio/3.0)%0A%0A%09%09pen.SetLineWidth(0)%0A%09%09pen.Walk(raio/2)%0A%09%09pen.Left(60)%0A%09%7D%0A%0A%09pen.Right(120)%0A%09pen.Up()%0A%09pen.Walk(-raio)%0A%09pen.Down()\n %0A%0A%7D%0A\n@@ -540,26 +540,30 @@\n 50, \n-4\n+2\n 50)%0A%09\n-ge\n+circu\n lo\n+s\n (pen, 1\n-0\n+4\n 0)%0A%09\n",
             "lines": "46"
+        },
+        {
+            "label": "2026-04-11_16-14-22",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc ri(inf, sup int) float64 {\n\treturn float64(rand.Intn(sup-inf+1) + inf)\n}\n\nfunc gelo(pen *Pen, dist float64) {\n\tif dist < 5 {\n\t\treturn\n\t}\n\n\tpen.SetLineWidth(1)\n\n\tfor i := 0; i < 5; i++ {\n\t\tpen.Walk(dist)\n\t\tgelo(pen, 2.0)\n\t\tpen.Walk(-dist)\n\t}\n\n}\n\nfunc main() {\n\tpen := NewPen(500, 500)\n\tpen.SetHeading(90)\n\tpen.SetPosition(250, 450)\n\tgelo(pen, 100)\n\tpen.SavePNG(\"tree.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "lines": "34"
         }
     ]
 }
