@@ -1,0 +1,44 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+)
+
+func ri(inf, sup int) float64 {
+	return float64(rand.Intn(sup-inf+1) + inf)
+}
+
+func circulos(pen *Pen, raio float64) {
+	if raio < 1 {
+		return
+	}
+
+	pen.SetLineWidth(1)
+	pen.DrawCircle(raio)
+	pen.Up()
+	pen.Walk(raio)
+	pen.Down()
+	pen.Left(120)
+
+	for i := 0; i < 6; i++ {
+		circulos(pen, raio/3.0)
+
+		pen.SetLineWidth(0)
+		pen.Walk(raio)
+		pen.Left(60)
+	}
+
+	pen.Right(120)
+	pen.Walk(-raio)
+
+}
+
+func main() {
+	pen := NewPen(500, 500)
+	pen.SetHeading(90)
+	pen.SetPosition(250, 250)
+	circulos(pen, 140)
+	pen.SavePNG("tree.png")
+	fmt.Println("PNG file created successfully.")
+}

@@ -16,10 +16,10 @@ sources:
   tasks: null
 expanded:
 - ed@rec
-- ed@list
 - ed@bfs
 - ed@linear
 - ed@tree
+- ed@list
 - ed@dfs
 flags:
   inbox: inbox
