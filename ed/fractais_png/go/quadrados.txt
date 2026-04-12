@@ -1,0 +1,45 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+)
+
+func ri(inf, sup int) float64 {
+	return float64(rand.Intn(sup-inf+1) + inf)
+}
+
+func quadrados(pen *Pen, dist_lado float64) {
+	if dist_lado < 2 {
+		return
+	}
+
+	pen.Up()
+	pen.Walk(dist_lado / 2.0)
+	pen.Left(90)
+	pen.Walk(dist_lado / 2.0)
+	pen.Down()
+
+	for i := 0; i < 4; i++ {
+		quadrados(pen, dist_lado / 2.2)
+		pen.Left(90)
+		pen.SetLineWidth(0.8)
+		pen.Walk(dist_lado)
+	}
+
+	pen.Up()
+	pen.Right(180)
+	pen.Walk(dist_lado / 2.0)
+	pen.Right(90)
+	pen.Walk(dist_lado / 2.0)
+	pen.Left(180)
+	pen.Down()
+}
+
+func main() {
+	pen := NewPen(500, 500)
+	pen.SetPosition(250, 250)
+	quadrados(pen, 200)
+	pen.SavePNG("tree.png")
+	fmt.Println("PNG file created successfully.")
+}

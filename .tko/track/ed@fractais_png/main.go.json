@@ -82,8 +82,18 @@
         },
         {
             "label": "2026-04-11_16-14-22",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc ri(inf, sup int) float64 {\n\treturn float64(rand.Intn(sup-inf+1) + inf)\n}\n\nfunc gelo(pen *Pen, dist float64) {\n\tif dist < 5 {\n\t\treturn\n\t}\n\n\tpen.SetLineWidth(1)\n\n\tfor i := 0; i < 5; i++ {\n\t\tpen.Walk(dist)\n\t\tgelo(pen, 2.0)\n\t\tpen.Walk(-dist)\n\t}\n\n}\n\nfunc main() {\n\tpen := NewPen(500, 500)\n\tpen.SetHeading(90)\n\tpen.SetPosition(250, 450)\n\tgelo(pen, 100)\n\tpen.SavePNG(\"tree.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "content": "@@ -123,25 +123,20 @@\n %7D%0A%0Afunc \n-quadrados\n+gelo\n (pen *Pe\n@@ -142,21 +142,16 @@\n en, dist\n-_lado\n  float64\n@@ -166,17 +166,12 @@\n dist\n-_lado\n  %3C \n-2\n+5\n  %7B%0A%09\n@@ -206,87 +206,8 @@\n h(1)\n-%0A%09pen.Up()%0A%09pen.Walk(dist_lado)%0A%09pen.Right(80)%0A%09pen.Walk(dist_lado)%0A%09pen.Down()\n %0A%0A%09f\n@@ -221,17 +221,17 @@\n  0; i %3C \n-4\n+5\n ; i++ %7B%0A\n@@ -236,34 +236,34 @@\n %7B%0A%09%09\n-quadrados(pen, dist_lado /\n+pen.Walk(dist)%0A%09%09gelo(pen,\n  2.0\n@@ -279,54 +279,17 @@\n alk(\n+-\n dist\n-_lado)%0A%0A%09%09pen.Left(80)%0A%09%7D%0A%0A%09pen.Right(100)\n+)%0A%09%7D\n %0A%0A%7D%0A\n@@ -374,31 +374,26 @@\n 50, \n-2\n+4\n 50)%0A%09\n-quadrados\n+gelo\n (pen, 1\n-2\n+0\n 0)%0A%09\n",
             "lines": "34"
+        },
+        {
+            "label": "2026-04-12_10-35-48",
+            "content": "@@ -180,17 +180,17 @@\n _lado %3C \n-5\n+2\n  %7B%0A%09%09ret\n@@ -196,17 +196,16 @@\n turn%0A%09%7D%0A\n-%09\n %0A%09pen.Se\n@@ -252,33 +252,33 @@\n ado)%0A%09pen.Right(\n-9\n+8\n 0)%0A%09pen.Walk(dis\n@@ -361,25 +361,8 @@\n 2.0)\n-%0A%0A%09%09pen.Right(90)\n %0A%09%09p\n@@ -384,132 +384,42 @@\n do)%0A\n-%09%7D%0A%0A%09pen.Up()\n %0A\n+%09\n %09pen.\n-Righ\n+Lef\n t(\n-1\n 80)%0A%09\n-pen.Walk(dist_lado / 2.0)%0A%09pen.Right(90)%0A%09pen.Walk(dist_lado / 2.0)%0A%09pen.Left(180)%0A%09pen.Down(\n+%7D%0A%0A%09pen.Right(100\n )%0A%0A%7D\n@@ -526,10 +526,10 @@\n en, \n+1\n 2\n-0\n 0)%0A%09\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-12_11-01-58",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc ri(inf, sup int) float64 {\n\treturn float64(rand.Intn(sup-inf+1) + inf)\n}\n\nfunc quadrados(pen *Pen, dist_lado float64) {\n\tif dist_lado < 5 {\n\t\treturn\n\t}\n\t\n\tpen.SetLineWidth(1)\n\tpen.Up()\n\tpen.Walk(dist_lado)\n\tpen.Right(90)\n\tpen.Walk(dist_lado)\n\tpen.Down()\n\n\tfor i := 0; i < 4; i++ {\n\t\tquadrados(pen, dist_lado / 2.0)\n\n\t\tpen.Right(90)\n\t\tpen.Walk(dist_lado)\n\t}\n\n\tpen.Up()\n\tpen.Right(180)\n\tpen.Walk(dist_lado / 2.0)\n\tpen.Right(90)\n\tpen.Walk(dist_lado / 2.0)\n\tpen.Left(180)\n\tpen.Down()\n\n}\n\nfunc main() {\n\tpen := NewPen(500, 500)\n\tpen.SetHeading(90)\n\tpen.SetPosition(250, 250)\n\tquadrados(pen, 200)\n\tpen.SavePNG(\"tree.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "lines": "48"
         }
     ]
 }
