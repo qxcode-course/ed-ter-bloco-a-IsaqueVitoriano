@@ -32,6 +32,6 @@ func main() {
 	pen.SetHeading(90)
 	pen.SetPosition(250, 450)
 	arvore(pen, 65)
-	pen.SavePNG("tree.png")
+	pen.SavePNG("arvore.png")
 	fmt.Println("PNG file created successfully.")
 }
