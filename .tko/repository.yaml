@@ -15,11 +15,11 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@bfs
 - ed@linear
+- ed@bfs
 - ed@tree
-- ed@dfs
 - ed@list
+- ed@dfs
 - ed@rec
 flags:
   inbox: inbox

@@ -122,8 +122,18 @@
         },
         {
             "label": "2026-04-13_13-45-51",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc ri(inf, sup int) float64 {\n\treturn float64(rand.Intn(sup-inf+1) + inf)\n}\n\nfunc trigo(pen *Pen, dist float64) {\n\tif dist < 3 {\n\t\treturn\n\t}\n\n\tpen.SetLineWidth(0.7)\n\tangulo_direita := ri(25, 30)\n\tangulo_esquerda := ri(25, 30)\n\n\tfor i := 0; i < 4; i++ {\n\t\tpen.Walk(dist / 4.0)\n\t\tpen.Right(angulo_direita)\n\t\ttrigo(pen, dist * (ri(80, 85)/100.0))\n\t\tpen.Left(angulo_direita + angulo_esquerda)\n\t\ttrigo(pen, dist * (ri(80, 85)/100.0))\n\t\tpen.Right(angulo_esquerda)\n\t}\n\n\tpen.Walk(-dist)\n}\n\nfunc main() {\n\tpen := NewPen(500, 500)\n\tpen.SetHeading(90)\n\tpen.SetPosition(250, 350)\n\ttrigo(pen, 160)\n\tpen.SavePNG(\"tree.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "content": "@@ -123,24 +123,21 @@\n %7D%0A%0Afunc \n-rotacoes\n+trigo\n (pen *Pe\n@@ -170,10 +170,9 @@\n t %3C \n-10\n+3\n  %7B%0A%09\n@@ -205,11 +205,102 @@\n dth(\n-1)%0A\n+0.7)%0A%09angulo_direita := ri(25, 30)%0A%09angulo_esquerda := ri(25, 30)%0A%0A%09for i := 0; i %3C 4; i++ %7B%0A%09\n %09pen\n@@ -309,18 +309,25 @@\n alk(dist\n+ / 4.0\n )%0A\n+%09\n %09pen.Rig\n@@ -333,40 +333,193 @@\n ght(\n-90)%0A%09dist *= 90%0A%0A%09rotacoes(pen, \n+angulo_direita)%0A%09%09trigo(pen, dist * (ri(80, 85)/100.0))%0A%09%09pen.Left(angulo_direita + angulo_esquerda)%0A%09%09trigo(pen, dist * (ri(80, 85)/100.0))%0A%09%09pen.Right(angulo_esquerda)%0A%09%7D%0A%0A%09pen.Walk(-\n dist\n@@ -556,18 +556,38 @@\n Pen(\n-8\n+5\n 00, \n-8\n+5\n 00)%0A\n+%09pen.SetHeading(90)%0A\n %09pen\n@@ -604,34 +604,31 @@\n on(2\n-00, 20\n+50, 35\n 0)%0A%09\n-rotacoes\n+trigo\n (pen, \n-40\n+16\n 0)%0A%09\n@@ -699,8 +699,9 @@\n lly.%22)%0A%7D\n+%0A\n",
             "lines": "40"
+        },
+        {
+            "label": "2026-04-13_14-15-36",
+            "content": "@@ -169,17 +169,18 @@\n  dist %3C \n-5\n+10\n  %7B%0A%09%09ret\n@@ -209,17 +209,9 @@\n dth(\n-dist / 45\n+1\n )%0A%09p\n@@ -253,9 +253,9 @@\n *= 9\n-7\n+0\n %0A%0A%09r\n@@ -290,16 +290,16 @@\n ain() %7B%0A\n+\n %09pen := \n@@ -319,27 +319,8 @@\n 00)%0A\n-%09pen.SetHeading(0)%0A\n %09pen\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-13_14-32-53",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc ri(inf, sup int) float64 {\n\treturn float64(rand.Intn(sup-inf+1) + inf)\n}\n\nfunc rotacoes(pen *Pen, dist float64) {\n\tif dist < 5 {\n\t\treturn\n\t}\n\n\tpen.SetLineWidth(dist / 45)\n\tpen.Walk(dist)\n\tpen.Right(90)\n\tdist *= 97\n\n\trotacoes(pen, dist)\n}\n\nfunc main() {\n\tpen := NewPen(800, 800)\n\tpen.SetHeading(0)\n\tpen.SetPosition(200, 200)\n\trotacoes(pen, 400)\n\tpen.SavePNG(\"tree.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}",
+            "lines": "32"
         }
     ]
 }
