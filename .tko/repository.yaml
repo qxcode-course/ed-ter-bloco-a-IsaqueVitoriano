@@ -15,10 +15,10 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@linear
 - ed@bfs
-- ed@dfs
+- ed@linear
 - ed@tree
+- ed@dfs
 - ed@list
 - ed@rec
 flags:

@@ -1,0 +1,40 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+)
+
+func ri(inf, sup int) float64 {
+	return float64(rand.Intn(sup-inf+1) + inf)
+}
+
+func trigo(pen *Pen, dist float64) {
+	if dist < 2.65 {
+		return
+	}
+
+	pen.SetLineWidth(0.8)
+	angulo_direita := 35.0
+	angulo_esquerda := 35.0
+
+	for i := 0; i < 4; i++ {
+		pen.Walk(dist / 4.0)
+		pen.Right(angulo_direita)
+		trigo(pen, dist / 2.8)
+		pen.Left(angulo_direita + angulo_esquerda)
+		trigo(pen, dist / 2.8)
+		pen.Right(angulo_esquerda)
+	}
+
+	pen.Walk(-dist)
+}
+
+func main() {
+	pen := NewPen(500, 500)
+	pen.SetHeading(90)
+	pen.SetPosition(250, 350)
+	trigo(pen, 160)
+	pen.SavePNG("tree.png")
+	fmt.Println("PNG file created successfully.")
+}
