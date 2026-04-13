@@ -15,12 +15,12 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@linear
 - ed@bfs
+- ed@dfs
 - ed@tree
 - ed@list
-- ed@dfs
 - ed@rec
+- ed@linear
 flags:
   inbox: inbox
   panel: skills
