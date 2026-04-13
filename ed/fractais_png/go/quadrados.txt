@@ -40,6 +40,6 @@ func main() {
 	pen := NewPen(500, 500)
 	pen.SetPosition(250, 250)
 	quadrados(pen, 200)
-	pen.SavePNG("tree.png")
+	pen.SavePNG("quadrados.png")
 	fmt.Println("PNG file created successfully.")
 }

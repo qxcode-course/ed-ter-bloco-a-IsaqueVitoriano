@@ -10,16 +10,15 @@ func ri(inf, sup int) float64 {
 }
 
 func rotacoes(pen *Pen, dist float64) {
-	if dist < 17.5 {
+	if dist < 15 {
 		return
 	}
 
-	pen.SetRGB(ri(100, 255), ri(90, 200), ri(0, 120))
-
-	pen.SetLineWidth(0.7)
+	pen.SetRGB(ri(0, 255), ri(0, 255), ri(0, 255))
+	pen.SetLineWidth(dist / 45.0)
 	pen.Walk(dist)
 	pen.Right(90)
-	dist *= 0.94
+	dist *= 0.969
 
 	rotacoes(pen, dist)
 }
@@ -29,6 +28,6 @@ func main() {
 	pen.SetHeading(0)
 	pen.SetPosition(25, 25)
 	rotacoes(pen, 150)
-	pen.SavePNG("tree.png")
+	pen.SavePNG("rotacoes.png")
 	fmt.Println("PNG file created successfully.")
 }

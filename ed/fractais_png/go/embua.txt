@@ -27,6 +27,6 @@ func main() {
 	pen.SetHeading(0)
 	pen.SetPosition(200, 200)
 	embua(pen, 400)
-	pen.SavePNG("tree.png")
+	pen.SavePNG("embua.png")
 	fmt.Println("PNG file created successfully.")
 }

@@ -15,14 +15,14 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@bfs
 - ed@dfs
-- ed@tree
 - ed@list
+- ed@bfs
+- ed@tree
 - ed@rec
 - ed@linear
 flags:
-  inbox: inbox
+  inbox: all
   panel: skills
   show_panel: 'true'
   task_graph_mode: executions

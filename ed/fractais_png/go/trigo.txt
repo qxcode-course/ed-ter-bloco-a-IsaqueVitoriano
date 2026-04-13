@@ -35,6 +35,6 @@ func main() {
 	pen.SetHeading(90)
 	pen.SetPosition(250, 350)
 	trigo(pen, 160)
-	pen.SavePNG("tree.png")
+	pen.SavePNG("trigo.png")
 	fmt.Println("PNG file created successfully.")
 }

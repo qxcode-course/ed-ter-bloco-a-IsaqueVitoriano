@@ -29,6 +29,6 @@ func main() {
 	pen.SetHeading(60)
 	pen.SetPosition(250, 250)
 	gelo(pen, 130)
-	pen.SavePNG("tree.png")
+	pen.SavePNG("gelo.png")
 	fmt.Println("PNG file created successfully.")
 }

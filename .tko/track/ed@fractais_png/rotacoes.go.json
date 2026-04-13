@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-13_19-22-31",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc ri(inf, sup int) float64 {\n\treturn float64(rand.Intn(sup-inf+1) + inf)\n}\n\nfunc rotacoes(pen *Pen, dist float64) {\n\tif dist < 17.5 {\n\t\treturn\n\t}\n\n\tpen.SetRGB(ri(0, 255), ri(0, 255), ri(0, 255))\n\n\tpen.SetLineWidth(0.7)\n\tpen.Walk(dist)\n\tpen.Right(90)\n\tdist *= 0.94\n\n\trotacoes(pen, dist)\n}\n\nfunc main() {\n\tpen := NewPen(200, 200)\n\tpen.SetHeading(0)\n\tpen.SetPosition(25, 25)\n\trotacoes(pen, 150)\n\tpen.SavePNG(\"tree.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}",
+            "lines": "34"
+        }
+    ]
+}
