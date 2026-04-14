@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-14_10-48-22",
+            "content": "package main\nimport \"fmt\"\n\nfunc main() {\n    var N int\n    fmt.Scan(&N)\n\n    contaCasais := 0\n    var descasados []int\n\n    for i := 0; i < N; i++ {\n        var animal int\n        fmt.Scan(&animal)\n        descasados = append(descasados, N, animal)\n\n        if descasados[i] == animal || animal < 0 {\n            descasados[i] = 0\n            contaCasais++\n        } else {\n            descasados = append(descasados, N, animal)\n        }\n    }\n\n    fmt.Println(contaCasais)\n}\n",
+            "lines": "25"
+        }
+    ]
+}

@@ -1,0 +1,144 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-14_10-25-13",
+            "content": "@@ -155,17 +155,17 @@\n en(grid%5B\n-c\n+l\n %5D)%0A%0A%09if \n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-04-14_10-25-58",
+            "content": "@@ -83,16 +83,38 @@\n  int) %7B%0A\n+%09_, _, _ = grid, l, c%0A\n %09qtd_lin\n@@ -155,17 +155,17 @@\n en(grid%5B\n-l\n+c\n %5D)%0A%0A%09if \n@@ -167,17 +167,16 @@\n %0A%09if c %3E\n-=\n  qtd_col\n@@ -195,17 +195,16 @@\n 0 %7C%7C l %3E\n-=\n  qtd_lin\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-04-14_10-26-37",
+            "content": "@@ -255,20 +255,16 @@\n %0A%09grid%5Bl\n- + 1\n %5D%5Bc%5D = '\n@@ -270,73 +270,117 @@\n 'o'%0A\n-%09\n+%0A%09burnTrees(\n grid\n-%5Bl - 1%5D%5Bc%5D = 'o'%0A%09grid%5Bl%5D%5Bc + 1%5D = 'o'%0A%09grid%5Bl%5D%5Bc - 1%5D = 'o'\n+, l + 1, c)%0A%09burnTrees(grid, l - 1, c)%0A%09burnTrees(grid, l, c + 1)%0A%09burnTrees(grid, l, c - 1)%0A\n %0A%0A%09/\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-04-14_10-28-06",
+            "content": "@@ -251,24 +251,28 @@\n %0A%09%7D%0A%0A%09grid%5Bl\n+ + 1\n %5D%5Bc%5D = 'o'%0A%0A\n@@ -270,16 +270,81 @@\n %5D = 'o'%0A\n+%09grid%5Bl - 1%5D%5Bc%5D = 'o'%0A%09grid%5Bl%5D%5Bc + 1%5D = 'o'%0A%09grid%5Bl%5D%5Bc - 1%5D = 'o'\n %0A%0A%09// se\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-04-14_10-28-39",
+            "content": "@@ -271,36 +271,8 @@\n o'%0A%0A\n-%09burnTrees(grid, l + 1, c)%0A%0A\n %0A%09//\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-04-14_10-30-33",
+            "content": "@@ -270,29 +270,35 @@\n 'o'%0A\n-%09\n+%0A%09burnTrees(\n grid\n-%5B\n+, \n l + 1\n-%5D%5Bc%5D = 'o'\n+, c)\n %0A%0A%0A%09\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-04-14_10-31-03",
+            "content": "@@ -271,54 +271,28 @@\n o'%0A%09\n-%0A%09burnTrees(grid, qtd_linhas + 1, qtd_colunas)\n+grid%5Bl + 1%5D%5Bc%5D = 'o'\n %0A%0A%0A%09\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-04-14_10-31-43",
+            "content": "@@ -285,20 +285,43 @@\n s(grid, \n-l, c\n+qtd_linhas + 1, qtd_colunas\n )%0A%0A%0A%09// \n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-04-14_10-31-54",
+            "content": "@@ -295,33 +295,8 @@\n  c)%0A\n-%09burnTrees(grid, l+1, c)%0A\n %0A%0A%09/\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-04-14_10-32-16",
+            "content": "@@ -312,14 +312,14 @@\n id, \n-'o', l\n+l+1, c\n )%0A%0A%0A\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-04-14_10-33-42",
+            "content": "@@ -145,16 +145,17 @@\n %0A%09if c %3E\n+=\n  qtd_col\n@@ -174,16 +174,17 @@\n 0 %7C%7C l %3E\n+=\n  qtd_lin\n@@ -308,20 +308,22 @@\n s(grid, \n-l, c\n+'o', l\n )%0A%0A%0A%09// \n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-04-14_10-34-14",
+            "content": "@@ -288,10 +288,8 @@\n d, l\n-+1\n , c)\n@@ -311,10 +311,8 @@\n d, l\n--1\n , c)\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-04-14_10-34-24",
+            "content": "@@ -320,58 +320,8 @@\n  c)%0A\n-%09burnTrees(grid, l, c+1)%0A%09burnTrees(grid, l, c-1)%0A\n %0A%0A%09/\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-04-14_10-34-52",
+            "content": "@@ -284,16 +284,18 @@\n (grid, l\n++1\n , c)%0A%09bu\n@@ -367,16 +367,17 @@\n , c-1)%0A%0A\n+%0A\n %09// se e\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-04-14_10-37-16",
+            "content": "@@ -287,22 +287,9 @@\n id, \n-qtd_linhas + 1\n+l\n , c)\n@@ -310,21 +310,10 @@\n id, \n-qtd_linhas - \n+l-\n 1, c\n@@ -338,22 +338,10 @@\n  l, \n-qtd_colunas + \n+c+\n 1)%0A%09\n@@ -363,22 +363,10 @@\n  l, \n-qtd_colunas - \n+c-\n 1)%0A%0A\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-04-14_10-38-17",
+            "content": "@@ -133,17 +133,17 @@\n en(grid%5B\n-c\n+l\n %5D)%0A%0A%09if \n@@ -287,10 +287,21 @@\n id, \n-l+\n+qtd_linhas + \n 1, c\n@@ -323,10 +323,21 @@\n id, \n-l-\n+qtd_linhas - \n 1, c\n@@ -362,10 +362,22 @@\n  l, \n-c+\n+qtd_colunas + \n 1)%0A%09\n@@ -399,10 +399,22 @@\n  l, \n-c-\n+qtd_colunas - \n 1)%0A%0A\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-04-14_10-39-33",
+            "content": "@@ -133,17 +133,17 @@\n en(grid%5B\n-l\n+c\n %5D)%0A%0A%09if \n@@ -145,17 +145,16 @@\n %0A%09if c %3E\n-=\n  qtd_col\n@@ -164,17 +164,16 @@\n s %7C%7C c %3C\n-=\n  0 %7C%7C l \n@@ -173,17 +173,16 @@\n 0 %7C%7C l %3E\n-=\n  qtd_lin\n@@ -191,17 +191,16 @@\n s %7C%7C l %3C\n-=\n  0 %7B%0A%09%09r\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-04-14_10-40-24",
+            "content": "@@ -145,16 +145,17 @@\n %0A%09if c %3E\n+=\n  qtd_col\n@@ -175,16 +175,17 @@\n 0 %7C%7C l %3E\n+=\n  qtd_lin\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-04-14_10-40-48",
+            "content": "@@ -164,16 +164,17 @@\n s %7C%7C c %3C\n+=\n  0 %7C%7C l \n@@ -192,16 +192,17 @@\n s %7C%7C l %3C\n+=\n  0 %7B%0A%09%09r\n@@ -286,19 +286,17 @@\n (grid, l\n- + \n++\n 1, c)%0A%09b\n@@ -311,19 +311,17 @@\n (grid, l\n- - \n+-\n 1, c)%0A%09b\n@@ -343,11 +343,9 @@\n l, c\n- + \n++\n 1)%0A%09\n@@ -368,11 +368,9 @@\n l, c\n- - \n+-\n 1)%0A%0A\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-04-14_10-42-59",
+            "content": "@@ -253,18 +253,16 @@\n %0A%09grid%5Bl\n-+1\n %5D%5Bc%5D = '\n@@ -269,66 +269,116 @@\n o'%0A%09\n-grid%5Bl-1%5D%5Bc%5D = 'o'%0A%09grid%5Bl%5D%5Bc+1%5D = 'o'%0A%09grid%5Bl%5D%5Bc-1%5D = 'o'\n+%0A%09burnTrees(grid, l + 1, c)%0A%09burnTrees(grid, l - 1, c)%0A%09burnTrees(grid, l, c + 1)%0A%09burnTrees(grid, l, c - 1)\n %0A%0A%09/\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-04-14_10-43-35",
+            "content": "@@ -133,17 +133,17 @@\n en(grid%5B\n-c\n+l\n %5D)%0A%0A%09if \n@@ -249,24 +249,26 @@\n %0A%09%7D%0A%0A%09grid%5Bl\n++1\n %5D%5Bc%5D = 'o'%0A%09\n@@ -271,116 +271,66 @@\n o'%0A%09\n-%0A%09burnTrees(grid, l + 1, c)%0A%09burnTrees(grid, l - 1, c)%0A%09burnTrees(grid, l, c + 1)%0A%09burnTrees(grid, l, c - 1)\n+grid%5Bl-1%5D%5Bc%5D = 'o'%0A%09grid%5Bl%5D%5Bc+1%5D = 'o'%0A%09grid%5Bl%5D%5Bc-1%5D = 'o'\n %0A%0A%09/\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-04-14_10-45-20",
+            "content": "@@ -133,17 +133,17 @@\n en(grid%5B\n-0\n+c\n %5D)%0A%0A%09if \n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-04-14_11-43-39",
+            "content": "@@ -145,17 +145,16 @@\n %0A%09if c %3E\n-=\n  qtd_col\n@@ -164,17 +164,16 @@\n s %7C%7C c %3C\n-=\n  0 %7C%7C l \n@@ -173,17 +173,16 @@\n 0 %7C%7C l %3E\n-=\n  qtd_lin\n@@ -191,17 +191,16 @@\n s %7C%7C l %3C\n-=\n  0 %7B%0A%09%09r\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-04-14_11-47-35",
+            "content": "@@ -228,17 +228,17 @@\n d%5Bl%5D%5Bc%5D \n-=\n+!\n = '#' %7B%0A\n@@ -238,16 +238,28 @@\n  '#' %7B%0A%09\n+%09return%0A%09%7D%0A%0A\n %09grid%5Bl%5D\n@@ -268,19 +268,16 @@\n %5D = 'o'%0A\n-%09%7D%0A\n %09%0A%09burnT\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-04-14_11-48-27",
+            "content": "@@ -232,9 +232,9 @@\n %5Bc%5D \n-!\n+=\n = '#\n@@ -238,28 +238,16 @@\n  '#' %7B%0A%09\n-%09return%0A%09%7D%0A%0A\n %09grid%5Bl%5D\n@@ -256,16 +256,19 @@\n %5D = 'o'%0A\n+%09%7D%0A\n %09%0A%09burnT\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-04-14_11-48-46",
+            "content": "@@ -145,16 +145,17 @@\n %0A%09if c %3E\n+=\n  qtd_col\n@@ -175,16 +175,17 @@\n 0 %7C%7C l %3E\n+=\n  qtd_lin\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-04-14_11-49-08",
+            "content": "@@ -145,17 +145,16 @@\n %0A%09if c %3E\n-=\n  qtd_col\n@@ -164,16 +164,17 @@\n s %7C%7C c %3C\n+=\n  0 %7C%7C l \n@@ -174,17 +174,16 @@\n 0 %7C%7C l %3E\n-=\n  qtd_lin\n@@ -192,16 +192,17 @@\n s %7C%7C l %3C\n+=\n  0 %7B%0A%09%09r\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-04-14_11-49-18",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc burnTrees(grid [][]rune, l, c int) {\n\tqtd_linhas := len(grid)\n\tqtd_colunas := len(grid[0])\n\n\tif c >= qtd_colunas || c < 0 || l >= qtd_linhas || l < 0 {\n\t\treturn\n\t}\n\n\tif grid[l][c] != '#' {\n\t\treturn\n\t}\n\n\tgrid[l][c] = 'o'\n\t\n\tburnTrees(grid, l + 1, c)\n\tburnTrees(grid, l - 1, c)\n\tburnTrees(grid, l, c + 1)\n\tburnTrees(grid, l, c - 1)\n\n\t// se estiver fora da matriz, retorne\n\t// se o elemento atual n\u00e3o for uma arvore, retorne\n\t// queime a arvore colocando o caractere 'o' na posi\u00e7\u00e3o atual\n\t// chame a recurs\u00e3o para todos os 4 vizinhos\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tvar nl, nc, lfire, cfire int\n\tfmt.Sscanf(line, \"%d %d %d %d\", &nl, &nc, &lfire, &cfire)\n\n\tgrid := make([][]rune, 0, nl)\n\tfor range nl {\n\t\tscanner.Scan()\n\t\tline := []rune(scanner.Text())\n\t\tgrid = append(grid, line)\n\t}\n\tburnTrees(grid, lfire, cfire)\n\tshowGrid(grid)\n}\n\nfunc showGrid(grid [][]rune) {\n\tfor _, line := range grid {\n\t\tfmt.Println(string(line))\n\t}\n}\n",
+            "lines": "55"
+        }
+    ]
+}

@@ -1,0 +1,209 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-14_11-26-23",
+            "content": "@@ -262,42 +262,38 @@\n for \n-i := 0; i %3C numeros_retirados; i++\n+_, num := range numero_contem \n %7B%0A%09%09\n@@ -299,16 +299,19 @@\n %09var num\n+ero\n  int%0A%09%09f\n@@ -322,16 +322,19 @@\n can(&num\n+ero\n )%0A%0A%09%09if \n@@ -350,16 +350,30 @@\n ntem%5Bnum\n+eros_retirados\n %5D%7B%0A%09%09%09nu\n@@ -387,16 +387,30 @@\n ntem%5Bnum\n+eros_retirados\n %5D = fals\n@@ -447,10 +447,11 @@\n contem)%0A\n+%0A\n %7D%0A\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-04-14_11-32-56",
+            "content": "@@ -393,73 +393,8 @@\n %09%7D%0A%0A\n-%09for _, esta := range numero_contem %7B%0A%09%09fmt.Print(esta, %22 %22)%0A%09%7D%0A%0A\n %09fmt\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-14_11-34-08",
+            "content": "@@ -398,12 +398,15 @@\n for \n-i, _\n+_, esta\n  := \n@@ -439,17 +439,20 @@\n t.Print(\n-i\n+esta\n , %22 %22)%0A%09\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-04-14_11-34-40",
+            "content": "@@ -398,15 +398,12 @@\n for \n-_, esta\n+i, _\n  := \n@@ -440,12 +440,9 @@\n int(\n-esta\n+i\n , %22 \n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-04-14_11-35-11",
+            "content": "@@ -390,25 +390,31 @@\n %09%7D%0A%09%7D%0A%0A%09for \n-i\n+_, esta\n  := range nu\n@@ -443,33 +443,49 @@\n int(\n-numero_contem%5Bi%5D, %22 %22)%0A%09%7D%0A\n+esta, %22 %22)%0A%09%7D%0A%0A%09fmt.Println(numero_contem)\n %0A%7D%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-04-14_11-35-37",
+            "content": "@@ -446,16 +446,19 @@\n o_contem\n+%5Bi%5D\n , %22 %22)%0A%09\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-14_11-37-38",
+            "content": "@@ -389,16 +389,49 @@\n %09%09%7D%0A%09%7D%0A%0A\n+%09for i := range numero_contem %7B%0A%09\n %09fmt.Pri\n@@ -446,13 +446,21 @@\n o_contem\n-)\n+, %22 %22)%0A%09%7D\n %0A%0A%7D%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-14_11-37-59",
+            "content": "@@ -393,52 +393,8 @@\n %09%7D%0A%0A\n-%09for i := 0; i %3C len(numero_contem); i++ %7B%0A%09\n %09fmt\n@@ -417,20 +417,9 @@\n ntem\n-%5Bi%5D, %22 %22)%0A%09%7D\n+)\n %0A%0A%7D%0A\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-04-14_11-39-06",
+            "content": "@@ -398,24 +398,24 @@\n for \n-_, num := range \n+i := 0; i %3C len(\n nume\n@@ -423,16 +423,22 @@\n o_contem\n+); i++\n  %7B%0A%09%09fmt\n@@ -447,16 +447,29 @@\n rint(num\n+ero_contem%5Bi%5D\n , %22 %22)%0A%09\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-14_11-41-40",
+            "content": "@@ -390,25 +390,30 @@\n %09%7D%0A%09%7D%0A%0A%09for \n-i\n+_, num\n  := range nu\n@@ -438,17 +438,19 @@\n t.Print(\n-i\n+num\n , %22 %22)%0A%09\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-14_11-41-51",
+            "content": "@@ -395,18 +395,16 @@\n %0A%0A%09for i\n-, \n  := rang\n@@ -425,32 +425,8 @@\n m %7B%0A\n-%09%09if numero_contem%5B%5D %7B%0A%09\n %09%09fm\n@@ -441,18 +441,14 @@\n i, %22 %22)%0A\n-%09%09%7D%0A\n %09%7D%0A%0A%7D%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-14_11-43-32",
+            "content": "@@ -391,24 +391,26 @@\n %7D%0A%09%7D%0A%0A%09for i\n+, \n  := range nu\n@@ -442,17 +442,16 @@\n _contem%5B\n-i\n %5D %7B%0A%09%09%09f\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_11-44-38",
+            "content": "@@ -458,32 +458,17 @@\n t.Print(\n-numero_contem%5Bi%5D\n+i\n , %22 %22)%0A%09\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_11-45-33",
+            "content": "@@ -458,17 +458,32 @@\n t.Print(\n-i\n+numero_contem%5Bi%5D\n , %22 %22)%0A%09\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_11-45-38",
+            "content": "@@ -64,27 +64,8 @@\n N)%0A%0A\n-%09var numeros %5B%5Dint%0A\n %09num\n@@ -196,44 +196,8 @@\n rue%0A\n-%09%09numeros = append(numeros, numero)%0A\n %09%7D%0A%0A\n@@ -385,26 +385,8 @@\n lse%0A\n-%09%09%09numeros%5Bi%5D = 0%0A\n %09%09%7D%0A\n@@ -411,17 +411,23 @@\n e numero\n-s\n+_contem\n  %7B%0A%09%09if \n@@ -436,17 +436,18 @@\n mero\n-s%5Bi%5D != 0\n+_contem%5Bi%5D\n  %7B%0A%09\n@@ -462,18 +462,9 @@\n int(\n-numeros%5Bi%5D\n+i\n , %22 \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_11-53-22",
+            "content": "@@ -79,16 +79,53 @@\n s %5B%5Dint%0A\n+%09numero_contem := make(map%5Bint%5Dbool)%0A\n %09for i :\n@@ -180,16 +180,47 @@\n umero)%0A%0A\n+%09%09numero_contem%5Bnumero%5D = true%0A\n %09%09numero\n@@ -396,34 +396,51 @@\n mero\n-s%5Bi%5D == numeros_retirados%7B\n+_contem%5Bnum%5D%7B%0A%09%09%09numero_contem%5Bnum%5D = false\n %0A%09%09%09\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-14_11-54-28",
+            "content": "@@ -335,16 +335,30 @@\n %5D == num\n+eros_retirados\n %7B%0A%09%09%09num\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_11-55-11",
+            "content": "@@ -348,19 +348,17 @@\n numeros%5B\n-num\n+i\n %5D = 0%0A%09%09\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_11-55-22",
+            "content": "@@ -427,17 +427,26 @@\n t.Print(\n-i\n+numeros%5Bi%5D\n , %22 %22)%0A%09\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_11-55-35",
+            "content": "@@ -348,17 +348,19 @@\n numeros%5B\n-i\n+num\n %5D = 0%0A%09%09\n@@ -427,26 +427,17 @@\n t.Print(\n-numeros%5Bi%5D\n+i\n , %22 %22)%0A%09\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_11-56-02",
+            "content": "@@ -405,17 +405,17 @@\n eros%5Bi%5D \n-=\n+!\n = 0 %7B%0A%09%09\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_11-56-39",
+            "content": "@@ -329,17 +329,17 @@\n eros%5Bi%5D \n-!\n+=\n = num%7B%0A%09\n@@ -409,9 +409,9 @@\n %5Bi%5D \n-!\n+=\n = 0 \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_11-57-50",
+            "content": "@@ -261,20 +261,25 @@\n i %3C \n-len(\n numeros\n-)\n+_retirados\n ; i+\n@@ -325,22 +325,22 @@\n  num\n- == num\n eros%5Bi%5D\n+ != num\n %7B%0A%09%09\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_11-58-51",
+            "content": "@@ -257,33 +257,28 @@\n  0; i %3C \n+len(\n numeros\n-_retirados\n+)\n ; i++%7B%0A%09\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_11-59-58",
+            "content": "@@ -65,43 +65,25 @@\n )%0A%0A%09\n+var \n numero\n-_contem := make(map%5Bint%5Dbool)\n+s %5B%5Dint\n %0A%09fo\n@@ -155,30 +155,35 @@\n mero\n-_contem%5Bnumero%5D = true\n+s = append(numeros, numero)\n %0A%09%7D%0A\n@@ -325,106 +325,100 @@\n  num\n-ero_contem%5Bnum%5D%7B%0A%09%09%09numero_contem%5Bnum%5D = false%0A%09%09%7D%0A%09%7D%0A%0A%09for i := 0; i %3C len(numero_contem); i++\n+ == numeros%5Bi%5D%7B%0A%09%09%09numeros%5Bi%5D = 0%0A%09%09%7D%0A%09%7D%0A%0A%09for i := range numeros %7B%0A%09%09if numeros%5Bi%5D != 0\n  %7B%0A\n+%09\n %09%09fm\n@@ -435,15 +435,9 @@\n mero\n-_contem\n+s\n %5Bi%5D,\n@@ -442,14 +442,18 @@\n %5D, %22 %22)%0A\n+%09%09%7D%0A\n %09%7D%0A%0A%7D%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_12-00-40",
+            "content": "@@ -403,14 +403,19 @@\n  := \n-range \n+0; i %3C len(\n nume\n@@ -423,16 +423,22 @@\n o_contem\n+); i++\n  %7B%0A%09%09fmt\n@@ -463,16 +463,17 @@\n em%5Bi%5D, %22\n+ \n %22)%0A%09%7D%0A%0A%7D\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-14_12-01-37",
+            "content": "@@ -452,17 +452,16 @@\n em%5Bi%5D, %22\n- \n %22)%0A%09%7D%0A%0A%7D\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-14_12-01-44",
+            "content": "@@ -433,17 +433,32 @@\n t.Print(\n-i\n+numero_contem%5Bi%5D\n , %22 %22)%0A%09\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-14_12-02-01",
+            "content": "@@ -437,24 +437,9 @@\n int(\n-numero_contem%5Bi%5D\n+i\n , %22 \n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-14_12-02-11",
+            "content": "@@ -403,19 +403,14 @@\n  := \n-0; i %3C len(\n+range \n nume\n@@ -422,14 +422,8 @@\n ntem\n-); i++\n  %7B%0A%09\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-14_12-02-54",
+            "content": "@@ -457,16 +457,19 @@\n o_contem\n+%5Bi%5D\n , %22 %22)%0A%09\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-14_12-03-01",
+            "content": "@@ -444,17 +444,29 @@\n t.Print(\n-i\n+numero_contem\n , %22 %22)%0A%09\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-14_12-03-08",
+            "content": "@@ -438,70 +438,26 @@\n %7B%0A%09%09\n-if numero_contem%5Bi%5D %7B%0A%09%09%09fmt.Print(numero_contem%5Bi%5D\n+fmt.Print(i\n , %22 %22)%0A\n-%09%09%7D%0A\n %09%7D%0A%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-14_12-03-57",
+            "content": "@@ -469,17 +469,32 @@\n t.Print(\n-i\n+numero_contem%5Bi%5D\n , %22 %22)%0A%09\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_12-04-09",
+            "content": "@@ -403,14 +403,19 @@\n  := \n-range \n+0; i %3C len(\n nume\n@@ -427,23 +427,22 @@\n ntem\n- %7B%0A%09%09fmt.Print(\n+); i++ %7B%0A%09%09if \n nume\n@@ -457,15 +457,36 @@\n m%5Bi%5D\n+ %7B%0A%09%09%09fmt.Print(i\n , %22 %22)%0A\n+%09%09%7D%0A\n %09%7D%0A%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_12-04-33",
+            "content": "@@ -397,11 +397,8 @@\n %09for\n- _,\n  i :\n@@ -433,17 +433,32 @@\n t.Print(\n-i\n+numero_contem%5Bi%5D\n , %22 %22)%0A%09\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-14_12-07-07",
+            "content": "@@ -397,25 +397,23 @@\n %09for\n+ _,\n  i := \n-0; i %3C len(\n+range \n nume\n@@ -425,14 +425,8 @@\n ntem\n-); i++\n  %7B%0A%09\n@@ -440,24 +440,9 @@\n int(\n-numero_contem%5Bi%5D\n+i\n , %22 \n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-14_12-08-15",
+            "content": "@@ -444,17 +444,32 @@\n t.Print(\n-i\n+numero_contem%5Bi%5D\n , %22 %22)%0A%09\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-14_12-08-24",
+            "content": "@@ -403,14 +403,19 @@\n  := \n-range \n+0; i %3C len(\n nume\n@@ -423,16 +423,22 @@\n o_contem\n+); i++\n  %7B%0A%09%09fmt\n@@ -448,24 +448,9 @@\n int(\n-numero_contem%5Bi%5D\n+i\n , %22 \n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-14_12-08-36",
+            "content": "@@ -399,11 +399,8 @@\n or i\n-, _\n  := \n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-14_12-09-45",
+            "content": "package main\nimport \"fmt\"\n\nfunc main() {\n\tvar N int\n\tfmt.Scan(&N)\n\n\tnumero_contem := make(map[int]bool)\n\tfor i := 0; i < N; i++ {\n\t\tvar numero int\n\t\tfmt.Scan(&numero)\n\n\t\tnumero_contem[numero] = true\n\t}\n\n\tvar numeros_retirados int\n\tfmt.Scan(&numeros_retirados)\n\tfor i := 0; i < numeros_retirados; i++{\n\t\tvar num int\n\t\tfmt.Scan(&num)\n\n\t\tif numero_contem[num]{\n\t\t\tnumero_contem[num] = false\n\t\t}\n\t}\n\n\tfor i, _ := range numero_contem {\n\t\tfmt.Print(numero_contem[i], \" \")\n\t}\n\n}\n",
+            "lines": "31"
+        }
+    ]
+}

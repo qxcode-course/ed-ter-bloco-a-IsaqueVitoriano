@@ -1,0 +1,159 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-14_10-53-25",
+            "content": "@@ -163,17 +163,17 @@\n or i := \n-1\n+0\n ; i %3C le\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-04-14_10-53-31",
+            "content": "@@ -94,40 +94,8 @@\n ) %7B%0A\n-%09if len(vet) %3C 1 %7B%0A%09%09return%0A%09%7D%0A%0A\n %09if \n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-04-14_10-53-59",
+            "content": "@@ -267,9 +267,9 @@\n t%5Bi \n--\n++\n  1%5D)\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-04-14_10-54-34",
+            "content": "@@ -210,20 +210,16 @@\n len(vet)\n- - 1\n ; i++ %7B%0A\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-04-14_10-54-44",
+            "content": "@@ -195,17 +195,17 @@\n or i := \n-0\n+1\n ; i %3C le\n@@ -210,16 +210,20 @@\n len(vet)\n+ - 1\n ; i++ %7B%0A\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-04-14_10-55-12",
+            "content": "@@ -165,16 +165,36 @@\n et)%0A%09%7D%0A%0A\n+%09var soma_vet %5B%5Dint%0A\n %09for i :\n@@ -195,17 +195,17 @@\n or i := \n-1\n+0\n ; i %3C le\n@@ -224,26 +224,41 @@\n %7B%0A%09%09\n-vet%5Bi%5D =\n+soma_vet = append(soma_vet,\n  vet%5Bi\n- + 1\n %5D + \n@@ -267,16 +267,17 @@\n t%5Bi - 1%5D\n+)\n %0A%09%7D%0A%0A%09pr\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-04-14_10-56-28",
+            "content": "@@ -175,17 +175,17 @@\n or i := \n-0\n+1\n ; i %3C le\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-04-14_10-56-36",
+            "content": "@@ -175,17 +175,17 @@\n or i := \n-1\n+0\n ; i %3C le\n@@ -190,20 +190,16 @@\n len(vet)\n- - 1\n ; i++ %7B%0A\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-04-14_10-56-48",
+            "content": "@@ -169,44 +169,8 @@\n %09%7D%0A%0A\n-%0A%09soma_vet := make(%5B%5Dint, len(vet))%0A\n %09for\n@@ -208,13 +208,8 @@\n %7B%0A%09%09\n-soma_\n vet%5B\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-04-14_10-58-46",
+            "content": "@@ -226,16 +226,20 @@\n len(vet)\n+ - 1\n ; i++ %7B%0A\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-14_10-58-51",
+            "content": "@@ -211,17 +211,17 @@\n or i := \n-0\n+1\n ; i %3C le\n@@ -255,16 +255,20 @@\n  = vet%5Bi\n+ + 1\n %5D + vet%5B\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-14_10-59-18",
+            "content": "@@ -226,20 +226,16 @@\n len(vet)\n- - 1\n ; i++ %7B%0A\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-14_10-59-22",
+            "content": "@@ -211,17 +211,17 @@\n or i := \n-1\n+0\n ; i %3C le\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-14_10-59-27",
+            "content": "@@ -288,21 +288,16 @@\n rocessa(\n-soma_\n vet)%0A%0A%09/\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-14_10-59-40",
+            "content": "@@ -226,16 +226,20 @@\n len(vet)\n+ - 1\n ; i++ %7B%0A\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-14_10-59-54",
+            "content": "@@ -211,17 +211,17 @@\n or i := \n-0\n+1\n ; i %3C le\n@@ -226,20 +226,16 @@\n len(vet)\n- - 1\n ; i++ %7B%0A\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-14_11-00-10",
+            "content": "@@ -226,16 +226,20 @@\n len(vet)\n+ - 1\n ; i++ %7B%0A\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-14_11-00-22",
+            "content": "@@ -280,24 +280,29 @@\n %0A%0A%09processa(\n+soma_\n vet)%0A%0A%09// 1.\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-14_11-00-27",
+            "content": "@@ -248,35 +248,33 @@\n _vet\n- = append(soma_vet, vet...)\n+%5Bi%5D = vet%5Bi%5D + vet%5Bi - 1%5D\n %0A%09%7D%0A\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-14_11-00-59",
+            "content": "@@ -271,11 +271,11 @@\n  vet\n-%5Bi%5D\n+...\n )%0A%09%7D\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-14_11-01-07",
+            "content": "@@ -274,21 +274,8 @@\n t%5Bi%5D\n- + vet%5Bi + 1%5D\n )%0A%09%7D\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-14_11-01-22",
+            "content": "@@ -171,12 +171,8 @@\n %0A%0A%0A%09\n-var \n soma\n@@ -176,21 +176,40 @@\n oma_vet \n-%5B%5Dint\n+:= make(%5B%5Dint, len(vet))\n %0A%09for i \n@@ -230,12 +230,8 @@\n vet)\n- - 1\n ; i+\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-14_11-02-56",
+            "content": "@@ -196,17 +196,17 @@\n or i := \n-1\n+0\n ; i %3C le\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-14_11-03-44",
+            "content": "@@ -196,17 +196,17 @@\n or i := \n-0\n+1\n ; i %3C le\n@@ -211,16 +211,20 @@\n len(vet)\n+ - 1\n ; i++ %7B%0A\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-14_11-04-31",
+            "content": "@@ -268,9 +268,9 @@\n t%5Bi \n--\n++\n  1%5D)\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-14_11-04-50",
+            "content": "@@ -122,16 +122,60 @@\n urn%0A%09%7D%0A%0A\n+%09if len(vet) == 1 %7B%0A%09%09fmt.Println(vet)%0A%09%7D%0A%0A%0A\n %09var som\n@@ -200,17 +200,28 @@\n  := \n-range vet\n+0; i %3C len(vet); i++\n  %7B%0A%09\n@@ -264,17 +264,17 @@\n + vet%5Bi \n-+\n+-\n  1%5D)%0A%09%7D%0A\n@@ -278,10 +278,8 @@\n %09%7D%0A%0A\n-%09%0A\n %09pro\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-14_11-07-22",
+            "content": "@@ -224,171 +224,8 @@\n %7D%0A%0A%09\n-fmt.Print(%22%5B %22)%0A%09for i := range soma_vet %7B%0A%09%09if i %3C len(soma_vet) - 1 %7B%0A%09%09%09fmt.Print(soma_vet%5Bi%5D)%0A%09%09%7D else %7B%0A%09%09%09fmt.Print(soma_vet%5Bi%5D, %22 %22)%0A%09%09%7D%0A%09%7D%0A%09fmt.Print(%22 %5D%22)\n %0A%09pr\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-04-14_11-09-00",
+            "content": "@@ -200,16 +200,29 @@\n , vet%5Bi%5D\n+ + vet%5Bi + 1%5D\n )%0A%09%7D%0A%0A%09f\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-04-14_11-10-17",
+            "content": "@@ -371,17 +371,16 @@\n t(%22 %5D%22)%0A\n-%0A\n %09process\n@@ -381,21 +381,16 @@\n rocessa(\n-soma_\n vet)%0A%0A%09/\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-04-14_11-10-31",
+            "content": "@@ -146,75 +146,8 @@\n int%0A\n-%0A%09if len(soma_vet) == 1 %7B%0A%09%09fmt.Println(%22%5B %22, soma_vet,  %22 %5D%22)%0A%09%7D%0A%0A\n %09for\n@@ -283,34 +283,32 @@\n 1 %7B%0A%09%09%09fmt.Print\n-ln\n (soma_vet%5Bi%5D)%0A%09%09\n@@ -332,10 +332,8 @@\n rint\n-ln\n (som\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-04-14_11-13-10",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc processa(vet []int) {\n\tif len(vet) < 1 {\n\t\treturn\n\t}\n\n\tvar soma_vet []int\n\n\tif len(soma_vet) == 1 {\n\t\tfmt.Println(\"[ \", soma_vet,  \" ]\")\n\t}\n\n\tfor i := range vet {\n\t\tsoma_vet = append(soma_vet, vet[i])\n\t}\n\n\tfmt.Print(\"[ \")\n\tfor i := range soma_vet {\n\t\tif i < len(soma_vet) - 1 {\n\t\t\tfmt.Println(soma_vet[i])\n\t\t} else {\n\t\t\tfmt.Println(soma_vet[i], \" \")\n\t\t}\n\t}\n\tfmt.Print(\" ]\")\n\n\tprocessa(soma_vet)\n\n\t// 1. defina o ponto de parada\n\t// 2. monte o vetor auxiliar com os resultados das somas\n\t// 3. chame recursivamente a fun\u00e7\u00e3o processa para o vetor auxiliar\n\t// 4. imprima o vetor original\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\tline := scanner.Text()\n\tparts := strings.Fields(line)\n\tvet := []int{}\n\tfor _, part := range parts {\n\t\tif value, err := strconv.Atoi(part); err == nil {\n\t\t\tvet = append(vet, value)\n\t\t}\n\t}\n\tprocessa(vet)\n}\n\nfunc Join[T any](v []T, sep string) string {\n\tif len(v) == 0 {\n\t\treturn \"\"\n\t}\n\ts := \"\"\n\tfor i, x := range v {\n\t\tif i > 0 {\n\t\t\ts += sep\n\t\t}\n\t\ts += fmt.Sprintf(\"%v\", x)\n\t}\n\treturn s\n}\n",
+            "lines": "72"
+        }
+    ]
+}
