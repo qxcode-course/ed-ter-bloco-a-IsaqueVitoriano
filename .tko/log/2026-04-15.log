@@ -82,3 +82,4 @@
 2026-04-15 16:24:30, EXEC, v:1, k:ed@vetbuild, mode:FULL, rate:54, size:217
 2026-04-15 16:24:36, MOVE, v:1, k:ed@vetbuild, mode:BACK
 2026-04-15 16:26:10, SELF, v:1, k:ed@vetbuild, self:1, rate:54, study:65, concept:1
+2026-04-15 16:23:44, MOVE, v:1, k:ed@vetbuild, mode:EDIT
