@@ -3,9 +3,9 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"strings"
-	"strconv"
 	"os"
+	"strconv"
+	"strings"
 )
 
 type Vector struct {
@@ -23,7 +23,7 @@ func NewVector(capacity int) *Vector {
 }
 
 func (v *Vector) Status() string {
-	return fmt.Sprintf("size:%v capacity:%v", v.size, v.capacity)
+	return fmt.Sprintf("size:%v capacity:%v", v.size, v.Capacity())
 }
 
 func (v *Vector) String() string {
@@ -55,6 +55,54 @@ func (v *Vector) Reserve(newCapacity int) {
 
 	v.data = newVec
 	v.capacity = newCapacity
+}
+
+func (v *Vector) PopBack() (int, error){
+	if v.size == 0 {
+		return 0, fmt.Errorf("vector is empty")
+	}
+
+	valueRemoved := v.data[v.size-1]
+	v.size -= 1
+	return valueRemoved, nil
+}
+
+func (v *Vector) Get(index int) int {
+	var value int
+	for i := range v.size {
+		if i == index {
+			value = v.data[i]
+		}
+	}
+	return value
+}
+
+func (v *Vector) Set(index, value int) error {
+	if index > v.size || index < 0 {
+		return fmt.Errorf("index out of range")
+	}
+
+	v.data[index] = value
+	return nil
+}
+
+func (v *Vector) At(index int) (int, error) {
+	if index > v.size || index < 0 {
+		return 0, fmt.Errorf("index out of range")
+	}
+
+	var value int
+	for i := range v.size {
+		if i == index {
+			value = v.data[i]
+		}
+	}
+
+	return value, nil
+}
+
+func (v *Vector) Clear() {
+	v.size = 0
 }
 
 func (v *Vector) Capacity() int {
@@ -99,18 +147,18 @@ func main() {
 			v = NewVector(value)
 		case "push":
 			for _, part := range parts[1:] {
-			value, _ := strconv.Atoi(part)
-			v.PushBack(value)
-		}
+				value, _ := strconv.Atoi(part)
+				v.PushBack(value)
+			}
 		case "show":
 			fmt.Println(v)
 		case "status":
 			fmt.Println(v.Status())
 		case "pop":
-			// err := v.PopBack()
-			// if err != nil {
-			// 	fmt.Println(err)
-			// }
+			_, err := v.PopBack()
+			if err != nil {
+				fmt.Println(err)
+			}
 		case "insert":
 			// index, _ := strconv.Atoi(parts[1])
 			// value, _ := strconv.Atoi(parts[2])
@@ -136,28 +184,27 @@ func main() {
 			// 	fmt.Println("false")
 			// }
 		case "clear":
-			// v.Clear()
+			v.Clear()
 		case "capacity":
-			// fmt.Println(v.Capacity())
+			fmt.Println(v.Capacity())
 		case "get":
-			// index, _ := strconv.Atoi(parts[1])
-			// value, err := v.At(index)
-			// if err != nil {
-			// 	fmt.Println(err)
-			// } else {
-			// 	fmt.Println(value)
-			// }
+			index, _ := strconv.Atoi(parts[1])
+			value, err := v.At(index)
+			if err != nil {
+			 	fmt.Println(err)
+			} else {
+			 	fmt.Println(value)
+			}
 		case "set":
-			// index, _ := strconv.Atoi(parts[1])
-			// value, _ := strconv.Atoi(parts[2])
-			// err := v.Set(index, value)
-			// if err != nil {
-			// 	fmt.Println(err)
-			// }
-			// 
+			index, _ := strconv.Atoi(parts[1])
+			value, _ := strconv.Atoi(parts[2])
+			err := v.Set(index, value)
+			if err != nil {
+				fmt.Println(err)
+			} 
 		case "reserve":
-			// newCapacity, _ := strconv.Atoi(parts[1])
-			// v.Reserve(newCapacity)
+			newCapacity, _ := strconv.Atoi(parts[1])
+			v.Reserve(newCapacity)
 		case "slice":
 			// start, _ := strconv.Atoi(parts[1])
 			// end, _ := strconv.Atoi(parts[2])
