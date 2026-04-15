@@ -166,3 +166,4 @@
 2026-04-14 12:08:56, EXEC, v:1, k:eval1@apagando, mode:FULL, rate:0
 2026-04-14 12:09:45, EXEC, v:1, k:eval1@apagando, mode:FULL, rate:0, size:31
 2026-04-14 12:10:04, MOVE, v:1, k:eval1@apagando, mode:BACK
+2026-04-14 12:09:50, MOVE, v:1, k:eval1@apagando, mode:EDIT
