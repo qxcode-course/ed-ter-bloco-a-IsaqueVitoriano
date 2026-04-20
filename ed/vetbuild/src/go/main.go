@@ -162,6 +162,19 @@ func (v *Vector) Contains(value int) bool {
 	return false
 }
 
+func (v *Vector) Slice(start, end int) *Vector {
+	if start < 0 || end > v.size {
+		return &Vector{}
+	}
+
+	if start > end {
+		end = end + v.size
+		return &Vector{v.data[start:end], end - start, v.capacity - start}
+	}
+
+	return &Vector{v.data[start:end], end - start, v.capacity - start}
+}
+
 func (v *Vector) Capacity() int {
 	return v.capacity
 }
@@ -263,10 +276,10 @@ func main() {
 			newCapacity, _ := strconv.Atoi(parts[1])
 			v.Reserve(newCapacity)
 		case "slice":
-			// start, _ := strconv.Atoi(parts[1])
-			// end, _ := strconv.Atoi(parts[2])
-			// slice := v.Slice(start, end)
-			// fmt.Println(slice)
+			start, _ := strconv.Atoi(parts[1])
+			end, _ := strconv.Atoi(parts[2])
+			slice := v.Slice(start, end)
+			fmt.Println(slice)
 		default:
 			fmt.Println("fail: comando invalido")
 		}
