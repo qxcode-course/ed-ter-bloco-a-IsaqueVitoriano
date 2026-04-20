@@ -105,6 +105,63 @@ func (v *Vector) Clear() {
 	v.size = 0
 }
 
+func (v *Vector) Insert(index, value int) error {
+	if index > v.size || index < 0 {
+		return fmt.Errorf("index out of range")
+	}
+
+	if v.size < v.capacity {
+		for i := v.size; i > index; i-- {
+			v.data[i] = v.data[i - 1]
+		}
+		v.data[index] = value
+		v.size += 1
+	} else {
+		v.Reserve(v.capacity * 2)
+		for i := v.size; i > index; i--{
+			v.data[i] = v.data[i - 1]
+		}
+		v.data[index] = value
+		v.size += 1
+	}
+
+	return nil
+}
+
+func (v *Vector) Erase(index int) error {
+	if index > v.size || v.size < 0 {
+		return fmt.Errorf("index out of range")
+	}
+	
+	for i := index; i < v.size - 1; i++ {
+		v.data[i] = v.data[i + 1]
+	}
+	v.size -= 1
+
+	return nil
+}  
+
+func (v *Vector) IndexOf(value int) int {
+	if v.Contains(value) {
+		for i := range v.size {
+			if v.data[i] == value {
+				return i
+			}
+		}
+	}
+
+	return -1
+}
+
+func (v *Vector) Contains(value int) bool {
+	for i := range v.size {
+		if v.data[i] == value {
+			return true
+		}
+	}
+	return false
+}
+
 func (v *Vector) Capacity() int {
 	return v.capacity
 }
@@ -160,29 +217,29 @@ func main() {
 				fmt.Println(err)
 			}
 		case "insert":
-			// index, _ := strconv.Atoi(parts[1])
-			// value, _ := strconv.Atoi(parts[2])
-			// err := v.Insert(index, value)
-			// if err != nil {
-			// 	fmt.Println(err)
-			// }
+			index, _ := strconv.Atoi(parts[1])
+			value, _ := strconv.Atoi(parts[2])
+			err := v.Insert(index, value)
+			if err != nil {
+				fmt.Println(err)
+			}
 		case "erase":
-			// index, _ := strconv.Atoi(parts[1])
-			// err := v.Erase(index)
-			// if err != nil {
-			// 	fmt.Println(err)
-			// }
+			index, _ := strconv.Atoi(parts[1])
+			err := v.Erase(index)
+			if err != nil {
+			fmt.Println(err)
+			}
 		case "indexOf":
-			// value, _ := strconv.Atoi(parts[1])
-			// index := v.IndexOf(value)
-			// fmt.Println(index)
+			value, _ := strconv.Atoi(parts[1])
+			index := v.IndexOf(value)
+			fmt.Println(index)
 		case "contains":
-			// value, _ := strconv.Atoi(parts[1])
-			// if v.Contains(value) {
-			// 	fmt.Println("true")
-			// } else {
-			// 	fmt.Println("false")
-			// }
+			value, _ := strconv.Atoi(parts[1])
+			if v.Contains(value) {
+				fmt.Println("true")
+			} else {
+			 	fmt.Println("false")
+			}
 		case "clear":
 			v.Clear()
 		case "capacity":
