@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-22_16-22-14",
+            "content": "@@ -160,50 +160,8 @@\n  1%0A%0A\n-%09elementoExiste := false%0A%09elemento := -1%0A%0A\n %09for\n@@ -177,16 +177,16 @@\n = fim %7B%0A\n+\n %09%09meio :\n@@ -241,43 +241,20 @@\n %0A%09%09%09\n-elementoExiste = true%0A%09%09%09elemento =\n+return true,\n  mei\n@@ -351,59 +351,8 @@\n %09%7D%0A%0A\n-%09if elementoExiste %7B%0A%09%09return false, elemento %0A%09%7D%0A%0A\n %09ret\n@@ -365,18 +365,14 @@\n ue, \n-elemento%0A%09\n+inicio\n %0A%7D%0A%0A\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-22_16-26-02",
+            "content": "@@ -156,16 +156,58 @@\n e) - 1%0A%0A\n+%09elementoExiste := false%0A%09elemento := -1%0A%0A\n %09for ini\n@@ -219,16 +219,16 @@\n = fim %7B%0A\n-\n %09%09meio :\n@@ -283,20 +283,43 @@\n %0A%09%09%09\n-return true,\n+elementoExiste = true%0A%09%09%09elemento =\n  mei\n@@ -417,27 +417,79 @@\n %7D%0A%0A%09\n-return false, inici\n+if elementoExiste %7B%0A%09%09return false, elemento %0A%09%7D%0A%0A%09return true, element\n o%0A%09%0A\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-04-22_16-28-01",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc BetterSearch(slice []int, value int) (bool, int) {\n\tinicio := 0\n\tfim := len(slice) - 1\n\n\tfor inicio <= fim {\n\t\tmeio := (inicio + fim) / 2\n\t\tif slice[meio] == value {\n\t\t\treturn true, meio\n\t\t} else if slice[meio] < value {\n\t\t\tinicio = meio + 1\n\t\t} else {\n\t\t\tfim = meio - 1\n\t\t}\n\t}\n\n\treturn false, inicio\n\t\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Split(scanner.Text(), \" \")\n\tslice := []int{}\n\tfor _, elem := range parts[1 : len(parts)-1] {\n\t\tvalue, _ := strconv.Atoi(elem)\n\t\tslice = append(slice, value)\n\t}\n\tscanner.Scan()\n\tvalue, _ := strconv.Atoi(scanner.Text())\n\tfound, result := BetterSearch(slice, value)\n\tif found {\n\t\tfmt.Println(\"V\", result)\n\t} else {\n\t\tfmt.Println(\"F\", result)\n\t}\n}\n",
+            "lines": "47"
+        }
+    ]
+}
