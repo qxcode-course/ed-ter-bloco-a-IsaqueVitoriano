@@ -1,0 +1,74 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-22_16-52-27",
+            "content": "@@ -53,604 +53,9 @@\n gs%22%0A\n-%09%22strconv%22%0A)%0A%0Atype MultiSet struct %7B%0A%09data      %5B%5Dint%0A%09size  %09  int%0A%09capacity  int%0A%7D%0A%0Afunc NewMultiSet (capacity int) *MultiSet %7B%0A%09return &MultiSet%7B%0A%09%09data: make(%5B%5Dint, capacity),%0A%09%09size: 0,%0A%09%09capacity: capacity,%0A%09%7D%0A%7D%0A%0Afunc (ms *MultiSet) String() string %7B%0A%09return fmt.Sprintf(%22%5B%25v%5D%22, Join(ms.data%5B0:ms.size%5D, %22,%22))%0A%7D%0A%0Afunc (ms *MultiSet) Insert(value int) %7B%0A%09for i := 0; i %3C ms.size; i++ %7B%0A%09%09if ms.data%5Bi%5D %3E value %7B%0A%09%09%09ms.data%5Bi%5D = value%0A%09%09%7D%0A%09%7D%0A%7D%0A%0Afunc (ms *MultiSet) insert(value, index int) error %7B%0A%09if index %3C 0 %7C%7C index %3E ms.size %7B%0A%09%09return fmt.Errorf(%22index out of range%22)%0A%09%7D%0A%0A%09return nil%0A%7D\n+)\n %0A%0Afu\n@@ -347,16 +347,19 @@\n Stdin)%0A%09\n+// \n ms := Ne\n@@ -594,24 +594,27 @@\n  %22init%22:%0A%09%09%09\n+// \n value, _ := \n@@ -638,16 +638,19 @@\n %5B1%5D)%0A%09%09%09\n+// \n ms = New\n@@ -685,16 +685,19 @@\n rt%22:%0A%09%09%09\n+// \n for _, p\n@@ -723,16 +723,20 @@\n :%5D %7B%0A%09%09%09\n+// %09\n value, _\n@@ -761,16 +761,19 @@\n art)%0A%09%09%09\n+// \n %7D%0A%09%09case\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-04-22_17-14-09",
+            "content": "@@ -1341,28 +1341,8 @@\n rt)%0A\n-%09%09%09ms.Insert(value)%0A\n %09%09%09%7D\n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-04-22_17-18-16",
+            "content": "@@ -1381,36 +1381,8 @@\n w%22:%0A\n-%09%09%09fmt.Println(ms.String())%0A\n %09%09ca\n",
+            "lines": "95"
+        },
+        {
+            "label": "2026-04-22_17-19-03",
+            "content": "@@ -413,90 +413,38 @@\n  %7B%0A%09\n-inicio := 0%0A%09fim := ms.size - 1%0A%0A%09for inicio %3C= fim %7B%0A%09%09meio := (inicio + fim) / 2\n+for i := 0; i %3C ms.size; i++ %7B\n %0A%09%09i\n@@ -457,15 +457,12 @@\n ata%5B\n-meio%5D %3C\n+i%5D %3E\n  val\n@@ -471,61 +471,8 @@\n  %7B%0A%09\n-%09%09inicio = meio + 1%0A%09%09%7D else %7B%0A%09%09%09fim = meio + 1%0A%09%09%7D%0A\n %09%09ms\n@@ -481,12 +481,9 @@\n ata%5B\n-meio\n+i\n %5D = \n@@ -488,20 +488,23 @@\n = value%0A\n+%09%09%7D%0A\n %09%7D%0A\n-%0A\n %7D%0A%0Afunc \n@@ -632,18 +632,16 @@\n e%22)%0A%09%7D%0A%0A\n-%0A%0A\n %09return \n",
+            "lines": "96"
+        },
+        {
+            "label": "2026-04-22_17-25-23",
+            "content": "@@ -512,17 +512,16 @@\n %5Bmeio%5D %3C\n-=\n  value %7B\n@@ -521,16 +521,16 @@\n value %7B%0A\n+\n %09%09%09inici\n@@ -607,50 +607,8 @@\n %09%7D%0A%0A\n-%09index := inicio%0A%09ms.insert(value, index)%0A\n %7D%0A%0Af\n@@ -744,101 +744,8 @@\n %09%7D%0A%0A\n-%09for i := ms.size; i %3E index; i-- %7B%0A%09%09ms.data%5Bi%5D = ms.data%5Bi - 1%5D%0A%09%7D%0A%0A%09ms.data%5Bindex%5D = value\n %0A%0A%09r\n",
+            "lines": "106"
+        },
+        {
+            "label": "2026-04-22_17-30-10",
+            "content": "@@ -572,16 +572,40 @@\n eio \n--\n++\n  1%0A%09%09%7D%0A\n+%09%09ms.data%5Bmeio%5D = value%0A\n %09%7D%0A%0A\n@@ -897,208 +897,8 @@\n %0A%7D%0A%0A\n-func (ms *MultiSet) expand() %7B%0A%09newMultiSet := make(%5B%5Dint, ms.capacity * 2)%0A%0A%09for i := 0; i %3C ms.size; i++ %7B%0A%09%09newMultiSet%5Bi%5D = ms.data%5Bi%5D%0A%09%7D%0A%0A%09ms.data = newMultiSet%0A%09ms.capacity = ms.capacity * 2%0A%7D%0A%0A\n func\n",
+            "lines": "112"
+        },
+        {
+            "label": "2026-04-22_17-43-25",
+            "content": "@@ -584,55 +584,8 @@\n %09%7D%0A%0A\n-%09if ms.capacity == ms.size %7B%0A%09%09ms.expand()%0A%09%7D%0A%0A\n %09ind\n",
+            "lines": "122"
+        },
+        {
+            "label": "2026-04-22_17-44-17",
+            "content": "@@ -951,52 +951,8 @@\n ) %7B%0A\n-%09if ms.capacity == 0%7B%0A%09%09ms.capacity = 1%0A%09%7D%0A%0A\n %09new\n",
+            "lines": "126"
+        },
+        {
+            "label": "2026-04-22_17-50-08",
+            "content": "@@ -952,49 +952,15 @@\n  %7B%0A%09\n-newCapacity := ms.capacity * 2%0A%09%0A%09if newC\n+if ms.c\n apac\n@@ -963,25 +963,24 @@\n apacity == 0\n- \n %7B%0A%09%09ms.capac\n",
+            "lines": "130"
+        },
+        {
+            "label": "2026-04-22_17-51-02",
+            "content": "@@ -1054,27 +1054,31 @@\n (%5B%5Dint, \n-newC\n+ms.c\n apacity\n+ * 2\n )%0A%0A%09for \n@@ -1176,27 +1176,31 @@\n acity = \n-newC\n+ms.c\n apacity\n+ * 2\n %0A%7D%0A%0Afunc\n",
+            "lines": "132"
+        },
+        {
+            "label": "2026-04-22_17-51-56",
+            "content": "@@ -1934,16 +1934,25 @@\n intln(ms\n+.String()\n )%0A%09%09case\n",
+            "lines": "132"
+        },
+        {
+            "label": "2026-04-22_17-52-56",
+            "content": "@@ -903,22 +903,8 @@\n alue\n-%0A%09ms.size += 1\n %0A%0A%09r\n@@ -1938,17 +1938,8 @@\n n(ms\n-.String()\n )%0A%09%09\n",
+            "lines": "132"
+        },
+        {
+            "label": "2026-04-22_17-55-19",
+            "content": "@@ -361,17 +361,16 @@\n ize%5D, %22,\n- \n %22))%0A%7D%0A%0Af\n",
+            "lines": "133"
+        },
+        {
+            "label": "2026-04-22_17-55-35",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strings\"\n\t\"strconv\"\n)\n\ntype MultiSet struct {\n\tdata      []int\n\tsize  \t  int\n\tcapacity  int\n}\n\nfunc NewMultiSet (capacity int) *MultiSet {\n\treturn &MultiSet{\n\t\tdata: make([]int, capacity),\n\t\tsize: 0,\n\t\tcapacity: capacity,\n\t}\n}\n\nfunc (ms *MultiSet) String() string {\n\treturn fmt.Sprintf(\"[%v]\", Join(ms.data[0:ms.size], \", \"))\n}\n\nfunc (ms *MultiSet) Insert(value int) {\n\tinicio := 0\n\tfim := ms.size - 1\n\n\tfor inicio <= fim {\n\t\tmeio := (inicio + fim) / 2\n\t\tif ms.data[meio] <= value {\n\t\t\tinicio = meio + 1\n\t\t} else {\n\t\t\tfim = meio - 1\n\t\t}\n\t}\n\n\tif ms.capacity == ms.size {\n\t\tms.expand()\n\t}\n\n\tindex := inicio\n\tms.insert(value, index)\n}\n\nfunc (ms *MultiSet) insert(value, index int) error {\n\tif index < 0 || index > ms.size {\n\t\treturn fmt.Errorf(\"index out of range\")\n\t}\n\n\tfor i := ms.size; i > index; i-- {\n\t\tms.data[i] = ms.data[i - 1]\n\t}\n\n\tms.data[index] = value\n\tms.size += 1\n\n\treturn nil\n}\n\nfunc (ms *MultiSet) expand() {\n\tnewCapacity := ms.capacity * 2\n\t\n\tif newCapacity == 0 {\n\t\tms.capacity = 1\n\t}\n\n\tnewMultiSet := make([]int, newCapacity)\n\n\tfor i := 0; i < ms.size; i++ {\n\t\tnewMultiSet[i] = ms.data[i]\n\t}\n\n\tms.data = newMultiSet\n\tms.capacity = newCapacity\n}\n\nfunc Join(slice []int, sep string) string {\n\tif len(slice) == 0 {\n\t\treturn \"\"\n\t}\n\tresult := fmt.Sprintf(\"%d\", slice[0])\n\tfor _, value := range slice[1:] {\n\t\tresult += sep + fmt.Sprintf(\"%d\", value)\n\t}\n\treturn result\n}\n\nfunc main() {\n\tvar line, cmd string\n\tscanner := bufio.NewScanner(os.Stdin)\n\tms := NewMultiSet(0)\n\n\tfor scanner.Scan() {\n\t\tfmt.Print(\"$\")\n\t\tline = scanner.Text()\n\t\targs := strings.Fields(line)\n\t\tfmt.Println(line)\n\t\tif len(args) == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tcmd = args[0]\n\n\t\tswitch cmd {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"init\":\n\t\t\tvalue, _ := strconv.Atoi(args[1])\n\t\t\tms = NewMultiSet(value)\n\t\tcase \"insert\":\n\t\t\tfor _, part := range args[1:] {\n\t\t\tvalue, _ := strconv.Atoi(part)\n\t\t\tms.Insert(value)\n\t\t\t}\n\t\tcase \"show\":\n\t\t\tfmt.Println(ms.String())\n\t\tcase \"erase\":\n\t\t\t// value, _ := strconv.Atoi(args[1])\n\t\tcase \"contains\":\n\t\t\t// value, _ := strconv.Atoi(args[1])\n\t\tcase \"count\":\n\t\t\t// value, _ := strconv.Atoi(args[1])\n\t\tcase \"unique\":\n\t\tcase \"clear\":\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "133"
+        }
+    ]
+}
