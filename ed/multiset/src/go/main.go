@@ -150,6 +150,25 @@ func (ms *MultiSet) Count(value int) int {
 	return (ultimaOcorrencia - primeiraOcorrencia) + 1
 }
 
+func (ms *MultiSet) Unique() int {
+	if ms.size == 0 {
+		return 0
+	}
+
+	unicos := 1
+
+	for i := 1; i < ms.size; i++ {
+		if ms.data[i] != ms.data[i - 1] {
+			unicos++
+		}
+	}
+	return unicos
+}
+
+func (ms *MultiSet) Clear() {
+	ms.size = 0
+}
+
 func Join(slice []int, sep string) string {
 	if len(slice) == 0 {
 		return ""
@@ -207,7 +226,9 @@ func main() {
 			ocorrencia := ms.Count(value)
 			fmt.Println(ocorrencia)
 		case "unique":
+			fmt.Println(ms.Unique())
 		case "clear":
+			ms.Clear()
 		default:
 			fmt.Println("fail: comando invalido")
 		}
