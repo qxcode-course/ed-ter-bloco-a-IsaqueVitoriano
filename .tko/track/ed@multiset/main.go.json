@@ -67,8 +67,193 @@
         },
         {
             "label": "2026-04-22_17-55-35",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strings\"\n\t\"strconv\"\n)\n\ntype MultiSet struct {\n\tdata      []int\n\tsize  \t  int\n\tcapacity  int\n}\n\nfunc NewMultiSet (capacity int) *MultiSet {\n\treturn &MultiSet{\n\t\tdata: make([]int, capacity),\n\t\tsize: 0,\n\t\tcapacity: capacity,\n\t}\n}\n\nfunc (ms *MultiSet) String() string {\n\treturn fmt.Sprintf(\"[%v]\", Join(ms.data[0:ms.size], \", \"))\n}\n\nfunc (ms *MultiSet) Insert(value int) {\n\tinicio := 0\n\tfim := ms.size - 1\n\n\tfor inicio <= fim {\n\t\tmeio := (inicio + fim) / 2\n\t\tif ms.data[meio] <= value {\n\t\t\tinicio = meio + 1\n\t\t} else {\n\t\t\tfim = meio - 1\n\t\t}\n\t}\n\n\tif ms.capacity == ms.size {\n\t\tms.expand()\n\t}\n\n\tindex := inicio\n\tms.insert(value, index)\n}\n\nfunc (ms *MultiSet) insert(value, index int) error {\n\tif index < 0 || index > ms.size {\n\t\treturn fmt.Errorf(\"index out of range\")\n\t}\n\n\tfor i := ms.size; i > index; i-- {\n\t\tms.data[i] = ms.data[i - 1]\n\t}\n\n\tms.data[index] = value\n\tms.size += 1\n\n\treturn nil\n}\n\nfunc (ms *MultiSet) expand() {\n\tnewCapacity := ms.capacity * 2\n\t\n\tif newCapacity == 0 {\n\t\tms.capacity = 1\n\t}\n\n\tnewMultiSet := make([]int, newCapacity)\n\n\tfor i := 0; i < ms.size; i++ {\n\t\tnewMultiSet[i] = ms.data[i]\n\t}\n\n\tms.data = newMultiSet\n\tms.capacity = newCapacity\n}\n\nfunc Join(slice []int, sep string) string {\n\tif len(slice) == 0 {\n\t\treturn \"\"\n\t}\n\tresult := fmt.Sprintf(\"%d\", slice[0])\n\tfor _, value := range slice[1:] {\n\t\tresult += sep + fmt.Sprintf(\"%d\", value)\n\t}\n\treturn result\n}\n\nfunc main() {\n\tvar line, cmd string\n\tscanner := bufio.NewScanner(os.Stdin)\n\tms := NewMultiSet(0)\n\n\tfor scanner.Scan() {\n\t\tfmt.Print(\"$\")\n\t\tline = scanner.Text()\n\t\targs := strings.Fields(line)\n\t\tfmt.Println(line)\n\t\tif len(args) == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tcmd = args[0]\n\n\t\tswitch cmd {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"init\":\n\t\t\tvalue, _ := strconv.Atoi(args[1])\n\t\t\tms = NewMultiSet(value)\n\t\tcase \"insert\":\n\t\t\tfor _, part := range args[1:] {\n\t\t\tvalue, _ := strconv.Atoi(part)\n\t\t\tms.Insert(value)\n\t\t\t}\n\t\tcase \"show\":\n\t\t\tfmt.Println(ms.String())\n\t\tcase \"erase\":\n\t\t\t// value, _ := strconv.Atoi(args[1])\n\t\tcase \"contains\":\n\t\t\t// value, _ := strconv.Atoi(args[1])\n\t\tcase \"count\":\n\t\t\t// value, _ := strconv.Atoi(args[1])\n\t\tcase \"unique\":\n\t\tcase \"clear\":\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "content": "@@ -1206,147 +1206,8 @@\n %0A%7D%0A%0A\n-func (ms *MultiSet) Contains(value int) bool %7B%0A%09for i := range ms.data %7B%0A%09%09if ms.data%5Bi%5D == value %7B%0A%09%09%09return true%0A%09%09%7D%0A%09%7D%0A%09return false%0A%7D%0A%0A\n func\n@@ -2034,24 +2034,27 @@\n ntains%22:%0A%09%09%09\n+// \n value, _ := \n@@ -2079,30 +2079,8 @@\n 1%5D)%0A\n-%09%09%09ms.Contains(value)%0A\n %09%09ca\n",
             "lines": "133"
+        },
+        {
+            "label": "2026-04-23_15-42-39",
+            "content": "@@ -1264,28 +1264,28 @@\n := range ms.\n-size\n+data\n  %7B%0A%09%09if ms.d\n",
+            "lines": "143"
+        },
+        {
+            "label": "2026-04-23_15-42-54",
+            "content": "@@ -2000,17 +2000,16 @@\n :%5D %7B%0A%09%09%09\n-%09\n value, _\n@@ -2031,17 +2031,16 @@\n i(part)%0A\n-%09\n %09%09%09ms.In\n@@ -2214,19 +2214,16 @@\n %5B1%5D)%0A%09%09%09\n-if \n ms.Conta\n@@ -2236,76 +2236,8 @@\n lue)\n- %7B%0A%09%09%09%09fmt.Println(%22true%22)%0A%09%09%09%7D else %7B%0A%09%09%09%09fmt.Println(%22false%22)%0A%09%09%09%7D\n %0A%09%09c\n",
+            "lines": "143"
+        },
+        {
+            "label": "2026-04-23_15-48-42",
+            "content": "@@ -1260,36 +1260,36 @@\n r i := range ms.\n-data\n+size\n  %7B%0A%09%09if ms.data%5B\n@@ -1345,294 +1345,8 @@\n %0A%7D%0A%0A\n-func (ms *MultiSet) Erase(value int) error %7B%0A%09index := -1%0A%09for i := range ms.data %7B%0A%09%09if ms.data%5Bi%5D == value %7B%0A%09%09%09index = i%0A%09%09%09ms.erase(index)%0A%09%09%7D%0A%09%7D%0A%0A%09return fmt.Errorf(%22value not found%22)%0A%7D%0A%0Afunc (ms *MultiSet) erase(index int) error %7B%0A%09ms.data%5Bindex%5D = 0%0A%09ms.size--%0A%0A%09return nil%0A%7D%0A%0A%0A%0A\n func\n",
+            "lines": "147"
+        },
+        {
+            "label": "2026-04-23_15-55-27",
+            "content": "@@ -1582,77 +1582,8 @@\n r %7B%0A\n-%09for i := 0; i %3C ms.size - 1; i++ %7B%0A%09%09ms.data%5Bi%5D = ms.data%5Bi + 1%5D%0A%09%7D%0A\n %09ms.\n",
+            "lines": "168"
+        },
+        {
+            "label": "2026-04-23_15-57-05",
+            "content": "@@ -1679,13 +1679,10 @@\n size\n- -= 1\n+--\n %0A%0A%09r\n@@ -2471,24 +2471,27 @@\n %22erase%22:%0A%09%09%09\n+// \n value, _ := \n@@ -2516,27 +2516,8 @@\n 1%5D)%0A\n-%09%09%09ms.Erase(value)%0A\n %09%09ca\n",
+            "lines": "171"
+        },
+        {
+            "label": "2026-04-23_15-57-55",
+            "content": "@@ -1588,21 +1588,17 @@\n or i := \n-index\n+0\n ; i %3C ms\n@@ -1647,16 +1647,36 @@\n + 1%5D%0A%09%7D%0A\n+%09ms.data%5Bindex%5D = 0%0A\n %09ms.size\n",
+            "lines": "172"
+        },
+        {
+            "label": "2026-04-23_15-58-33",
+            "content": "@@ -1593,20 +1593,16 @@\n := index\n- - 1\n ; i %3C ms\n@@ -1598,32 +1598,36 @@\n dex; i %3C ms.size\n+ - 1\n ; i++ %7B%0A%09%09ms.dat\n",
+            "lines": "171"
+        },
+        {
+            "label": "2026-04-23_15-59-12",
+            "content": "@@ -1597,22 +1597,25 @@\n ndex\n+ - 1\n ; i %3C\n-=\n  ms.size\n -1; \n@@ -1610,18 +1610,16 @@\n  ms.size\n--1\n ; i++ %7B%0A\n",
+            "lines": "171"
+        },
+        {
+            "label": "2026-04-23_15-59-23",
+            "content": "@@ -1594,24 +1594,25 @@\n = index; i %3C\n+=\n  ms.size-1; \n@@ -1649,16 +1649,30 @@\n  + 1%5D%0A%09%7D\n+%0A%09ms.size -= 1\n %0A%0A%09retur\n",
+            "lines": "171"
+        },
+        {
+            "label": "2026-04-23_16-01-15",
+            "content": "@@ -1650,23 +1650,8 @@\n  1%5D%0A\n-%09%09ms.size -= 1%0A\n %09%7D%0A%0A\n",
+            "lines": "170"
+        },
+        {
+            "label": "2026-04-23_16-01-32",
+            "content": "@@ -1643,27 +1643,24 @@\n ata%5Bi + 1%5D%0A%09\n-%7D%0A%0A\n %09ms.size -= \n@@ -1660,16 +1660,19 @@\n ize -= 1\n+%0A%09%7D\n %0A%0A%09retur\n",
+            "lines": "171"
+        },
+        {
+            "label": "2026-04-23_16-01-51",
+            "content": "@@ -1414,28 +1414,28 @@\n := range ms.\n-size\n+data\n  %7B%0A%09%09if ms.d\n",
+            "lines": "172"
+        },
+        {
+            "label": "2026-04-23_16-03-54",
+            "content": "@@ -1396,17 +1396,18 @@\n ndex := \n-0\n+-1\n %0A%09for i \n@@ -1410,36 +1410,36 @@\n r i := range ms.\n-data\n+size\n  %7B%0A%09%09if ms.data%5B\n",
+            "lines": "172"
+        },
+        {
+            "label": "2026-04-23_16-04-10",
+            "content": "@@ -1378,32 +1378,44 @@\n ue int) error %7B%0A\n+%09index := 0%0A\n %09for i := range \n@@ -1413,28 +1413,28 @@\n := range ms.\n-size\n+data\n  %7B%0A%09%09if ms.d\n@@ -1451,16 +1451,29 @@\n value %7B%0A\n+%09%09%09index = i%0A\n %09%09%09ms.er\n@@ -1477,16 +1477,20 @@\n .erase(i\n+ndex\n )%0A%09%09%7D%0A%09%7D\n@@ -1675,24 +1675,26 @@\n turn nil%0A%7D%0A%0A\n+%0A%0A\n func Join(sl\n",
+            "lines": "172"
+        },
+        {
+            "label": "2026-04-23_16-11-36",
+            "content": "@@ -1392,38 +1392,37 @@\n %7B%0A%09for i := \n-0; i %3C\n+range\n  ms.size\n ; i++ %7B%0A%09%09if\n@@ -1405,29 +1405,24 @@\n ange ms.size\n-; i++\n  %7B%0A%09%09if ms.d\n",
+            "lines": "168"
+        },
+        {
+            "label": "2026-04-23_16-12-20",
+            "content": "@@ -1464,22 +1464,8 @@\n (i)%0A\n-%09%09%09return nil%0A\n %09%09%7D%0A\n",
+            "lines": "168"
+        },
+        {
+            "label": "2026-04-23_16-13-30",
+            "content": "@@ -1461,19 +1461,16 @@\n ase(i)%0A%09\n-%09%7D%0A\n %09%09return\n@@ -1474,16 +1474,20 @@\n urn nil%0A\n+%09%09%7D%0A\n %09%7D%0A%0A%09ret\n",
+            "lines": "169"
+        },
+        {
+            "label": "2026-04-23_16-14-13",
+            "content": "@@ -1461,16 +1461,19 @@\n ase(i)%0A%09\n+%09%7D%0A\n %09%09return\n@@ -1477,20 +1477,16 @@\n urn nil%0A\n-%09%09%7D%0A\n %09%7D%0A%0A%09ret\n@@ -2485,26 +2485,16 @@\n %5B1%5D)%0A%09%09%09\n-result := \n ms.Erase\n@@ -2505,31 +2505,8 @@\n ue)%0A\n-%09%09%09fmt.Println(result)%0A\n %09%09ca\n",
+            "lines": "169"
+        },
+        {
+            "label": "2026-04-23_16-16-57",
+            "content": "@@ -2516,31 +2516,8 @@\n ue)%0A\n-%09%09%09if result != nil %7B%0A%09\n %09%09%09f\n@@ -2535,21 +2535,16 @@\n result)%0A\n-%09%09%09%7D%0A\n %09%09case %22\n",
+            "lines": "170"
+        },
+        {
+            "label": "2026-04-23_16-19-41",
+            "content": "@@ -1674,330 +1674,8 @@\n %0A%7D%0A%0A\n-func (ms *MultiSet) Count(value int) int %7B%0A%09inicio := 0%0A%09fim := ms.size - 1%0A%0A%09contaOcorrencia := 0%0A%0A%09for inicio %3C= fim %7B%0A%09%09meio := (inicio + fim) / 2%0A%09%09if ms.data%5Bmeio%5D == value %7B%0A%09%09%09contaOcorrencia++%0A%09%09%7D else if ms.data%5Bmeio%5D %3C value %7B%0A%09%09%09inicio = meio + 1%0A%09%09%7D else %7B%0A%09%09%09fim = meio - 1%0A%09%09%7D%0A%09%7D%0A%0A%09return contaOcorrencia%0A%7D%0A%0A\n func\n@@ -2727,24 +2727,27 @@\n %22count%22:%0A%09%09%09\n+// \n value, _ := \n@@ -2772,27 +2772,8 @@\n 1%5D)%0A\n-%09%09%09ms.Count(value)%0A\n %09%09ca\n",
+            "lines": "172"
+        },
+        {
+            "label": "2026-04-23_16-25-13",
+            "content": "@@ -1871,37 +1871,16 @@\n encia++%0A\n-%09%09%09inicio = meio + 1%0A\n %09%09%7D else\n",
+            "lines": "193"
+        },
+        {
+            "label": "2026-04-23_16-26-38",
+            "content": "@@ -3115,63 +3115,22 @@\n %0A%09%09%09\n-ocorrencia := ms.Count(value)%0A%09%09%09fmt.Println(ocorrencia\n+ms.Count(value\n )%0A%09%09\n",
+            "lines": "194"
+        },
+        {
+            "label": "2026-04-23_16-27-03",
+            "content": "@@ -1870,35 +1870,38 @@\n rencia++%0A%09%09%09\n-fim\n+inicio\n  = meio \n - 1%0A%09%09%7D else\n@@ -1884,25 +1884,25 @@\n icio = meio \n--\n++\n  1%0A%09%09%7D else \n",
+            "lines": "195"
+        },
+        {
+            "label": "2026-04-23_16-27-41",
+            "content": "@@ -1871,37 +1871,16 @@\n encia++%0A\n-%09%09%09inicio = meio + 1%0A\n %09%09%09fim =\n",
+            "lines": "195"
+        },
+        {
+            "label": "2026-04-23_16-28-00",
+            "content": "@@ -1871,16 +1871,37 @@\n encia++%0A\n+%09%09%09inicio = meio + 1%0A\n %09%09%09fim =\n",
+            "lines": "196"
+        },
+        {
+            "label": "2026-04-23_16-28-08",
+            "content": "@@ -1908,33 +1908,32 @@\n  ms.data%5Bmeio%5D %3C\n-=\n  value %7B%0A%09%09%09inic\n",
+            "lines": "195"
+        },
+        {
+            "label": "2026-04-23_16-30-16",
+            "content": "@@ -1920,224 +1920,9 @@\n o%5D %3C\n- value %7B%0A%09%09%09inicio = meio + 1%0A%09%09%7D else %7B%0A%09%09%09fim = meio - 1%0A%09%09%7D%0A%09%7D%0A%0A%09for inicio %3C= fim %7B%0A%09%09meio := (inicio + fim) / 2%0A%09%09if ms.data%5Bmeio%5D == value %7B%0A%09%09%09contaOcorrencia++%0A%09%09%09inicio = meio + 1%0A%09%09%7D else if ms.data%5Bmeio%5D %3C\n+=\n  val\n",
+            "lines": "195"
+        },
+        {
+            "label": "2026-04-23_16-38-50",
+            "content": "@@ -1772,58 +1772,8 @@\n := 0\n-%0A%09primeiraOcorrencia := -1%0A%09ultimaOcorrencia := -1\n %0A%0A%09f\n@@ -1845,37 +1845,36 @@\n %5D == value %7B%0A%09%09%09\n-ultim\n+cont\n aOcorrencia = me\n@@ -1864,31 +1864,26 @@\n taOcorrencia\n- = meio\n+++\n %0A%09%09%09fim = me\n@@ -2066,21 +2066,20 @@\n ue %7B%0A%09%09%09\n-ultim\n+cont\n aOcorren\n@@ -2081,23 +2081,18 @@\n orrencia\n- = meio\n+++\n %0A%09%09%09inic\n@@ -2199,116 +2199,12 @@\n %09%09%7D%0A\n+\n %09%7D%0A%0A\n-%09if primeiraOcorrencia == -1 %7B%0A%09%09return 0%0A%09%7D%0A%0A%09contaOcorrencia = ultimaOcorrencia - primeiraOcorrencia%0A%0A\n %09ret\n",
+            "lines": "207"
+        },
+        {
+            "label": "2026-04-23_16-43-20",
+            "content": "@@ -2326,17 +2326,16 @@\n encia = \n-(\n ultimaOc\n@@ -2367,13 +2367,8 @@\n ncia\n-) + 1\n %0A%0A%09r\n",
+            "lines": "215"
+        },
+        {
+            "label": "2026-04-23_16-43-35",
+            "content": "@@ -1748,23 +1748,69 @@\n e - 1%0A%0A%09\n-primeir\n+contaOcorrencia := 0%0A%09primeiraOcorrencia := -1%0A%09ultim\n aOcorren\n@@ -1903,23 +1903,21 @@\n ue %7B%0A%09%09%09\n-primeir\n+ultim\n aOcorren\n@@ -1926,38 +1926,35 @@\n a = meio%0A%09%09%09\n-inicio\n+fim\n  = meio \n + 1%0A%09%09%7D else\n@@ -1933,33 +1933,33 @@\n o%0A%09%09%09fim = meio \n-+\n+-\n  1%0A%09%09%7D else if v\n@@ -1952,32 +1952,24 @@\n %0A%09%09%7D else if\n- value %3E\n  ms.data%5Bmei\n@@ -1962,32 +1962,40 @@\n if ms.data%5Bmeio%5D\n+ %3C value\n  %7B%0A%09%09%09inicio = m\n@@ -2043,78 +2043,8 @@\n %09%7D%0A%0A\n-%09if primeiraOcorrencia == -1 %7B%0A%09%09return 0%0A%09%7D%0A%0A%09ultimaOcorrencia := -1%0A\n %09for\n@@ -2145,35 +2145,38 @@\n a = meio%0A%09%09%09\n-fim\n+inicio\n  = meio \n - 1%0A%09%09%7D else\n@@ -2155,33 +2155,33 @@\n %09%09inicio = meio \n--\n++\n  1%0A%09%09%7D else if v\n@@ -2182,16 +2182,8 @@\n e if\n- value %3E\n  ms.\n@@ -2192,16 +2192,24 @@\n ta%5Bmeio%5D\n+ %3C value\n  %7B%0A%09%09%09in\n@@ -2262,22 +2262,79 @@\n %09%7D%0A%09%7D%0A%0A%09\n-return\n+if primeiraOcorrencia == -1 %7B%0A%09%09return 0%0A%09%7D%0A%0A%09contaOcorrencia =\n  (ultima\n@@ -2369,16 +2369,41 @@\n cia) + 1\n+%0A%0A%09return contaOcorrencia\n %0A%7D%0A%0Afunc\n",
+            "lines": "215"
+        },
+        {
+            "label": "2026-04-23_16-49-18",
+            "content": "@@ -1875,32 +1875,53 @@\n orrencia = meio%0A\n+%09%09%09inicio = meio + 1%0A\n %09%09%7D else if valu\n@@ -2175,16 +2175,34 @@\n  = meio%0A\n+%09%09%09fim = meio - 1%0A\n %09%09%7D else\n",
+            "lines": "212"
+        },
+        {
+            "label": "2026-04-23_16-49-48",
+            "content": "@@ -1883,37 +1883,16 @@\n  = meio%0A\n-%09%09%09inicio = meio + 1%0A\n %09%09%7D else\n@@ -2154,34 +2154,16 @@\n  = meio%0A\n-%09%09%09fim = meio - 1%0A\n %09%09%7D else\n",
+            "lines": "210"
+        },
+        {
+            "label": "2026-04-23_16-49-53",
+            "content": "@@ -2313,17 +2313,17 @@\n rrencia \n-+\n+-\n  primeir\n",
+            "lines": "212"
+        },
+        {
+            "label": "2026-04-23_16-50-14",
+            "content": "@@ -2296,23 +2296,21 @@\n return (\n-primeir\n+ultim\n aOcorren\n@@ -2317,15 +2317,17 @@\n cia \n-- ultim\n++ primeir\n aOco\n",
+            "lines": "212"
+        },
+        {
+            "label": "2026-04-23_16-50-28",
+            "content": "@@ -1882,35 +1882,38 @@\n a = meio%0A%09%09%09\n-fim\n+inicio\n  = meio \n - 1%0A%09%09%7D else\n@@ -1896,25 +1896,25 @@\n icio = meio \n--\n++\n  1%0A%09%09%7D else \n@@ -2174,38 +2174,35 @@\n a = meio%0A%09%09%09\n-inicio\n+fim\n  = meio \n + 1%0A%09%09%7D else\n@@ -2181,33 +2181,33 @@\n o%0A%09%09%09fim = meio \n-+\n+-\n  1%0A%09%09%7D else if v\n@@ -2296,21 +2296,23 @@\n return (\n-ultim\n+primeir\n aOcorren\n@@ -2317,23 +2317,21 @@\n encia - \n-primeir\n+ultim\n aOcorren\n",
+            "lines": "212"
+        },
+        {
+            "label": "2026-04-23_16-52-00",
+            "content": "@@ -2045,40 +2045,8 @@\n %09%7D%0A%0A\n-%09inicio = 0%0A%09fim = ms.size - 1%0A%0A\n %09ult\n",
+            "lines": "212"
+        },
+        {
+            "label": "2026-04-23_16-57-38",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strings\"\n\t\"strconv\"\n)\n\ntype MultiSet struct {\n\tdata      []int\n\tsize  \t  int\n\tcapacity  int\n}\n\nfunc NewMultiSet (capacity int) *MultiSet {\n\treturn &MultiSet{\n\t\tdata: make([]int, capacity),\n\t\tsize: 0,\n\t\tcapacity: capacity,\n\t}\n}\n\nfunc (ms *MultiSet) String() string {\n\treturn fmt.Sprintf(\"[%v]\", Join(ms.data[0:ms.size], \", \"))\n}\n\nfunc (ms *MultiSet) Insert(value int) {\n\tinicio := 0\n\tfim := ms.size - 1\n\n\tfor inicio <= fim {\n\t\tmeio := (inicio + fim) / 2\n\t\tif ms.data[meio] <= value {\n\t\t\tinicio = meio + 1\n\t\t} else {\n\t\t\tfim = meio - 1\n\t\t}\n\t}\n\n\tif ms.capacity == ms.size {\n\t\tms.expand()\n\t}\n\n\tindex := inicio\n\tms.insert(value, index)\n}\n\nfunc (ms *MultiSet) insert(value, index int) error {\n\tif index < 0 || index > ms.size {\n\t\treturn fmt.Errorf(\"index out of range\")\n\t}\n\n\tfor i := ms.size; i > index; i-- {\n\t\tms.data[i] = ms.data[i - 1]\n\t}\n\n\tms.data[index] = value\n\tms.size += 1\n\n\treturn nil\n}\n\nfunc (ms *MultiSet) expand() {\n\tnewCapacity := ms.capacity * 2\n\t\n\tif newCapacity == 0 {\n\t\tms.capacity = 1\n\t}\n\n\tnewMultiSet := make([]int, newCapacity)\n\n\tfor i := 0; i < ms.size; i++ {\n\t\tnewMultiSet[i] = ms.data[i]\n\t}\n\n\tms.data = newMultiSet\n\tms.capacity = newCapacity\n}\n\nfunc (ms *MultiSet) Contains(value int) bool {\n\tfor i := range ms.data {\n\t\tif ms.data[i] == value {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}\n\nfunc (ms *MultiSet) Erase(value int) error {\n\tfor i := 0; i < ms.size; i++ {\n\t\tif ms.data[i] == value {\n\t\t\tms.erase(i)\n\t\t\treturn nil\n\t\t}\n\t}\n\n\treturn fmt.Errorf(\"value not found\")\n}\n\nfunc (ms *MultiSet) erase(index int) error {\n\tfor i := index; i < ms.size-1; i++ {\n\t\tms.data[i] = ms.data[i + 1]\n\t}\n\n\tms.size -= 1\n\n\treturn nil\n}\n\nfunc (ms *MultiSet) Count(value int) int {\n\tinicio := 0\n\tfim := ms.size - 1\n\n\tprimeiraOcorrencia := -1\n\n\tfor inicio <= fim {\n\t\tmeio := (inicio + fim) / 2\n\t\tif ms.data[meio] == value {\n\t\t\tprimeiraOcorrencia = meio\n\t\t\tfim = meio - 1\n\t\t} else if value > ms.data[meio] {\n\t\t\tinicio = meio + 1\n\t\t} else {\n\t\t\tfim = meio - 1\n\t\t}\n\t}\n\n\tif primeiraOcorrencia == -1 {\n\t\treturn 0\n\t}\n\n\tinicio = 0\n\tfim = ms.size - 1\n\n\tultimaOcorrencia := -1\n\tfor inicio <= fim {\n\t\tmeio := (inicio + fim) / 2\n\t\tif ms.data[meio] == value {\n\t\t\tultimaOcorrencia = meio\n\t\t\tinicio = meio + 1\n\t\t} else if value > ms.data[meio] {\n\t\t\tinicio = meio + 1\n\t\t} else {\n\t\t\tfim = meio - 1\n\t\t}\n\t}\n\n\treturn (ultimaOcorrencia - primeiraOcorrencia) + 1\n}\n\nfunc Join(slice []int, sep string) string {\n\tif len(slice) == 0 {\n\t\treturn \"\"\n\t}\n\tresult := fmt.Sprintf(\"%d\", slice[0])\n\tfor _, value := range slice[1:] {\n\t\tresult += sep + fmt.Sprintf(\"%d\", value)\n\t}\n\treturn result\n}\n\nfunc main() {\n\tvar line, cmd string\n\tscanner := bufio.NewScanner(os.Stdin)\n\tms := NewMultiSet(0)\n\n\tfor scanner.Scan() {\n\t\tfmt.Print(\"$\")\n\t\tline = scanner.Text()\n\t\targs := strings.Fields(line)\n\t\tfmt.Println(line)\n\t\tif len(args) == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tcmd = args[0]\n\n\t\tswitch cmd {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"init\":\n\t\t\tvalue, _ := strconv.Atoi(args[1])\n\t\t\tms = NewMultiSet(value)\n\t\tcase \"insert\":\n\t\t\tfor _, part := range args[1:] {\n\t\t\t\tvalue, _ := strconv.Atoi(part)\n\t\t\t\tms.Insert(value)\n\t\t\t}\n\t\tcase \"show\":\n\t\t\tfmt.Println(ms.String())\n\t\tcase \"erase\":\n\t\t\tvalue, _ := strconv.Atoi(args[1])\n\t\t\tresult := ms.Erase(value)\n\t\t\tif result != nil {\n\t\t\t\tfmt.Println(result)\n\t\t\t}\n\t\tcase \"contains\":\n\t\t\tvalue, _ := strconv.Atoi(args[1])\n\t\t\tif ms.Contains(value) {\n\t\t\t\tfmt.Println(\"true\")\n\t\t\t} else {\n\t\t\t\tfmt.Println(\"false\")\n\t\t\t}\n\t\tcase \"count\":\n\t\t\tvalue, _ := strconv.Atoi(args[1])\n\t\t\tocorrencia := ms.Count(value)\n\t\t\tfmt.Println(ocorrencia)\n\t\tcase \"unique\":\n\t\tcase \"clear\":\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "215"
         }
     ]
 }
