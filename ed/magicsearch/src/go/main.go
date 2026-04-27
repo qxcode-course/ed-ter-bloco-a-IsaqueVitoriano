@@ -19,7 +19,7 @@ func MagicSearch(slice []int, value int) int {
 		if slice[meio] == value {
 			ultimaOcorrencia = meio
 			inicio = meio + 1
-		} else if value > slice[meio] {
+		} else if slice[meio] < value {
 			inicio = meio + 1
 		} else {
 			fim = meio - 1
