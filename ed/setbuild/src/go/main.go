@@ -23,20 +23,24 @@ func NewSet(capacity int) *Set {
 }
 
 func (s *Set) Insert(value int) {
+	if s.size == s.capacity {
+		s.reserve(s.capacity)
+	}
+
+	if s.Contains(value) {
+		return
+	}
+
 	inicio := 0
 	fim := s.size - 1
 
 	for inicio <= fim {
-		meio := (inicio + fim) / 2 
+		meio := (inicio + fim) / 2
 		if s.data[meio] <= value {
 			inicio = meio + 1
 		} else {
 			fim = meio - 1
 		}
-	}
-
-	if s.size == s.capacity {
-		s.reserve(s.capacity)
 	}
 
 	index := inicio
@@ -47,10 +51,6 @@ func (s *Set) Insert(value int) {
 func (s *Set) insert(value, index int) error {
 	if index < 0 || index > s.size {
 		return fmt.Errorf("index out of range")
-	}
-
-	if s.binarySearch(value) != -1 {
-		return nil
 	}
 	
 	for i := s.size; i > index; i-- {
@@ -92,10 +92,10 @@ func (s *Set) erase(index int) error {
 }   
 
 func (s *Set) reserve(newCapacity int) {
-	newCapacity = s.capacity * 2
-
 	if s.capacity == 0 {
 		s.capacity = 1
+	} else {
+		newCapacity = s.capacity * 2
 	}
 
 	newSet := make([]int, newCapacity)
@@ -112,8 +112,6 @@ func (s *Set) binarySearch(value int) int {
 	inicio := 0
 	fim := s.size - 1
 
-	encontrado := -1
-
 	for inicio <= fim {
 		meio := (inicio + fim) / 2
 		if s.data[meio] == value {
@@ -125,11 +123,7 @@ func (s *Set) binarySearch(value int) int {
 		}
 	}
 
-	if encontrado == -1 {
-		return -1
-	}
-
-	return inicio
+	return -1
 } 
 
 func (s *Set) String() string {
