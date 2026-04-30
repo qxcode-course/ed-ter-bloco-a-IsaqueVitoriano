@@ -21,7 +21,7 @@ type LList struct {
 }
 
 func (n *Node) Next() *Node {
-	if n.root.next == n.root {
+	if n.next == n.root {
 		return nil
 	}
 
@@ -29,7 +29,7 @@ func (n *Node) Next() *Node {
 }
 
 func (n *Node) Prev() *Node {
-	if n.root.prev == n.root {
+	if n.prev == n.root {
 		return nil
 	}
 
@@ -93,12 +93,40 @@ func (l *LList) Insert(node *Node, value int) {
 	l.size++
 }
 
+func (l *LList) Remove(node *Node) {
+	A := node.prev
+	C := node.next
+
+	A.next = C
+	C.prev = A
+	node.prev = nil
+	node.next = nil
+
+	l.size--
+}
+
 func (l *LList) PushBack(value int) {
 	l.Insert(l.root.prev, value)
 }
 
 func (l *LList) PushFront(value int) {
-	l.Insert(l.root.prev.next, value)
+	l.Insert(l.root, value)
+}
+
+func (l* LList) PopBack() {
+	if l.root.prev == nil {
+		return
+	}
+
+	l.Remove(l.root.prev)
+}
+
+func (l * LList) PopFront() {
+	if l.root.next == nil {
+		return
+	}
+
+	l.Remove(l.root.next)
 }
 
 func (l *LList) Clear() {
@@ -167,9 +195,9 @@ func main() {
 				ll.PushFront(num)
 			}
 		case "pop_back":
-			// ll.PopBack()
+			ll.PopBack()
 		case "pop_front":
-			// ll.PopFront()
+			ll.PopFront()
 		case "clear":
 			ll.Clear()
 		case "walk":
@@ -183,31 +211,31 @@ func main() {
 			}
 			fmt.Println("]")
 		case "replace":
-			// oldvalue, _ := strconv.Atoi(args[1])
-			// newvalue, _ := strconv.Atoi(args[2])
-			// node := ll.Search(oldvalue)
-			// if node != nil {
-			// 	node.Value = newvalue
-			// } else {
-			// 	fmt.Println("fail: not found")
-			// }
+			oldvalue, _ := strconv.Atoi(args[1])
+			newvalue, _ := strconv.Atoi(args[2])
+			node := ll.Search(oldvalue)
+			if node != nil {
+			node.Value = newvalue
+			} else {
+				fmt.Println("fail: not found")
+			}
 		case "insert":
 			oldvalue, _ := strconv.Atoi(args[1])
 			newvalue, _ := strconv.Atoi(args[2])
 			node := ll.Search(oldvalue)
 			if node != nil {
-			 	ll.Insert(node, newvalue)
+			 	ll.Insert(node.prev, newvalue)
 			} else {
 			 	fmt.Println("fail: not found")
 			}
 		case "remove":
-			// oldvalue, _ := strconv.Atoi(args[1])
-			// node := ll.Search(oldvalue)
-			// if node != nil {
-			// 	ll.Remove(node)
-			// } else {
-			// 	fmt.Println("fail: not found")
-			// }
+			oldvalue, _ := strconv.Atoi(args[1])
+			node := ll.Search(oldvalue)
+			if node != nil {
+				ll.Remove(node)
+			} else {
+			 	fmt.Println("fail: not found")
+			}
 		case "end":
 			return
 		default:
