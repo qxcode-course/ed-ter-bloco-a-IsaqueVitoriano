@@ -1,0 +1,79 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-30_16-10-25",
+            "content": "@@ -134,222 +134,16 @@\n  %7B%0A%09\n-saida := %22%5B %22%0A%0A%09atual := l.root.next%0A%0A%09for atual != l.root %7B%0A%09%09if l.root.next == sword %7B%0A%09%09%09saida += fmt.Sprintf(%22%25d%3E%22, sword.Value)%0A%09%09%7D else %7B%0A%09%09%09saida += fmt.Sprintf(%22%25d %22, sword.Value)%0A%09%09%7D%0A%09%7D%0A%0A%09return saida + %22%5D\n+return %22\n %22%0A%7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-30_16-16-07",
+            "content": "@@ -450,27 +450,19 @@\n %09return \n-l.root.next\n+nil\n %0A%7D%0A%0Afunc\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-30_16-19-12",
+            "content": "@@ -326,29 +326,8 @@\n %09%09%7D%0A\n-%09%09atual = atual.next%0A\n %09%7D%0A%0A\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-30_16-20-09",
+            "content": "@@ -305,22 +305,21 @@\n (%22%25d %22, \n-l.root\n+sword\n .Value)%0A\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-04-30_16-20-40",
+            "content": "@@ -247,17 +247,16 @@\n ntf(%22%25d%3E\n- \n %22, sword\n@@ -365,17 +365,16 @@\n aida + %22\n- \n %5D%22%0A%7D%0A%0A//\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-04-30_16-21-04",
+            "content": "@@ -366,16 +366,17 @@\n aida + %22\n+ \n %5D%22%0A%7D%0A%0A//\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-04-30_16-21-15",
+            "content": "@@ -306,21 +306,22 @@\n (%22%25d %22, \n-atual\n+l.root\n .Value)%0A\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-04-30_16-22-01",
+            "content": "@@ -472,17 +472,21 @@\n %09return \n-i\n+l.roo\n t.next%0A%7D\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-04-30_16-24-08",
+            "content": "@@ -196,21 +196,27 @@\n  %7B%0A%09%09if \n-atual\n+l.root.next\n  == swor\n@@ -472,21 +472,17 @@\n %09return \n-l.roo\n+i\n t.next%0A%7D\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-04-30_16-30-26",
+            "content": "@@ -466,17 +466,21 @@\n %09return \n-i\n+l.roo\n t.next%0A%7D\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-04-30_16-30-53",
+            "content": "@@ -462,59 +462,8 @@\n %5D %7B%0A\n-%09if it.next == l.root %7B%0A%09%09it.next = l.root.next%0A%09%7D%0A\n %09ret\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-04-30_16-31-42",
+            "content": "@@ -484,22 +484,25 @@\n oot %7B%0A%09%09\n-return\n+it.next =\n  l.root.\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-04-30_16-33-26",
+            "content": "@@ -859,10 +859,40 @@\n ord)%0A%09%7D%0A\n+%09fmt.Println(ToStr(l, sword))%0A\n %7D%0A\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-04-30_16-35-08",
+            "content": "@@ -585,16 +585,42 @@\n chosen)%0A\n+%09fmt.Println(qtd, chosen)%0A\n %09l := Ne\n@@ -863,36 +863,6 @@\n %0A%09%7D%0A\n-%09fmt.Println(ToStr(l, sword))%0A\n %7D%0A\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-04-30_16-35-23",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\n// mostra a lista com o elemento sword destacado\nfunc ToStr(l *DList[int], sword *DNode[int]) string {\n\tsaida := \"[ \"\n\n\tatual := l.root.next\n\n\tfor atual != l.root {\n\t\tif atual == sword {\n\t\t\tsaida += fmt.Sprintf(\"%d> \", sword.Value)\n\t\t} else {\n\t\t\tsaida += fmt.Sprintf(\"%d \", atual.Value)\n\t\t}\n\t\tatual = atual.next\n\t}\n\n\treturn saida + \"]\"\n}\n\n// move para frente na lista circular\nfunc Next(l *DList[int], it *DNode[int]) *DNode[int] {\n\tif it.next == l.root {\n\t\treturn l.root.next\n\t}\n\treturn it.next\n}\n\nfunc main() {\n\tvar qtd, chosen int\n\tfmt.Scan(&qtd, &chosen)\n\tl := NewDList[int]()\n\tfor i := 1; i <= qtd; i++ {\n\t\tl.PushBack(i)\n\t}\n\tsword := l.Front()\n\tfor range chosen - 1 {\n\t\tsword = Next(l, sword)\n\t}\n\tfor range qtd - 1 {\n\t\tfmt.Println(ToStr(l, sword))\n\t\tl.Erase(Next(l, sword))\n\t\tsword = Next(l, sword)\n\t}\n\tfmt.Println(ToStr(l, sword))\n}\n",
+            "lines": "50"
+        }
+    ]
+}

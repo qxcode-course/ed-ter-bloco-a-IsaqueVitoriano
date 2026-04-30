@@ -12,3 +12,28 @@
 2026-04-30 15:46:31, EXEC, v:1, k:ed@lista_d2, mode:FULL, rate:80, size:245
 2026-04-30 15:46:42, EXEC, v:1, k:ed@lista_d2, mode:FULL, rate:100, size:245
 2026-04-30 15:48:07, SELF, v:1, k:ed@lista_d2, self:1, rate:100, study:25, concept:1
+2026-04-30 16:07:41, MOVE, v:1, k:ed@prin_list1, mode:DOWN
+2026-04-30 16:07:42, MOVE, v:1, k:ed@prin_list1, mode:PICK
+2026-04-30 16:10:25, EXEC, v:1, k:ed@prin_list1, mode:FULL, rate:0, size:171
+2026-04-30 16:07:41, MOVE, v:1, k:ed@prin_list1, mode:EDIT
+2026-04-30 16:12:02, MOVE, v:1, k:ed@prin_list1, mode:EDIT
+2026-04-30 16:09:16, MOVE, v:1, k:ed@prin_list1, mode:EDIT
+2026-04-30 16:16:07, EXEC, v:1, k:ed@prin_list1, mode:FULL, rate:0, size:183
+2026-04-30 16:16:14, MOVE, v:1, k:ed@prin_list1, mode:EDIT
+2026-04-30 16:19:12, EXEC, v:1, k:ed@prin_list1, mode:FULL, rate:0, size:183
+2026-04-30 16:20:09, EXEC, v:1, k:ed@prin_list1, mode:FULL, rate:0, size:184
+2026-04-30 16:20:40, EXEC, v:1, k:ed@prin_list1, mode:FULL, rate:0, size:184
+2026-04-30 16:21:04, EXEC, v:1, k:ed@prin_list1, mode:FULL, rate:0, size:184
+2026-04-30 16:21:15, EXEC, v:1, k:ed@prin_list1, mode:FULL, rate:0, size:184
+2026-04-30 16:22:01, EXEC, v:1, k:ed@prin_list1, mode:FULL, rate:0, size:184
+2026-04-30 16:21:59, MOVE, v:1, k:ed@prin_list1, mode:EDIT
+2026-04-30 16:24:08, EXEC, v:1, k:ed@prin_list1, mode:FULL, rate:0, size:184
+2026-04-30 16:26:39, MOVE, v:1, k:ed@prin_list1, mode:EDIT
+2026-04-30 16:30:26, EXEC, v:1, k:ed@prin_list1, mode:FULL, rate:0, size:184
+2026-04-30 16:30:54, EXEC, v:1, k:ed@prin_list1, mode:FULL, rate:0, size:184
+2026-04-30 16:31:42, EXEC, v:1, k:ed@prin_list1, mode:FULL, rate:0, size:187
+2026-04-30 16:32:06, MOVE, v:1, k:ed@prin_list1, mode:EDIT
+2026-04-30 16:33:26, EXEC, v:1, k:ed@prin_list1, mode:FULL, rate:0, size:187
+2026-04-30 16:35:08, EXEC, v:1, k:ed@prin_list1, mode:FULL, rate:0, size:186
+2026-04-30 16:35:23, EXEC, v:1, k:ed@prin_list1, mode:FULL, rate:100, size:186
+2026-04-30 16:36:03, SELF, v:1, k:ed@prin_list1, self:1, rate:100, study:30, concept:1
