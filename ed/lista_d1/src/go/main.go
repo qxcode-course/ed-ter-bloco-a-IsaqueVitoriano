@@ -9,102 +9,97 @@ import (
 )
 
 type Node struct {
-	info int
+	Value int
 	prev *Node
 	next *Node
 }
 
-type List struct {
-	node *Node
+type LList struct {
+	root *Node
 }
 
-func NewLList() *List{
-	n := &Node{info:0}
-	n.next = n
-	n.prev = n
-	return &List{node: n}
+func NewLList() *LList {
+	root := &Node{Value:0}
+	root.prev = root
+	root.next = root
+	return &LList{root: root}
 }
 
-func (l *List) Insert(B *Node) {
-	A := B.prev
-	C := B.next
-	A.next = B
-	C.prev = B
+func (ll *LList) Insert(node *Node) {
+	A := node.prev
+	C := node.next
+	A.next = node
+	C.prev = node
 }
 
-func (l *List) Remove(B *Node) {
-	A := B.prev
-	C := B.next
+func (ll *LList) Remove(node *Node) {
+	A := node.prev
+	C := node.next
 	A.next = C
 	C.prev = A
-	B.prev = nil
-	B.next = nil
+	node.prev = nil
+	node.next = nil
 }
 
-func (l *List) PushFront(value int) {
-	node := &Node{info: value}
-
-	node.prev = l.node
-	node.next = l.node.next
-
-	l.Insert(node)
+func (ll *LList) PushFront(value int) {
+	node := &Node{Value: value}
+	node.prev = ll.root
+	node.next = ll.root.next
+	ll.Insert(node)
 }
 
-func (l *List) PushBack(value int) {
-	node := &Node{info: value}
-
-	node.prev = l.node.prev
-	node.next = l.node
-
-	l.Insert(node)
+func (ll *LList) PushBack(value int) {
+	node := &Node{Value: value}
+	node.prev = ll.root.prev
+	node.next = ll.root
+	ll.Insert(node)
 }
 
-func (l *List) PopBack() {
-	if l.Size() > 0 {
-		l.Remove(l.node.prev)
+func (ll *LList) PopFront() {
+	if ll.root.next != ll.root {
+		ll.Remove(ll.root.next)
 	}
 }
 
-func (l *List) PopFront() {
-	if l.Size() > 0 {
-		l.Remove(l.node.next)
+func (ll *LList) PopBack() {
+	if ll.root.prev != ll.root {
+		ll.Remove(ll.root.prev)
 	}
 }
 
-func (l *List) Size() int {
-	contaElementos := 0
+func (ll *LList) Clear() {
+	ll.root.next = ll.root
+	ll.root.prev = ll.root
+}
 
-	nodeAtual := l.node.next
+func (ll *LList) Size() int {
+	contador := 0
 
-	for nodeAtual != l.node {
-		contaElementos++
-		nodeAtual = nodeAtual.next
+	atual := ll.root.next
+
+	for atual != ll.root {
+		contador++
+		atual = atual.next
 	}
 
-	return contaElementos
+	return contador
 }
 
-func (l *List) Clear() {
-	l.node.next = l.node
-	l.node.prev = l.node
-}
-
-func (l *List) String() string {
-	if l.Size() == 0 {
+func (ll *LList) String() string {
+	if ll.Size() == 0 {
 		return "[]"
 	}
 
 	saida := "["
+	atual := ll.root.next
 
-	it := l.node.next
+	for atual != ll.root {
+		saida += fmt.Sprintf("%d", atual.Value)
 
-	for it != l.node {
-		saida += fmt.Sprintf("%d", it.info)
-
-		if it.next != l.node {
+		if atual.next != ll.root {
 			saida += ", "
 		}
-		it = it.next
+		atual = atual.next
 	}
 
 	return saida + "]"
