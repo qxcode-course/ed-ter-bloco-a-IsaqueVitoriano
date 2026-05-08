@@ -99,11 +99,40 @@ func (e *Editor) KeyDown() {
 }
 
 func (e *Editor) KeyBackspace() {
+	if e.itChar == e.itLine.Value.Front() {
+		if e.itLine == e.text.Front() {
+			return
+		}
+
+		linhaDeCima := e.itLine.Prev()
+		for i := e.itLine.Value.Front(); i != e.itLine.Value.End(); i = i.Next() {
+			linhaDeCima.Value.PushBack(i.Value)
+		}
+
+		e.text.Erase(e.itLine)
+		e.itLine = linhaDeCima
+		e.itChar = linhaDeCima.Value.End()
+	}
+
 	e.itLine.Value.Erase(e.itChar.Prev())
 }
 
 func (e *Editor) KeyDelete() {
-	e.itLine.Value.Erase(e.itChar.Next())
+	if e.itChar == e.itLine.Value.End() {
+		if e.itLine == e.text.Back() {
+			return
+		}
+
+		linhaDeBaixo := e.itLine.Next()
+		for i := linhaDeBaixo.Value.Front(); i != linhaDeBaixo.Value.End(); i = i.Next() {
+			e.itLine.Value.PushBack(i.Value)
+		}
+
+		e.text.Erase(linhaDeBaixo)
+	}
+
+	e.itLine.Value.Erase(e.itChar)
+	e.itChar = e.itChar.Next()
 }
 
 func main() { // Texto inicial e posição do cursor
