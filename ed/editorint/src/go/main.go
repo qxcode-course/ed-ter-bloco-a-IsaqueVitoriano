@@ -32,15 +32,15 @@ func (e *Editor) KeyLeft() {
 }
 
 func (e *Editor) KeyEnter() {
-	newLine := NewList[rune]()
+	novaLinha := NewList[rune]()
 
 	for e.itChar != e.itLine.Value.End() {
-		newLine.PushBack(e.itChar.Next().Value)
+		novaLinha.PushBack(e.itChar.Next().Value)
 		e.itLine.Value.Erase(e.itChar.Next())
 		e.itChar = e.itChar.Next()
 	}
 
-	e.text.Insert(e.itLine.Next(), newLine) // cria uma nova linha e insere abaixo da linha corrente
+	e.text.Insert(e.itLine.Next(), novaLinha) // cria uma nova linha e insere abaixo da linha corrente
 	e.itLine = e.itLine.Next()        // vai pra próxima linha
 	e.itChar = e.itLine.Value.Front() // move o cursor para o início da linha
 }
@@ -50,6 +50,7 @@ func (e *Editor) KeyRight() {
 		e.itChar = e.itChar.Next()
 		return
 	}
+
 	if e.itLine != e.text.Back() {
 		e.itLine = e.itLine.Next()
 		e.itChar = e.itLine.Value.Front()
@@ -61,15 +62,15 @@ func (e *Editor) KeyUp() {
 		return
 	}
 
-	contadorDeColunas := 0
+	contaColunas := 0
 	for i := e.itLine.Value.Front(); i != e.itChar && i != e.itLine.Value.End(); i = i.Next() {
-		contadorDeColunas++
+		contaColunas++
 	}
 
 	e.itLine = e.itLine.Prev()
 	e.itChar = e.itLine.Value.Front()
 
-	for i := 0; i < contadorDeColunas; i++ {
+	for i := 0; i < contaColunas; i++ {
 		if e.itChar == e.itLine.Value.End() {
 			break
 		}
@@ -82,15 +83,15 @@ func (e *Editor) KeyDown() {
 		return
 	}
 
-	contadorDeColunas := 0
+	contaColunas := 0
 	for i := e.itLine.Value.Front(); i != e.itChar && i != e.itLine.Value.End(); i = i.Next() {
-		contadorDeColunas++
+		contaColunas++
 	}
 
 	e.itLine = e.itLine.Next()
 	e.itChar = e.itLine.Value.Front()
 
-	for i := 0; i < contadorDeColunas; i++ {
+	for i := 0; i < contaColunas; i++ {
 		if e.itChar == e.itLine.Value.End() {
 			break
 		}
