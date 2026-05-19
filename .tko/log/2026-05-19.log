@@ -1,0 +1,11 @@
+2026-05-19 16:05:25, MOVE, v:1, k:ed@queimada, mode:PICK
+2026-05-19 16:09:54, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-05-19 16:14:53, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-05-19 16:19:45, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-05-19 16:22:56, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-05-19 16:29:49, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-05-19 16:30:48, EXEC, v:1, k:ed@queimada, mode:FULL, rate:14, size:57
+2026-05-19 16:33:51, EXEC, v:1, k:ed@queimada, mode:FULL, rate:100, size:68
+2026-05-19 16:34:12, EXEC, v:1, k:ed@queimada, mode:FULL, rate:100
+2026-05-19 16:33:35, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-05-19 16:34:58, SELF, v:1, k:ed@queimada, self:1, rate:100, study:30, concept:1

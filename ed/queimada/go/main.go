@@ -6,36 +6,38 @@ import (
 	"os"
 )
 
-func isTree (grid [][]rune, l, c int, caractere rune) bool {
-	qtdLinhas := len(grid)
-	qtdColunas := len(grid[0])
-
-	if l < 0 || l >= qtdLinhas || c < 0 || c >= qtdColunas {
-		return false
-	}
-
-	if grid[l][c] != caractere {
-		return false
-	}
-
-	return true
+type Pos struct {
+	l, c int
 }
 
-func burnTrees(grid [][]rune, l, c int) {
-	if !isTree(grid, l, c, '#') {
+func getNeig(pos Pos) []Pos {
+	return []Pos{
+		{pos.l, pos.c - 1}, 
+		{pos.l - 1, pos.c}, 
+		{pos.l, pos.c + 1}, 
+		{pos.l + 1, pos.c},
+	}
+}
+
+func inside(grid [][]rune, pos Pos) bool {
+	return !(pos.l < 0 || pos.l >= len(grid) || pos.c < 0 || pos.c >= len(grid[0]))
+}
+
+func match(grid [][]rune, pos Pos, value rune) bool {
+	return inside(grid, pos) && grid[pos.l][pos.c] == value
+}
+
+func burnTrees(grid [][]rune, pos Pos, visitados map[Pos]bool) {
+	if !match(grid, pos, '#') || visitados[pos]{
 		return 
 	}
 
-	grid[l][c] = 'o'
-	burnTrees(grid, l, c + 1)
-	burnTrees(grid, l, c - 1)
-	burnTrees(grid, l + 1, c)
-	burnTrees(grid, l - 1, c)
+	visitados[pos] = true
+	grid[pos.l][pos.c] = 'o'
 
-	// se estiver fora da matriz, retorne
-	// se o elemento atual não for uma arvore, retorne
-	// queime a arvore colocando o caractere 'o' na posição atual
-	// chame a recursão para todos os 4 vizinhos
+	for _, vizinho := range getNeig(pos) {
+		burnTrees(grid, vizinho, visitados)
+	}
 }
 
 func main() {
@@ -51,7 +53,11 @@ func main() {
 		line := []rune(scanner.Text())
 		grid = append(grid, line)
 	}
-	burnTrees(grid, lfire, cfire)
+
+	visitados := make(map[Pos]bool)
+	posicaoInicial := Pos{lfire, cfire}
+	burnTrees(grid, posicaoInicial, visitados)
+	
 	showGrid(grid)
 }
 
