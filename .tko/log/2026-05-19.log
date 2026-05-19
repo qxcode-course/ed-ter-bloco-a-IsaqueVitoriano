@@ -9,3 +9,9 @@
 2026-05-19 16:34:12, EXEC, v:1, k:ed@queimada, mode:FULL, rate:100
 2026-05-19 16:33:35, MOVE, v:1, k:ed@queimada, mode:EDIT
 2026-05-19 16:34:58, SELF, v:1, k:ed@queimada, self:1, rate:100, study:30, concept:1
+2026-05-19 16:37:32, MOVE, v:1, k:ed@queimada, mode:BACK
+2026-05-19 16:37:49, MOVE, v:1, k:ed@labirinto, mode:PICK
+2026-05-19 16:49:54, MOVE, v:1, k:ed@labirinto, mode:EDIT
+2026-05-19 16:54:42, EXEC, v:1, k:ed@labirinto, mode:FULL, rate:100, size:90
+2026-05-19 16:53:58, MOVE, v:1, k:ed@labirinto, mode:EDIT
+2026-05-19 16:55:51, SELF, v:1, k:ed@labirinto, self:1, rate:100, study:22, concept:1

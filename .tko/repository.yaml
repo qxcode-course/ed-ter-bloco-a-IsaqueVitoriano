@@ -28,5 +28,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@queimada
-selected_index: 8
+selected: ed@labirinto
+selected_index: 9

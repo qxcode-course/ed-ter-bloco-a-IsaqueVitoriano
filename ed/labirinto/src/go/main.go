@@ -11,7 +11,12 @@ type Pos struct {
 }
 
 func getNeig(p Pos) []Pos {
-	return []Pos{{p.l, p.c - 1}, {p.l - 1, p.c}, {p.l, p.c + 1}, {p.l + 1, p.c}}
+	return []Pos{
+		{p.l, p.c - 1}, 
+		{p.l - 1, p.c}, 
+		{p.l, p.c + 1}, 
+		{p.l + 1, p.c},
+	}
 }
 
 func inside(grid [][]rune, p Pos) bool {
@@ -23,23 +28,25 @@ func match(grid [][]rune, p Pos, value rune) bool {
 }
 
 // Função recursiva que tenta encontrar o caminho do início ao fim
-func search(grid [][]rune, startPos, endPos Pos) bool {
-	if startPos == endPos {
-		grid[startPos.l][startPos.c] = '.'
+func search(grid [][]rune, pos, endPos Pos, visitados map[Pos]bool) bool {
+	if pos == endPos {
+		grid[pos.l][pos.c] = '.'
 		return true
 	}
 
-	grid[startPos.l][startPos.c] = '.'
+	visitados[pos] = true
+	grid[pos.l][pos.c] = '.'
 
-	for _, pos := range getNeig(startPos) {
-		if match(grid, pos, ' ') {
-			if search(grid, pos, endPos) {
+	for _, pos := range getNeig(pos) {
+		if match(grid, pos, ' ') && !visitados[pos] {
+			if search(grid, pos, endPos, visitados) {
 				return true
 			}
 		}
 	}
 
-	grid[startPos.l][startPos.c] = ' '
+	visitados[pos] = false
+	grid[pos.l][pos.c] = ' '
 
 	return false
 }
@@ -73,7 +80,8 @@ func main() {
 		}
 	}
 
-	search(grid, startPos, endPos)
+	visitados := make(map[Pos]bool)
+	search(grid, startPos, endPos, visitados)
 
 	// Imprime o labirinto final
 	for _, line := range grid {
