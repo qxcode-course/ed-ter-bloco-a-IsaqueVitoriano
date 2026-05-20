@@ -1,0 +1,89 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-20_16-43-40",
+            "content": "@@ -95,45 +95,15 @@\n ros \n-int%0A    for i := 0; i %3C n; i++ %7B%0A    \n+string%0A\n     \n@@ -125,14 +125,8 @@\n ros)\n-%0A    %7D\n %0A%0A  \n",
+            "lines": "14"
+        },
+        {
+            "label": "2026-05-20_16-45-32",
+            "content": "@@ -95,10 +95,8 @@\n ros \n-%5B%5D\n int%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-05-20_16-46-06",
+            "content": "@@ -97,14 +97,11 @@\n s %5B%5D\n-str\n in\n-g\n+t\n %0A   \n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-05-20_16-46-29",
+            "content": "@@ -91,16 +91,18 @@\n nteiros \n+%5B%5D\n string%0A \n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-05-20_16-46-39",
+            "content": "@@ -78,16 +78,20 @@\n k)%0A%0A    \n+var \n inteiros\n@@ -95,14 +95,14 @@\n ros \n-:= %22 %22\n+string\n %0A   \n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-05-20_16-49-02",
+            "content": "@@ -94,22 +94,11 @@\n  := \n-make(%5B%5Dint, n)\n+%22 %22\n %0A   \n@@ -153,11 +153,8 @@\n iros\n-%5Bi%5D\n )%0A  \n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-05-20_16-49-59",
+            "content": "@@ -25,274 +25,8 @@\n t%22%0A%0A\n-func somaSubconjunto(inteiros %5B%5Dint, resultado int) bool %7B%0A    soma := 0%0A    for i := range inteiros %7B%0A        soma += inteiros%5Bi%5D%0A    %7D%0A%0A    if soma %3E resultado %7B%0A        return false%0A    %7D%0A%0A    if soma == resultado %7B%0A        return true%0A    %7D%0A%0A    return false%0A%7D%0A%0A\n func\n@@ -35,16 +35,16 @@\n ain() %7B%0A\n+\n     var \n@@ -180,23 +180,19 @@\n     \n-somaSubconjunto\n+fmt.Println\n (int\n@@ -196,16 +196,13 @@\n inteiros\n-, k\n )%0A%0A%7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-05-20_16-58-58",
+            "content": "@@ -438,27 +438,24 @@\n %0A    %7D%0A%0A    \n-if \n somaSubconju\n@@ -474,86 +474,8 @@\n , k)\n- %7B%0A        fmt.Println(%22true%22)%0A    %7D else %7B%0A        fmt.Println(%22false%22)%0A    %7D\n %0A%0A%7D%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-05-20_16-59-34",
+            "content": "@@ -156,125 +156,8 @@\n %5Bi%5D%0A\n-        if soma %3C resultado %7B%0A            somaSubconjunto(inteiros, resultado)%0A        %7D%0A        soma -= inteiros%5Bi%5D%0A\n     \n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-05-20_17-01-20",
+            "content": "@@ -136,39 +136,36 @@\n     \n-if \n soma \n-%3C resultado %7B%0A \n++= inteiros%5Bi%5D%0A\n         \n    s\n@@ -160,38 +160,37 @@\n         \n-  \n+if\n  soma \n-+= inteiros%5Bi%5D\n+%3C resultado %7B\n %0A       \n@@ -231,16 +231,16 @@\n ultado)%0A\n-\n         \n@@ -241,16 +241,44 @@\n       %7D%0A\n+        soma -= inteiros%5Bi%5D%0A\n     %7D%0A%0A \n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-05-20_17-02-04",
+            "content": "@@ -186,16 +186,65 @@\n iros%5Bi%5D%0A\n+            somaSubconjunto(inteiros, resultado)%0A\n         \n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-05-20_17-02-18",
+            "content": "@@ -71,46 +71,81 @@\n tado\n-,\n  in\n-dex, soma int) bool\n+t) bool %7B%0A    soma := 0%0A    for i := range inteiros\n  %7B%0A    \n+ \n+   \n if soma \n %3E re\n@@ -144,9 +144,9 @@\n oma \n-%3E\n+%3C\n  res\n@@ -162,28 +162,49 @@\n         \n-return false\n+    soma += inteiros%5Bi%5D%0A        %7D\n %0A    %7D%0A%0A\n@@ -219,10 +219,9 @@\n oma \n-==\n+%3E\n  res\n@@ -236,35 +236,36 @@\n %0A        return \n-tru\n+fals\n e%0A    %7D%0A%0A    if \n@@ -272,73 +272,21 @@\n soma\n-Subconjunto(inteiros, resultado, index+1, soma + inteiros%5Bindex%5D)\n+ == resultado\n  %7B%0A \n@@ -486,37 +486,8 @@\n  %7D%0A%0A\n-    index := 0%0A    soma := 0%0A\n     \n@@ -520,21 +520,8 @@\n s, k\n-, index, soma\n ) %7B%0A\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-05-20_17-18-17",
+            "content": "@@ -311,96 +311,8 @@\n  %7D%0A%0A\n-    if somaSubconjunto(inteiros, resultado, index+1, soma) %7B%0A        return true%0A    %7D%0A%0A\n     \n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-05-20_17-19-52",
+            "content": "@@ -109,10 +109,9 @@\n oma \n-==\n+%3E\n  res\n@@ -126,35 +126,36 @@\n %0A        return \n-tru\n+fals\n e%0A    %7D%0A%0A    if \n@@ -151,33 +151,34 @@\n  %7D%0A%0A    if soma \n-%3E\n+==\n  resultado %7B%0A   \n@@ -181,36 +181,35 @@\n %0A        return \n-fals\n+tru\n e%0A    %7D%0A%0A    if \n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-05-20_17-23-42",
+            "content": "@@ -103,41 +103,16 @@\n   if\n- index %3E= len(inteiros) %7C%7C\n  soma \n-%3E\n+==\n  res\n@@ -135,20 +135,19 @@\n  return \n-fals\n+tru\n e%0A    %7D%0A\n@@ -151,34 +151,33 @@\n  %7D%0A%0A    if soma \n-==\n+%3E\n  resultado %7B%0A   \n@@ -180,35 +180,36 @@\n %0A        return \n-tru\n+fals\n e%0A    %7D%0A%0A    if \n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-05-20_17-25-33",
+            "content": "@@ -97,62 +97,8 @@\n l %7B%0A\n-    if soma == resultado %7B%0A        return true%0A    %7D%0A%0A\n     \n@@ -165,32 +165,86 @@\n rn false%0A    %7D%0A%0A\n+    if soma == resultado %7B%0A        return true%0A    %7D%0A%0A\n     if somaSubco\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-05-20_17-26-32",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc somaSubconjunto(inteiros []int, resultado, index, soma int) bool {\n    if soma == resultado {\n        return true\n    }\n\n    if index >= len(inteiros) || soma > resultado {\n        return false\n    }\n\n    if somaSubconjunto(inteiros, resultado, index+1, soma + inteiros[index]) {\n        return true\n    }\n\n    if somaSubconjunto(inteiros, resultado, index+1, soma) {\n        return true\n    }\n\n    return false\n}\n\nfunc main() {\n    var n, k int\n    fmt.Scan(&n, &k)\n\n    inteiros := make([]int, n)\n    for i := 0; i < n; i++ {\n        fmt.Scan(&inteiros[i])\n    }\n\n    index := 0\n    soma := 0\n    if somaSubconjunto(inteiros, k, index, soma) {\n        fmt.Println(\"true\")\n    } else {\n        fmt.Println(\"false\")\n    }\n\n}\n",
+            "lines": "42"
+        }
+    ]
+}

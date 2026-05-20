@@ -79,3 +79,34 @@
 2026-05-20 16:22:47, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:0, size:97
 2026-05-20 16:23:46, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:100, size:101
 2026-05-20 16:25:24, SELF, v:1, k:ed@wordsearch, self:1, rate:100, study:50, concept:1
+2026-05-20 16:39:02, MOVE, v:1, k:ed@subset_sum, mode:DOWN
+2026-05-20 16:39:10, MOVE, v:1, k:ed@subset_sum, mode:PICK
+2026-05-20 16:39:02, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-05-20 16:39:02, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-05-20 16:43:27, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-05-20 16:43:40, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:14
+2026-05-20 16:45:32, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:16
+2026-05-20 16:46:06, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:16
+2026-05-20 16:46:29, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:16
+2026-05-20 16:46:39, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:16
+2026-05-20 16:46:35, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-05-20 16:49:02, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:16
+2026-05-20 16:49:59, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:16
+2026-05-20 16:53:27, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-05-20 16:58:30, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-05-20 16:58:58, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:33
+2026-05-20 16:59:34, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:33, size:37
+2026-05-20 17:01:20, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:41
+2026-05-20 17:02:04, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:40
+2026-05-20 17:02:18, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:54, size:39
+2026-05-20 17:03:00, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-05-20 17:04:59, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-05-20 17:13:06, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-05-20 17:18:17, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:4, size:38
+2026-05-20 17:18:13, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-05-20 17:19:52, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:42
+2026-05-20 17:19:44, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-05-20 17:23:42, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:42
+2026-05-20 17:25:33, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:62, size:42
+2026-05-20 17:26:32, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:100, size:42
+2026-05-20 17:27:44, SELF, v:1, k:ed@subset_sum, self:1, rate:100, study:45, concept:1
