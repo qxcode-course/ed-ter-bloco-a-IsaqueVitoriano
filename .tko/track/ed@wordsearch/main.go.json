@@ -1,0 +1,54 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-20_15-50-44",
+            "content": "@@ -265,9 +265,9 @@\n na%5D \n-!\n+=\n = wo\n@@ -291,249 +291,29 @@\n urn \n-fals\n+tru\n e%0A%09%7D%0A%0A%09\n-buscandoPalavra(grid, linha + 1, coluna, index, word)%0A%09buscandoPalavra(grid, linha - 1, coluna, index, word)%0A%09buscandoPalavra(grid, linha, coluna + 1, index, word)%0A%09buscandoPalavra(grid, linha, coluna - 1, index, word)%0A%09return tru\n+return fals\n e%0A%7D \n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-05-20_15-52-20",
+            "content": "@@ -301,51 +301,8 @@\n %09%7D%0A%0A\n-%09if index == len(word) %7B%0A%09%09return true%0A%09%7D%0A%0A\n %09bus\n@@ -336,36 +336,32 @@\n 1, coluna, index\n- + 1\n , word)%0A%09buscand\n@@ -395,28 +395,24 @@\n oluna, index\n- + 1\n , word)%0A%09bus\n@@ -446,36 +446,32 @@\n oluna + 1, index\n- + 1\n , word)%0A%09buscand\n@@ -509,20 +509,16 @@\n 1, index\n- + 1\n , word)%0A\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-05-20_15-56-58",
+            "content": "@@ -241,51 +241,8 @@\n %09%7D%0A%0A\n-%09if index == len(word) %7B%0A%09%09return true%0A%09%7D%0A%0A\n %09if \n@@ -297,16 +297,59 @@\n lse%0A%09%7D%0A%0A\n+%09if index == len(word) %7B%0A%09%09return true%0A%09%7D%0A%0A\n %09buscand\n@@ -580,10 +580,8 @@\n rd)%0A\n-%09%0A\n %09ret\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-05-20_16-00-38",
+            "content": "@@ -46,26 +46,31 @@\n )%0A%0Afunc \n-searchWord\n+buscandoPalavra\n (grid%5B%5D%5B\n@@ -78,19 +78,28 @@\n  byte, l\n-, c\n+inha, coluna\n , index \n@@ -164,34 +164,16 @@\n )%0A%0A%09\n-letra := grid%5Bl%5D%5Bc%5D%0A%0A%09\n if l\n+inha\n  %3C 0\n@@ -177,16 +177,21 @@\n %3C 0 %7C%7C c\n+oluna\n  %3C 0 %7C%7C \n@@ -191,16 +191,20 @@\n %3C 0 %7C%7C l\n+inha\n  %3E= m %7C%7C\n@@ -209,37 +209,18 @@\n %7C%7C c\n- %3E= n %7C%7C letra != word%5Bindex%5D\n+oluna %3E= n\n  %7B%0A%09\n@@ -285,70 +285,125 @@\n %7D%0A%0A%09\n+if \n grid%5Bl\n-%5D%5Bc\n+inha%5D%5Bcoluna\n %5D \n+!\n = \n-'X'%0A%09%0A%09if searchWord(grid, l+1, c\n+word%5Bindex%5D %7B%0A%09%09return false%0A%09%7D%0A%0A%09buscandoPalavra(grid, linha + 1, coluna\n , index\n-+\n+ + \n 1, word)\n  %7C%7C \n@@ -402,53 +402,67 @@\n ord)\n- %7C%7C %0A%09searchWord(grid, l-1, c\n+%0A%09buscandoPalavra(grid, linha - 1, coluna\n , index\n-+\n+ + \n 1, word)\n  %7C%7C \n@@ -461,44 +461,56 @@\n ord)\n- %7C%7C %0A%09searchWord(grid, l, c+\n+%0A%09buscandoPalavra(grid, linha, coluna + \n 1, index\n +1, \n@@ -505,25 +505,27 @@\n 1, index\n-+\n+ + \n 1, word)\n  %7C%7C%0A%09sea\n@@ -520,43 +520,56 @@\n ord)\n- %7C%7C%0A%09searchWord(grid, l, c-\n+%0A%09buscandoPalavra(grid, linha, coluna - \n 1, index\n +1, \n@@ -568,17 +568,19 @@\n ndex\n-+\n+ + \n 1, word)\n  %7B%0A%09\n@@ -571,28 +571,27 @@\n x + 1, word)\n- %7B\n %0A%09\n+%0A\n %09return true\n@@ -595,46 +595,8 @@\n rue%0A\n-%09%7D%0A%0A%09grid%5Bl%5D%5Bc%5D = letra%0A%09return false%0A\n %7D %0A%0A\n@@ -829,18 +829,23 @@\n %09if \n-searchWord\n+buscandoPalavra\n (gri\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-05-20_16-12-56",
+            "content": "@@ -171,51 +171,8 @@\n c%5D%0A%0A\n-%09if index == len(word) %7B%0A%09%09return true%0A%09%7D%0A%0A\n %09if \n@@ -247,24 +247,67 @@\n n false%0A%09%7D%0A%0A\n+%09if index == len(word) %7B%0A%09%09return true%0A%09%7D%0A%0A\n %09grid%5Bl%5D%5Bc%5D \n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-05-20_16-13-11",
+            "content": "@@ -171,68 +171,8 @@\n c%5D%0A%0A\n-%09if l %3C 0 %7C%7C c %3C 0 %7C%7C l %3E= m %7C%7C c %3E= n %7B%0A%09%09return false%0A%09%7D%0A%0A\n %09if \n@@ -213,16 +213,54 @@\n %0A%09%7D%0A%0A%09if\n+ l %3C 0 %7C%7C c %3C 0 %7C%7C l %3E= m %7C%7C c %3E= n %7C%7C\n  letra !\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-05-20_16-13-36",
+            "content": "@@ -341,17 +341,10 @@\n %0A%09%0A%09\n-existe :=\n+if\n  sea\n@@ -375,32 +375,34 @@\n dex+1, word) %7C%7C \n+%0A%09\n searchWord(grid,\n@@ -472,17 +472,18 @@\n word) %7C%7C\n- \n+%0A%09\n searchWo\n@@ -514,16 +514,34 @@\n , word) \n+%7B%0A%09%09return true%0A%09%7D\n %0A%0A%09grid%5B\n@@ -562,21 +562,20 @@\n %09return \n-exist\n+fals\n e%0A%7D %0A%0A//\n",
+            "lines": "72"
+        },
+        {
+            "label": "2026-05-20_16-14-49",
+            "content": "@@ -145,16 +145,38 @@\n id%5B0%5D)%0A%0A\n+%09letra := grid%5Bl%5D%5Bc%5D%0A%0A\n %09if l %3C \n@@ -228,35 +228,56 @@\n se%0A%09%7D%0A%0A%09\n-letra := grid%5Bl%5D%5Bc%5D\n+if index == len(word) %7B%0A%09%09return true%0A%09%7D\n %0A%0A%09if le\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-05-20_16-22-47",
+            "content": "@@ -209,51 +209,8 @@\n %09%7D%0A%0A\n-%09if index == len(word) %7B%0A%09%09return true%0A%09%7D%0A%0A\n %09let\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-05-20_16-23-46",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc searchWord(grid[][] byte, l, c, index int, word string) bool {\n\tm := len(grid)\n\tn := len(grid[0])\n\n\tif l < 0 || c < 0 || l >= m || c >= n {\n\t\treturn false\n\t}\n\n\tif index == len(word) {\n\t\treturn true\n\t}\n\n\tletra := grid[l][c]\n\n\tif letra != word[index] {\n\t\treturn false\n\t}\n\n\tgrid[l][c] = 'X'\n\t\n\texiste := searchWord(grid, l+1, c, index+1, word) || searchWord(grid, l-1, c, index+1, word) || \n\tsearchWord(grid, l, c+1, index+1, word) || searchWord(grid, l, c-1, index+1, word) \n\n\tgrid[l][c] = letra\n\treturn existe\n} \n\n// N\u00e3o mude a assinatura desta fun\u00e7\u00e3o, ela \u00e9 a fun\u00e7\u00e3o chamada pelo LeetCode\nfunc exist(grid [][]byte, word string) bool {\n\tm := len(grid)\n\tn := len(grid[0])\n\n\tindex := 0\n\n\tfor i := 0; i < m; i++ {\n\t\tfor j := 0; j < n; j++ {\n\t\t\tif searchWord(grid, i, j, index, word) {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\t}\n\n\treturn false\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar word string\n\tfmt.Sscanf(scanner.Text(), \"%s\", &word)\n\tgrid := make([][]byte, 0)\n\tfor scanner.Scan() {\n\t\tgrid = append(grid, []byte(scanner.Text()))\n\t}\n\tif exist(grid, word) {\n\t\tfmt.Println(\"true\")\n\t} else {\n\t\tfmt.Println(\"false\")\n\t}\n}\n",
+            "lines": "68"
+        }
+    ]
+}
