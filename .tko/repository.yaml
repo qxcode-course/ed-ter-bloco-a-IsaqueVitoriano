@@ -19,8 +19,7 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@rec
-- ed@backtrack
+- ed@dfs
 flags:
   inbox: all
   panel: skills
@@ -28,5 +27,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@labirinto
-selected_index: 9
+selected: ed@pintura
+selected_index: 12

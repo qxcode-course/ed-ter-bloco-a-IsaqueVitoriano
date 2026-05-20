@@ -1,0 +1,174 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-20_10-24-52",
+            "content": "@@ -457,23 +457,8 @@\n lor)\n-%0A%0A%09return image\n %0A%7D%0A%0A\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-05-20_10-25-09",
+            "content": "@@ -276,57 +276,13 @@\n urn \n-nil%0A%09%7D%0A%0A%09if image%5Bsr%5D%5Bsc%5D != color %7B%0A%09%09return nil\n+image\n %0A%09%7D%0A\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-05-20_10-27-11",
+            "content": "@@ -67,16 +67,72 @@\n %0A)%0A%0A\n-func dfs\n+// N%C3%A3o modifique a assinatura da fun%C3%A7%C3%A3o floodFill%0Afunc floodFill\n (ima\n@@ -141,24 +141,28 @@\n  %5B%5D%5B%5Dint, sr\n+ int\n , sc int, co\n@@ -169,16 +169,24 @@\n lor int)\n+ %5B%5D%5B%5Dint\n  %7B%0A%09m :=\n@@ -267,24 +267,28 @@\n n %7B%0A%09%09return\n+ nil\n %0A%09%7D%0A%0A%09if ima\n@@ -317,16 +317,20 @@\n %09%09return\n+ nil\n %0A%09%7D%0A%0A%09im\n@@ -453,32 +453,32 @@\n + 1, sc, color)%0A\n+\n %09floodFill(image\n@@ -501,284 +501,8 @@\n lor)\n-%0A%7D%0A%0A// N%C3%A3o modifique a assinatura da fun%C3%A7%C3%A3o floodFill%0Afunc floodFill(image %5B%5D%5B%5Dint, sr int, sc int, color int) %5B%5D%5B%5Dint %7B%0A%09m := len(image)%0A%09n := len(image%5B0%5D)%0A%0A%09contador := 0%0A%09for i := 0; i %3C m; i++ %7B%0A%09%09for j := 0; j %3C n; j++ %7B%0A%09%09%09contador++%0A%09%09%09dfs(image, sr, sc, color)%0A%09%09%7D%0A%09%7D\n %0A%0A%09r\n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-05-20_10-41-45",
+            "content": "@@ -580,16 +580,31 @@\n ge%5B0%5D)%0A%0A\n+%09contador := 0%0A\n %09for i :\n@@ -648,16 +648,30 @@\n ; j++ %7B%0A\n+%09%09%09contador++%0A\n %09%09%09dfs(i\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-05-20_10-42-41",
+            "content": "@@ -275,19 +275,25 @@\n color%0A%0A%09\n-dfs\n+floodFill\n (image, \n@@ -304,35 +304,41 @@\n sc + 1, color)%0A%09\n-dfs\n+floodFill\n (image, sr, sc -\n@@ -341,35 +341,41 @@\n sc - 1, color)%0A%09\n-dfs\n+floodFill\n (image, sr + 1, \n@@ -386,19 +386,25 @@\n color)%0A%09\n-dfs\n+floodFill\n (image, \n",
+            "lines": "84"
+        },
+        {
+            "label": "2026-05-20_10-44-52",
+            "content": "@@ -157,18 +157,17 @@\n %0A%09if sr \n-%3E=\n+%3C\n  0 %7C%7C sc\n@@ -171,10 +171,9 @@\n  sc \n-%3E=\n+%3C\n  0 %7C\n@@ -177,17 +177,18 @@\n 0 %7C%7C sr \n-%3C\n+%3E=\n  m %7C%7C sc\n@@ -188,17 +188,18 @@\n m %7C%7C sc \n-%3C\n+%3E=\n  n %7B%0A%09%09r\n",
+            "lines": "84"
+        },
+        {
+            "label": "2026-05-20_10-48-30",
+            "content": "@@ -226,17 +226,17 @@\n sr%5D%5Bsc%5D \n-=\n+!\n = color \n",
+            "lines": "84"
+        },
+        {
+            "label": "2026-05-20_10-48-52",
+            "content": "@@ -152,38 +152,8 @@\n %5B0%5D)\n-%0A%09corOriginal := image%5Bsr%5D%5Bsc%5D\n %0A%0A%09i\n@@ -216,19 +216,21 @@\n %09if \n-corOriginal\n+image%5Bsr%5D%5Bsc%5D\n  == \n",
+            "lines": "84"
+        },
+        {
+            "label": "2026-05-20_10-51-31",
+            "content": "@@ -266,40 +266,8 @@\n olor\n- %7C%7C corOriginal == image%5Bsr%5D%5Bsc%5D\n  %7B%0A%09\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-05-20_10-52-34",
+            "content": "@@ -93,36 +93,27 @@\n , sr, sc\n+ int\n , color\n-, corOriginal\n  int) %7B%0A\n@@ -148,16 +148,46 @@\n mage%5B0%5D)\n+%0A%09corOriginal := image%5Bsr%5D%5Bsc%5D\n %0A%0A%09if sr\n@@ -262,16 +262,48 @@\n == color\n+ %7C%7C corOriginal == image%5Bsr%5D%5Bsc%5D\n  %7B%0A%09%09ret\n@@ -359,37 +359,24 @@\n c + 1, color\n-, corOriginal\n )%0A%09dfs(image\n@@ -390,37 +390,24 @@\n c - 1, color\n-, corOriginal\n )%0A%09dfs(image\n@@ -425,29 +425,16 @@\n c, color\n-, corOriginal\n )%0A%09dfs(i\n@@ -456,29 +456,16 @@\n c, color\n-, corOriginal\n )%0A%7D%0A%0A// \n@@ -620,39 +620,8 @@\n %5D)%0A%0A\n-%09corOriginal := image%5Bsr%5D%5Bsc%5D%0A%0A\n %09for\n@@ -700,21 +700,8 @@\n olor\n-, corOriginal\n )%0A%09%09\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-05-20_10-58-21",
+            "content": "@@ -717,12 +717,14 @@\n ge, \n-i, j\n+sr, sc\n , co\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-05-20_10-58-55",
+            "content": "@@ -217,16 +217,56 @@\n urn%0A%09%7D%0A%0A\n+%09if corOriginal == color %7B%0A%09%09return%0A%09%7D%0A%0A\n %09image%5Bs\n@@ -650,52 +650,8 @@\n c%5D%0A%0A\n-%09if color == corOriginal %7B%0A%09%09return nil%0A%09%7D%0A%0A\n %09for\n@@ -709,30 +709,28 @@\n %09dfs(image, \n-sr, sc\n+i, j\n , color, cor\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-05-20_11-00-57",
+            "content": "@@ -221,48 +221,8 @@\n %09%7D%0A%0A\n-%09if corOriginal != color %7B%0A%09%09return%0A%09%7D%0A%0A\n %09ima\n@@ -606,16 +606,60 @@\n r%5D%5Bsc%5D%0A%0A\n+%09if color == corOriginal %7B%0A%09%09return nil%0A%09%7D%0A%0A\n %09for i :\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-05-20_11-03-47",
+            "content": "@@ -650,52 +650,8 @@\n c%5D%0A%0A\n-%09if corOriginal == color %7B%0A%09%09return nil%0A%09%7D%0A%0A\n %09for\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-05-20_11-05-56",
+            "content": "@@ -682,21 +682,19 @@\n %09return \n-image\n+nil\n %0A%09%7D%0A%0A%09fo\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-05-20_11-06-03",
+            "content": "@@ -577,16 +577,54 @@\n %5B%5Dint %7B%0A\n+%09m := len(image)%0A%09n := len(image%5B0%5D)%0A%0A\n %09corOrig\n@@ -692,16 +692,71 @@\n age%0A%09%7D%0A%0A\n+%09for i := 0; i %3C m; i++ %7B%0A%09%09for j := 0; j %3C n; j++ %7B%0A%09%09\n %09dfs(ima\n@@ -786,16 +786,23 @@\n riginal)\n+%0A%09%09%7D%0A%09%7D\n %0A%0A%09retur\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-05-20_11-07-22",
+            "content": "@@ -648,11 +648,13 @@\n urn \n-nil\n+image\n %0A%09%7D%0A\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-20_11-08-38",
+            "content": "@@ -221,29 +221,27 @@\n %09%7D%0A%0A%09if \n-image%5Bsr%5D%5Bsc%5D\n+corOriginal\n  != colo\n@@ -644,21 +644,19 @@\n %09return \n-image\n+nil\n %0A%09%7D%0A%0A%09df\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-20_11-12-06",
+            "content": "@@ -240,25 +240,19 @@\n c%5D != co\n-rOriginal\n+lor\n  %7B%0A%09%09ret\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-20_11-12-30",
+            "content": "@@ -235,17 +235,17 @@\n sr%5D%5Bsc%5D \n-=\n+!\n = corOri\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-20_11-12-41",
+            "content": "@@ -241,32 +241,8 @@\n %5D ==\n- corOriginal %7C%7C color ==\n  cor\n@@ -616,16 +616,62 @@\n r%5D%5Bsc%5D%0A%0A\n+%09if corOriginal == color %7B%0A%09%09return image%0A%09%7D%0A%0A\n %09dfs(ima\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-20_11-13-59",
+            "content": "@@ -239,9 +239,9 @@\n sc%5D \n-!\n+=\n = co\n",
+            "lines": "79"
+        },
+        {
+            "label": "2026-05-20_11-14-42",
+            "content": "@@ -259,17 +259,17 @@\n %7C color \n-!\n+=\n = corOri\n",
+            "lines": "79"
+        },
+        {
+            "label": "2026-05-20_11-14-48",
+            "content": "@@ -237,16 +237,40 @@\n %5D%5Bsc%5D !=\n+ corOriginal %7C%7C color !=\n  corOrig\n",
+            "lines": "79"
+        },
+        {
+            "label": "2026-05-20_11-14-55",
+            "content": "@@ -240,19 +240,25 @@\n c%5D != co\n-lor\n+rOriginal\n  %7B%0A%09%09ret\n",
+            "lines": "79"
+        },
+        {
+            "label": "2026-05-20_11-15-16",
+            "content": "@@ -240,25 +240,19 @@\n c%5D != co\n-rOriginal\n+lor\n  %7B%0A%09%09ret\n@@ -614,54 +614,8 @@\n c%5D%0A%0A\n-%09if corOriginal != color %7B%0A%09%09return image%0A%09%7D%0A%0A\n %09dfs\n",
+            "lines": "79"
+        },
+        {
+            "label": "2026-05-20_11-17-26",
+            "content": "@@ -632,17 +632,17 @@\n riginal \n-=\n+!\n = color \n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-20_11-17-40",
+            "content": "@@ -221,48 +221,8 @@\n %09%7D%0A%0A\n-%09if corOriginal == color %7B%0A%09%09return%0A%09%7D%0A%0A\n %09if \n@@ -616,16 +616,62 @@\n r%5D%5Bsc%5D%0A%0A\n+%09if corOriginal == color %7B%0A%09%09return image%0A%09%7D%0A%0A\n %09dfs(ima\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-20_11-21-30",
+            "content": "@@ -217,16 +217,56 @@\n urn%0A%09%7D%0A%0A\n+%09if corOriginal == color %7B%0A%09%09return%0A%09%7D%0A%0A\n %09if imag\n@@ -660,52 +660,8 @@\n c%5D%0A%0A\n-%09if corOriginal == color %7B%0A%09%09return nil%0A%09%7D%0A%0A\n %09dfs\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-20_11-24-57",
+            "content": "@@ -652,21 +652,19 @@\n %09return \n-image\n+nil\n %0A%09%7D%0A%0A%09df\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-20_11-25-19",
+            "content": "@@ -239,16 +239,22 @@\n sc%5D \n-=\n+!\n = co\n-lor\n+rOriginal\n  %7B%0A%09\n@@ -616,16 +616,62 @@\n r%5D%5Bsc%5D%0A%0A\n+%09if corOriginal == color %7B%0A%09%09return image%0A%09%7D%0A%0A\n %09dfs(ima\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-20_11-26-33",
+            "content": "@@ -248,40 +248,8 @@\n lor \n-%7C%7C image%5Bsr%5D%5Bsc%5D != corOriginal \n %7B%0A%09%09\n",
+            "lines": "79"
+        },
+        {
+            "label": "2026-05-20_11-27-17",
+            "content": "@@ -166,17 +166,18 @@\n %0A%09if sr \n-%3C\n+%3E=\n  0 %7C%7C sc\n@@ -177,17 +177,18 @@\n 0 %7C%7C sc \n-%3C\n+%3E=\n  0 %7C%7C sr\n@@ -188,18 +188,17 @@\n 0 %7C%7C sr \n-%3E=\n+%3C\n  m %7C%7C sc\n@@ -198,18 +198,17 @@\n m %7C%7C sc \n-%3E=\n+%3C\n  n %7B%0A%09%09r\n",
+            "lines": "79"
+        },
+        {
+            "label": "2026-05-20_11-30-29",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc dfs(image [][]int, sr, sc, color, corOriginal int) {\n\tm := len(image)\n\tn := len(image[0])\n\n\tif sr < 0 || sc < 0 || sr >= m || sc >= n {\n\t\treturn\n\t}\n\n\tif image[sr][sc] == color || image[sr][sc] != corOriginal {\n\t\treturn\n\t}\n\n\timage[sr][sc] = color\n\n\tdfs(image, sr, sc + 1, color, corOriginal)\n\tdfs(image, sr, sc - 1, color, corOriginal)\n\tdfs(image, sr + 1, sc, color, corOriginal)\n\tdfs(image, sr - 1, sc, color, corOriginal)\n}\n\n// N\u00e3o modifique a assinatura da fun\u00e7\u00e3o floodFill\nfunc floodFill(image [][]int, sr int, sc int, color int) [][]int {\n\tcorOriginal := image[sr][sc]\n\n\tdfs(image, sr, sc, color, corOriginal)\n\n\treturn image\n}\n\n// N\u00e3o modifique a fun\u00e7\u00e3o main\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tparts := strings.Fields(line)\n\tnl, _ := strconv.Atoi(parts[0])\n\tnc, _ := strconv.Atoi(parts[1])\n\n\timage := make([][]int, nl)\n\tfor i := 0; i < nl; i++ {\n\t\tscanner.Scan()\n\t\trowStr := strings.Fields(scanner.Text())\n\t\trow := make([]int, nc)\n\t\tfor j := 0; j < nc; j++ {\n\t\t\trow[j], _ = strconv.Atoi(rowStr[j])\n\t\t}\n\t\timage[i] = row\n\t}\n\n\t// L\u00ea sr, sc e color\n\tscanner.Scan()\n\tparams := strings.Fields(scanner.Text())\n\tsr, _ := strconv.Atoi(params[0])\n\tsc, _ := strconv.Atoi(params[1])\n\tcolor, _ := strconv.Atoi(params[2])\n\n\tresult := floodFill(image, sr, sc, color)\n\n\t// Imprime a matriz resultante\n\tfor _, row := range result {\n\t\tfor j, val := range row {\n\t\t\tif j > 0 {\n\t\t\t\tfmt.Print(\" \")\n\t\t\t}\n\t\t\tfmt.Print(val)\n\t\t}\n\t\tfmt.Println()\n\t}\n}\n",
+            "lines": "79"
+        }
+    ]
+}
