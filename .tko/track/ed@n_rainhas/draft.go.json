@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-23_15-04-52",
+            "content": "@@ -1106,11 +1106,22 @@\n ador\n- +=\n+++%0A           \n  n_r\n@@ -1152,10 +1152,8 @@\n tual\n-+1\n )%0A%0A \n",
+            "lines": "75"
+        },
+        {
+            "label": "2026-05-23_15-05-38",
+            "content": "@@ -1398,20 +1398,8 @@\n     \n-fmt.Println(\n n_ra\n@@ -1426,12 +1426,11 @@\n haAtual)\n-)\n %0A%7D%0A\n",
+            "lines": "74"
+        },
+        {
+            "label": "2026-05-23_15-06-12",
+            "content": "@@ -925,17 +925,26 @@\n  return \n-1\n+linhaAtual\n %0A    %7D%0A%0A\n",
+            "lines": "74"
+        },
+        {
+            "label": "2026-05-23_15-08-54",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc checaPosicao(matriz [][]int, linhaAtual, colunaAtual, n int) bool {\n    for linha := linhaAtual-1; linha >= 0; linha-- {\n        if matriz[linha][colunaAtual] == 1 {\n            return false\n        }\n    }\n\n    coluna_esq := colunaAtual - 1\n    e_linhaDeCima := linhaAtual - 1\n\n    for e_linhaDeCima >= 0 && coluna_esq >= 0 {\n        if matriz[e_linhaDeCima][coluna_esq] == 1 {\n            return false\n        }\n\n        e_linhaDeCima--\n        coluna_esq--\n    }\n\n    coluna_dir := colunaAtual + 1\n    d_linhaDeCima := linhaAtual - 1\n\n    for d_linhaDeCima >= 0 && coluna_dir < n {\n        if matriz[d_linhaDeCima][coluna_dir] == 1 {\n            return false\n        }\n        \n        d_linhaDeCima--\n        coluna_dir++\n    } \n\n    return true\n}\n\nfunc n_rainhas(matriz [][]int, n, linhaAtual int) int {\n    //posicionar N rainhas em um tabuleiro N X N\n\n    if linhaAtual == n {\n        return 1\n    }\n\n    contador := 0\n\n    for i := 0; i < n; i++ {\n        if checaPosicao(matriz, linhaAtual, i, n) {\n            matriz[linhaAtual][i] = 1\n\n            contador += n_rainhas(matriz, n, linhaAtual+1)\n\n            matriz[linhaAtual][i] = 0\n        }\n    }\n\n    return contador\n}\n\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n\n    matriz := make([][]int, n)\n\n    for i := 0; i < n; i++ {\n        matriz[i] = make([]int, n)\n    }\n\n    linhaAtual := 0\n\n    fmt.Println(n_rainhas(matriz, n, linhaAtual))\n}\n",
+            "lines": "74"
+        }
+    ]
+}
