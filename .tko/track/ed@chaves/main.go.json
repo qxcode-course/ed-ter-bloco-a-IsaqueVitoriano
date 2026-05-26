@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-26_20-02-13",
+            "content": "@@ -30,16 +30,30 @@\n %0A)%0A%0Afunc\n+ (Q *Queue%5BT%5D)\n  main() \n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-05-26_20-02-25",
+            "content": "@@ -494,21 +494,17 @@\n eamento.\n-Dequeue()\n+items\n )%0A%7D%0A\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-05-26_20-02-41",
+            "content": "@@ -486,13 +486,8 @@\n int(\n-rune(\n chav\n@@ -504,12 +504,11 @@\n queue())\n-)\n %0A%7D%0A\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-05-26_20-03-07",
+            "content": "@@ -486,14 +486,12 @@\n int(\n-string\n+rune\n (cha\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-05-26_20-03-23",
+            "content": "@@ -485,10 +485,8 @@\n rint\n-ln\n (str\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-05-26_20-03-42",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\tchaveamento := NewQueue[rune]()\n\n\tfor selecao := 'A'; selecao <= 'P'; selecao++ {\n\t\tchaveamento.Enqueue(selecao)\n\t}\n\n\tfor chaveamento.items.Len() > 1 {\n\t\tselecao1 := chaveamento.Dequeue()\n\t\tselecao2 := chaveamento.Dequeue()\n\n\t\tvar gols_selecao1, gols_selecao2 int\n\t\tfmt.Scan(&gols_selecao1, &gols_selecao2)\n\n\t\tif gols_selecao1 > gols_selecao2 {\n\t\t\tchaveamento.Enqueue(selecao1)\n\t\t} else {\n\t\t\tchaveamento.Enqueue(selecao2)\n\t\t}\n\t}\n\n\tfmt.Println(string(chaveamento.Dequeue()))\n}\n",
+            "lines": "29"
+        }
+    ]
+}
