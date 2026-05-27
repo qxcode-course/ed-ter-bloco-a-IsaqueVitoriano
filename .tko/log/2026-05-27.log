@@ -65,3 +65,18 @@
 2026-05-27 16:26:39, EXEC, v:1, k:ed@pilha, mode:FULL, rate:0, size:129
 2026-05-27 16:27:26, EXEC, v:1, k:ed@pilha, mode:FULL, rate:100, size:129
 2026-05-27 16:28:18, SELF, v:1, k:ed@pilha, self:1, rate:100, study:38
+2026-05-27 16:40:45, MOVE, v:1, k:ed@queimando, mode:DOWN
+2026-05-27 16:40:46, MOVE, v:1, k:ed@queimando, mode:PICK
+2026-05-27 16:40:45, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-05-27 16:40:45, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-05-27 16:42:08, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-05-27 16:40:45, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-05-27 16:48:46, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-05-27 16:53:43, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-05-27 16:58:54, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-05-27 17:00:22, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-05-27 17:05:58, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20, size:95
+2026-05-27 17:08:27, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-05-27 17:11:17, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20, size:103
+2026-05-27 17:12:04, EXEC, v:1, k:ed@queimando, mode:FULL, rate:100, size:103
+2026-05-27 17:12:53, SELF, v:1, k:ed@queimando, self:1, rate:100, study:32
