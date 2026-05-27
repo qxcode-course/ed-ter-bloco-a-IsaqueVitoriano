@@ -1,0 +1,34 @@
+2026-05-27 10:08:30, MOVE, v:1, k:ed@pilha, mode:DOWN
+2026-05-27 10:08:31, MOVE, v:1, k:ed@pilha, mode:DOWN
+2026-05-27 10:08:33, MOVE, v:1, k:ed@pilha, mode:DOWN
+2026-05-27 10:08:46, MOVE, v:1, k:ed@pilha, mode:DOWN
+2026-05-27 10:08:55, MOVE, v:1, k:ed@pilha, mode:DOWN
+2026-05-27 10:10:35, MOVE, v:1, k:ed@fila_enc, mode:DOWN
+2026-05-27 10:10:43, MOVE, v:1, k:ed@fila_enc, mode:PICK
+2026-05-27 10:08:30, MOVE, v:1, k:ed@pilha, mode:EDIT
+2026-05-27 10:08:30, MOVE, v:1, k:ed@pilha, mode:EDIT
+2026-05-27 10:08:30, MOVE, v:1, k:ed@pilha, mode:EDIT
+2026-05-27 10:08:30, MOVE, v:1, k:ed@pilha, mode:EDIT
+2026-05-27 10:08:55, MOVE, v:1, k:ed@pilha, mode:EDIT
+2026-05-27 10:08:55, MOVE, v:1, k:ed@pilha, mode:EDIT
+2026-05-27 10:10:35, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-27 10:10:35, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-27 10:12:20, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-27 10:17:12, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-27 10:22:18, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-27 10:24:34, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:0, size:106
+2026-05-27 10:25:05, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:0, size:106
+2026-05-27 10:25:22, MOVE, v:1, k:ed@fila_enc, mode:PICK
+2026-05-27 10:27:04, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-27 10:33:28, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:0, size:109
+2026-05-27 10:33:54, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:0, size:109
+2026-05-27 10:34:57, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:0, size:115
+2026-05-27 10:34:53, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-27 10:36:09, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:33, size:115
+2026-05-27 10:40:16, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-27 10:41:27, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:66, size:119
+2026-05-27 10:42:52, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:66, size:126
+2026-05-27 10:43:40, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:66, size:128
+2026-05-27 10:44:09, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-27 10:45:40, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:100, size:128
+2026-05-27 10:46:39, SELF, v:1, k:ed@fila_enc, self:1, rate:100, study:40, concept:1
