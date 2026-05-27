@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-27_16-08-51",
+            "content": "@@ -1349,16 +1349,19 @@\n sh%22:%0A%09%09%09\n+// \n for _, p\n@@ -1388,16 +1388,18 @@\n :%5D %7B%0A%09%09%09\n+//\n  %09value,\n@@ -1426,16 +1426,18 @@\n art)%0A%09%09%09\n+//\n  %09v.Push\n@@ -1447,16 +1447,19 @@\n lue)%0A%09%09%09\n+// \n %7D%0A%09%09case\n",
+            "lines": "119"
+        },
+        {
+            "label": "2026-05-27_16-10-07",
+            "content": "@@ -1667,16 +1667,19 @@\n op%22:%0A%09%09%09\n+// \n err := v\n@@ -1688,16 +1688,19 @@\n op()%0A%09%09%09\n+// \n if err !\n@@ -1710,16 +1710,18 @@\n il %7B%0A%09%09%09\n+//\n  %09fmt.Pr\n@@ -1730,24 +1730,27 @@\n tln(err)%0A%09%09%09\n+// \n %7D%0A%09%09case %22cl\n",
+            "lines": "119"
+        },
+        {
+            "label": "2026-05-27_16-10-24",
+            "content": "@@ -377,32 +377,39 @@\n data)%0A%09s.data = \n+append(\n s.data%5B:tamanho-\n@@ -410,16 +410,32 @@\n manho-1%5D\n+, s.data%5B0:%5D...)\n %0A%09return\n",
+            "lines": "119"
+        },
+        {
+            "label": "2026-05-27_16-14-30",
+            "content": "@@ -423,194 +423,8 @@\n %0A%7D%0A%0A\n-func (s *Stack%5BT%5D) Peek() (T, error) %7B%0A%09if s.IsEmpty() %7B%0A%09%09var zero T%0A%09%09return zero, fmt.Errorf(%22stack is empty%22)%0A%09%7D%0A%0A%09topoDaPilha := s.data%5Blen(s.data) - 1%5D%0A%09return topoDaPilha, nil%0A%7D%0A%0A\n func\n@@ -1470,16 +1470,19 @@\n op%22:%0A%09%09%09\n+// \n top, err\n@@ -1493,24 +1493,27 @@\n v.Peek()%0A%09%09%09\n+// \n if err != ni\n@@ -1511,32 +1511,34 @@\n err != nil %7B%0A%09%09%09\n+//\n  %09fmt.Println(er\n@@ -1543,16 +1543,19 @@\n err)%0A%09%09%09\n+// \n %7D else %7B\n@@ -1554,24 +1554,26 @@\n %7D else %7B%0A%09%09%09\n+//\n  %09fmt.Printl\n@@ -1578,24 +1578,27 @@\n tln(top)%0A%09%09%09\n+// \n %7D%0A%09%09case %22si\n",
+            "lines": "119"
+        },
+        {
+            "label": "2026-05-27_16-22-18",
+            "content": "@@ -649,15 +649,18 @@\n %09if \n-s.Size(\n+len(s.data\n ) ==\n",
+            "lines": "129"
+        },
+        {
+            "label": "2026-05-27_16-24-07",
+            "content": "@@ -821,19 +821,26 @@\n .data = \n-nil\n+s.data%5B:0%5D\n %0A%7D%0A%0Afunc\n",
+            "lines": "129"
+        },
+        {
+            "label": "2026-05-27_16-24-58",
+            "content": "@@ -825,18 +825,11 @@\n a = \n-s.data%5B:0%5D\n+nil\n %0A%7D%0A%0A\n@@ -896,22 +896,27 @@\n = range \n+cap(\n s.data\n+)\n  %7B%0A %09%09if\n",
+            "lines": "129"
+        },
+        {
+            "label": "2026-05-27_16-26-39",
+            "content": "@@ -182,11 +182,8 @@\n %5B%5DT,\n- 0,\n  cap\n@@ -907,19 +907,14 @@\n nge \n-cap(\n s.data\n-)\n  %7B%0A \n",
+            "lines": "129"
+        },
+        {
+            "label": "2026-05-27_16-27-26",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strings\"\n\t\"strconv\"\n)\n\ntype Stack[T any] struct {\n\tdata []T\n}\n\nfunc NewStack[T any](cap int) *Stack[T] {\n\treturn &Stack[T]{data: make([]T, 0, cap)}\n}\n\nfunc (s *Stack[T]) Push(value T) {\n\ts.data = append(s.data, value)\n}\n\nfunc (s *Stack[T]) Pop() error {\n\tif s.IsEmpty() {\n\t\treturn fmt.Errorf(\"stack is empty\")\n\t}\n\n\ttamanho := len(s.data)\n\ts.data = s.data[:tamanho-1]\n\treturn nil\n}\n\nfunc (s *Stack[T]) Peek() (T, error) {\n\tif s.IsEmpty() {\n\t\tvar zero T\n\t\treturn zero, fmt.Errorf(\"stack is empty\")\n\t}\n\n\ttopoDaPilha := s.data[len(s.data) - 1]\n\treturn topoDaPilha, nil\n}\n\nfunc (s *Stack[T]) IsEmpty() bool {\n\tif s.Size() == 0 {\n\t\treturn true\n\t}\n\n\treturn false\n}\n\nfunc (s *Stack[T]) Size() int {\n\treturn len(s.data)\n}\n\nfunc (s *Stack[T]) Clear() {\n\tif s.IsEmpty() {\n\t\treturn\n\t}\n\n\ts.data = s.data[:0]\n}\n\nfunc (s *Stack[T]) String() string {\n\toutput := \"\"\n \tfor i := range cap(s.data) {\n \t\tif i != 0 {\n \t\t\toutput += \", \"\n \t\t}\n \t\tif i < len(s.data) {\n \t\t\toutput += fmt.Sprintf(\"%v\", s.data[i])\n \t\t} else {\n \t\t\toutput += \"_\"\n \t\t}\n \t}\n \treturn output\n}\n \nfunc main() {\n\tvar line, cmd string\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tv := NewStack[int](10)\n\tfor {\n\t\tfmt.Print(\"$\")\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tline = scanner.Text()\n\t\tfmt.Println(line)\n\t\tparts := strings.Fields(line)\n\t\tif len(parts) == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tcmd = parts[0]\n\n\t\tswitch cmd {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"init\":\n\t\t\tcap, _ := strconv.Atoi(parts[1])\n\t\t\tv = NewStack[int](cap)\n\t\tcase \"push\":\n\t\t\tfor _, part := range parts[1:] {\n\t\t\t \tvalue, _ := strconv.Atoi(part)\n\t\t\t \tv.Push(value)\n\t\t\t}\n\t\tcase \"debug\":\n\t\t\tfmt.Println(v)\n\t\tcase \"top\":\n\t\t\ttop, err := v.Peek()\n\t\t\tif err != nil {\n\t\t\t \tfmt.Println(err)\n\t\t\t} else {\n\t\t\t \tfmt.Println(top)\n\t\t\t}\n\t\tcase \"size\":\n\t\t\tfmt.Println(v.Size())\n\t\tcase \"pop\":\n\t\t\terr := v.Pop()\n\t\t\tif err != nil {\n\t\t\t \tfmt.Println(err)\n\t\t\t}\n\t\tcase \"clear\":\n\t\t\tv.Clear()\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "129"
+        }
+    ]
+}
