@@ -1,0 +1,109 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-03_17-13-06",
+            "content": "@@ -362,20 +362,20 @@\n te) %5B%5D%5B%5D\n+ \n int\n- \n %7B%0A%09m := \n@@ -1717,69 +1717,8 @@\n 1 %7B%0A\n-%09%09%09%09%09%09if atualMinuto %3C= tempoDoFogo%5Bvizinho.l%5D%5Bvizinho.c%5D %7B%0A%09\n %09%09%09%09\n@@ -1735,16 +1735,8 @@\n rue%0A\n-%09%09%09%09%09%09%7D%0A\n %09%09%09%09\n",
+            "lines": "146"
+        },
+        {
+            "label": "2026-06-03_17-16-27",
+            "content": "@@ -283,18 +283,17 @@\n urn p.l \n-%3E=\n+%3C\n  0 %7C%7C p.\n@@ -298,10 +298,9 @@\n p.c \n-%3E=\n+%3C\n  0 %7C\n@@ -305,17 +305,18 @@\n  %7C%7C p.l \n-%3C\n+%3E=\n  m %7C%7C p.\n@@ -317,17 +317,18 @@\n  %7C%7C p.c \n-%3C\n+%3E=\n  n%0A%7D%0A%0Afu\n",
+            "lines": "148"
+        },
+        {
+            "label": "2026-06-03_17-18-27",
+            "content": "@@ -288,18 +288,18 @@\n .l %3E= 0 \n-&&\n+%7C%7C\n  p.c %3E= \n@@ -300,18 +300,18 @@\n .c %3E= 0 \n-&&\n+%7C%7C\n  p.l %3C m\n@@ -311,18 +311,18 @@\n p.l %3C m \n-&&\n+%7C%7C\n  p.c %3C n\n",
+            "lines": "148"
+        },
+        {
+            "label": "2026-06-03_17-19-26",
+            "content": "@@ -215,19 +215,20 @@\n rid %5B%5D%5B%5D\n-int\n+byte\n , p Pos)\n",
+            "lines": "148"
+        },
+        {
+            "label": "2026-06-03_17-21-29",
+            "content": "@@ -215,20 +215,19 @@\n rid %5B%5D%5B%5D\n-byte\n+int\n , p Pos)\n@@ -845,27 +845,25 @@\n zinho.c%5D != \n-'2'\n+2\n  %7B%0A%09%09%09%09novoT\n@@ -1569,33 +1569,8 @@\n %09%09if\n- inside(grid, vizinho) &&\n  !vi\n@@ -1601,16 +1601,41 @@\n ho.c%5D &&\n+ inside(grid, vizinho) &&\n  grid%5Bvi\n@@ -1661,11 +1661,9 @@\n  != \n-'2'\n+2\n  %7B%0A%09\n@@ -1806,18 +1806,23 @@\n %0A%09%09%09%09%09%7D%0A\n-%0A\n %09\n+%09%09%09%7D%0A%0A\n %09%09%09%09if a\n@@ -1866,25 +1866,24 @@\n izinho.c%5D %7B%0A\n-%09\n %09%09%09%09%09fila = \n@@ -1909,17 +1909,16 @@\n o)%0A%09%09%09%09%09\n-%09\n visitado\n@@ -1948,23 +1948,16 @@\n  = true%0A\n-%09%09%09%09%09%7D%0A\n %09%09%09%09%7D%0A%09%09\n",
+            "lines": "148"
+        },
+        {
+            "label": "2026-06-03_17-30-59",
+            "content": "@@ -1447,30 +1447,8 @@\n ++%0A%0A\n-%09%09nivel := len(fila)%0A%0A\n %09%09fo\n@@ -1465,13 +1465,17 @@\n i %3C \n-nivel\n+len(fila)\n ; i+\n",
+            "lines": "148"
+        },
+        {
+            "label": "2026-06-03_17-32-43",
+            "content": "@@ -678,34 +678,8 @@\n j%7D)%0A\n-%09%09%09%09tempoDoFogo%5Bi%5D%5Bj%5D = 0%0A\n %09%09%09%7D\n",
+            "lines": "150"
+        },
+        {
+            "label": "2026-06-03_17-34-02",
+            "content": "@@ -540,9 +540,9 @@\n  = 1\n-5\n+0\n 0000\n",
+            "lines": "151"
+        },
+        {
+            "label": "2026-06-03_17-38-21",
+            "content": "@@ -539,10 +539,10 @@\n %5D = \n-20\n+15\n 0000\n",
+            "lines": "151"
+        },
+        {
+            "label": "2026-06-03_17-38-33",
+            "content": "@@ -535,17 +535,17 @@\n i%5D%5Bj%5D = \n-1\n+2\n 00000000\n@@ -1221,68 +1221,8 @@\n l %7B%0A\n-%09if tempoDeEspera %3E= tempoDoFogo%5B0%5D%5B0%5D %7B%0A%09%09return false%0A%09%7D%0A%0A\n %09m :\n",
+            "lines": "151"
+        },
+        {
+            "label": "2026-06-03_17-44-31",
+            "content": "@@ -535,17 +535,17 @@\n i%5D%5Bj%5D = \n-2\n+1\n 00000000\n",
+            "lines": "155"
+        },
+        {
+            "label": "2026-06-03_17-44-47",
+            "content": "@@ -1209,32 +1209,92 @@\n era int) bool %7B%0A\n+%09if tempoDeEspera %3E= tempoDoFogo%5B0%5D%5B0%5D %7B%0A%09%09return false%0A%09%7D%0A%0A\n %09m := len(grid)%0A\n",
+            "lines": "155"
+        },
+        {
+            "label": "2026-06-03_17-56-20",
+            "content": "@@ -1221,68 +1221,8 @@\n l %7B%0A\n-%09if tempoDeEspera %3E= tempoDoFogo%5B0%5D%5B0%5D %7B%0A%09%09return false%0A%09%7D%0A%0A\n %09m :\n",
+            "lines": "151"
+        },
+        {
+            "label": "2026-06-03_18-01-15",
+            "content": "@@ -215,19 +215,20 @@\n rid %5B%5D%5B%5D\n-int\n+byte\n , p Pos)\n@@ -352,19 +352,20 @@\n rid %5B%5D%5B%5D\n-int\n+byte\n ) %5B%5D%5B%5Din\n@@ -872,25 +872,27 @@\n zinho.c%5D != \n-2\n+'2'\n  %7B%0A%09%09%09%09novoT\n@@ -1160,27 +1160,28 @@\n go(grid %5B%5D%5B%5D\n-int\n+byte\n , tempoDoFog\n@@ -1209,32 +1209,92 @@\n era int) bool %7B%0A\n+%09if tempoDeEspera %3E= tempoDoFogo%5B0%5D%5B0%5D %7B%0A%09%09return false%0A%09%7D%0A%0A\n %09m := len(grid)%0A\n@@ -1764,17 +1764,19 @@\n o.c%5D != \n-2\n+'2'\n  %7B%0A%09%09%09%09%09\n@@ -2225,29 +2225,25 @@\n ma%0Afunc \n-maximumMinute\n+numIsland\n s(grid %5B\n@@ -2245,19 +2245,20 @@\n rid %5B%5D%5B%5D\n-int\n+byte\n ) int %7B%0A\n@@ -2730,19 +2730,20 @@\n ake(%5B%5D%5B%5D\n-int\n+byte\n , nl)%0A%09f\n@@ -2790,128 +2790,40 @@\n )%0A%09%09\n-texto := scanner.Text()%0A%09%09grid%5Bi%5D = make(%5B%5Dint, nc)%0A%0A%09%09for j := 0; j %3C nc; j++ %7B%0A%09%09%09grid%5Bi%5D%5Bj%5D = int(texto%5Bj%5D - '0')%0A%09%09%7D\n+grid%5Bi%5D = %5B%5Dbyte(scanner.Text())\n %0A%09%7D%0A\n@@ -2837,21 +2837,17 @@\n  := \n-maximumMinute\n+numIsland\n s(gr\n",
+            "lines": "155"
+        },
+        {
+            "label": "2026-06-03_18-09-37",
+            "content": "@@ -533,17 +533,17 @@\n i%5D%5Bj%5D = \n-1\n+2\n 00000000\n",
+            "lines": "156"
+        },
+        {
+            "label": "2026-06-03_18-10-04",
+            "content": "@@ -631,17 +631,19 @@\n %5D%5Bj%5D == \n-1\n+'1'\n  %7B%0A%09%09%09%09f\n",
+            "lines": "156"
+        },
+        {
+            "label": "2026-06-03_18-12-47",
+            "content": "@@ -533,17 +533,17 @@\n i%5D%5Bj%5D = \n-2\n+1\n 00000000\n",
+            "lines": "156"
+        },
+        {
+            "label": "2026-06-03_18-13-46",
+            "content": "@@ -1214,69 +1214,8 @@\n l %7B%0A\n-%09if tempoDeEspera %3E= tempoDoFogo%5B0%5D%5B0%5D %7B%0A%09%09return false%0A%09%7D%0A%09%0A\n %09m :\n",
+            "lines": "156"
+        },
+        {
+            "label": "2026-06-03_18-16-15",
+            "content": "@@ -1202,32 +1202,93 @@\n era int) bool %7B%0A\n+%09if tempoDeEspera %3E= tempoDoFogo%5B0%5D%5B0%5D %7B%0A%09%09return false%0A%09%7D%0A%09%0A\n %09m := len(grid)%0A\n@@ -2575,16 +2575,95 @@\n ain() %7B%0A\n+%09scanner := bufio.NewScanner(os.Stdin)%0A%09scanner.Scan()%0A%09line := scanner.Text()%0A\n %09var nl,\n@@ -2676,20 +2676,37 @@\n t%0A%09fmt.S\n+s\n can\n-(\n+f(line, %22%25d %25d%22, \n &nl, &nc\n@@ -2761,16 +2761,59 @@\n ; i++ %7B%0A\n+%09%09scanner.Scan()%0A%09%09texto := scanner.Text()%0A\n %09%09grid%5Bi\n@@ -2832,16 +2832,17 @@\n nt, nc)%0A\n+%0A\n %09%09for j \n@@ -2868,18 +2868,8 @@\n %0A%09%09%09\n-fmt.Scan(&\n grid\n@@ -2874,16 +2874,37 @@\n id%5Bi%5D%5Bj%5D\n+ = int(texto%5Bj%5D - '0'\n )%0A%09%09%7D%0A%09%7D\n@@ -2904,18 +2904,16 @@\n %0A%09%09%7D%0A%09%7D%0A\n-%09%0A\n %09result \n",
+            "lines": "160"
+        },
+        {
+            "label": "2026-06-03_18-21-29",
+            "content": "@@ -42,19 +42,8 @@\n os%22%0A\n-%09%22strconv%22%0A\n )%0A%0At\n@@ -2519,186 +2519,41 @@\n  %7B%0A%09\n-scanner := bufio.NewScanner(os.Stdin)%0A%09scanner.Split(bufio.ScanWords)%0A%09scanner.Scan()%0A%09nl, _ := strconv.Atoi(scanner.Text())%0A%09scanner.Scan()%0A%09nc, _ := strconv.Atoi(scanner.Text()\n+var nl, nc int%0A%09fmt.Scan(&nl, &nc\n )%0A%09g\n@@ -2667,26 +2667,18 @@\n %0A%09%09%09\n-scanner\n+fmt\n .Scan(\n-)%0A%09%09%09\n+&\n grid\n@@ -2687,41 +2687,8 @@\n %5D%5Bj%5D\n-, _ = strconv.Atoi(scanner.Text()\n )%0A%09%09\n@@ -2688,24 +2688,25 @@\n %5Bj%5D)%0A%09%09%7D%0A%09%7D%0A\n+%09\n %0A%09result := \n",
+            "lines": "151"
+        },
+        {
+            "label": "2026-06-03_18-29-51",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n)\n\ntype Pos struct {\n\tl, c int\n}\n\nfunc getNeig(p Pos) []Pos {\n\treturn []Pos {\n\t\t{p.l, p.c + 1},\n\t\t{p.l, p.c - 1},\n\t\t{p.l + 1, p.c},\n\t\t{p.l - 1, p.c},\n\t}\n}\n\nfunc inside(grid [][]int, p Pos) bool {\n\tm := len(grid)\n\tn := len(grid[0])\n\n\treturn p.l >= 0 && p.c >= 0 && p.l < m && p.c < n\n}\n\nfunc prevendoFogo(grid [][]int) [][]int {\n\tm := len(grid)\n\tn := len(grid[0])\n\n\ttempoDoFogo := make([][]int, m)\n\tfor i := range m {\n\t\ttempoDoFogo[i] = make([]int, n)\n\t\tfor j := range n {\n\t\t\ttempoDoFogo[i][j] = 2000000000\n\t\t}\n\t}\n\n\tfila := []Pos{}\n\n\tfor i := range m {\n\t\tfor j := range n {\n\t\t\tif grid[i][j] == 1 {\n\t\t\t\tfila = append(fila, Pos{i, j})\n\t\t\t\ttempoDoFogo[i][j] = 0\n\t\t\t}\n\t\t}\n\t}\n\n\tfor len(fila) > 0 {\n\t\tatual := fila[0]\n\t\tfila = fila[1:]\n\n\t\tfor _, vizinho := range getNeig(atual) {\n\t\t\tif inside(grid, vizinho) && grid[vizinho.l][vizinho.c] != 2 {\n\t\t\t\tnovoTempoDoFogo := tempoDoFogo[atual.l][atual.c] + 1\n\n\t\t\t\tif novoTempoDoFogo < tempoDoFogo[vizinho.l][vizinho.c] {\n\t\t\t\t\ttempoDoFogo[vizinho.l][vizinho.c] = novoTempoDoFogo\n\t\t\t\t\tfila = append(fila, vizinho)\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\treturn tempoDoFogo\n}\n\nfunc escapandoDoFogo(grid [][]int, tempoDoFogo [][]int, tempoDeEspera int) bool {\n\tm := len(grid)\n\tn := len(grid[0])\n\n\tvisitados := make([][]bool, m) \n\tfor i := range visitados {\n\t\tvisitados[i] = make([]bool, n)\n\t}\n\n\tvisitados[0][0] = true\n\n\tatualMinuto := tempoDeEspera\n\n\tfila := []Pos{{0, 0}}\n\n\tfor len(fila) > 0 {\n\t\tatualMinuto++\n\n\t\tnivel := len(fila)\n\n\t\tfor i := 0; i < nivel; i++ {\n\t\t\tatual := fila[0]\n\t\t\tfila = fila[1:]\n\n\t\t\tfor _, vizinho := range getNeig(atual) {\n\t\t\t\tif inside(grid, vizinho) && !visitados[vizinho.l][vizinho.c] && grid[vizinho.l][vizinho.c] != 2 {\n\t\t\t\t\tif vizinho.l == m - 1 && vizinho.c == n - 1 {\n\t\t\t\t\t\tif atualMinuto <= tempoDoFogo[vizinho.l][vizinho.c] {\n\t\t\t\t\t\t\treturn true\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\n\t\t\t\t\tif atualMinuto < tempoDoFogo[vizinho.l][vizinho.c] {\n\t\t\t\t\t\tfila = append(fila, vizinho)\n\t\t\t\t\t\tvisitados[vizinho.l][vizinho.c] = true\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\treturn false\n}\n\n// N\u00e3o modifique a assinatura da fun\u00e7\u00e3o numIslands\n// Ela \u00e9 a fun\u00e7\u00e3o que ser\u00e1 chamada no LeetCode para resolver o problema\nfunc maximumMinutes(grid [][]int) int {\n\ttempoDoFogo := prevendoFogo(grid)\n\n\tinicio := 0\n\tfim := 1000000000\n\tresposta := -1\n\n\tfor inicio <= fim {\n\t\tmeio := (inicio + fim)/2\n\t\tif escapandoDoFogo(grid, tempoDoFogo, meio) {\n\t\t\tresposta = meio\n\t\t\tinicio = meio + 1\n\t\t} else {\n\t\t\tfim = meio - 1\n\t\t}\n\t}\n\n\treturn resposta\n}\n\n// N\u00e3o modifique a fun\u00e7\u00e3o main\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Split(bufio.ScanWords)\n\tscanner.Scan()\n\tnl, _ := strconv.Atoi(scanner.Text())\n\tscanner.Scan()\n\tnc, _ := strconv.Atoi(scanner.Text())\n\tgrid := make([][]int, nl)\n\tfor i := 0; i < nl; i++ {\n\t\tgrid[i] = make([]int, nc)\n\t\tfor j := 0; j < nc; j++ {\n\t\t\tscanner.Scan()\n\t\t\tgrid[i][j], _ = strconv.Atoi(scanner.Text())\n\t\t}\n\t}\n\n\tresult := maximumMinutes(grid)\n\tfmt.Println(result)\n}\n",
+            "lines": "157"
+        }
+    ]
+}
