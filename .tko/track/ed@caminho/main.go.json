@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-03_14-18-01",
+            "content": "@@ -958,24 +958,24 @@\n nho%5B\n-vizinho%5D = atual\n+atual%5D = vizinho\n %0A%09%09%09\n",
+            "lines": "108"
+        },
+        {
+            "label": "2026-06-03_14-18-29",
+            "content": "@@ -986,111 +986,8 @@\n %7D%0A%09%7D\n-%0A%0A%09rota := voltar(caminho, startPos, endPos)%0A%0A%09for _, pos := range rota %7B%0A%09%09grid%5Bpos.l%5D%5Bpos.c%5D = '.'%0A%09%7D\n %0A%7D%0A%0A\n",
+            "lines": "108"
+        },
+        {
+            "label": "2026-06-03_14-38-05",
+            "content": "@@ -853,16 +853,49 @@\n  '#') %7B%0A\n+%09%09%09%09grid%5Batual.l%5D%5Batual.c%5D = '.'%0A\n %09%09%09%09visi\n",
+            "lines": "114"
+        },
+        {
+            "label": "2026-06-03_14-38-25",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tl, c int\n}\n\nfunc (p Pos) getNeig() []Pos {\n\treturn []Pos {\n\t\t{p.l, p.c + 1},\n\t\t{p.l, p.c - 1},\n\t\t{p.l + 1, p.c},\n\t\t{p.l - 1, p.c},\n\t}\n}\n\nfunc inside(grid [][]rune, pos Pos) bool {\n\tnrows := len(grid)\n\tncols := len(grid[0])\n\treturn pos.l >= 0 && pos.l < nrows && pos.c >= 0 && pos.c < ncols\n}\n\nfunc match(grid [][]rune, pos Pos, char rune) bool {\n\treturn inside(grid, pos) && grid[pos.l][pos.c] == char\n}\n\nfunc search(grid [][]rune, startPos Pos, endPos Pos) {\n\tfila := NewQueue[Pos]()\n\tfila.Enqueue(startPos)\n\n\tcaminho := make(map[Pos]Pos)\n\tvisitados := make(map[Pos]bool)\n\tvisitados[startPos] = true\n\n\tfor !fila.IsEmpty() {\n\t\tatual, _ := fila.Dequeue()\n\t\tif atual == endPos {\n\t\t\tbreak\n\t\t}\n\n\t\tfor _, vizinho := range atual.getNeig() {\n\t\t\tif !visitados[vizinho] && !match(grid, vizinho, '#') {\n\t\t\t\tvisitados[vizinho] = true\n\t\t\t\tfila.Enqueue(vizinho)\n\t\t\t\tcaminho[vizinho] = atual\n\t\t\t}\n\t\t}\n\t}\n\n\trota := voltar(caminho, startPos, endPos)\n\n\tfor _, pos := range rota {\n\t\tgrid[pos.l][pos.c] = '.'\n\t}\n}\n\nfunc voltar(caminho map[Pos]Pos, startPos, endPos Pos) []Pos {\n\trotaReconstruida := []Pos{}\n\n\tatual := endPos\n\n\tfor atual != startPos {\n\t\trotaReconstruida = append(rotaReconstruida, atual)\n\t\tatual = caminho[atual]\n\t}\n\n\trotaReconstruida = append(rotaReconstruida, startPos)\n\treturn rotaReconstruida\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tvar nl, nc int\n\tscanner.Scan()\n\tline := scanner.Text()\n\tfmt.Sscanf(line, \"%d %d\", &nl, &nc)\n\tmat := make([][]rune, nl) // Inicializa a matriz de runes\n\n\t// Carregando matriz\n\tfor i := range nl {\n\t\tscanner.Scan()\n\t\tline := scanner.Text()\n\t\tmat[i] = []rune(line)\n\t}\n\n\tvar inicio, fim Pos\n\n\t// Procurando inicio e fim e colocando ' ' nas posi\u00e7\u00f5es iniciais\n\tfor l := range nl {\n\t\tfor c := range nc {\n\t\t\tif mat[l][c] == 'I' {\n\t\t\t\tmat[l][c] = ' '\n\t\t\t\tinicio = Pos{l, c}\n\t\t\t}\n\t\t\tif mat[l][c] == 'F' {\n\t\t\t\tmat[l][c] = ' '\n\t\t\t\tfim = Pos{l, c}\n\t\t\t}\n\t\t}\n\t}\n\n\tsearch(mat, inicio, fim)\n\n\tfor _, line := range mat {\n\t\tfmt.Println(string(line)) // Converte o slice de runes de volta para string para imprimir\n\t}\n}\n",
+            "lines": "113"
+        }
+    ]
+}
