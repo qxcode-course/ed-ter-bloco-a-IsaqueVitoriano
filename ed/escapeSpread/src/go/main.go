@@ -13,36 +13,36 @@ type Pos struct {
 
 func getNeig(p Pos) []Pos {
 	return []Pos {
-		{p.l, p.c + 1},
-		{p.l, p.c - 1},
 		{p.l + 1, p.c},
 		{p.l - 1, p.c},
+		{p.l, p.c + 1},
+		{p.l, p.c - 1},
 	}
 }
 
 func inside(grid [][]int, p Pos) bool {
-	m := len(grid)
-	n := len(grid[0])
+	nl := len(grid)
+	nc := len(grid[0])
 
-	return p.l >= 0 && p.c >= 0 && p.l < m && p.c < n
+	return p.l >= 0 && p.l < nl && p.c >= 0 && p.c < nc
 }
 
 func prevendoFogo(grid [][]int) [][]int {
-	m := len(grid)
-	n := len(grid[0])
+	nl := len(grid)
+	nc := len(grid[0])
 
-	tempoDoFogo := make([][]int, m)
-	for i := range m {
-		tempoDoFogo[i] = make([]int, n)
-		for j := range n {
+	tempoDoFogo := make([][]int, nl)
+	for i := range nl {
+		tempoDoFogo[i] = make([]int, nc)
+		for j := range nc {
 			tempoDoFogo[i][j] = 2000000000
 		}
 	}
 
 	fila := []Pos{}
 
-	for i := range m {
-		for j := range n {
+	for i := range nl {
+		for j := range nc {
 			if grid[i][j] == 1 {
 				fila = append(fila, Pos{i, j})
 				tempoDoFogo[i][j] = 0
@@ -69,33 +69,31 @@ func prevendoFogo(grid [][]int) [][]int {
 	return tempoDoFogo
 }
 
-func escapandoDoFogo(grid [][]int, tempoDoFogo [][]int, tempoDeEspera int) bool {
-	m := len(grid)
-	n := len(grid[0])
+func podeEscapar(grid [][]int, tempoDoFogo [][]int, tempoDeEspera int) bool {
+	nl := len(grid)
+	nc := len(grid[0])
+	atualMinuto := tempoDeEspera
 
-	visitados := make([][]bool, m) 
+	visitados := make([][]bool, nl)
 	for i := range visitados {
-		visitados[i] = make([]bool, n)
+		visitados[i] = make([]bool, nc)
 	}
 
 	visitados[0][0] = true
 
-	atualMinuto := tempoDeEspera
-
-	fila := []Pos{{0, 0}}
+	fila := []Pos{{0,0}}
 
 	for len(fila) > 0 {
 		atualMinuto++
 
-		nivel := len(fila)
-
-		for i := 0; i < nivel; i++ {
+		nivelDaFila := len(fila)
+		for i := 0; i < nivelDaFila; i++ {
 			atual := fila[0]
 			fila = fila[1:]
 
 			for _, vizinho := range getNeig(atual) {
 				if inside(grid, vizinho) && !visitados[vizinho.l][vizinho.c] && grid[vizinho.l][vizinho.c] != 2 {
-					if vizinho.l == m - 1 && vizinho.c == n - 1 {
+					if vizinho.l == nl - 1 && vizinho.c == nc - 1 {
 						if atualMinuto <= tempoDoFogo[vizinho.l][vizinho.c] {
 							return true
 						}
@@ -113,26 +111,26 @@ func escapandoDoFogo(grid [][]int, tempoDoFogo [][]int, tempoDeEspera int) bool 
 	return false
 }
 
-// Não modifique a assinatura da função numIslands
+// Não modifique a assinatura da função maximumMinutes
 // Ela é a função que será chamada no LeetCode para resolver o problema
 func maximumMinutes(grid [][]int) int {
 	tempoDoFogo := prevendoFogo(grid)
 
 	inicio := 0
 	fim := 1000000000
-	resposta := -1
+	minutes := -1
 
 	for inicio <= fim {
-		meio := (inicio + fim)/2
-		if escapandoDoFogo(grid, tempoDoFogo, meio) {
-			resposta = meio
+		meio := (inicio + fim) / 2
+		if podeEscapar(grid, tempoDoFogo, meio) {
+			minutes = meio
 			inicio = meio + 1
 		} else {
 			fim = meio - 1
 		}
 	}
 
-	return resposta
+	return minutes
 }
 
 // Não modifique a função main

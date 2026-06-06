@@ -6,3 +6,17 @@
 2026-06-06 13:55:01, MOVE, v:1, k:ed@caminho, mode:EDIT
 2026-06-06 13:58:06, EXEC, v:1, k:ed@caminho, mode:FULL, rate:100, size:152
 2026-06-06 13:58:40, SELF, v:1, k:ed@caminho, self:1, rate:100, study:30
+2026-06-06 14:12:24, MOVE, v:1, k:ed@escapeSpread, mode:PICK
+2026-06-06 14:15:17, MOVE, v:1, k:ed@escapeSpread, mode:EDIT
+2026-06-06 14:20:20, MOVE, v:1, k:ed@escapeSpread, mode:EDIT
+2026-06-06 14:25:04, MOVE, v:1, k:ed@escapeSpread, mode:EDIT
+2026-06-06 14:30:20, MOVE, v:1, k:ed@escapeSpread, mode:EDIT
+2026-06-06 14:33:37, MOVE, v:1, k:ed@escapeSpread, mode:EDIT
+2026-06-06 14:40:21, MOVE, v:1, k:ed@escapeSpread, mode:EDIT
+2026-06-06 14:45:20, MOVE, v:1, k:ed@escapeSpread, mode:EDIT
+2026-06-06 14:50:16, MOVE, v:1, k:ed@escapeSpread, mode:EDIT
+2026-06-06 14:55:17, MOVE, v:1, k:ed@escapeSpread, mode:EDIT
+2026-06-06 14:55:40, EXEC, v:1, k:ed@escapeSpread, mode:FULL, rate:33, size:154
+2026-06-06 14:55:41, EXEC, v:1, k:ed@escapeSpread, mode:FULL, rate:33
+2026-06-06 15:01:29, EXEC, v:1, k:ed@escapeSpread, mode:FULL, rate:100, size:155
+2026-06-06 15:02:09, SELF, v:1, k:ed@escapeSpread, self:1, rate:100, study:50
