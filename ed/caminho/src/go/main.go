@@ -33,18 +33,19 @@ func search(grid [][]rune, startPos Pos, endPos Pos) {
 	fila := NewQueue[Pos]()
 	fila.Enqueue(startPos)
 
-	caminho := make(map[Pos]Pos)
 	visitados := make(map[Pos]bool)
 	visitados[startPos] = true
+	caminho := make(map[Pos]Pos)
 
 	for !fila.IsEmpty() {
 		atual, _ := fila.Dequeue()
+
 		if atual == endPos {
 			break
 		}
 
 		for _, vizinho := range atual.getNeig() {
-			if !visitados[vizinho] && !match(grid, vizinho, '#') {
+			if match(grid, vizinho, ' ') && !visitados[vizinho] {
 				visitados[vizinho] = true
 				fila.Enqueue(vizinho)
 				caminho[vizinho] = atual
@@ -53,17 +54,14 @@ func search(grid [][]rune, startPos Pos, endPos Pos) {
 	}
 
 	rota := voltar(caminho, startPos, endPos)
-
-	for _, pos := range rota {
-		grid[pos.l][pos.c] = '.'
+	for _, elemento := range rota {
+		grid[elemento.l][elemento.c] = '.'
 	}
 }
 
-func voltar(caminho map[Pos]Pos, startPos, endPos Pos) []Pos {
+func voltar(caminho map[Pos]Pos, startPos, endPos Pos) []Pos{
 	rotaReconstruida := []Pos{}
-
 	atual := endPos
-
 	for atual != startPos {
 		rotaReconstruida = append(rotaReconstruida, atual)
 		atual = caminho[atual]
