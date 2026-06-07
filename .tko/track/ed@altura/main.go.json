@@ -1,0 +1,139 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-07_10-50-57",
+            "content": "@@ -840,38 +840,8 @@\n t %7B%0A\n-%09_, _, _ = node, level, value%0A\n %09ret\n",
+            "lines": "113"
+        },
+        {
+            "label": "2026-06-07_10-51-03",
+            "content": "@@ -626,25 +626,39 @@\n %09%7D%0A%0A%09return \n-0\n+getHeight(node)\n %0A%7D%0A%0A// node \n",
+            "lines": "114"
+        },
+        {
+            "label": "2026-06-07_10-51-20",
+            "content": "@@ -627,109 +627,16 @@\n %7D%0A%0A%09\n-alturaDir := getHeight(node.Right)%0A%09alturaEsq := getHeight(node.Left)%0A%09%0A%09return alturaDir + alturaEsq\n+return 0\n %0A%7D%0A%0A\n",
+            "lines": "114"
+        },
+        {
+            "label": "2026-06-07_10-52-51",
+            "content": "@@ -659,19 +659,16 @@\n Right)%0A%09\n-// \n alturaEs\n@@ -693,16 +693,17 @@\n e.Left)%0A\n+%09\n %0A%09return\n@@ -703,17 +703,25 @@\n %09return \n-1\n+alturaDir\n  + altur\n@@ -721,19 +721,19 @@\n + altura\n-Dir\n+Esq\n %0A%7D%0A%0A// n\n",
+            "lines": "117"
+        },
+        {
+            "label": "2026-06-07_10-56-09",
+            "content": "@@ -659,16 +659,19 @@\n Right)%0A%09\n+// \n alturaEs\n@@ -702,116 +702,28 @@\n )%0A%0A%09\n-maior_altura := alturaDir%0A%09if maior_altura %3C alturaEsq %7B%0A%09%09maior_altura = alturaEsq%0A%09%7D%0A%0A%09return maior_altura\n+return 1 + alturaDir\n %0A%7D%0A%0A\n",
+            "lines": "117"
+        },
+        {
+            "label": "2026-06-07_10-57-51",
+            "content": "@@ -794,12 +794,8 @@\n turn\n- 1 +\n  mai\n",
+            "lines": "122"
+        },
+        {
+            "label": "2026-06-07_10-57-56",
+            "content": "@@ -725,25 +725,28 @@\n Dir%0A%09if \n+maior_\n altura\n-Dir\n  %3C altur\n",
+            "lines": "122"
+        },
+        {
+            "label": "2026-06-07_10-58-54",
+            "content": "@@ -1000,80 +1000,36 @@\n  %7B%0A%09\n-if node == nil %7B%0A%09%09return -1%0A%09%7D%0A%0A%09if\n+_, _, _ = node,\n  level\n- ==\n+,\n  value\n- %7B%0A%09%09return level%0A%09%7D%0A\n %0A%09re\n",
+            "lines": "122"
+        },
+        {
+            "label": "2026-06-07_11-01-22",
+            "content": "@@ -1037,211 +1037,53 @@\n %09if \n-node.Value == value %7B%0A%09%09return level%0A%09%7D%0A%0A%09profundidadeDir := calcNodeDepth(node.Right, level + 1, value)%0A%0A%09if profundidadeDir != -1 %7B%0A%09%09return level%0A%09%7D%0A%0A%09return calcNodeDepth(node.Left, level + 1, value)\n+level == value %7B%0A%09%09return level%0A%09%7D%0A%0A%09return 0\n %0A%7D%0A%0A\n",
+            "lines": "129"
+        },
+        {
+            "label": "2026-06-07_11-06-07",
+            "content": "@@ -1191,26 +1191,14 @@\n %7D%0A%0A%09\n-profundidadeEsq :=\n+return\n  cal\n@@ -1241,34 +1241,8 @@\n ue)%0A\n-%09%0A%09return profundidadeEsq%0A\n %7D%0A%0A/\n",
+            "lines": "135"
+        },
+        {
+            "label": "2026-06-07_11-07-01",
+            "content": "@@ -717,19 +717,19 @@\n = altura\n-Esq\n+Dir\n %0A%09if alt\n@@ -739,9 +739,9 @@\n Dir \n-%3E\n+%3C\n  alt\n@@ -772,19 +772,19 @@\n = altura\n-Dir\n+Esq\n %0A%09%7D%0A%0A%09re\n@@ -1187,22 +1187,34 @@\n el%0A%09%7D%0A%0A%09\n-return\n+profundidadeEsq :=\n  calcNod\n@@ -1249,16 +1249,42 @@\n  value)%0A\n+%09%0A%09return profundidadeEsq%0A\n %7D%0A%0A// --\n",
+            "lines": "137"
+        },
+        {
+            "label": "2026-06-07_11-08-29",
+            "content": "@@ -787,16 +787,20 @@\n %0A%09return\n+ 1 +\n  maior_a\n@@ -804,20 +804,16 @@\n r_altura\n- + 1\n %0A%7D%0A%0A// n\n",
+            "lines": "135"
+        },
+        {
+            "label": "2026-06-07_11-10-35",
+            "content": "@@ -353,184 +353,70 @@\n %7D%0A%0A%09\n-if node.\n+return &Node%7B\n Value\n- ==\n+:\n  value\n- %7B%0A%09%09return node%0A%09%7D%0A%0A%09procurandoEsq := find(node.Left, node.Value)%0A%0A%09if procurandoEsq != nil %7B%0A%09%09return node.Left%0A%09%7D%0A%0A%09return find(node.Right, node.Value)\n+, Left: node.Left, Right: node.Right%7D\n %0A%7D%0A%0A\n@@ -791,12 +791,8 @@\n turn\n- 1 +\n  mai\n@@ -800,16 +800,20 @@\n r_altura\n+ + 1\n %0A%7D%0A%0A// n\n",
+            "lines": "135"
+        },
+        {
+            "label": "2026-06-07_11-22-49",
+            "content": "@@ -734,139 +734,167 @@\n urn \n--1\n+0\n %0A%09%7D%0A%0A%09\n-procurandoNode := find(node, node.Value)%0A%0A%09if procurandoNode != nil %7B%0A%09%09altura := getHeight(procurandoNode)%0A%09%09return\n+alturaDir := getHeight(node.Right)%0A%09alturaEsq := getHeight(node.Left)%0A%0A%09maior_altura := alturaEsq%0A%09if alturaDir %3E alturaEsq %7B%0A%09%09maior_altura =\n  altura\n+Dir\n %0A%09%7D%0A\n@@ -902,31 +902,32 @@\n %09return \n-getHeight(node)\n+1 + maior_altura\n %0A%7D%0A%0A// n\n",
+            "lines": "145"
+        },
+        {
+            "label": "2026-06-07_11-28-14",
+            "content": "@@ -874,17 +874,31 @@\n %09return \n-0\n+getHeight(node)\n %0A%7D%0A%0A// n\n",
+            "lines": "144"
+        },
+        {
+            "label": "2026-06-07_11-28-23",
+            "content": "@@ -426,17 +426,22 @@\n e.Left, \n-v\n+node.V\n alue)%0A%0A%09\n@@ -514,17 +514,22 @@\n .Right, \n-v\n+node.V\n alue)%0A%7D%0A\n@@ -810,22 +810,25 @@\n nil %7B%0A%09%09\n-return\n+altura :=\n  getHeig\n@@ -846,16 +846,32 @@\n doNode)%0A\n+%09%09return altura%0A\n %09%7D%0A%0A%09ret\n",
+            "lines": "144"
+        },
+        {
+            "label": "2026-06-07_11-30-05",
+            "content": "@@ -470,29 +470,25 @@\n %09return \n-procurandoEsq\n+node.Left\n %0A%09%7D%0A%0A%09re\n@@ -732,158 +732,112 @@\n %7D%0A%0A%09\n-alturaDir := getHeight(node.Right)%0A%09alturaEsq := getHeight(node.Left)%0A%0A%09maiorAltura := alturaDir%0A%09if alturaEsq %3E alturaDir %7B%0A%09%09maiorAltura = alturaDir\n+procurandoNode := find(node, node.Value)%0A%0A%09if procurandoNode != nil %7B%0A%09%09return getHeight(procurandoNode)\n %0A%09%7D%0A\n@@ -849,19 +849,9 @@\n urn \n-maiorAltura\n+0\n %0A%7D%0A%0A\n",
+            "lines": "143"
+        },
+        {
+            "label": "2026-06-07_11-36-33",
+            "content": "@@ -898,12 +898,8 @@\n turn\n- 1 +\n  mai\n",
+            "lines": "145"
+        },
+        {
+            "label": "2026-06-07_11-36-56",
+            "content": "@@ -879,19 +879,19 @@\n = altura\n-Esq\n+Dir\n %0A%09%7D%0A%0A%09re\n",
+            "lines": "145"
+        },
+        {
+            "label": "2026-06-07_11-38-24",
+            "content": "@@ -1282,31 +1282,21 @@\n %09return \n-profundidadeDir\n+level\n %0A%09%7D%0A%0A%09re\n",
+            "lines": "145"
+        },
+        {
+            "label": "2026-06-07_11-39-21",
+            "content": "@@ -894,16 +894,20 @@\n %0A%09return\n+ 1 +\n  maiorAl\n@@ -910,20 +910,16 @@\n orAltura\n- + 1\n %0A%7D%0A%0A// n\n",
+            "lines": "145"
+        },
+        {
+            "label": "2026-06-07_11-40-50",
+            "content": "@@ -913,9 +913,9 @@\n a + \n-2\n+1\n %0A%7D%0A%0A\n",
+            "lines": "145"
+        },
+        {
+            "label": "2026-06-07_11-40-57",
+            "content": "@@ -766,20 +766,16 @@\n e.Right)\n- + 1\n %0A%09altura\n@@ -801,20 +801,16 @@\n de.Left)\n- + 1\n %0A%0A%09maior\n@@ -906,16 +906,20 @@\n orAltura\n+ + 2\n %0A%7D%0A%0A// n\n",
+            "lines": "145"
+        },
+        {
+            "label": "2026-06-07_11-43-57",
+            "content": "@@ -906,12 +906,8 @@\n turn\n- 1 +\n  mai\n",
+            "lines": "145"
+        },
+        {
+            "label": "2026-06-07_11-44-08",
+            "content": "@@ -724,17 +724,18 @@\n %09return \n-0\n+-1\n %0A%09%7D%0A%0A%09al\n@@ -766,16 +766,20 @@\n e.Right)\n+ + 1\n %0A%09altura\n@@ -805,16 +805,20 @@\n de.Left)\n+ + 1\n %0A%0A%09maior\n@@ -902,16 +902,20 @@\n %0A%09return\n+ 1 +\n  maiorAl\n",
+            "lines": "145"
+        },
+        {
+            "label": "2026-06-07_11-45-10",
+            "content": "@@ -897,12 +897,8 @@\n turn\n- 1 +\n  mai\n",
+            "lines": "145"
+        },
+        {
+            "label": "2026-06-07_11-45-17",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Node struct {\n\tValue int\n\tLeft  *Node\n\tRight *Node\n}\n\n// Search node with value\n// Starts with node == root\n// Value is the value we are looking for\n// Returns the node with the value or nil if not found\nfunc find(node *Node, value int) *Node {\n\tif node == nil {\n\t\treturn nil\n\t}\n\n\tif node.Value == value {\n\t\treturn node\n\t}\n\n\tprocurandoEsq := find(node.Left, value)\n\n\tif procurandoEsq != nil {\n\t\treturn procurandoEsq\n\t}\n\n\treturn find(node.Right, value)\n}\n\n// node is the node we want to find the height of\n// the height of a node is the number of edges on the longest path from the node to a leaf\nfunc getHeight(node *Node) int {\n\tif node == nil {\n\t\treturn 0\n\t}\n\n\talturaDir := getHeight(node.Right)\n\talturaEsq := getHeight(node.Left)\n\n\tmaiorAltura := alturaDir\n\tif alturaEsq > alturaDir {\n\t\tmaiorAltura = alturaEsq\n\t}\n\n\treturn 1 + maiorAltura\n}\n\n// node is the root of the tree\n// level is the current level in the tree (1 for root)\n// value is the value we are looking for\nfunc calcNodeDepth(node *Node, level int, value int) int {\n\tif node == nil {\n\t\treturn -1\n\t}\n\n\tif node.Value == value {\n\t\treturn level\n\t}\n\n\tprofundidadeDir := calcNodeDepth(node.Right, level + 1, value)\n\n\tif profundidadeDir != -1 {\n\t\treturn profundidadeDir\n\t}\n\n\treturn calcNodeDepth(node.Left, level + 1, value)\n}\n\n// --------------------------------------------------------------------\n// Don't change from here\nfunc BShow(node *Node, heranca string) {\n\tif node != nil && (node.Left != nil || node.Right != nil) {\n\t\tBShow(node.Left, heranca+\"l\")\n\t}\n\tfor i := 0; i < len(heranca)-1; i++ {\n\t\tif heranca[i] != heranca[i+1] {\n\t\t\tfmt.Print(\"\u2502   \")\n\t\t} else {\n\t\t\tfmt.Print(\"    \")\n\t\t}\n\t}\n\tif heranca != \"\" {\n\t\tif heranca[len(heranca)-1] == 'l' {\n\t\t\tfmt.Print(\"\u256d\u2500\u2500\u2500\")\n\t\t} else {\n\t\t\tfmt.Print(\"\u2570\u2500\u2500\u2500\")\n\t\t}\n\t}\n\tif node == nil {\n\t\tfmt.Println(\"#\")\n\t\treturn\n\t}\n\tfmt.Println(node.Value)\n\tif node.Left != nil || node.Right != nil {\n\t\tBShow(node.Right, heranca+\"r\")\n\t}\n}\n\nfunc create(parts *[]string) *Node {\n\telem := (*parts)[0]\n\t*parts = (*parts)[1:]\n\tif elem == \"#\" {\n\t\treturn nil\n\t}\n\tvalue, _ := strconv.Atoi(elem)\n\tnode := &Node{Value: value}\n\tnode.Left = create(parts)\n\tnode.Right = create(parts)\n\treturn node\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tscanner.Scan()\n\n\tline := scanner.Text()\n\tparts := strings.Split(line, \" \")\n\troot := create(&parts)\n\n\tscanner.Scan()\n\tline = scanner.Text()\n\tfmt.Println(\"Arvore:\")\n\tBShow(root, \"\")\n\n\tvalues := strings.FieldsSeq(line)\n\tfor s := range values {\n\t\tvalue, _ := strconv.Atoi(s)\n\t \tnode := find(root, value)\n\t\tif node != nil {\n\t\t\tfmt.Printf(\"Altura: %d, Profundidade: %d\\n\", getHeight(node), calcNodeDepth(root, 1, value))\n\t\t} else {\n\t\t\tfmt.Println(\"-1\")\n\t\t}\n\t}\n}\n",
+            "lines": "145"
+        }
+    ]
+}
