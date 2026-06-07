@@ -19,7 +19,7 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@bfs
+- ed@tree
 flags:
   inbox: all
   panel: graph
@@ -27,5 +27,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@escapeSpread
-selected_index: 13
+selected: ed@soma
+selected_index: 12
