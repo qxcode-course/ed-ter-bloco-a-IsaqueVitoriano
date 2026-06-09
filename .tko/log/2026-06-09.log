@@ -1,0 +1,21 @@
+2026-06-09 09:10:50, MOVE, v:1, k:ed@compare, mode:DOWN
+2026-06-09 09:10:50, MOVE, v:1, k:ed@compare, mode:PICK
+2026-06-09 09:10:50, MOVE, v:1, k:ed@compare, mode:EDIT
+2026-06-09 09:10:50, MOVE, v:1, k:ed@compare, mode:EDIT
+2026-06-09 09:10:50, MOVE, v:1, k:ed@compare, mode:EDIT
+2026-06-09 09:14:48, MOVE, v:1, k:ed@compare, mode:EDIT
+2026-06-09 09:18:21, EXEC, v:1, k:ed@compare, mode:FULL, rate:25, size:100
+2026-06-09 09:19:47, MOVE, v:1, k:ed@compare, mode:EDIT
+2026-06-09 09:23:45, EXEC, v:1, k:ed@compare, mode:FULL, rate:0, size:100
+2026-06-09 09:23:55, EXEC, v:1, k:ed@compare, mode:FULL, rate:25, size:100
+2026-06-09 09:23:54, MOVE, v:1, k:ed@compare, mode:EDIT
+2026-06-09 09:28:28, EXEC, v:1, k:ed@compare, mode:FULL, rate:25, size:94
+2026-06-09 09:28:15, MOVE, v:1, k:ed@compare, mode:EDIT
+2026-06-09 09:34:21, EXEC, v:1, k:ed@compare, mode:FULL, rate:0, size:102
+2026-06-09 09:34:09, MOVE, v:1, k:ed@compare, mode:EDIT
+2026-06-09 09:35:25, EXEC, v:1, k:ed@compare, mode:FULL, rate:25, size:106
+2026-06-09 09:36:04, EXEC, v:1, k:ed@compare, mode:FULL, rate:50, size:106
+2026-06-09 09:35:59, MOVE, v:1, k:ed@compare, mode:EDIT
+2026-06-09 09:41:04, EXEC, v:1, k:ed@compare, mode:FULL, rate:75, size:106
+2026-06-09 09:43:40, EXEC, v:1, k:ed@compare, mode:FULL, rate:100, size:108
+2026-06-09 09:44:32, SELF, v:1, k:ed@compare, self:1, rate:100, study:35, concept:1
