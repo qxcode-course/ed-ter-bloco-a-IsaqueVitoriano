@@ -28,7 +28,6 @@ func find(node *Node, value int) *Node {
 	}
 
 	procurandoEsq := find(node.Left, value)
-
 	if procurandoEsq != nil {
 		return procurandoEsq
 	}
@@ -43,15 +42,16 @@ func getHeight(node *Node) int {
 		return 0
 	}
 
-	alturaDir := getHeight(node.Right)
 	alturaEsq := getHeight(node.Left)
+	alturaDir := getHeight(node.Right)
 
-	maiorAltura := alturaDir
-	if alturaEsq > alturaDir {
-		maiorAltura = alturaEsq
+	maiorAltura := alturaEsq
+
+	if alturaDir > alturaEsq {
+		maiorAltura = alturaDir
 	}
 
-	return 1 + maiorAltura
+	return maiorAltura + 1
 }
 
 // node is the root of the tree
@@ -66,13 +66,13 @@ func calcNodeDepth(node *Node, level int, value int) int {
 		return level
 	}
 
-	profundidadeDir := calcNodeDepth(node.Right, level + 1, value)
+	resultadoEsq := calcNodeDepth(node.Left, level + 1, value)
 
-	if profundidadeDir != -1 {
-		return profundidadeDir
+	if resultadoEsq != -1 {
+		return resultadoEsq
 	}
 
-	return calcNodeDepth(node.Left, level + 1, value)
+	return calcNodeDepth(node.Right, level + 1, value)
 }
 
 // --------------------------------------------------------------------
