@@ -21,8 +21,8 @@ func Clone(node *Node) *Node {
 
 	return &Node{
 		Value: node.Value,
-		Left: node.Left,
-		Right: node.Right,
+		Left: Clone(node.Left),
+		Right: Clone(node.Right),
 	}
 }
 
