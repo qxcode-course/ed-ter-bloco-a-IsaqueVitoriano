@@ -1,0 +1,94 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-15_15-28-03",
+            "content": "@@ -388,20 +388,8 @@\n t %7B%0A\n-    return 0\n %0A%7D%0A%0A\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-06-15_15-28-14",
+            "content": "@@ -392,955 +392,16 @@\n     \n-if len(grid) == 0 %7B%0A        return 0%0A    %7D%0A%0A    fila := %5B%5D%5B%5DPos%7B%7D%0A    laranjasFrescas := 0%0A    minutos := 0%0A%0A    for i := range len(grid) %7B%0A        for j := range len(grid%5B0%5D) %7B%0A            if grid%5Bi%5D%5Bj%5D == 2 %7B%0A                fila = append(fila, %5B%5DPos%7B%7Bi, j%7D%7D)%0A            %7D else %7B%0A                laranjasFrescas++%0A            %7D%0A        %7D%0A    %7D%0A%0A    for len(fila) %3E 0 && laranjasFrescas %3E 0 %7B%0A        tamanhoFila := len(fila)%0A        minutos++%0A%0A        for i := 0; i %3C tamanhoFila; i++ %7B%0A            atual := fila%5B0%5D%0A            fila = fila%5B1:%5D%0A%0A            for _, vizinho := range getNeig(atual%5B0%5D) %7B%0A                if inside(grid, vizinho) && grid%5Bvizinho.l%5D%5Bvizinho.c%5D == 1%7B%0A                    grid%5Bvizinho.l%5D%5Bvizinho.c%5D = 2%0A                    laranjasFrescas--%0A                    fila = append(fila, %5B%5DPos%7Bvizinho%7D)%0A                %7D%0A            %7D%0A        %7D%0A    %7D%0A%0A    if laranjasFrescas %3E 0 %7B%0A        return -1%0A    %7D%0A%0A    return minutos\n+return 0\n %0A%7D%0A%0A\n@@ -549,44 +549,8 @@\n  %7D%0A%0A\n-    minutos := orangeRotting(grid) %0A\n     \n@@ -562,18 +562,13 @@\n rint\n-ln(minutos\n+(grid\n )%0A%7D%0A\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-06-15_16-06-37",
+            "content": "@@ -986,17 +986,17 @@\n g(atual%5B\n-1\n+0\n %5D) %7B%0A   \n",
+            "lines": "80"
+        },
+        {
+            "label": "2026-06-15_16-09-46",
+            "content": "@@ -448,22 +448,17 @@\n  := \n-make(\n+%5B%5D\n %5B%5DPos\n-, 0)\n+%7B%7D\n %0A   \n@@ -639,17 +639,21 @@\n la, \n+%5B%5D\n Pos%7B\n+%7B\n i, j%7D\n+%7D\n )%0A  \n@@ -985,16 +985,19 @@\n ig(atual\n+%5B1%5D\n ) %7B%0A    \n@@ -1198,23 +1198,30 @@\n d(fila, \n+%5B%5DPos%7B\n vizinho\n+%7D\n )%0A      \n",
+            "lines": "80"
+        },
+        {
+            "label": "2026-06-15_16-10-35",
+            "content": "@@ -448,15 +448,22 @@\n  := \n+make(\n %5B%5DPos\n-%7B%7D\n+, 0)\n %0A   \n@@ -741,62 +741,8 @@\n  %7D%0A%0A\n-    if laranjasFrescas == 0 %7B%0A        return 0%0A    %7D%0A%0A\n     \n@@ -1065,17 +1065,16 @@\n .c%5D == 1\n- \n %7B%0A      \n",
+            "lines": "80"
+        },
+        {
+            "label": "2026-06-15_16-13-46",
+            "content": "@@ -589,25 +589,25 @@\n id%5Bi%5D%5Bj%5D == \n-1\n+2\n  %7B%0A         \n@@ -617,25 +617,38 @@\n     \n-laranjasFrescas++\n+fila = append(fila, Pos%7Bi, j%7D)\n %0A   \n@@ -649,32 +649,39 @@\n %7D)%0A            %7D\n+ else %7B\n %0A            %0A  \n@@ -681,41 +681,43 @@\n     \n-%0A\n     \n-        if grid%5Bi%5D%5Bj%5D == 2 %7B\n+laranjasFrescas++%0A            %7D\n %0A   \n@@ -725,70 +725,63 @@\n     \n+%7D%0A\n     \n+%7D%0A%0A\n     \n-fila = append(fila, Pos%7Bi, j%7D)%0A            %7D%0A        %7D\n+if laranjasFrescas == 0 %7B%0A        return 0\n %0A   \n",
+            "lines": "84"
+        },
+        {
+            "label": "2026-06-15_16-18-18",
+            "content": "@@ -648,13 +648,52 @@\n    %7D\n- else\n+%0A            %0A            if grid%5Bi%5D%5Bj%5D == 2\n  %7B%0A \n",
+            "lines": "82"
+        },
+        {
+            "label": "2026-06-15_16-19-09",
+            "content": "@@ -734,62 +734,8 @@\n  %7D%0A%0A\n-    if laranjasFrescas == 0 %7B%0A        return 0%0A    %7D%0A%0A\n     \n",
+            "lines": "80"
+        },
+        {
+            "label": "2026-06-15_16-19-25",
+            "content": "@@ -726,24 +726,78 @@\n    %7D%0A    %7D%0A%0A\n+    if laranjasFrescas == 0 %7B%0A        return 0%0A    %7D%0A%0A\n     for len(\n@@ -1090,22 +1090,26 @@\n rid%5B\n-atual.l%5D%5Batual\n+vizinho.l%5D%5Bvizinho\n .c%5D \n",
+            "lines": "84"
+        },
+        {
+            "label": "2026-06-15_16-20-15",
+            "content": "@@ -589,25 +589,25 @@\n id%5Bi%5D%5Bj%5D == \n-0\n+1\n  %7B%0A         \n@@ -617,16 +617,25 @@\n     \n-continue\n+laranjasFrescas++\n %0A   \n@@ -654,27 +654,8 @@\n lse \n-if grid%5Bi%5D%5Bj%5D == 2 \n %7B%0A  \n@@ -703,63 +703,8 @@\n j%7D)%0A\n-            %7D else %7B%0A                laranjasFrescas++%0A\n     \n@@ -1032,34 +1032,30 @@\n && grid%5B\n-vizinho.l%5D%5Bvizinho\n+atual.l%5D%5Batual\n .c%5D == 1\n",
+            "lines": "80"
+        },
+        {
+            "label": "2026-06-15_16-23-00",
+            "content": "@@ -380,24 +380,72 @@\n %5Dint) int %7B%0A\n+    if len(grid) == 0 %7B%0A        return 0%0A    %7D%0A%0A\n     fila := \n@@ -592,16 +592,81 @@\n i%5D%5Bj%5D ==\n+ 0 %7B%0A                continue%0A            %7D else if grid%5Bi%5D%5Bj%5D ==\n  2 %7B%0A   \n",
+            "lines": "82"
+        },
+        {
+            "label": "2026-06-15_16-25-25",
+            "content": "@@ -460,22 +460,21 @@\n or i := \n-0; i %3C\n+range\n  len(gri\n@@ -475,21 +475,16 @@\n en(grid)\n-; i++\n  %7B%0A     \n@@ -499,14 +499,13 @@\n  := \n-0; j %3C\n+range\n  len\n@@ -517,13 +517,8 @@\n %5B0%5D)\n-; j++\n  %7B%0A \n",
+            "lines": "76"
+        },
+        {
+            "label": "2026-06-15_16-26-28",
+            "content": "@@ -456,29 +456,30 @@\n    for i := \n-range\n+0; i %3C\n  len(grid) %7B\n@@ -476,16 +476,21 @@\n en(grid)\n+; i++\n  %7B%0A     \n@@ -501,21 +501,22 @@\n or j := \n-range\n+0; j %3C\n  len(gri\n@@ -520,16 +520,21 @@\n grid%5B0%5D)\n+; j++\n  %7B%0A     \n@@ -543,72 +543,8 @@\n     \n- if grid%5Bi%5D%5Bj%5D == 0 %7B%0A                continue%0A            %7Delse\n  if \n",
+            "lines": "76"
+        },
+        {
+            "label": "2026-06-15_16-27-40",
+            "content": "@@ -544,16 +544,80 @@\n i%5D%5Bj%5D ==\n+ 0 %7B%0A                continue%0A            %7Delse if grid%5Bi%5D%5Bj%5D ==\n  2 %7B%0A   \n@@ -683,27 +683,8 @@\n lse \n-if grid%5Bi%5D%5Bj%5D != 0 \n %7B%0A  \n",
+            "lines": "78"
+        },
+        {
+            "label": "2026-06-15_16-30-29",
+            "content": "@@ -352,25 +352,24 @@\n %0Afunc orange\n-s\n Rotting(grid\n@@ -629,20 +629,20 @@\n d%5Bi%5D%5Bj%5D \n-== 1\n+!= 0\n  %7B%0A     \n@@ -1396,17 +1396,17 @@\n = range \n-n\n+m\n  %7B%0A     \n@@ -1461,17 +1461,16 @@\n = orange\n-s\n Rotting(\n",
+            "lines": "76"
+        },
+        {
+            "label": "2026-06-15_16-37-10",
+            "content": "@@ -1397,17 +1397,17 @@\n = range \n-m\n+n\n  %7B%0A     \n",
+            "lines": "76"
+        },
+        {
+            "label": "2026-06-15_16-37-18",
+            "content": "@@ -1437,80 +1437,8 @@\n , n)\n-%0A%0A        for j := range m %7B%0A            fmt.Scan(&grid%5Bi%5D%5Bj%5D)%0A        %7D\n %0A   \n",
+            "lines": "76"
+        },
+        {
+            "label": "2026-06-15_16-39-28",
+            "content": "package main\n\nimport \"fmt\"\n\ntype Pos struct {\n    l, c int\n}\n\nfunc getNeig(p Pos) []Pos {\n    return []Pos{\n        {p.l + 1, p.c},\n        {p.l - 1, p.c},\n        {p.l, p.c + 1},\n        {p.l, p.c - 1},\n    }\n}\n\nfunc inside(grid [][]int, p Pos) bool {\n    m := len(grid)\n    n := len(grid[0])\n\n    return p.l >= 0 && p.l < m && p.c >= 0 && p.c < n\n}\n\nfunc orangesRotting(grid [][]int) int {\n    fila := []Pos{}\n    laranjasFrescas := 0\n    minutos := 0\n\n    for i := range len(grid) {\n        for j := range len(grid[0]) {\n            if grid[i][j] == 2 {\n                fila = append(fila, Pos{i, j})\n            } else if grid[i][j] == 1 {\n                laranjasFrescas++\n            }\n        }\n    }\n\n    for len(fila) > 0 && laranjasFrescas > 0 {\n        tamanhoFila := len(fila)\n        minutos++\n\n        for i := 0; i < tamanhoFila; i++ {\n            atual := fila[0]\n            fila = fila[1:]\n\n            for _, vizinho := range getNeig(atual) {\n                if inside(grid, vizinho) && grid[vizinho.l][vizinho.c] == 1 {\n                    grid[vizinho.l][vizinho.c] = 2\n                    laranjasFrescas--\n                    fila = append(fila, vizinho)\n                }\n            }\n        }\n    }\n\n    if laranjasFrescas > 0 {\n        return -1\n    }\n\n    return minutos\n}\n\nfunc main() {\n    var m, n int\n    fmt.Scan(&m, &n)\n\n    grid := make([][]int, m)\n    for i := range m {\n        grid[i] = make([]int, n)\n\n        for j := range m {\n            fmt.Scan(&grid[i][j])\n        }\n    }\n\n    minutos := orangesRotting(grid) \n    fmt.Println(minutos)\n}\n",
+            "lines": "80"
+        }
+    ]
+}
