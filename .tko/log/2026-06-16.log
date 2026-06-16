@@ -28,3 +28,24 @@
 2026-06-16 15:52:23, EXEC, v:1, k:ed@bst_insert, mode:FULL, rate:16, size:84
 2026-06-16 15:52:46, EXEC, v:1, k:ed@bst_insert, mode:FULL, rate:100, size:84
 2026-06-16 15:53:59, SELF, v:1, k:ed@bst_insert, self:1, rate:100, study:45
+2026-06-16 15:58:03, MOVE, v:1, k:ed@bst_remove, mode:DOWN
+2026-06-16 15:58:04, MOVE, v:1, k:ed@bst_remove, mode:PICK
+2026-06-16 15:58:03, MOVE, v:1, k:ed@bst_remove, mode:EDIT
+2026-06-16 16:02:02, MOVE, v:1, k:ed@bst_remove, mode:EDIT
+2026-06-16 16:07:43, MOVE, v:1, k:ed@bst_remove, mode:EDIT
+2026-06-16 16:07:55, EXEC, v:1, k:ed@bst_remove, mode:FULL, rate:12, size:112
+2026-06-16 16:11:42, EXEC, v:1, k:ed@bst_remove, mode:FULL, rate:12, size:117
+2026-06-16 16:11:40, MOVE, v:1, k:ed@bst_remove, mode:EDIT
+2026-06-16 16:13:38, EXEC, v:1, k:ed@bst_remove, mode:FULL, rate:12, size:117
+2026-06-16 16:13:36, MOVE, v:1, k:ed@bst_remove, mode:EDIT
+2026-06-16 16:22:44, MOVE, v:1, k:ed@bst_remove, mode:EDIT
+2026-06-16 16:22:53, EXEC, v:1, k:ed@bst_remove, mode:FULL, rate:12, size:112
+2026-06-16 16:23:09, EXEC, v:1, k:ed@bst_remove, mode:FULL, rate:50, size:112
+2026-06-16 16:27:28, EXEC, v:1, k:ed@bst_remove, mode:FULL, rate:75, size:121
+2026-06-16 16:27:39, MOVE, v:1, k:ed@bst_remove, mode:EDIT
+2026-06-16 16:28:32, EXEC, v:1, k:ed@bst_remove, mode:FULL, rate:50, size:121
+2026-06-16 16:30:54, EXEC, v:1, k:ed@bst_remove, mode:FULL, rate:50, size:121
+2026-06-16 16:31:07, EXEC, v:1, k:ed@bst_remove, mode:FULL, rate:50, size:121
+2026-06-16 16:30:59, MOVE, v:1, k:ed@bst_remove, mode:EDIT
+2026-06-16 16:34:30, EXEC, v:1, k:ed@bst_remove, mode:FULL, rate:100, size:121
+2026-06-16 16:35:30, SELF, v:1, k:ed@bst_remove, self:1, rate:100, study:35, concept:1, problem:1

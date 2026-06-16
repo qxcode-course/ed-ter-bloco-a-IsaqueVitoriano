@@ -31,5 +31,5 @@ audit:
 audit_enabled: false
 audit_interval_seconds: null
 lang: go
-selected: ed@bst_insert
-selected_index: 16
+selected: ed@bst_remove
+selected_index: 18
