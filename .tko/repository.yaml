@@ -26,10 +26,8 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 audit:
-  enabled: false
+  enabled: true
   interval_seconds: null
-audit_enabled: false
-audit_interval_seconds: null
 lang: go
-selected: ed@bst_remove
-selected_index: 18
+selected: ed@bst_serial
+selected_index: 17

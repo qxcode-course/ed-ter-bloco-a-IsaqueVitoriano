@@ -1,0 +1,69 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-16_19-38-20",
+            "content": "@@ -725,175 +725,36 @@\n  %7B%0A%09\n-if root == nil %7B%0A%09%09return %22%22%0A%09%7D%0A%0A%09if root.Left == nil %7B%0A%09%09return %22#%22%0A%09%7D%0A%0A%09if root.Right == nil %7B%0A%09%09return %22#%22%0A%09%7D%0A%09%0A%09return Serialize(root.Left) + Serialize(root.Right)\n+// TODO%0A%09_ = root%0A%09return %22%22\n %0A%7D%0A%0A\n",
+            "lines": "93"
+        },
+        {
+            "label": "2026-06-16_19-41-15",
+            "content": "@@ -740,33 +740,32 @@\n nil %7B%0A%09%09return %22\n-#\n %22%0A%09%7D%0A%0A%09if root.L\n@@ -838,153 +838,61 @@\n %0A%09%7D%0A\n-%0A%09var vetor %5B%5Dstring%0A%09vetor = append(vetor, Serialize(root.Right))%0A%09vetor = append(vetor, Serialize(root.Left))%0A%09%0A%09return strings.Join(vetor, %22 %22\n+%09%0A%09return Serialize(root.Left) + Serialize(root.Right\n )%0A%7D%0A\n",
+            "lines": "103"
+        },
+        {
+            "label": "2026-06-16_19-50-54",
+            "content": "@@ -748,16 +748,17 @@\n return %22\n+#\n %22%0A%09%7D%0A%0A%09i\n",
+            "lines": "107"
+        },
+        {
+            "label": "2026-06-16_19-51-06",
+            "content": "@@ -754,16 +754,97 @@\n  %22%22%0A%09%7D%0A%0A\n+%09if root.Left == nil %7B%0A%09%09return %22#%22%0A%09%7D%0A%0A%09if root.Right == nil %7B%0A%09%09return %22#%22%0A%09%7D%0A%0A\n %09var vet\n",
+            "lines": "107"
+        },
+        {
+            "label": "2026-06-16_19-52-16",
+            "content": "@@ -748,17 +748,16 @@\n return %22\n-#\n %22%0A%09%7D%0A%0A%09v\n",
+            "lines": "99"
+        },
+        {
+            "label": "2026-06-16_19-52-32",
+            "content": "@@ -759,36 +759,8 @@\n %09%7D%0A%0A\n-%09value := byte(root.Value)%0A%0A\n %09var\n@@ -817,50 +817,13 @@\n oot.\n-Left))%0A%09vetor = append(vetor, string(value\n+Right\n ))%0A%09\n@@ -855,28 +855,27 @@\n ialize(root.\n-Righ\n+Lef\n t))%0A%09%0A%09retur\n",
+            "lines": "99"
+        },
+        {
+            "label": "2026-06-16_20-00-38",
+            "content": "@@ -785,14 +785,8 @@\n lue)\n- + '0'\n %0A%0A%09v\n",
+            "lines": "102"
+        },
+        {
+            "label": "2026-06-16_20-01-03",
+            "content": "@@ -836,20 +836,27 @@\n or, \n-string(value\n+Serialize(root.Left\n ))%0A%09\n@@ -877,35 +877,28 @@\n (vetor, \n-Serialize(root.Left\n+string(value\n ))%0A%09veto\n",
+            "lines": "102"
+        },
+        {
+            "label": "2026-06-16_20-01-21",
+            "content": "@@ -755,16 +755,50 @@\n %22#%22%0A%09%7D%0A%0A\n+%09value := byte(root.Value) + '0'%0A%0A\n %09var vet\n@@ -839,22 +839,17 @@\n  string(\n-root.V\n+v\n alue))%0A%09\n",
+            "lines": "102"
+        },
+        {
+            "label": "2026-06-16_20-02-33",
+            "content": "@@ -759,42 +759,8 @@\n %09%7D%0A%0A\n-%09value := byte(root.Value) + '0'%0A%0A\n %09var\n@@ -805,17 +805,22 @@\n  string(\n-v\n+root.V\n alue))%0A%09\n",
+            "lines": "100"
+        },
+        {
+            "label": "2026-06-16_20-03-24",
+            "content": "@@ -769,31 +769,12 @@\n  := \n-strconv.FormatInt(int64\n+byte\n (roo\n@@ -785,13 +785,14 @@\n lue)\n-, 36)\n+ + '0'\n %0A%0A%09v\n",
+            "lines": "102"
+        },
+        {
+            "label": "2026-06-16_20-05-44",
+            "content": "@@ -777,12 +777,23 @@\n onv.\n-Itoa\n+FormatInt(int64\n (roo\n@@ -800,16 +800,21 @@\n t.Value)\n+, 36)\n %0A%0A%09var v\n",
+            "lines": "102"
+        },
+        {
+            "label": "2026-06-16_20-06-38",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Node struct {\n\tValue int\n\tLeft  *Node\n\tRight *Node\n}\n\nfunc BstInsert(values []int) *Node {\n\tif len(values) == 0 {\n\t\treturn nil\n\t}\n\n\telemento := values[0]\n\tvar esquerda []int\n\tvar direita []int\n\n\tnode := Node{Value: elemento}\n\n\tfor _, value := range values[1:] {\n\t\tif value < node.Value {\n\t\t\tesquerda = append(esquerda, value)\n\t\t} else if value > node.Value {\n\t\t\tdireita = append(direita, value)\n\t\t}\n\t}\n\n\tnode.Left = BstInsert(esquerda)\n\tnode.Right = BstInsert(direita)\n\n\treturn &node\n}\n\n// Dica: crie um vetor compartilhado e v\u00e1 preenchendo conforme anda na recurs\u00e3o\n// Depois use o strings.Join para gerar o serial\nfunc Serialize(root *Node) string {\n\tif root == nil {\n\t\treturn \"#\"\n\t}\n\n\tvalue := strconv.Itoa(root.Value)\n\n\tvar vetor []string\n\tvetor = append(vetor, string(value))\n\tvetor = append(vetor, Serialize(root.Left))\n\tvetor = append(vetor, Serialize(root.Right))\n\t\n\treturn strings.Join(vetor, \" \")\n}\n\n// -----------------------------------------------------------------------------------\nfunc BShow(node *Node, history string) {\n\tif node != nil && (node.Left != nil || node.Right != nil) {\n\t\tBShow(node.Left, history+\"l\")\n\t}\n\tfor i := 0; i < len(history)-1; i++ {\n\t\tif history[i] != history[i+1] {\n\t\t\tfmt.Print(\"\u2502   \")\n\t\t} else {\n\t\t\tfmt.Print(\"    \")\n\t\t}\n\t}\n\tif history != \"\" {\n\t\tif history[len(history)-1] == 'l' {\n\t\t\tfmt.Print(\"\u256d\u2500\u2500\u2500\")\n\t\t} else {\n\t\t\tfmt.Print(\"\u2570\u2500\u2500\u2500\")\n\t\t}\n\t}\n\tif node == nil {\n\t\tfmt.Println(\"#\")\n\t\treturn\n\t}\n\tfmt.Println(node.Value)\n\tif node.Left != nil || node.Right != nil {\n\t\tBShow(node.Right, history+\"r\")\n\t}\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Split(scanner.Text(), \" \")\n\tvalues := make([]int, 0, len(parts))\n\tfor _, elem := range parts {\n\t\tv, err := strconv.Atoi(elem)\n\t\tif err == nil {\n\t\t\tvalues = append(values, v)\n\t\t}\n\t}\n\troot := BstInsert(values)\n\tBShow(root, \"\") // Chama a fun\u00e7\u00e3o de impress\u00e3o formatada\n\tfmt.Println(Serialize((root)))\n}\n",
+            "lines": "102"
+        }
+    ]
+}
