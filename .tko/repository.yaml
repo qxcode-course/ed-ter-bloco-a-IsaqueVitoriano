@@ -19,13 +19,17 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@bfs
+- ed@tree
 flags:
   inbox: all
-  panel: graph
-  show_panel: 'true'
+  panel: skills
   task_graph_mode: executions
   show_time: 'true'
+audit:
+  enabled: false
+  interval_seconds: null
+audit_enabled: false
+audit_interval_seconds: null
 lang: go
-selected: ed@rotten
-selected_index: 11
+selected: ed@bst_insert
+selected_index: 16
